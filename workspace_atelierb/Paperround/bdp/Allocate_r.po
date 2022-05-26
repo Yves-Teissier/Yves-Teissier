@@ -1,0 +1,35 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(12) & WellDefinedness_allocate.2,(_f(18) => _f(15));
+_f(1) & _f(2) & _f(3) & _f(12) & WellDefinedness_allocate.1,(_f(18) => _f(14));
+_f(1) & _f(2) & _f(3) & _f(12) & _f(13) & Operation_allocate.4,(_f(6) => _f(17));
+_f(1) & _f(2) & _f(3) & _f(12) & _f(13) & Operation_allocate.3,(_f(6) => _f(16));
+_f(1) & _f(2) & _f(3) & _f(12) & _f(13) & Operation_allocate.2,(_f(6) => _f(15));
+_f(1) & _f(2) & _f(3) & _f(12) & _f(13) & Operation_allocate.1,(_f(6) => _f(14));
+_f(1) & _f(2) & _f(3) & _f(4) & _f(8) & Operation_query.2,(_f(11) & _f(6) => _f(5));
+_f(1) & _f(2) & _f(3) & _f(4) & _f(8) & Operation_query.1,(_f(9) & _f(6) => _f(10));
+_f(1) & _f(2) & _f(3) & _f(4) & _f(5) & Operation_choose.1,(_f(6) => _f(7))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+allocated : POW( ((1) .. (100)));
+((allocated) = (allocated$1));
+((nn) : (((1) .. (100))));
+not(((nn) : (allocated)));
+"Refinement is correct";
+((((allocated) \/ (({nn})))) = (((allocated$1) \/ (({nn})))));
+((aa) = (aa$1));
+((nn) : (allocated$1));
+((nn) : (allocated));
+not(((nn) : (allocated$1)));
+not((((((1) .. (100)) - allocated)) = ({})));
+((nn) = (nn$1));
+not((((((1) .. (100)) - allocated$1)) = ({})));
+(((((((1) .. (100)) - allocated$1)) /\ ((INTEGER - NATURAL)))) : (FIN(INTEGER)));
+((min((((1) .. (100)) - allocated$1))) : ((((1) .. (100)) - allocated)));
+((((allocated) \/ (({min((((1) .. (100)) - allocated$1))})))) = (((allocated$1) \/ (({min((((1) .. (100)) - allocated$1))})))));
+"Operation is well defined"
+END
+&
+THEORY EnumerateX
+END

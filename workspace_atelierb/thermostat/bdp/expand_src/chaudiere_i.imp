@@ -1,0 +1,20 @@
+﻿/* chaudiere_i
+ * Author: yves
+ * Creation date: 21/11/2020
+ */
+
+IMPLEMENTATION chaudiere_i
+REFINES chaudiere
+
+OPERATIONS
+    start_chaudiere =
+    BEGIN
+        // Put the power on here
+        skip
+    END ;
+    stop_chaudiere =
+    BEGIN
+        // Put the power off here
+        skip
+    END
+ END

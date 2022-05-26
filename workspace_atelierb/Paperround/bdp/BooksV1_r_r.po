@@ -1,0 +1,49 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(7) & _f(8) & _f(9) & WellDefinedness_newbook.2,(_f(24) => _f(21));
+_f(1) & _f(2) & _f(3) & _f(7) & _f(8) & _f(9) & WellDefinedness_newbook.1,(_f(24) => _f(25));
+_f(1) & _f(2) & _f(3) & _f(7) & WellDefinednessInvariant.8,(_f(16) & _f(19) => _f(23));
+_f(1) & _f(2) & _f(3) & _f(7) & WellDefinednessInvariant.7,(_f(16) & _f(19) => _f(22));
+_f(1) & _f(2) & _f(3) & _f(7) & WellDefinednessInvariant.6,(_f(16) & _f(18) & _f(19) => _f(21));
+_f(1) & _f(2) & _f(3) & _f(7) & WellDefinednessInvariant.5,(_f(16) & _f(18) & _f(19) => _f(20));
+_f(1) & _f(2) & _f(3) & _f(7) & WellDefinednessInvariant.4,(_f(16) & _f(17) & _f(19) => _f(21));
+_f(1) & _f(2) & _f(3) & _f(7) & WellDefinednessInvariant.3,(_f(16) & _f(17) & _f(19) => _f(20));
+_f(1) & _f(2) & _f(3) & _f(7) & WellDefinednessInvariant.2,(_f(16) & _f(19) => _f(15));
+_f(1) & _f(2) & _f(3) & _f(7) & WellDefinednessInvariant.1,(_f(19) => _f(15));
+_f(1) & _f(2) & WellDefinednessProperties.1,(_f(14) => _f(15));
+_f(1) & _f(2) & _f(3) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_newbook.3,(_f(4) => _f(13));
+_f(1) & _f(2) & _f(3) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_newbook.2,(_f(4) => _f(12));
+_f(1) & _f(2) & _f(3) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_newbook.1,(_f(4) => _f(11));
+_f(1) & _f(2) & _f(3) & Initialisation.2,(_f(4) => _f(6));
+_f(1) & _f(2) & _f(3) & Initialisation.1,(_f(4) => _f(5))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+BOOK: FIN(INTEGER) & not(BOOK = {});
+bookarr : ((0) .. ((card(BOOK) - 1))) +-> BOOK & bookarr : ((0) .. ((card(BOOK) - 1))) >+> BOOK & bookarr : ((0) .. ((card(BOOK) - 1))) +->> BOOK & bookarr : ((0) .. ((card(BOOK) - 1))) --> BOOK & dom(bookarr) = ((0) .. ((card(BOOK) - 1))) & bookarr~ : BOOK +-> ((0) .. ((card(BOOK) - 1))) & ran(bookarr) = BOOK & ((bookarr) : (((((0) .. ((card(BOOK) - 1)))) >->> (BOOK))));
+"Refinement is correct";
+((0) : (((0) .. (card(BOOK)))));
+#(scheme$1).(((scheme$1) : (perm(BOOK))) & ((%(ii).(((ii) : (((1) .. (card(BOOK))))) | (bookarr )((ii - 1)))) = (((%(ii).(((ii) : (((1) .. (0)))) | (bookarr )((ii - 1)))) ^ (scheme$1)))));
+scheme : seq(BOOK) & scheme : NATURAL-{0} +-> BOOK & scheme ~ : BOOK +-> NATURAL-{0} & ((scheme) : (iseq(BOOK))) & ((ran(scheme)) = ((BOOK - read))) & read : POW( BOOK);
+((counter$1) : (((0) .. (card(BOOK))))) & ((%(ii).(((ii) : (((1) .. (card(BOOK))))) | (bookarr )((ii - 1)))) = (((%(ii).(((ii) : (((1) .. (counter$1)))) | (bookarr )((ii - 1)))) ^ (scheme))));
+not(((read) = (BOOK)));
+((bb) = (bb$1));
+(((counter$1 + 1)) : (((0) .. (card(BOOK)))));
+((%(ii).(((ii) : (((1) .. (card(BOOK))))) | (bookarr )((ii - 1)))) = (((%(ii).(((ii) : (((1) .. ((counter$1 + 1))))) | (bookarr )((ii - 1)))) ^ (tail(scheme)))));
+((first(scheme)) = ((bookarr )(counter$1)));
+"Properties are well defined";
+((BOOK) : (FIN(BOOK)));
+((counter$1) : (((0) .. (card(BOOK)))));
+((ii) : (((1) .. (card(BOOK)))));
+((ii) : (((1) .. (counter$1))));
+"Invariant is well defined";
+(((ii - 1)) : (dom(bookarr)));
+((bookarr) : (((dom(bookarr)) +-> (ran(bookarr)))));
+((%(ii).(((ii) : (((1) .. (counter$1)))) | (bookarr )((ii - 1)))) : (seq(ran(%(ii).(((ii) : (((1) .. (counter$1)))) | (bookarr )((ii - 1)))))));
+((scheme) : (seq(ran(scheme))));
+"Operation is well defined";
+((counter$1) : (dom(bookarr)))
+END
+&
+THEORY EnumerateX
+END

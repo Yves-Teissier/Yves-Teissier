@@ -1,0 +1,12 @@
+digraph {
+CTX_i [ label=" CTX\nCTX_i " shape= box ]
+ControlUnit_i [ label=" ControlUnit\nControlUnit_i " shape= box ]
+ControlUnit_r [ label=" ControlUnit\nControlUnit_r " shape= box ]
+digicode_i [ label=" digicode\ndigicode_i " shape= box ]
+httpServer_i [ label=" httpServer\nhttpServer_i " shape= box ]
+
+"ControlUnit_i" -> "CTX_i" [style= dotted ]
+"ControlUnit_r" -> "CTX_i" [style= dotted ]
+"ControlUnit_i" -> "httpServer_i" []
+"ControlUnit_i" -> "digicode_i" []
+}

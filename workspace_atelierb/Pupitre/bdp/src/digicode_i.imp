@@ -1,0 +1,14 @@
+﻿/* digicode_i
+ * Author: yves
+ * Creation date: 24/05/2022
+ */
+
+IMPLEMENTATION digicode_i
+REFINES digicode
+
+OPERATIONS
+    response <-- digi_getResponse =
+    BEGIN
+        response := 0
+    END
+ END

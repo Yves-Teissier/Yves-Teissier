@@ -1,0 +1,32 @@
+/* ExamR
+ * Author: yves
+ * Creation date: 12/02/2022
+ */
+
+REFINEMENT        ExamR
+
+REFINES           Exam
+
+VARIABLES         total, num, candidates
+
+INVARIANT         total = SIGMA (zz) . (zz : dom(marks) | marks(zz)) /* La somme de toutes les notes. Via la fonction SIGMA. */
+                  & num = card(dom(marks)) /* le nombre de notes */
+                  & candidates = dom(marks) /* le nombre de candidats notés = nombre de noté données */
+
+INITIALISATION    total := 0 ; num := 0; candidates := {}
+
+OPERATIONS
+
+  enter(cc , nn) = 
+      BEGIN 
+        total := total + nn /* incrémente le total */
+        || num := num + 1  /* incrémente le nombre de note */
+        || candidates := candidates \/ {cc} /* on rajoute le candidat cc à la liste des candidats */
+  END;
+
+aa <-- average =
+    aa := total / num;
+
+  nn <-- number = nn := num
+
+END

@@ -1,0 +1,45 @@
+﻿/* Iron1R
+ * Author: yves
+ * Creation date: 12/02/2022
+ */
+
+REFINEMENT Iron1R
+REFINES Iron1
+
+ABSTRACT_VARIABLES
+    pilearray , counter
+
+CONCRETE_CONSTANTS
+    ee
+
+PROPERTIES
+    ee : ITEM
+
+INVARIANT
+    pilearray : 0 .. limit - 1 --> ITEM
+    & counter : 0 .. limit
+    & counter = size ( pile )
+    & pile = ( % ii . ( ii : 1 .. counter | pilearray ( ii - 1 ) ) )
+
+INITIALISATION    pilearray := ( 0 .. limit - 1 ) * { ee } || counter := 0
+
+OPERATIONS
+
+  put ( ii ) =
+      BEGIN
+        pilearray ( counter ) := ii ;
+        counter := counter + 1
+      END ;
+
+  ii <-- take =
+          BEGIN
+            counter := counter - 1 ;
+            ii := pilearray ( counter )
+          END ;
+
+bb <-- query ( ii ) =
+    IF ii : pilearray [ 0 .. counter - 1 ]
+    THEN bb := TRUE
+    ELSE bb := FALSE END
+
+END

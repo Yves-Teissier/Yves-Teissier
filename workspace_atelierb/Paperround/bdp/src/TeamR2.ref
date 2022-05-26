@@ -1,0 +1,29 @@
+﻿/* TeamR2
+ * Author: yves
+ * Creation date: 08/02/2022
+ */
+
+REFINEMENT TeamR2
+REFINES Team
+ABSTRACT_VARIABLES
+    teama
+INVARIANT
+    teama : 0 .. 21 --> BOOL & team = dom ( teama |> { TRUE } )
+INITIALISATION
+    teama := ( 0 .. 10 ) * { TRUE } \/ ( 11 .. 21 ) * { FALSE }
+OPERATIONS
+        substitute ( pp , rr ) =
+        BEGIN
+                teama ( pp ) := FALSE ;
+                teama ( rr ) := TRUE
+        END ;
+        aa <-- query ( pp ) =
+        VAR bb IN
+            bb := teama ( pp ) ;
+            IF bb = TRUE
+        THEN aa := in
+        ELSE aa := out
+        END
+    END
+
+END

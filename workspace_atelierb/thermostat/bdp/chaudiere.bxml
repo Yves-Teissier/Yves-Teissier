@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='chaudiere' type='abstraction' position='true' semantic='true' b0check='false'>
+<Initialisation>
+<Skip/>
+</Initialisation>
+<Operations>
+<Operation name='start_chaudiere'>
+<Attr>
+<Pos l='9' c='5' s='15' endLine='12'/>
+</Attr>
+<Body>
+<Skip>
+<Attr>
+<Pos l='11' c='9' s='4'/>
+</Attr>
+</Skip>
+</Body>
+</Operation>
+<Operation name='stop_chaudiere'>
+<Attr>
+<Pos l='13' c='5' s='14' endLine='16'/>
+</Attr>
+<Body>
+<Skip>
+<Attr>
+<Pos l='15' c='9' s='4'/>
+</Attr>
+</Skip>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

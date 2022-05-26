@@ -1,0 +1,58 @@
+THEORY BalanceX IS
+Paperround,10,0,0,8,2,0,0;
+Initialisation,1,0,0,1,0,0,0;
+Operation_addmagazine,1,0,0,1,0,0,0;
+Operation_addpaper,3,0,0,3,0,0,0;
+Operation_remove,3,0,0,3,0,0,0;
+WellDefinednessInvariant,1,0,0,0,1,0,0;
+WellDefinednessPrecondition_addpaper,1,0,0,0,1,0,0
+END
+&
+THEORY ProofState IS
+Proved(1);
+Proved(1);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0)
+END
+&
+THEORY MethodList IS
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr
+END
+&
+THEORY PassList IS
+Force(1),(?; 0);
+Force(1),(?; 0);
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?
+END
+&
+THEORY Status IS
+Paperround,10,0,10,0,0,0;
+Initialisation,1,0,1,0,0,0;
+Operation_addmagazine,1,0,1,0,0,0;
+Operation_addpaper,3,0,3,0,0,0;
+Operation_remove,3,0,3,0,0,0;
+WellDefinednessInvariant,1,0,1,0,0,0;
+WellDefinednessPrecondition_addpaper,1,0,1,0,0,0
+END

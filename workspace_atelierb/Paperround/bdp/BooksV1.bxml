@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='BooksV1' type='abstraction' position='true' semantic='true' b0check='false'>
+<Sets>
+<Attr>
+<Pos l='7' c='1' s='4'/>
+</Attr>
+<Set>
+<Id value='BOOK' typref='4'>
+<Attr>
+<Pos l='7' c='19' s='4'/>
+</Attr>
+</Id>
+</Set>
+</Sets>
+<Abstract_Variables>
+<Attr>
+<Pos l='9' c='1' s='18'/>
+</Attr>
+<Id value='read' typref='4'>
+<Attr>
+<Pos l='9' c='19' s='4'/>
+</Attr>
+</Id>
+</Abstract_Variables>
+<Invariant>
+<Attr>
+<Pos l='11' c='1' s='9'/>
+</Attr>
+<Exp_Comparison op='&lt;:'>
+<Attr>
+<Pos l='11' c='24' s='2'/>
+</Attr>
+<Id value='read' typref='4'>
+<Attr>
+<Pos l='11' c='19' s='4'/>
+</Attr>
+</Id>
+<Id value='BOOK' typref='4'>
+<Attr>
+<Pos l='11' c='27' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='13' c='1' s='14'/>
+</Attr>
+<Assignement_Sub>
+<Attr>
+<Pos l='13' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='read' typref='4'>
+<Attr>
+<Pos l='13' c='19' s='4'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<EmptySet typref='4'>
+<Attr>
+<Pos l='13' c='27' s='2'/>
+</Attr>
+</EmptySet>
+</Values>
+</Assignement_Sub>
+</Initialisation>
+<Operations>
+<Operation name='newbook'>
+<Attr>
+<Pos l='17' c='1' s='2' endLine='23'/>
+</Attr>
+<Output_Parameters>
+<Id value='bb' typref='5'>
+<Attr>
+<Pos l='17' c='1' s='2'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Precondition>
+<Exp_Comparison op='/='>
+<Attr>
+<Pos l='18' c='12' s='2'/>
+</Attr>
+<Id value='read' typref='4'>
+<Attr>
+<Pos l='18' c='7' s='4'/>
+</Attr>
+</Id>
+<Id value='BOOK' typref='4'>
+<Attr>
+<Pos l='18' c='15' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<ANY_Sub>
+<Attr>
+<Pos l='19' c='8' s='3'/>
+</Attr>
+<Variables>
+<Id value='tt' typref='5'>
+<Attr>
+<Pos l='19' c='12' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Pred>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='20' c='17' s='1'/>
+</Attr>
+<Id value='tt' typref='5'>
+<Attr>
+<Pos l='20' c='14' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='-s' typref='4'>
+<Attr>
+<Pos l='20' c='24' s='1'/>
+</Attr>
+<Id value='BOOK' typref='4'>
+<Attr>
+<Pos l='20' c='19' s='4'/>
+</Attr>
+</Id>
+<Id value='read' typref='4'>
+<Attr>
+<Pos l='20' c='26' s='4'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Exp_Comparison>
+</Pred>
+<Then>
+<Nary_Sub op='||'>
+<Assignement_Sub>
+<Attr>
+<Pos l='21' c='16' s='2'/>
+</Attr>
+<Variables>
+<Id value='bb' typref='5'>
+<Attr>
+<Pos l='21' c='13' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='tt' typref='5'>
+<Attr>
+<Pos l='21' c='19' s='2'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='21' c='30' s='2'/>
+</Attr>
+<Variables>
+<Id value='read' typref='4'>
+<Attr>
+<Pos l='21' c='25' s='4'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='\/' typref='4'>
+<Attr>
+<Pos l='21' c='38' s='2'/>
+</Attr>
+<Id value='read' typref='4'>
+<Attr>
+<Pos l='21' c='33' s='4'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='4'>
+<Attr>
+<Pos l='21' c='41' s='1'/>
+</Attr>
+<Id value='tt' typref='5'>
+<Attr>
+<Pos l='21' c='42' s='2'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Then>
+</ANY_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Unary_Exp op='POW'>
+<Id value='BOOK'/>
+</Unary_Exp>
+</Type>
+<Type id='5'>
+<Id value='BOOK'/>
+</Type>
+</TypeInfos>
+
+</Machine>

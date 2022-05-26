@@ -1,0 +1,12 @@
+THEORY ProofList IS
+_f(1) & Operation_target_get_target.1,(_f(2) => _f(3))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+"Refinement is correct";
+((1800) : (NAT))
+END
+&
+THEORY EnumerateX
+END

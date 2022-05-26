@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="17219133420564441872">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0"/>
+    <Define name="seext" hash="0"/>
+    <Define name="lprp" hash="17133952005787737096">
+        <Set>
+            <Id value="STATE" typref="0"/>
+            <Enumerated_Values>
+                <Id value="S_DEBUT" typref="1"/>
+                <Id value="S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE" typref="1"/>
+                <Id value="S_DIGICODE" typref="1"/>
+                <Id value="S_ACCES_REFUSE" typref="1"/>
+                <Id value="S_ACCESS_AUTORISE" typref="1"/>
+                <Id value="S_PERTE_DE_TEMPS_1" typref="1"/>
+                <Id value="S_INCIDENT_NIVEAU_4" typref="1"/>
+                <Id value="S_RECHERCHE_INCIDENT_1" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_1" typref="1"/>
+                <Id value="S_PROTOCOLE_ACCES_PROCEDURE_1" typref="1"/>
+                <Id value="S_MODE_AIDE_1" typref="1"/>
+                <Id value="S_ENIGME_CABLES_1" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_RESOLU_1" typref="1"/>
+                <Id value="S_RECHERCHE_INCIDENT_2" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_2" typref="1"/>
+                <Id value="S_PROTOCOLE_ACCES_PROCEDURE_2" typref="1"/>
+                <Id value="S_MODE_AIDE_2" typref="1"/>
+                <Id value="S_ENIGME_CABLES_2" typref="1"/>
+                <Id value="S_ENIGME_CABLES_2S2" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_RESOLU_2" typref="1"/>
+                <Id value="S_RECHERCHE_INCIDENT_3" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_3" typref="1"/>
+                <Id value="S_PROTOCOLE_ACCES_PROCEDURE_3" typref="1"/>
+                <Id value="S_MODE_AIDE_3" typref="1"/>
+                <Id value="S_ENIGME_ACTIVATION_BALANCE_3" typref="1"/>
+                <Id value="S_ENIGME_POST_ACTIVATION_BALANCE_3" typref="1"/>
+                <Id value="S_ENIGME_NIVEAU_DEAU" typref="1"/>
+                <Id value="S_INCIDENT_RESOLU" typref="1"/>
+                <Id value="S_GENERIC" typref="1"/>
+                <Id value="S_BILAN_PARTIE" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Exp_Comparison op=":">
+            <Id value="NEXT" typref="2" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:1:1"/>
+            <Binary_Exp op="&lt;-&gt;" typref="3">
+                <Id value="STATE" typref="0" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:1:2:1"/>
+                <Id value="STATE" typref="0" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:1:2:2"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="NEXT" typref="2" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:1"/>
+            <Nary_Exp op="{" typref="2">
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_DEBUT" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:1:1"/>
+                    <Id value="S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:1:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:2:1"/>
+                    <Id value="S_DIGICODE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:2:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_DIGICODE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:3:1"/>
+                    <Id value="S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:3:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_DIGICODE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:4:1"/>
+                    <Id value="S_ACCES_REFUSE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:4:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ACCES_REFUSE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:5:1"/>
+                    <Id value="S_DIGICODE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:5:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_DIGICODE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:6:1"/>
+                    <Id value="S_INCIDENT_NIVEAU_4" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:6:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_INCIDENT_NIVEAU_4" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:7:1"/>
+                    <Id value="S_DIGICODE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:7:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_DIGICODE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:8:1"/>
+                    <Id value="S_PERTE_DE_TEMPS_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:8:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_PERTE_DE_TEMPS_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:9:1"/>
+                    <Id value="S_INCIDENT_NIVEAU_4" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:9:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_DIGICODE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:10:1"/>
+                    <Id value="S_ACCESS_AUTORISE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:10:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ACCESS_AUTORISE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:11:1"/>
+                    <Id value="S_RECHERCHE_INCIDENT_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:11:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_RECHERCHE_INCIDENT_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:12:1"/>
+                    <Id value="S_INCIDENT_MAJEUR_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:12:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_INCIDENT_MAJEUR_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:13:1"/>
+                    <Id value="S_PROTOCOLE_ACCES_PROCEDURE_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:13:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_PROTOCOLE_ACCES_PROCEDURE_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:14:1"/>
+                    <Id value="S_MODE_AIDE_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:14:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_MODE_AIDE_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:15:1"/>
+                    <Id value="S_ENIGME_CABLES_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:15:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ENIGME_CABLES_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:16:1"/>
+                    <Id value="S_INCIDENT_MAJEUR_RESOLU_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:16:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_INCIDENT_MAJEUR_RESOLU_1" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:17:1"/>
+                    <Id value="S_RECHERCHE_INCIDENT_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:17:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_RECHERCHE_INCIDENT_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:18:1"/>
+                    <Id value="S_INCIDENT_MAJEUR_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:18:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_INCIDENT_MAJEUR_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:19:1"/>
+                    <Id value="S_PROTOCOLE_ACCES_PROCEDURE_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:19:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_PROTOCOLE_ACCES_PROCEDURE_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:20:1"/>
+                    <Id value="S_MODE_AIDE_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:20:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_MODE_AIDE_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:21:1"/>
+                    <Id value="S_ENIGME_CABLES_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:21:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ENIGME_CABLES_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:22:1"/>
+                    <Id value="S_ENIGME_CABLES_2S2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:22:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ENIGME_CABLES_2S2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:23:1"/>
+                    <Id value="S_ENIGME_CABLES_2S2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:23:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ENIGME_CABLES_2S2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:24:1"/>
+                    <Id value="S_INCIDENT_MAJEUR_RESOLU_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:24:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_INCIDENT_MAJEUR_RESOLU_2" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:25:1"/>
+                    <Id value="S_RECHERCHE_INCIDENT_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:25:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_RECHERCHE_INCIDENT_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:26:1"/>
+                    <Id value="S_INCIDENT_MAJEUR_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:26:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_INCIDENT_MAJEUR_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:27:1"/>
+                    <Id value="S_PROTOCOLE_ACCES_PROCEDURE_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:27:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_PROTOCOLE_ACCES_PROCEDURE_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:28:1"/>
+                    <Id value="S_MODE_AIDE_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:28:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_MODE_AIDE_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:29:1"/>
+                    <Id value="S_ENIGME_ACTIVATION_BALANCE_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:29:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ENIGME_ACTIVATION_BALANCE_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:30:1"/>
+                    <Id value="S_ENIGME_POST_ACTIVATION_BALANCE_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:30:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ENIGME_POST_ACTIVATION_BALANCE_3" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:31:1"/>
+                    <Id value="S_ENIGME_NIVEAU_DEAU" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:31:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_ENIGME_NIVEAU_DEAU" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:32:1"/>
+                    <Id value="S_INCIDENT_RESOLU" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:32:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_INCIDENT_RESOLU" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:33:1"/>
+                    <Id value="S_GENERIC" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:33:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_GENERIC" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:34:1"/>
+                    <Id value="S_BILAN_PARTIE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:34:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_BILAN_PARTIE" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:35:1"/>
+                    <Id value="S_GENERIC" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:35:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="S_GENERIC" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:36:1"/>
+                    <Id value="S_DEBUT" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:2:2:36:2"/>
+                </Binary_Exp>
+            </Nary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="S0" typref="1" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:3:1"/>
+            <Id value="STATE" typref="0" tag="/home/yves/workspace_atelierb/Pupitre/bdp/CTX.bxml:1:4:1:3:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="inprp" hash="0"/>
+    <Define name="inext" hash="0"/>
+    <Define name="inv" hash="0"/>
+    <Define name="ass" hash="0"/>
+    <Define name="cst" hash="0"/>
+    <Define name="sets" hash="79230945130082871">
+        <Set>
+            <Id value="STATE" typref="0"/>
+            <Enumerated_Values>
+                <Id value="S_DEBUT" typref="1"/>
+                <Id value="S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE" typref="1"/>
+                <Id value="S_DIGICODE" typref="1"/>
+                <Id value="S_ACCES_REFUSE" typref="1"/>
+                <Id value="S_ACCESS_AUTORISE" typref="1"/>
+                <Id value="S_PERTE_DE_TEMPS_1" typref="1"/>
+                <Id value="S_INCIDENT_NIVEAU_4" typref="1"/>
+                <Id value="S_RECHERCHE_INCIDENT_1" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_1" typref="1"/>
+                <Id value="S_PROTOCOLE_ACCES_PROCEDURE_1" typref="1"/>
+                <Id value="S_MODE_AIDE_1" typref="1"/>
+                <Id value="S_ENIGME_CABLES_1" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_RESOLU_1" typref="1"/>
+                <Id value="S_RECHERCHE_INCIDENT_2" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_2" typref="1"/>
+                <Id value="S_PROTOCOLE_ACCES_PROCEDURE_2" typref="1"/>
+                <Id value="S_MODE_AIDE_2" typref="1"/>
+                <Id value="S_ENIGME_CABLES_2" typref="1"/>
+                <Id value="S_ENIGME_CABLES_2S2" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_RESOLU_2" typref="1"/>
+                <Id value="S_RECHERCHE_INCIDENT_3" typref="1"/>
+                <Id value="S_INCIDENT_MAJEUR_3" typref="1"/>
+                <Id value="S_PROTOCOLE_ACCES_PROCEDURE_3" typref="1"/>
+                <Id value="S_MODE_AIDE_3" typref="1"/>
+                <Id value="S_ENIGME_ACTIVATION_BALANCE_3" typref="1"/>
+                <Id value="S_ENIGME_POST_ACTIVATION_BALANCE_3" typref="1"/>
+                <Id value="S_ENIGME_NIVEAU_DEAU" typref="1"/>
+                <Id value="S_INCIDENT_RESOLU" typref="1"/>
+                <Id value="S_GENERIC" typref="1"/>
+                <Id value="S_BILAN_PARTIE" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+    </Define>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER"/>
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER"/>
+        </Type>
+        <Type id="2">
+            <Unary_Exp op="POW">
+                <Binary_Exp op="*">
+                    <Id value="INTEGER"/>
+                    <Id value="INTEGER"/>
+                </Binary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="3">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Binary_Exp op="*">
+                        <Id value="INTEGER"/>
+                        <Id value="INTEGER"/>
+                    </Binary_Exp>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="4">
+            <Binary_Exp op="*">
+                <Id value="INTEGER"/>
+                <Id value="INTEGER"/>
+            </Binary_Exp>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

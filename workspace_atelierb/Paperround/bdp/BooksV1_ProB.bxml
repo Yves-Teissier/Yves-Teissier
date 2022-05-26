@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='BooksV1_ProB' type='abstraction' position='true' semantic='true' b0check='false'>
+<Extends>
+<Attr>
+<Pos l='8' c='1' s='7'/>
+</Attr>
+<Referenced_Machine>
+<Attr>
+<Pos l='8' c='9' s='7'/>
+</Attr>
+<Name>BooksV1</Name>
+</Referenced_Machine>
+</Extends>
+<Concrete_Constants>
+<Attr>
+<Pos l='10' c='1' s='18'/>
+</Attr>
+<Id value='DOM_QUIXOTE' typref='4'>
+<Attr>
+<Pos l='12' c='5' s='11'/>
+</Attr>
+</Id>
+<Id value='ULYSSES' typref='4'>
+<Attr>
+<Pos l='12' c='18' s='7'/>
+</Attr>
+</Id>
+<Id value='THE_ODISSEY' typref='4'>
+<Attr>
+<Pos l='12' c='27' s='11'/>
+</Attr>
+</Id>
+<Id value='HAMLET' typref='4'>
+<Attr>
+<Pos l='12' c='40' s='6'/>
+</Attr>
+</Id>
+<Id value='THE_DIVINE_COMEDY' typref='4'>
+<Attr>
+<Pos l='12' c='48' s='17'/>
+</Attr>
+</Id>
+</Concrete_Constants>
+<Properties>
+<Attr>
+<Pos l='14' c='1' s='10'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='16' c='16' s='1'/>
+</Attr>
+<Id value='DOM_QUIXOTE' typref='4'>
+<Attr>
+<Pos l='16' c='5' s='11'/>
+</Attr>
+</Id>
+<Id value='BOOK' typref='5'>
+<Attr>
+<Pos l='16' c='17' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='16' c='31' s='1'/>
+</Attr>
+<Id value='ULYSSES' typref='4'>
+<Attr>
+<Pos l='16' c='24' s='7'/>
+</Attr>
+</Id>
+<Id value='BOOK' typref='5'>
+<Attr>
+<Pos l='16' c='32' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='16' c='50' s='1'/>
+</Attr>
+<Id value='THE_ODISSEY' typref='4'>
+<Attr>
+<Pos l='16' c='39' s='11'/>
+</Attr>
+</Id>
+<Id value='BOOK' typref='5'>
+<Attr>
+<Pos l='16' c='51' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='17' c='17' s='1'/>
+</Attr>
+<Id value='HAMLET' typref='4'>
+<Attr>
+<Pos l='17' c='11' s='6'/>
+</Attr>
+</Id>
+<Id value='BOOK' typref='5'>
+<Attr>
+<Pos l='17' c='18' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='17' c='42' s='1'/>
+</Attr>
+<Id value='THE_DIVINE_COMEDY' typref='4'>
+<Attr>
+<Pos l='17' c='25' s='17'/>
+</Attr>
+</Id>
+<Id value='BOOK' typref='5'>
+<Attr>
+<Pos l='17' c='43' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='18' c='16' s='1'/>
+</Attr>
+<Id value='BOOK' typref='5'>
+<Attr>
+<Pos l='18' c='11' s='4'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='5'>
+<Attr>
+<Pos l='18' c='18' s='1'/>
+</Attr>
+<Id value='DOM_QUIXOTE' typref='4'>
+<Attr>
+<Pos l='18' c='19' s='11'/>
+</Attr>
+</Id>
+<Id value='ULYSSES' typref='4'>
+<Attr>
+<Pos l='18' c='32' s='7'/>
+</Attr>
+</Id>
+<Id value='THE_ODISSEY' typref='4'>
+<Attr>
+<Pos l='19' c='21' s='11'/>
+</Attr>
+</Id>
+<Id value='HAMLET' typref='4'>
+<Attr>
+<Pos l='19' c='34' s='6'/>
+</Attr>
+</Id>
+<Id value='THE_DIVINE_COMEDY' typref='4'>
+<Attr>
+<Pos l='20' c='21' s='17'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='21' c='22' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='21' c='11' s='4'/>
+</Attr>
+<Id value='BOOK' typref='5'>
+<Attr>
+<Pos l='21' c='16' s='4'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value='5' typref='1'>
+<Attr>
+<Pos l='21' c='24' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Nary_Pred>
+</Properties>
+<Initialisation>
+<Skip/>
+</Initialisation>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Id value='BOOK'/>
+</Type>
+<Type id='5'>
+<Unary_Exp op='POW'>
+<Id value='BOOK'/>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

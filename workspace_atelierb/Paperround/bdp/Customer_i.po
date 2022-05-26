@@ -1,0 +1,68 @@
+﻿THEORY ProofList IS
+  _f(3) & _f(14) & _f(35) & pricequery.1,(_f(36) & _f(19) => _f(20));
+  _f(3) & _f(14) & _f(28) & setprice.3,(_f(29) & _f(32) => _f(34));
+  _f(3) & _f(14) & _f(28) & setprice.2,(_f(29) & _f(32) => _f(33));
+  _f(3) & _f(14) & _f(28) & setprice.1,(_f(29) & _f(30) => _f(31));
+  _f(3) & _f(14) & _f(15) & buy.6,(_f(24) & _f(27) => _f(20));
+  _f(3) & _f(14) & _f(15) & buy.5,(_f(24) & _f(25) => _f(26));
+  _f(3) & _f(14) & _f(15) & buy.4,(_f(16) & _f(21) => _f(23));
+  _f(3) & _f(14) & _f(15) & buy.3,(_f(16) & _f(21) => _f(22));
+  _f(3) & _f(14) & _f(15) & buy.2,(_f(16) & _f(19) => _f(20));
+  _f(3) & _f(14) & _f(15) & buy.1,(_f(16) & _f(17) => _f(18));
+  _f(3) & Initialisation.7,(_f(11) => _f(13));
+  _f(3) & Initialisation.6,(_f(11) => _f(12));
+  _f(3) & Initialisation.5,(_f(6) => _f(10));
+  _f(3) & Initialisation.4,(_f(6) => _f(9));
+  _f(3) & Initialisation.3,(_f(6) => _f(8));
+  _f(3) & Initialisation.2,(_f(6) => _f(7));
+  _f(3) & Initialisation.1,(_f(4) => _f(5));
+  ValuesLemmas.1,(_f(1) => _f(2))
+END
+&
+THEORY Formulas IS
+  "`Check that the property (GOODS: FIN(INTEGER)) is preserved by the valuations - ref 5.2'";
+  (0..10: FIN(INTEGER));
+  ("`Valuations'" & GOODS = 0..10 & "`Previous components properties'" & GOODS: FIN(INTEGER) & not(GOODS = {}));
+  "`Check that the invariant (dom(purchases_i$1|>{TRUE}) = purchases) is established by the initialisation - ref 4.3, 5.4'" & "`Check initialisation refinement - ref 4.3, 5.4'";
+  (dom(GOODS*{FALSE}|>{TRUE}) = {});
+  "`Check initialisation refinement - ref 4.3, 5.4'";
+  (GOODS*{10}: GOODS +-> NAT-{0});
+  (dom(GOODS*{10}) = GOODS);
+  (GOODS*{1}: GOODS +-> NAT-{0});
+  (dom(GOODS*{1}) = GOODS);
+  "`Check that the invariant (purchases_i$1: GOODS --> BOOL) is established by the initialisation - ref 4.3, 5.4'";
+  (GOODS*{FALSE}: GOODS +-> BOOL);
+  (dom(GOODS*{FALSE}) = GOODS);
+  ("`Previous components invariants'" & purchases: POW(GOODS) & limit$1: GOODS +-> NAT-{0} & dom(limit$1) = GOODS & price: GOODS +-> NAT-{0} & dom(price) = GOODS & "`Component invariant'" & price_i$1: GOODS +-> NAT-{0} & dom(price_i$1) = GOODS & price_i$1 = price & purchases_i$1: GOODS +-> BOOL & dom(purchases_i$1) = GOODS & dom(purchases_i$1|>{TRUE}) = purchases & limit = limit$1);
+  ("`buy preconditions in previous components'" & gg: GOODS & price(gg)<=limit$1(gg));
+  ("`buy preconditions in this component'" & gg: GOODS & price(gg)<=limit$1(gg) & "`Local hypotheses'" & price_i$1(gg)<=limit$1(gg));
+  "`Check that the invariant (dom(purchases_i$1|>{TRUE}) = purchases) is preserved by the operation - ref 4.4, 5.5'" & "`Check operation refinement - ref 4.4, 5.5'";
+  (dom(purchases_i$1<+{gg|->TRUE}|>{TRUE}) = purchases\/{gg});
+  "`Check that the invariant (pp$1 = pp) is preserved by the operation - ref 4.4, 5.5'" & "`Check operation refinement - ref 4.4, 5.5'";
+  (price_i$1(gg) = price(gg));
+  "`Check that the invariant (purchases_i$1: GOODS --> BOOL) is preserved by the operation - ref 4.4, 5.5'";
+  (purchases_i$1<+{gg|->TRUE}: GOODS +-> BOOL);
+  (dom(purchases_i$1<+{gg|->TRUE}) = GOODS);
+  ("`buy preconditions in this component'" & gg: GOODS & price(gg)<=limit$1(gg) & "`Local hypotheses'" & not(price_i$1(gg)<=limit$1(gg)));
+  "`Check that the invariant (dom(purchases_i$1|>{TRUE}) = purchases) is preserved by the operation - ref 4.4, 5.5'";
+  (dom(purchases_i$1|>{TRUE}) = purchases\/{gg});
+  "`Check that the invariant (pp$1 = pp) is preserved by the operation - ref 4.4, 5.5'";
+  ("`setprice preconditions in previous components'" & gg: GOODS & pp: INTEGER & 0<=pp & pp<=2147483647 & not(pp = 0));
+  ("`setprice preconditions in this component'" & gg: GOODS & pp: INTEGER & 0<=pp & pp<=2147483647 & not(pp = 0));
+  "`Check that the invariant (price_i$1 = price) is preserved by the operation - ref 4.4, 5.5'" & "`Check operation refinement - ref 4.4, 5.5'";
+  (price_i$1<+{gg|->pp} = price<+{gg|->pp});
+  "`Check that the invariant (price_i$1: GOODS --> NAT1) is preserved by the operation - ref 4.4, 5.5'";
+  (price_i$1<+{gg|->pp}: GOODS +-> NAT-{0});
+  (dom(price_i$1<+{gg|->pp}) = GOODS);
+  ("`pricequery preconditions in previous components'" & gg: GOODS);
+  ("`pricequery preconditions in this component'" & gg: GOODS);
+  ("`Concrete variables typing predicates'" & limit$1: POW(INTEGER*INTEGER) & price_i$1: POW(INTEGER*INTEGER) & purchases_i$1: POW(INTEGER*BOOL) & "`Variables conservation'" & limit = limit$1 & price_i = price_i$1 & purchases_i = purchases_i$1);
+  ("`Concrete variables typing predicates'" & limit: POW(INTEGER*INTEGER) & price_i: POW(INTEGER*INTEGER) & purchases_i: POW(INTEGER*BOOL))
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

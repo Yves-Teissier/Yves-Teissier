@@ -1,0 +1,30 @@
+/* TeamR2
+ * Author: yves
+ * Creation date: 08/02/2022
+ */
+
+REFINEMENT TeamR2
+REFINES Team
+VARIABLES 
+    teama
+INVARIANT 
+    teama : 0..21 --> BOOL & team = dom(teama |> {TRUE}) /* teama est une fonction total de 0..21 vers BOOL. Chaque élément du domaine a une relation vers un élélement du co-domaine (0 ou 1). 
+    team est le domaine correspondant à la restriction sur le do-domaine de domaine de teama à l'ensemble {TRUE}. team correspond à tous les éléments du domaine de teama qui ont une relation avec TRUE. C'est à dire que team est l'ensemble des joueurs vraiment dans sur le terrain. */
+INITIALISATION 
+    teama := (0..10)*{TRUE} \/ (11..21)*{FALSE} /* Les 11 premiers sont sur le terrain et les autre non */
+OPERATIONS  
+	substitute(pp,rr) = 
+	BEGIN
+		teama(pp) := FALSE ; /* le joueur pp n'est plus sur le terrain */ 
+		teama(rr) := TRUE /* le jouer rr est sur le terrain */ 
+	END;
+	aa <-- query(pp) = 
+	VAR bb IN
+	    bb := teama(pp);
+	    IF bb = TRUE /* si l'élément du co-domaine est TRUE alors le joueur est sur le terrain */
+        THEN aa := in
+        ELSE aa := out
+        END
+    END
+
+END

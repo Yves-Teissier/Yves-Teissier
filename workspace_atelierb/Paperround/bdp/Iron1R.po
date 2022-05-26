@@ -1,0 +1,64 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(17) & WellDefinedness_take.2,(_f(36) => _f(35));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(17) & WellDefinedness_take.1,(_f(36) => _f(37));
+_f(1) & _f(2) & _f(3) & _f(9) & WellDefinednessInvariant.3,(_f(28) & _f(29) & _f(30) & _f(31) & _f(32) => _f(35));
+_f(1) & _f(2) & _f(3) & _f(9) & WellDefinednessInvariant.2,(_f(28) & _f(29) & _f(30) & _f(31) & _f(32) => _f(34));
+_f(1) & _f(2) & _f(3) & _f(9) & WellDefinednessInvariant.1,(_f(28) & _f(29) & _f(32) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & _f(23) & Operation_query.2,(_f(25) & _f(4) => _f(27));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & _f(23) & Operation_query.1,(_f(24) & _f(4) => _f(26));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(17) & _f(18) & Operation_take.4,(_f(4) => _f(22));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(17) & _f(18) & Operation_take.3,(_f(4) => _f(21));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(17) & _f(18) & Operation_take.2,(_f(4) => _f(20));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(17) & _f(18) & Operation_take.1,(_f(4) => _f(19));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & _f(12) & Operation_put.4,(_f(4) => _f(16));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & _f(12) & Operation_put.3,(_f(4) => _f(15));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & _f(12) & Operation_put.2,(_f(4) => _f(14));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & _f(12) & Operation_put.1,(_f(4) => _f(13));
+_f(1) & _f(2) & _f(3) & Initialisation.4,(_f(4) => _f(8));
+_f(1) & _f(2) & _f(3) & Initialisation.3,(_f(4) => _f(7));
+_f(1) & _f(2) & _f(3) & Initialisation.2,(_f(4) => _f(6));
+_f(1) & _f(2) & _f(3) & Initialisation.1,(_f(4) => _f(5))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+ITEM: FIN(INTEGER) & not(ITEM = {}) & ((limit) : ((NAT-{0})));
+((ee) : (ITEM));
+"Refinement is correct";
+(((((0) .. ((limit - 1))) * ({ee}))) : (((((0) .. ((limit - 1)))) --> (ITEM))));
+((0) : (((0) .. (limit))));
+((0) = (size({})));
+(({}) = (%(ii).(((ii) : (((1) .. (0)))) | ((((0) .. ((limit - 1))) * ({ee})) )((ii - 1)))));
+pile : NATURAL-{0} +-> ITEM & ((pile) : (seq(ITEM))) & (size(pile) <= limit);
+pilearray$1 : ((0) .. ((limit - 1))) +-> ITEM & dom(pilearray$1) = ((0) .. ((limit - 1))) & ((pilearray$1) : (((((0) .. ((limit - 1)))) --> (ITEM)))) & ((counter$1) : (((0) .. (limit)))) & ((counter$1) = (size(pile))) & ((pile) = (%(ii).(((ii) : (((1) .. (counter$1)))) | (pilearray$1 )((ii - 1)))));
+((ii) : (ITEM));
+(size(pile) +1 <= limit);
+((((pilearray$1) <+ (({((counter$1) |-> (ii))})))) : (((((0) .. ((limit - 1)))) --> (ITEM))));
+(((counter$1 + 1)) : (((0) .. (limit))));
+(((counter$1 + 1)) = (size(((pile) <- (ii)))));
+((((pile) <- (ii))) = (%(ii$1).(((ii$1) : (((1) .. ((counter$1 + 1))))) | (((pilearray$1) <+ (({((counter$1) |-> (ii))}))) )((ii$1 - 1)))));
+not(((pile) = ({})));
+((ii) = (ii$1));
+(((counter$1 - 1)) : (((0) .. (limit))));
+(((counter$1 - 1)) = (size(front(pile))));
+((front(pile)) = (%(ii).(((ii) : (((1) .. ((counter$1 - 1))))) | (pilearray$1 )((ii - 1)))));
+((last(pile)) = ((pilearray$1 )((counter$1 - 1))));
+((bb) = (bb$1));
+((ii) : ((pilearray$1 )[((0) .. ((counter$1 - 1)))]));
+not(((ii) : ((pilearray$1 )[((0) .. ((counter$1 - 1)))])));
+((ii) : (ran(pile)));
+not(((ii) : (ran(pile))));
+pilearray$1 : ((0) .. ((limit - 1))) +-> ITEM & dom(pilearray$1) = ((0) .. ((limit - 1))) & ((pilearray$1) : (((((0) .. ((limit - 1)))) --> (ITEM))));
+((counter$1) : (((0) .. (limit))));
+((counter$1) = (size(pile)));
+((ii) : (((1) .. (counter$1))));
+"Invariant is well defined";
+((pile) : (seq(ran(pile))));
+(((ii - 1)) : (dom(pilearray$1)));
+((pilearray$1) : (((dom(pilearray$1)) +-> (ran(pilearray$1)))));
+"Operation is well defined";
+(((counter$1 - 1)) : (dom(pilearray$1)))
+END
+&
+THEORY EnumerateX
+END

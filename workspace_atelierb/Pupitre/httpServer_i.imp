@@ -1,0 +1,21 @@
+/* httpServer_i
+ * Author: yves
+ * Creation date: 22/05/2022
+ */
+
+IMPLEMENTATION httpServer_i
+REFINES httpServer
+
+
+OPERATIONS
+    handleRequest =
+    BEGIN
+        skip
+    END;
+    
+    debutRequest <-- httpServer_get_debut_request =
+    BEGIN
+        debutRequest := 0
+    END
+    
+ END

@@ -1,0 +1,45 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(6) & _f(7) & WellDefinedness_pay.2,(_f(22) => _f(24));
+_f(1) & _f(2) & _f(6) & _f(7) & WellDefinedness_pay.1,(_f(22) => _f(23));
+_f(1) & _f(2) & _f(6) & Operation_penalty.3,(_f(15) & _f(18) & _f(3) => _f(21));
+_f(1) & _f(2) & _f(6) & Operation_penalty.2,(_f(10) & _f(3) => _f(13));
+_f(1) & _f(2) & _f(6) & Operation_penalty.1,(_f(10) & _f(3) => _f(12));
+_f(1) & _f(2) & _f(6) & _f(15) & Operation_play.1,(_f(16) & _f(3) => _f(17));
+_f(1) & _f(2) & _f(6) & _f(10) & _f(11) & Operation_select.3,(_f(3) => _f(14));
+_f(1) & _f(2) & _f(6) & _f(10) & _f(11) & Operation_select.2,(_f(3) => _f(13));
+_f(1) & _f(2) & _f(6) & _f(10) & _f(11) & Operation_select.1,(_f(3) => _f(12));
+_f(1) & _f(2) & _f(6) & _f(7) & Operation_pay.2,(_f(3) => _f(9));
+_f(1) & _f(2) & _f(6) & _f(7) & Operation_pay.1,(_f(3) => _f(8));
+_f(1) & _f(2) & Initialisation.2,(_f(3) => _f(5));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+TRACK: FIN(INTEGER) & not(TRACK = {}) & ((limit) : ((NATURAL-{0})));
+"Invariant is preserved";
+((0) : (NATURAL));
+(0 <= limit);
+credit : INTEGER & 0 <= credit & ((credit) : (NATURAL)) & (credit <= limit) & playset : POW( TRACK);
+((cc) : ((NATURAL-{0})));
+((min(({(credit + cc)}\/{limit}))) : (NATURAL));
+(min(({(credit + cc)}\/{limit})) <= limit);
+(0 +1 <= credit);
+((tt) : (TRACK));
+(((credit - 1)) : (NATURAL));
+((credit - 1) <= limit);
+((playset) \/ (({tt}))) : POW( TRACK);
+not(((playset) = ({})));
+((tr) : (playset));
+(playset - ({tr})) : POW( TRACK);
+((pp) : (playset));
+not((0 +1 <= credit));
+((playset) = ({}));
+(playset - ({pp})) : POW( TRACK);
+"Operation is well defined";
+not(((({(credit + cc)}\/{limit})) = ({})));
+((((({(credit + cc)}\/{limit})) /\ ((INTEGER - NATURAL)))) : (FIN(INTEGER)))
+END
+&
+THEORY EnumerateX
+END

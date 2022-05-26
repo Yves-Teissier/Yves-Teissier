@@ -1,0 +1,82 @@
+﻿<component_checksums>
+<base>
+<symbol name="NAME" value="ArraySearch" />
+<symbol name="TYPE" value="0" />
+<symbol name="PARAM" />
+<symbol name="CONSTRAINTS" />
+<symbol name="SEES" />
+<symbol name="INCLUDES" />
+<symbol name="IMPORTS" />
+<symbol name="PROMOTES" />
+<symbol name="EXTENDS" />
+<symbol name="USES" />
+<symbol name="SETS" />
+<symbol name="CONCRETE_VAR" />
+<symbol name="ABSTRACT_VAR" value="4124bc0a9335c27f086f24ba207a4912" />
+<symbol name="CONCRETE_CONST" value="26a4b44a837bf97b972628509912b4a5" />
+<symbol name="ABSTRACT_CONST" />
+<symbol name="PROPERTIES" value="47b97e8b25744a5adbd6759250f61dbf" />
+<symbol name="INVARIANT" value="72f43fad230eeea1275dc67930ec20b4" />
+<symbol name="VARIANT" />
+<symbol name="ASSERTIONS" />
+<symbol name="VALUES" />
+<operations>
+<operation>
+<symbol name="NAME" value="INITIALISATION" />
+<symbol name="COMPONENT" value="ArraySearch" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="74b645feebd07cb9a28cf3d089722bbe" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="get" />
+<symbol name="COMPONENT" value="ArraySearch" />
+<symbol name="PRECONDITION" value="b2b9e9469a17a04d92fe24515fc4c84f" />
+<symbol name="BODY" value="91f79484056ffd053e50c22d5ecdc373" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="add" />
+<symbol name="COMPONENT" value="ArraySearch" />
+<symbol name="PRECONDITION" value="706e8ba7a944ee98c39879e26f5a805c" />
+<symbol name="BODY" value="5a364a94807a09b584139c8183024662" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="contains" />
+<symbol name="COMPONENT" value="ArraySearch" />
+<symbol name="PRECONDITION" value="b974d4d9d3859781fbe92d7509659dc2" />
+<symbol name="BODY" value="32bb34a3085f68fe36055eda2d7f113a" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+</operations>
+</base>
+<seen>
+</seen>
+<used>
+</used>
+<included>
+</included>
+<imported>
+</imported>
+<extended>
+</extended>
+<refined>
+</refined>
+</component_checksums>

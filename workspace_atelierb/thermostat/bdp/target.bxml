@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='target' type='abstraction' position='true' semantic='true' b0check='false'>
+<Initialisation>
+<Skip/>
+</Initialisation>
+<Operations>
+<Operation name='target_get_target'>
+<Attr>
+<Pos l='10' c='5' s='10' endLine='13'/>
+</Attr>
+<Output_Parameters>
+<Id value='ret_target' typref='1'>
+<Attr>
+<Pos l='10' c='5' s='10'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Body>
+<Becomes_In>
+<Attr>
+<Pos l='12' c='20' s='2'/>
+</Attr>
+<Variables>
+<Id value='ret_target' typref='1'>
+<Attr>
+<Pos l='12' c='9' s='10'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<Id value='NAT' typref='2'>
+<Attr>
+<Pos l='12' c='23' s='3'/>
+</Attr>
+</Id>
+</Value>
+</Becomes_In>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

@@ -1,0 +1,30 @@
+﻿/* Allocate_r
+ * Author: yves
+ * Creation date: 22/02/2022
+ */
+
+REFINEMENT        Allocate_r
+
+REFINES           Allocate
+
+ABSTRACT_VARIABLES allocated
+
+INITIALISATION    allocated := {}
+
+OPERATIONS
+
+  choose ( nn ) = allocated := allocated \/ { nn } ;
+
+  aa <-- query ( nn ) =
+    IF nn : allocated
+    THEN aa := TRUE
+    ELSE aa := FALSE
+    END ;
+
+  nn <-- allocate =
+  BEGIN
+      nn := min ( ( 1 .. 100 ) - allocated ) ;
+      allocated := allocated \/ { nn }
+  END
+
+END

@@ -1,0 +1,33 @@
+﻿/* Allocate_r
+ * Author: yves
+ * Creation date: 22/02/2022
+ */
+
+REFINEMENT        Allocate_r
+
+REFINES           Allocate
+
+ABSTRACT_VARIABLES allocated
+
+INITIALISATION    allocated := {}
+
+/* les préconditions sont implicites */
+OPERATIONS
+
+  choose ( nn ) = allocated := allocated \/ { nn } ;
+
+  aa <-- query ( nn ) =
+    IF nn : allocated
+    THEN aa := TRUE
+    ELSE aa := FALSE
+    END ;
+
+  /* l'opération dans la machine abstraite était non-déterministe */
+  /* alors qu'ici cette opération est déterministe */
+  nn <-- allocate =
+  BEGIN
+      nn := min ( ( 1 .. 100 ) - allocated ) ; /* récupère le minimum de l'ensemble des éléments non alloués */
+      allocated := allocated \/ { nn }
+  END
+
+END

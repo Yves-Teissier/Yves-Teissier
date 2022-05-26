@@ -1,0 +1,7 @@
+file:3690ed6cb0865fe0b37ccd1ce33a3244
+abst:thermostat
+sees:CTX
+impo:target
+impo:temperature
+impo:chaudiere
+impo:timer

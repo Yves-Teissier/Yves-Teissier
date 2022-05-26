@@ -1,0 +1,24 @@
+THEORY ProofList IS
+_f(1) & WellDefinednessProperties.2,(_f(2) & _f(3) & _f(4) & _f(5) & _f(6) & _f(7) & _f(8) & _f(9) & _f(10) & _f(11) => _f(13));
+_f(1) & WellDefinednessProperties.1,(_f(2) & _f(3) & _f(4) & _f(5) & _f(6) & _f(7) & _f(8) & _f(11) => _f(12))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((brother) : (PRINTER));
+((hp) : (PRINTER));
+((lexmak) : (PRINTER));
+((rectoverso) : (OPTION));
+((couleur) : (OPTION));
+((ppp100) : (OPTION));
+((PRINTER) = (({brother}\/{hp}\/{lexmak})));
+((card(PRINTER)) = (2));
+((OPTION) = (({rectoverso}\/{couleur}\/{ppp100})));
+"Properties are well defined";
+((PRINTER) : (FIN(PRINTER)));
+((OPTION) : (FIN(OPTION)))
+END
+&
+THEORY EnumerateX IS
+PERMISSION == {ok,no}
+END

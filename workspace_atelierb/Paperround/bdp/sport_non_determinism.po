@@ -1,0 +1,36 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(10) & _f(11) & Operation_add_sport.3,(_f(14) & _f(5) => _f(20));
+_f(1) & _f(2) & _f(3) & _f(10) & _f(11) & Operation_add_sport.2,(_f(13) & _f(5) => _f(19));
+_f(1) & _f(2) & _f(3) & _f(10) & _f(11) & Operation_add_sport.1,(_f(12) & _f(5) => _f(18));
+_f(1) & _f(2) & _f(3) & _f(4) & Operation_add_member.4,(_f(5) => _f(9));
+_f(1) & _f(2) & _f(3) & _f(4) & Operation_add_member.3,(_f(5) => _f(8));
+_f(1) & _f(2) & _f(3) & _f(4) & Operation_add_member.2,(_f(5) => _f(7));
+_f(1) & _f(2) & _f(3) & _f(4) & Operation_add_member.1,(_f(5) => _f(6))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+NAME: FIN(INTEGER) & not(NAME = {}) & ((1..4)*{STATUS}): FIN(NATURAL*{STATUS})& not(((1..4)*{STATUS}) = {});
+members : POW( NAME) & tennis_p : POW( members) & croquet_p : POW( members) & squash_p : POW( members);
+((mm) : (NAME));
+"Invariant is preserved";
+((members) \/ (({mm}))) : POW( NAME);
+tennis_p : POW( ((members) \/ (({mm}))));
+croquet_p : POW( ((members) \/ (({mm}))));
+squash_p : POW( ((members) \/ (({mm}))));
+((mm) : (members));
+((ss) : (((1..4)*{STATUS})));
+((ss) = ((1|->STATUS)));
+((ss) = ((2|->STATUS)));
+((ss) = ((3|->STATUS)));
+not(((ss) = ((1|->STATUS))));
+not(((ss) = ((2|->STATUS))));
+not(((ss) = ((3|->STATUS))));
+((tennis_p) \/ (({mm}))) : POW( members);
+((croquet_p) \/ (({mm}))) : POW( members);
+((squash_p) \/ (({mm}))) : POW( members)
+END
+&
+THEORY EnumerateX IS
+STATUS == {tennis,croquet,squash,none}
+END

@@ -1,0 +1,15 @@
+/* temperature_i
+ * Author: yves
+ * Creation date: 21/11/2020
+ */
+
+IMPLEMENTATION temperature_i
+REFINES temperature
+
+OPERATIONS
+    new_temperature <-- temperature_get_temperature =
+    BEGIN
+        // Put temperature retreiving here
+        new_temperature := 1900
+    END
+ END

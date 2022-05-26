@@ -1,0 +1,30 @@
+/* MySet_r
+ * Author: yves
+ * Creation date: 22/02/2022
+ */
+
+REFINEMENT MySet_r
+REFINES MySet
+SEES MySet_ctx
+
+VARIABLES array, hwm
+
+INVARIANT 
+    array : 0..(MM-1) --> VALUE
+    & hwm :0..MM 
+    & (0..(hwm-1)) <| array : 0..(hwm-1) >-> VALUE
+	& hwm = card(ss)
+	& ss = array[0..(hwm-1)] 
+
+INITIALISATION array :: 0..(MM-1) --> VALUE || hwm := 0
+OPERATIONS
+  Add(xx) = 
+    IF hwm < MM & not(xx:array[0..(hwm-1)])
+    THEN array(hwm) := xx ; hwm := hwm + 1
+    END;
+    
+  xx <-- Discard = 
+    IF hwm > 0
+    THEN hwm := hwm - 1; xx := array(hwm)
+    END
+END

@@ -1,0 +1,24 @@
+﻿THEORY ProofList IS
+  _f(1) & _f(5) & _f(6) & setprice.2,(_f(7) => _f(9));
+  _f(1) & _f(5) & _f(6) & setprice.1,(_f(7) => _f(8));
+  _f(1) & Initialisation.1,(_f(2) & _f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+  ("`Component properties'" & GOODS: FIN(INTEGER) & not(GOODS = {}));
+  ("`Local hypotheses'" & limit$0: GOODS +-> NAT-{0} & dom(limit$0) = GOODS & price$0: GOODS +-> NAT-{0} & dom(price$0) = GOODS);
+  "`Check that the invariant (purchases <: GOODS) is established by the initialisation - ref 3.3'";
+  ({}: POW(GOODS));
+  ("`Component invariant'" & purchases: POW(GOODS) & limit: GOODS +-> NAT-{0} & dom(limit) = GOODS & price: GOODS +-> NAT-{0} & dom(price) = GOODS);
+  ("`setprice preconditions in this component'" & gg: GOODS & pp: INTEGER & 0<=pp & pp<=2147483647 & not(pp = 0));
+  "`Check that the invariant (price: GOODS --> NAT1) is preserved by the operation - ref 3.4'";
+  (price<+{gg|->pp}: GOODS +-> NAT-{0});
+  (dom(price<+{gg|->pp}) = GOODS)
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

@@ -1,0 +1,60 @@
+﻿<component_checksums>
+<base>
+<symbol name="NAME" value="TabInit" />
+<symbol name="TYPE" value="0" />
+<symbol name="PARAM" />
+<symbol name="CONSTRAINTS" />
+<symbol name="SEES" />
+<symbol name="INCLUDES" />
+<symbol name="IMPORTS" />
+<symbol name="PROMOTES" />
+<symbol name="EXTENDS" />
+<symbol name="USES" />
+<symbol name="SETS" />
+<symbol name="CONCRETE_VAR" />
+<symbol name="ABSTRACT_VAR" value="e7f8cbd87d347be881cba92dad128518" />
+<symbol name="CONCRETE_CONST" />
+<symbol name="ABSTRACT_CONST" />
+<symbol name="PROPERTIES" />
+<symbol name="INVARIANT" value="6f6fb3fa9d41b05de735d23b93ff0d5e" />
+<symbol name="VARIANT" />
+<symbol name="ASSERTIONS" />
+<symbol name="VALUES" />
+<operations>
+<operation>
+<symbol name="NAME" value="INITIALISATION" />
+<symbol name="COMPONENT" value="TabInit" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="00a8f6cef72b06c2641c0696d18d2d9d" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="op" />
+<symbol name="COMPONENT" value="TabInit" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="a026d4779608eabf2d8c9681b12d78e8" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+</operations>
+</base>
+<seen>
+</seen>
+<used>
+</used>
+<included>
+</included>
+<imported>
+</imported>
+<extended>
+</extended>
+<refined>
+</refined>
+</component_checksums>

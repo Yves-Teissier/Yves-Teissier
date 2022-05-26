@@ -1,0 +1,12 @@
+﻿THEORY ProofList
+END
+&
+THEORY Formulas 
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

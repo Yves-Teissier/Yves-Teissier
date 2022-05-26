@@ -1,0 +1,38 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(5) & _f(6) & _f(10) & WellDefinedness_guestswap.3,(_f(16) => _f(17));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(10) & WellDefinedness_guestswap.2,(_f(16) => _f(18));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(10) & WellDefinedness_guestswap.1,(_f(16) => _f(19));
+_f(1) & _f(2) & _f(5) & _f(6) & WellDefinedness_guestquery.2,(_f(16) => _f(18));
+_f(1) & _f(2) & _f(5) & _f(6) & WellDefinedness_guestquery.1,(_f(16) => _f(17));
+_f(1) & _f(12) & WellDefinednessProperties.1,(_f(13) & _f(14) => _f(15));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(10) & Operation_guestswap.1,(_f(3) => _f(11));
+_f(1) & _f(2) & _f(5) & _f(6) & Operation_guestchekout.1,(_f(3) => _f(9));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(7) & _f(8) & Operation_guestcheckin.1,(_f(3) => _f(9));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+ROOM: FIN(INTEGER) & not(ROOM = {}) & NAME: FIN(INTEGER) & not(NAME = {}) & ((1..2)*{REPORT}): FIN(NATURAL*{REPORT})& not(((1..2)*{REPORT}) = {}) & ((sze) : ((NATURAL-{0}))) & ((card(ROOM)) = (sze)) & ((empty) : (NAME));
+"Invariant is preserved";
+(((ROOM * ({empty}))) : (((ROOM) --> (NAME))));
+guests : ROOM +-> NAME & dom(guests) = ROOM & ((guests) : (((ROOM) --> (NAME))));
+((rr) : (ROOM));
+((nn) : (NAME));
+not(((nn) = (empty)));
+((((guests) <+ (({((rr) |-> (empty))})))) : (((ROOM) --> (NAME))));
+((ss) : (ROOM));
+((((guests) <+ (({((rr) |-> ((guests )(ss)))}\/{((ss) |-> ((guests )(rr)))})))) : (((ROOM) --> (NAME))));
+ROOM: FIN(INTEGER) & not(ROOM = {}) & NAME: FIN(INTEGER) & not(NAME = {}) & ((1..2)*{REPORT}): FIN(NATURAL*{REPORT})& not(((1..2)*{REPORT}) = {});
+((sze) : ((NATURAL-{0})));
+"Properties are well defined";
+((ROOM) : (FIN(ROOM)));
+"Operation is well defined";
+((rr) : (dom(guests)));
+((guests) : (((dom(guests)) +-> (ran(guests)))));
+((ss) : (dom(guests)))
+END
+&
+THEORY EnumerateX IS
+REPORT == {present,notpresent}
+END

@@ -1,0 +1,41 @@
+﻿/* PortR
+ * Author: yves
+ * Creation date: 12/02/2022
+ */
+
+REFINEMENT        PortR
+
+REFINES           Port
+
+INCLUDES          List ( SHIP ) , Map ( SHIP , QUAY )
+
+ABSTRACT_VARIABLES num
+
+INVARIANT         num : NAT & num = size ( waiting )
+                  & waiting = list & docked ~ = fun /* la suite waiting est la list. La fonction injective partielle docked est la map inverse "fun" */
+
+INITIALISATION    num := 0
+
+OPERATIONS
+
+arrive ( ss ) =
+    BEGIN
+        add ( ss ) ; num := num + 1 /* ajout de ss à la list. Le numbre de ship waiting s'incrémente de 1. Le ";" permet de faire des actions séquentielles. */
+    END ;
+
+dock ( qq ) =
+          BEGIN
+            VAR sh IN  /* crée une variable locale sh */
+                sh <-- take ; insert ( sh , qq ) /* récupère le premier ship de la liste waiting. insère la relation sh vers qq dans la map. */
+      END ;
+            num := num - 1 /* on décrément de 1 le nombre ship dans la liste waiting */
+          END ;
+
+qq <-- leave ( ss ) =
+          BEGIN
+              qq <-- query ( ss ) ; remove ( ss ) /* on renvoie la quai où se trouve le ship ss. on enlève ss de la liste des relations dans map. */
+          END ;
+
+nn <-- numberwaiting = nn := num
+
+END

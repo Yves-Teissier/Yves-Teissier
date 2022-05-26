@@ -1,0 +1,24 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(5) & _f(8) & WellDefinedness_take.1,(_f(10) => _f(11));
+_f(1) & _f(2) & _f(5) & _f(6) & WellDefinedness_add.1,(_f(10) => _f(11));
+_f(1) & _f(2) & _f(5) & _f(8) & Operation_take.1,(_f(3) => _f(9));
+_f(1) & _f(2) & _f(5) & _f(6) & Operation_add.1,(_f(3) => _f(7));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((ELEMENT) : (FIN(INTEGER))) & not(((ELEMENT) = ({})));
+"Invariant is preserved";
+(({}) : (seq(ELEMENT)));
+list : NATURAL-{0} +-> ELEMENT & ((list) : (seq(ELEMENT)));
+((ee) : (ELEMENT));
+((((list) <- (ee))) : (seq(ELEMENT)));
+not(((list) = ({})));
+((tail(list)) : (seq(ELEMENT)));
+"Operation is well defined";
+((list) : (seq(ran(list))))
+END
+&
+THEORY EnumerateX
+END

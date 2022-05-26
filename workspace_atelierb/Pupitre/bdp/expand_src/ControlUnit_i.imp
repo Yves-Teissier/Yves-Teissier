@@ -1,0 +1,81 @@
+﻿/* ControlUnit_i
+ * Author: yves
+ * Creation date: 22/05/2022
+ */
+
+IMPLEMENTATION ControlUnit_i
+REFINES ControlUnit
+
+IMPORTS
+    httpServer , digicode
+
+SEES CTX
+
+CONCRETE_VARIABLES
+    debutRequest , digicode_response
+
+INVARIANT
+    debutRequest : NAT &
+    digicode_response : NAT
+
+INITIALISATION
+    debutRequest := 0 ;
+    digicode_response := 0
+
+OPERATIONS
+    new_state <-- pupitre_next ( state ) =
+    BEGIN
+        // Reception of the "debut" request
+        IF state = S_DEBUT THEN
+            // Get debut request
+            debutRequest <-- httpServer_get_debut_request ;
+
+            IF debutRequest = 1 THEN
+                new_state := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE ;
+                debutRequest := 0
+            END
+        END ;
+        IF state = S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE THEN
+            new_state := S_DIGICODE
+        END ;
+        IF state = S_DIGICODE THEN
+            digicode_response <-- digi_getResponse ;
+
+            IF digicode_response = 0 THEN
+                new_state := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE
+            END ;
+            IF digicode_response = 1 THEN
+                new_state := S_ACCES_REFUSE
+            END ;
+            IF digicode_response = 2 THEN
+                new_state := S_INCIDENT_NIVEAU_4
+            END ;
+            IF digicode_response = 3 THEN
+                new_state := S_PERTE_DE_TEMPS_1
+            END ;
+            IF digicode_response = 4 THEN
+                new_state := S_ACCESS_AUTORISE
+            END
+        END ;
+        IF state = S_ACCES_REFUSE THEN
+            // Display erreur message
+            new_state := S_DIGICODE
+        END ;
+        IF state = S_INCIDENT_NIVEAU_4 THEN
+            // Display erreur message incident niveau 4
+            new_state := S_DIGICODE
+        END ;
+        IF state = S_PERTE_DE_TEMPS_1 THEN
+            // Delay 1000 seconds
+            new_state := S_INCIDENT_NIVEAU_4
+        END ;
+        IF state = S_ACCESS_AUTORISE THEN
+            new_state := S_RECHERCHE_INCIDENT_1 ;
+        END ;
+        IF state = S_RECHERCHE_INCIDENT_1 THEN
+            // Delay X sec or timer time out
+            new_state := S_INCIDENT_MAJEUR_1 ;
+        END
+
+    END
+END

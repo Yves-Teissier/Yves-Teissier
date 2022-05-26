@@ -1,0 +1,47 @@
+THEORY BalanceX IS
+MySet,7,0,0,5,0,0,0;
+Initialisation,1,0,0,1,0,0,0;
+Operation_Add,2,0,0,2,0,0,0;
+Operation_Discard,2,0,0,2,0,0,0;
+WellDefinednessInvariant,1,0,0,0,0,0,0;
+WellDefinednessPrecondition_Add,1,0,0,0,0,0,0
+END
+&
+THEORY ProofState IS
+Unproved;
+Unproved;
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0)
+END
+&
+THEORY MethodList IS
+?;
+?;
+pr;
+pr;
+pr;
+pr;
+pr
+END
+&
+THEORY PassList IS
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?
+END
+&
+THEORY Status IS
+MySet,7,0,5,0,0,0;
+Initialisation,1,0,1,0,0,0;
+Operation_Add,2,0,2,0,0,0;
+Operation_Discard,2,0,2,0,0,0;
+WellDefinednessInvariant,1,0,0,0,0,0;
+WellDefinednessPrecondition_Add,1,0,0,0,0,0
+END

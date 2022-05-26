@@ -1,0 +1,27 @@
+﻿/* TeamR
+ * Author: yves
+ * Creation date: 08/02/2022
+ */
+
+REFINEMENT        TeamR
+
+REFINES           Team
+
+ABSTRACT_VARIABLES teamr
+
+INVARIANT         teamr : 0 .. 10 >-> 0 .. 21 /* teamr est une fonction total de 0..10 vers 0..21. C'est à dire que chaque élément du domaine est en relation avec un élement du co-domaine (range). */
+                  & ran ( teamr ) = team /* Le do-domaine de la fonction teamr est éguale à l'ensemble (abstrait) team */
+
+INITIALISATION    teamr := % nn . ( nn : 0 .. 10 | nn ) /* cette lambda fonction est : pour tout nn (du domaine) avec nn appartenent à 0..10 (le domaine) alors sa relation est avec nn (lui-meme) dans le co-domaine. on va alors avoir 0 |-> 0 & 1 |-> 1 & 2 |-> 2 etc ... */
+
+OPERATIONS
+
+  substitute ( pp , rr ) =
+      teamr ( teamr ~ ( pp ) ) := rr ; /* teamr~(pp) correspond à l'index du pp qu'on veut enlever) r~ est la relation inverse.*/
+
+  aa <-- query ( pp ) =
+    IF pp : ran ( teamr )
+    THEN aa := in
+    ELSE aa := out
+    END
+END

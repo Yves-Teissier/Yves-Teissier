@@ -1,0 +1,73 @@
+/* ArraySearch_i
+ * Author: yves
+ * Creation date: 12/03/2022
+ */
+
+IMPLEMENTATION ArraySearch_i
+REFINES ArraySearch
+
+CONCRETE_VARIABLES
+    aa
+VALUES
+    MAX = 9
+INITIALISATION
+    VAR ii IN
+        ii := 0;
+        // CHANGE V2 
+        // The following assignment is needed to guarantee that the variable 
+        // is indeed a total function as defined in the invariant.
+        aa := (0..MAX)*{0};
+        // CHANGE V2 END
+        WHILE ii <= MAX 
+        DO  
+            aa(ii) := ii;
+	        ii := ii + 1 
+        INVARIANT
+            // CHANGE V.2
+            // The following predicate is needed to enable proof since we do not have
+            // the state invariant to prove the correctness of the loop. We need the fact that the variable
+            // is a partial funcion
+            aa:(0..MAX) --> NAT &
+            // CHANGE V2 END
+            
+	        !jj. (jj:0..(ii-1) => aa(jj) = jj) /* pour tout jj, jj appartenant à 0..(ii-1) c-a-d les index déjà traité. Donc pour les index précédent alors la valeur dans le tablea est égal à l'index */
+	        
+            // CHANGE V.2
+            // We replace the following predicate to make proofs easier
+	        // & ii <= MAX + 1
+	        & ii:0..MAX + 1
+            // CHANGE V2 END
+        VARIANT (MAX + 1) - ii  /* +1 car pour la dernière boucle ii est supérieur à MAX */
+        END
+    END
+
+OPERATIONS
+    ee <-- get(xx) = ee := aa(xx);
+    add(ii,xx) = aa(ii) := xx;
+    
+    bb <-- contains(xx) = 
+    VAR rr, ii IN
+        rr := FALSE; 
+        ii := 0;
+        WHILE ii <= MAX & rr = FALSE 
+        DO
+        	VAR ee IN 
+        		ee := aa(ii);
+	            ii := ii + 1;
+        		IF ee = xx 
+        		THEN rr:=TRUE 
+        		END
+        	END
+        INVARIANT
+            // CHANGE V.2
+            // We replace the following predicates to make proofs easier
+            // (rr=TRUE) <=> (xx:ran((0..ii-1) <| aa))
+	        // & ii <= MAX + 1
+            rr=bool(xx:ran((0..ii-1) <| aa)) /* xx appartient au co-domaine de aa restreint aux index de 0 à ii-1. <| = restriction sur le demaine. */
+	        & ii:0..(MAX + 1)
+            // CHANGE V2 END
+        VARIANT (MAX + 1) - ii
+        END;
+        bb := rr
+    END
+END

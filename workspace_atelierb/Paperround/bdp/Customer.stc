@@ -1,0 +1,82 @@
+﻿<component_checksums>
+<base>
+<symbol name="NAME" value="Customer" />
+<symbol name="TYPE" value="0" />
+<symbol name="PARAM" />
+<symbol name="CONSTRAINTS" />
+<symbol name="SEES" />
+<symbol name="INCLUDES" />
+<symbol name="IMPORTS" />
+<symbol name="PROMOTES" />
+<symbol name="EXTENDS" />
+<symbol name="USES" />
+<symbol name="SETS" value="5d2bf5c3962a28d16e244253ed3ccb3f" />
+<symbol name="CONCRETE_VAR" />
+<symbol name="ABSTRACT_VAR" value="d005d6aa6240ea14489830e1d911d847" />
+<symbol name="CONCRETE_CONST" />
+<symbol name="ABSTRACT_CONST" />
+<symbol name="PROPERTIES" />
+<symbol name="INVARIANT" value="d72b008f76dc5926524f3bd909e4b572" />
+<symbol name="VARIANT" />
+<symbol name="ASSERTIONS" />
+<symbol name="VALUES" />
+<operations>
+<operation>
+<symbol name="NAME" value="INITIALISATION" />
+<symbol name="COMPONENT" value="Customer" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="cdf71ec91044ca482ce99e125640457f" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="buy" />
+<symbol name="COMPONENT" value="Customer" />
+<symbol name="PRECONDITION" value="1a284267f656e0042789d4d3b6a19386" />
+<symbol name="BODY" value="b18016b76a9c690f2293867e6d8363f7" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="setprice" />
+<symbol name="COMPONENT" value="Customer" />
+<symbol name="PRECONDITION" value="1fdc9144723d09d65f5fffd3f8eaeeee" />
+<symbol name="BODY" value="b12ae189fdd61a46caa2a504c8a708fc" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="pricequery" />
+<symbol name="COMPONENT" value="Customer" />
+<symbol name="PRECONDITION" value="4483c76dd6c07b7dc75cc0ff6b4f47d5" />
+<symbol name="BODY" value="deb223f600bd6dc45012f788fd79690c" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+</operations>
+</base>
+<seen>
+</seen>
+<used>
+</used>
+<included>
+</included>
+<imported>
+</imported>
+<extended>
+</extended>
+<refined>
+</refined>
+</component_checksums>

@@ -1,0 +1,29 @@
+﻿THEORY ProofList IS
+  ValuesLemmas.5,(_f(9) => _f(10));
+  ValuesLemmas.4,(_f(7) => _f(8));
+  ValuesLemmas.3,(_f(5) => _f(6));
+  ValuesLemmas.2,(_f(3) => _f(4));
+  ValuesLemmas.1,(_f(1) => _f(2))
+END
+&
+THEORY Formulas IS
+  "`Check that the property (HOUR: FIN(INTEGER)) is preserved by the valuations - ref 5.2'";
+  (0..23: FIN(INTEGER));
+  "`Check that the property (MINUTE: FIN(INTEGER)) is preserved by the valuations - ref 5.2'";
+  (0..59: FIN(INTEGER));
+  "`Check that the property (DAY: FIN(INTEGER)) is preserved by the valuations - ref 5.2'";
+  (1..31: FIN(INTEGER));
+  "`Check that the property (MONTH: FIN(INTEGER)) is preserved by the valuations - ref 5.2'";
+  (1..12: FIN(INTEGER));
+  "`Check that the property (YEAR: FIN(INTEGER)) is preserved by the valuations - ref 5.2'";
+  (1900..2100: FIN(INTEGER));
+  ("`Valuations'" & YEAR = 1900..2100 & MONTH = 1..12 & DAY = 1..31 & SECOND = 0..59 & MINUTE = 0..59 & HOUR = 0..23 & "`Previous components properties'" & HOUR: FIN(INTEGER) & not(HOUR = {}) & MINUTE: FIN(INTEGER) & not(MINUTE = {}) & SECOND: FIN(INTEGER) & not(SECOND = {}) & DAY: FIN(INTEGER) & not(DAY = {}) & MONTH: FIN(INTEGER) & not(MONTH = {}) & YEAR: FIN(INTEGER) & not(YEAR = {}) & (1..2)*{MM}: FIN(NATURAL*{MM}) & not((1..2)*{MM} = {}))
+END
+&
+THEORY EnumerateX IS
+  MM == {am,pm}
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

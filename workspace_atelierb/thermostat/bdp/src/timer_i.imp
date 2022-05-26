@@ -1,0 +1,15 @@
+﻿/* timer_i
+ * Author: yves
+ * Creation date: 21/11/2020
+ */
+
+IMPLEMENTATION timer_i
+REFINES timer
+
+OPERATIONS
+    timer_wait ( aDelay ) =
+    BEGIN
+        skip
+    END
+
+ END

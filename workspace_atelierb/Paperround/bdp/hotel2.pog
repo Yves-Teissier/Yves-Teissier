@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="17219133420564441872">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0"/>
+    <Define name="seext" hash="0"/>
+    <Define name="lprp" hash="1995623981247688226">
+        <Set>
+            <Id value="ROOM" typref="0"/>
+        </Set>
+        <Set>
+            <Id value="NAME" typref="0"/>
+        </Set>
+        <Set>
+            <Id value="REPORT" typref="0"/>
+            <Enumerated_Values>
+                <Id value="present" typref="1"/>
+                <Id value="notpresent" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Exp_Comparison op=":">
+            <Id value="sze" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:1:1"/>
+            <Id value="NATURAL1" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:1:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Unary_Exp op="card" typref="1">
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:2:1:1"/>
+            </Unary_Exp>
+            <Id value="sze" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="empty" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:3:1"/>
+            <Id value="NAME" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:3:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="inprp" hash="0"/>
+    <Define name="inext" hash="0"/>
+    <Define name="inv" hash="12205048365042169125">
+        <Exp_Comparison op=":">
+            <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:1"/>
+            <Binary_Exp op="--&gt;" typref="3">
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:1"/>
+                <Id value="NAME" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:2"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ass" hash="0"/>
+    <Define name="cst" hash="0"/>
+    <Define name="sets" hash="2508414578291814299">
+        <Set>
+            <Id value="ROOM" typref="0"/>
+        </Set>
+        <Set>
+            <Id value="NAME" typref="0"/>
+        </Set>
+        <Set>
+            <Id value="REPORT" typref="0"/>
+            <Enumerated_Values>
+                <Id value="present" typref="1"/>
+                <Id value="notpresent" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+    </Define>
+    <Proof_Obligation goalHash="18015791892403391359">
+        <Tag>Initialisation</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Simple_Goal>
+            <Tag>Invariant is preserved</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="*s" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:1">
+                        <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:6:1:2:1:1"/>
+                        <Nary_Exp op="{" typref="0">
+                            <Id value="empty" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:6:1:2:1:2:1"/>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Binary_Exp op="--&gt;" typref="3">
+                        <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:1"/>
+                        <Id value="NAME" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="1514700194239047017">
+        <Tag>Operation_guestcheckin</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:2:1:1:1"/>
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:2:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="nn" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:2:1:2:1"/>
+                <Id value="NAME" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:2:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="nn" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:2:1:3:1"/>
+                    <Id value="empty" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:2:1:3:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Invariant is preserved</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;+" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:1">
+                        <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:3:1:1:1:1"/>
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="4">
+                                <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:3:1:1:1:2"/>
+                                <Id value="empty" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:1:3:1:2:1"/>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Binary_Exp op="--&gt;" typref="3">
+                        <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:1"/>
+                        <Id value="NAME" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="1514700194239047017">
+        <Tag>Operation_guestchekout</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:2:2:1:1"/>
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:2:2:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Invariant is preserved</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;+" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:1">
+                        <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:2:3:1:1:1:1"/>
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="4">
+                                <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:2:3:1:1:1:2"/>
+                                <Id value="empty" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:2:3:1:2:1"/>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Binary_Exp op="--&gt;" typref="3">
+                        <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:1"/>
+                        <Id value="NAME" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="6807000956451128362">
+        <Tag>Operation_guestswap</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:2:1:1:1"/>
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:2:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="ss" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:2:1:2:1"/>
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:2:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Invariant is preserved</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;+" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:1">
+                        <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:1"/>
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="4">
+                                <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:1:1"/>
+                                <Binary_Exp op="(" typref="1">
+                                    <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:1:2:1"/>
+                                    <Id value="ss" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:1:2:2"/>
+                                </Binary_Exp>
+                            </Binary_Exp>
+                            <Binary_Exp op="|-&gt;" typref="4">
+                                <Id value="ss" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:2:1"/>
+                                <Binary_Exp op="(" typref="1">
+                                    <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:2:2:1"/>
+                                    <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:2:2:2"/>
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Binary_Exp op="--&gt;" typref="3">
+                        <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:1"/>
+                        <Id value="NAME" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:5:1:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="11834290055865598630">
+        <Tag>WellDefinednessProperties</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="sets"/>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="sze" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:1:1"/>
+                <Id value="NATURAL1" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:1:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Properties are well defined</Tag>
+            <Ref_Hyp num="1"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:2:1:1"/>
+                    <Unary_Exp op="FIN" typref="5">
+                        <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:4:1:2:1:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="1445460203825698961">
+        <Tag>WellDefinedness_guestquery</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:3:3:1:1"/>
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:3:3:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:3:4:1:2:1:2"/>
+                    <Unary_Exp op="dom" typref="0">
+                        <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:3:4:1:2:1:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:3:4:1:2:1:1"/>
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:3:4:1:2:1:1"/>
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:3:4:1:2:1:1"/>
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="12799138105102152325">
+        <Tag>WellDefinedness_guestswap</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:2:1:1:1"/>
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:2:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="ss" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:2:1:2:1"/>
+                <Id value="ROOM" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:2:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="ss" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:1:2:2"/>
+                    <Unary_Exp op="dom" typref="0">
+                        <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:1:2:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:1:2:1"/>
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:1:2:1"/>
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:1:2:1"/>
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="rr" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:2:2:2"/>
+                    <Unary_Exp op="dom" typref="0">
+                        <Id value="guests" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/hotel2.bxml:1:7:5:3:1:2:1:2:2:2:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER"/>
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER"/>
+        </Type>
+        <Type id="2">
+            <Unary_Exp op="POW">
+                <Binary_Exp op="*">
+                    <Id value="INTEGER"/>
+                    <Id value="INTEGER"/>
+                </Binary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="3">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Binary_Exp op="*">
+                        <Id value="INTEGER"/>
+                        <Id value="INTEGER"/>
+                    </Binary_Exp>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="4">
+            <Binary_Exp op="*">
+                <Id value="INTEGER"/>
+                <Id value="INTEGER"/>
+            </Binary_Exp>
+        </Type>
+        <Type id="5">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Id value="INTEGER"/>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

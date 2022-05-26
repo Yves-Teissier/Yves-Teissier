@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Proof_Obligations version="1.0" author="pmi2Pos" xmlns="https://www.atelierb.eu/Formats/pog">
+<Proof_Obligation>
+<Tag>Initialisation</Tag>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(1)" passList="Force(1),(?; 0)" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_put</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" passList="Force(0),(?; 0; 1; 2; 3)" methodList="?"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" passList="Force(0),(?; 0; 1; 2; 3)" methodList="?"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_take</Tag>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(3)" passList="Force(3),(?; 0; 1; 2)" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" passList="Force(0),(?; 0; 1; 2; 3)" methodList="?"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" passList="Force(0),(?; 0; 1; 2; 3)" methodList="?"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_query</Tag>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessInvariant</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is well defined</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinedness_take</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State proofState="Proved(0)" passList="Force(0),?" methodList="pr"/>
+</Simple_Goal>
+</Proof_Obligation>
+</Proof_Obligations>

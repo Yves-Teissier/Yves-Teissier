@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='timer' type='abstraction' position='true' semantic='true' b0check='false'>
+<Abstract_Variables>
+<Attr>
+<Pos l='8' c='1' s='18'/>
+</Attr>
+<Id value='delay' typref='1'>
+<Attr>
+<Pos l='9' c='5' s='5'/>
+</Attr>
+</Id>
+</Abstract_Variables>
+<Invariant>
+<Attr>
+<Pos l='11' c='1' s='9'/>
+</Attr>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='12' c='11' s='1'/>
+</Attr>
+<Id value='delay' typref='1'>
+<Attr>
+<Pos l='12' c='5' s='5'/>
+</Attr>
+</Id>
+<Id value='NAT' typref='2'>
+<Attr>
+<Pos l='12' c='13' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='14' c='1' s='14'/>
+</Attr>
+<Becomes_In>
+<Attr>
+<Pos l='15' c='11' s='2'/>
+</Attr>
+<Variables>
+<Id value='delay' typref='1'>
+<Attr>
+<Pos l='15' c='5' s='5'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<Id value='NAT' typref='2'>
+<Attr>
+<Pos l='15' c='14' s='3'/>
+</Attr>
+</Id>
+</Value>
+</Becomes_In>
+</Initialisation>
+<Operations>
+<Operation name='timer_wait'>
+<Attr>
+<Pos l='18' c='5' s='10' endLine='21'/>
+</Attr>
+<Input_Parameters>
+<Id value='aDelay' typref='1'>
+<Attr>
+<Pos l='18' c='16' s='6'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='19' c='16' s='1'/>
+</Attr>
+<Id value='aDelay' typref='1'>
+<Attr>
+<Pos l='19' c='9' s='6'/>
+</Attr>
+</Id>
+<Id value='NAT' typref='2'>
+<Attr>
+<Pos l='19' c='18' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<Skip>
+<Attr>
+<Pos l='20' c='9' s='4'/>
+</Attr>
+</Skip>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

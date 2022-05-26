@@ -1,0 +1,26 @@
+THEORY BalanceX IS
+Allocate,2,0,0,2,0,0,0;
+Operation_allocate,1,0,0,1,0,0,0;
+Operation_choose,1,0,0,1,0,0,0
+END
+&
+THEORY ProofState IS
+Proved(0);
+Proved(0)
+END
+&
+THEORY MethodList IS
+pr;
+pr
+END
+&
+THEORY PassList IS
+Force(0),?;
+Force(0),?
+END
+&
+THEORY Status IS
+Allocate,2,0,2,0,0,0;
+Operation_allocate,1,0,1,0,0,0;
+Operation_choose,1,0,1,0,0,0
+END

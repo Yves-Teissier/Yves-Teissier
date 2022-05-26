@@ -1,0 +1,36 @@
+THEORY BalanceX IS
+Map,4,0,0,4,0,0,0;
+Initialisation,1,0,0,1,0,0,0;
+Operation_insert,1,0,0,1,0,0,0;
+Operation_remove,1,0,0,1,0,0,0;
+WellDefinedness_query,1,0,0,1,0,0,0
+END
+&
+THEORY ProofState IS
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0)
+END
+&
+THEORY MethodList IS
+pr;
+pr;
+pr;
+pr
+END
+&
+THEORY PassList IS
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?
+END
+&
+THEORY Status IS
+Map,4,0,4,0,0,0;
+Initialisation,1,0,1,0,0,0;
+Operation_insert,1,0,1,0,0,0;
+Operation_remove,1,0,1,0,0,0;
+WellDefinedness_query,1,0,1,0,0,0
+END

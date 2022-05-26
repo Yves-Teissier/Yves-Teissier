@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Proof_Obligations version="1.0" xmlns="https://www.atelierb.eu/Formats/pog" author="pmi2Pos">
+<Proof_Obligation>
+<Tag>Initialisation</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),(?; 0; 1; 2; 3)" methodList="?" proofState="Unproved"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_checkin</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),(?; 0; 1; 2; 3)" methodList="?" proofState="Unproved"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_checkout</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),(?; 0; 1; 2; 3)" methodList="?" proofState="Unproved"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_swap</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),(?; 0; 1; 2; 3)" methodList="?" proofState="Unproved"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessProperties</Tag>
+<Simple_Goal status="Proved">
+<Tag>Properties are well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessPrecondition_checkin</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation precondition is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Operation precondition is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinedness_roomquery</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinedness_vacancies</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinedness_totalguests</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinedness_swap</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+</Proof_Obligations>

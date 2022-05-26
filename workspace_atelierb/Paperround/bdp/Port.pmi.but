@@ -1,0 +1,1 @@
+﻿Flag(FileOn("Port.pmi.res")) & Set(toto | ss: SHIP => (not(0: NATURAL) => (waiting<-ss)~: SHIP +-> NATURAL))

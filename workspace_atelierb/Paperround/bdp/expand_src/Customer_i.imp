@@ -1,0 +1,48 @@
+﻿/* Customer_i
+ * Author: yves
+ * Creation date: 02/03/2022
+ */
+
+IMPLEMENTATION Customer_i
+
+REFINES
+    Customer
+
+CONCRETE_VARIABLES
+    limit ,
+    price_i ,
+    purchases_i
+
+INVARIANT
+    limit : GOODS --> NAT1 &
+    price_i : GOODS --> NAT1 &
+    price_i = price &
+    purchases_i : GOODS --> BOOL & /* au lieux d'etre en ensemble, c'est une fonction totale de GOODS dans BOOL */
+    dom ( purchases_i |> { TRUE } ) = purchases /* domaine de (restriction sur le co-domaine de purchases_i) correspond à l'ensemble purchase */
+
+VALUES
+    GOODS = 0 .. 10
+
+INITIALISATION
+    limit := GOODS * { 10 } ; /* * = produit cartésien */
+    price_i := GOODS * { 1 } ;
+    purchases_i := GOODS * { FALSE }
+
+OPERATIONS
+
+  pp <-- buy ( gg ) =
+  BEGIN
+    pp := price_i ( gg ) ;
+    VAR tmp IN
+        tmp := limit ( gg ) ;
+        IF pp <= tmp
+        THEN purchases_i ( gg ) := TRUE
+        END
+    END
+  END ;
+
+  setprice ( gg , pp ) = price_i ( gg ) := pp ;
+
+  pp <-- pricequery ( gg ) = pp := price_i ( gg )
+
+END

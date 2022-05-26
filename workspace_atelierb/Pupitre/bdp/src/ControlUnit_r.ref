@@ -1,0 +1,20 @@
+﻿/* ControlUnit_r
+ * Author: yves
+ * Creation date: 22/05/2022
+ */
+
+REFINEMENT ControlUnit_r
+REFINES ControlUnit
+
+SEES CTX
+
+OPERATIONS
+    new_state <-- pupitre_next ( state ) =
+    BEGIN
+        // Reception of the "debut" request
+        IF state = S_DEBUT THEN
+            // 
+            new_state := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE
+        END
+    END
+ END

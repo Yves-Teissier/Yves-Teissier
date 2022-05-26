@@ -1,0 +1,9 @@
+THEORY ProofList
+END
+&
+THEORY Formulas
+END
+&
+THEORY EnumerateX IS
+STATE == {IDLE_STATE,SETGAZ_STATE}
+END

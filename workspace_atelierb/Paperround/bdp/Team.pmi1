@@ -1,0 +1,37 @@
+THEORY BalanceX IS
+Team,5,0,0,3,0,0,0;
+Initialisation,2,0,0,2,0,0,0;
+Operation_substitute,2,0,0,1,0,0,0;
+WellDefinednessInvariant,1,0,0,0,0,0,0
+END
+&
+THEORY ProofState IS
+Unproved;
+Unproved;
+Proved(0);
+Proved(0);
+Proved(0)
+END
+&
+THEORY MethodList IS
+?;
+?;
+pr;
+pr;
+pr
+END
+&
+THEORY PassList IS
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),?;
+Force(0),?;
+Force(0),?
+END
+&
+THEORY Status IS
+Team,5,0,3,0,0,0;
+Initialisation,2,0,2,0,0,0;
+Operation_substitute,2,0,1,0,0,0;
+WellDefinednessInvariant,1,0,0,0,0,0
+END

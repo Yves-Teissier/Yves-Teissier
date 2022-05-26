@@ -1,0 +1,45 @@
+﻿/* Iron1R
+ * Author: yves
+ * Creation date: 12/02/2022
+ */
+
+REFINEMENT Iron1R
+REFINES Iron1
+
+ABSTRACT_VARIABLES
+    pilearray , counter
+
+CONCRETE_CONSTANTS
+    ee
+
+PROPERTIES
+    ee : ITEM
+
+INVARIANT
+    pilearray : 0 .. limit - 1 --> ITEM /* pilearray est une fonction total de 0..limit-1 (les index) dans ITEM. La taille est "limit". */
+    & counter : 0 .. limit /* counter est entre 0 et limit */
+    & counter = size ( pile ) /* counter est la taille de la séquence "pile" */
+    & pile = ( % ii . ( ii : 1 .. counter | pilearray ( ii - 1 ) ) ) /* pile est la fonction lambda consistant en : pour tout ii, ii appartenant à l'ensemble 1..counter alors pile est égale à la valeur de l'array pilearray avec l'index ii-1 (l'array par de 0 donc il faut décaler de -1 pour correspondre à la séquence "pile" */
+
+INITIALISATION    pilearray := ( 0 .. limit - 1 ) * { ee } || counter := 0 /* pilearray est initialisé avec des éléments ee appartenant à l'ensemble ITEM */
+
+OPERATIONS
+
+  put ( ii ) =
+      BEGIN
+        pilearray ( counter ) := ii ; /* set ii à l'index courant "counter" de l'array. counter commence à 0 */
+        counter := counter + 1 /* incrémente counter pour le indique l'index suivant */
+      END ;
+
+  ii <-- take =
+          BEGIN
+            counter := counter - 1 ; /* décrémente l'index souvant pour avoir l'index courant */
+            ii := pilearray ( counter ) /* récupère la valeur de l'array pour l'index courant */
+          END ;
+
+bb <-- query ( ii ) =
+    IF ii : pilearray [ 0 .. counter - 1 ] /* vérifie sie l'élément ii appartient à l'array. [] est utilisé pour les suites (array). On vérifie que ii est dans la relation image de pilearray. */
+    THEN bb := TRUE
+    ELSE bb := FALSE END
+
+END

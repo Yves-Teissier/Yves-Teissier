@@ -1,0 +1,54 @@
+THEORY BalanceX IS
+BooksV1_r,10,0,0,5,0,0,0;
+Initialisation,2,0,0,2,0,0,0;
+Operation_newbook,5,0,0,1,0,0,0;
+WellDefinednessInitialisation,1,0,0,1,0,0,0;
+WellDefinedness_newbook,2,0,0,1,0,0,0
+END
+&
+THEORY ProofState IS
+Unproved;
+Proved(0);
+Proved(0);
+Unproved;
+Unproved;
+Unproved;
+Proved(0);
+Unproved;
+Proved(0);
+Proved(0)
+END
+&
+THEORY MethodList IS
+?;
+pr;
+pr;
+?;
+?;
+?;
+pr;
+?;
+pr;
+pr
+END
+&
+THEORY PassList IS
+Force(0),(?; 0);
+Force(0),?;
+Force(0),?;
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),?;
+Force(0),(?; 0);
+Force(0),?;
+Force(0),?
+END
+&
+THEORY Status IS
+BooksV1_r,10,0,5,0,0,0;
+Initialisation,2,0,2,0,0,0;
+Operation_newbook,5,0,1,0,0,0;
+WellDefinednessInitialisation,1,0,1,0,0,0;
+WellDefinedness_newbook,2,0,1,0,0,0
+END

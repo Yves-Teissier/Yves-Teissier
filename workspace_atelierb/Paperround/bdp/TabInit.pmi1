@@ -1,0 +1,20 @@
+﻿THEORY BalanceX IS
+  TabInit,0,0,0,0,0,0,0;
+  Initialisation,0,0,0,0,0,0,0
+END
+&
+THEORY ProofState
+END
+&
+THEORY MethodList
+END
+&
+THEORY PassList
+END
+&
+THEORY ManForms 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

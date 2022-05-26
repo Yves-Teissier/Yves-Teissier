@@ -1,0 +1,21 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(5) & _f(6) & _f(7) & Operation_remove.1,(_f(3) => _f(9));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(7) & Operation_add.1,(_f(3) => _f(8));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+PRINTER: FIN(INTEGER) & not(PRINTER = {}) & OPTION: FIN(INTEGER) & not(OPTION = {}) & ((1..2)*{PERMISSION}): FIN(NATURAL*{PERMISSION})& not(((1..2)*{PERMISSION}) = {});
+"Invariant is preserved";
+(({}) : (((PRINTER) <-> (OPTION))));
+((options) : (((PRINTER) <-> (OPTION))));
+((pp) : (PRINTER));
+((oo) : (OPTION));
+((((options) \/ (({((pp) |-> (oo))})))) : (((PRINTER) <-> (OPTION))));
+(((options - ({((pp) |-> (oo))}))) : (((PRINTER) <-> (OPTION))))
+END
+&
+THEORY EnumerateX IS
+PERMISSION == {ok,no}
+END

@@ -1,0 +1,37 @@
+﻿THEORY BalanceX IS
+  DataFields_i,5,0,0,5,0,0,0;
+  ValuesLemmas,5,0,0,5,0,0,0;
+  Initialisation,0,0,0,0,0,0,0
+END
+&
+THEORY ProofState IS
+  Proved(0);
+  Proved(0);
+  Proved(0);
+  Proved(0);
+  Proved(0)
+END
+&
+THEORY MethodList IS
+  pr;
+  pr;
+  pr;
+  pr;
+  pr
+END
+&
+THEORY PassList IS
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?;
+  Force(0),?
+END
+&
+THEORY ManForms 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO,genDivergencePO == KO,local_op == OK);
+  PRVersion("svn")(CLT == "svn")
+END

@@ -1,0 +1,10 @@
+/* CTX_i
+ * Author: yves
+ * Creation date: 22/05/2022
+ */
+
+IMPLEMENTATION CTX_i
+REFINES CTX
+
+VALUES S0 = S_DEBUT
+ END

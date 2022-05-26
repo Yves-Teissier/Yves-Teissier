@@ -1,0 +1,108 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.50,(_f(15) & _f(17) & _f(32) & _f(5) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.49,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(30) & _f(5) => _f(42));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.48,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(30) & _f(5) => _f(41));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.47,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(30) & _f(5) => _f(10));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.46,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(30) & _f(5) => _f(8));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.45,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(30) & _f(5) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.44,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(29) & _f(5) => _f(42));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.43,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(29) & _f(5) => _f(41));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.42,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(29) & _f(5) => _f(10));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.41,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(29) & _f(5) => _f(8));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.40,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(9) & _f(29) & _f(5) => _f(35));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.39,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(31) & _f(34) => _f(9));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.38,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(30) & _f(5) => _f(42));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.37,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(30) & _f(5) => _f(41));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.36,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(30) & _f(5) => _f(38));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.35,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(30) & _f(5) => _f(37));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.34,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(30) & _f(5) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.33,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(29) & _f(5) => _f(42));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.32,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(29) & _f(5) => _f(41));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.31,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(29) & _f(5) => _f(38));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.30,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(29) & _f(5) => _f(37));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.29,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(23) & _f(29) & _f(5) => _f(35));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.28,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(27) & _f(28) & _f(34) => _f(23));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.27,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(25) & _f(5) => _f(40));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.26,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(25) & _f(5) => _f(39));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.25,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(25) & _f(5) => _f(10));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.24,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(25) & _f(5) => _f(8));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.23,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(25) & _f(5) => _f(36));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.22,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(25) & _f(5) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.21,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(24) & _f(5) => _f(40));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.20,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(24) & _f(5) => _f(39));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.19,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(24) & _f(5) => _f(10));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.18,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(24) & _f(5) => _f(8));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.17,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(24) & _f(5) => _f(36));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.16,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(9) & _f(24) & _f(5) => _f(35));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.15,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(26) & _f(34) => _f(9));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.14,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(25) & _f(5) => _f(40));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.13,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(25) & _f(5) => _f(39));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.12,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(25) & _f(5) => _f(38));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.11,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(25) & _f(5) => _f(37));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.10,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(25) & _f(5) => _f(36));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.9,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(25) & _f(5) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.8,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(24) & _f(5) => _f(40));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.7,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(24) & _f(5) => _f(39));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.6,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(24) & _f(5) => _f(38));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.5,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(24) & _f(5) => _f(37));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.4,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(24) & _f(5) => _f(36));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.3,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(24) & _f(5) => _f(35));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.2,(_f(15) & _f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(34) => _f(23));
+_f(1) & _f(2) & _f(3) & _f(13) & _f(14) & Operation_thermostat_next.1,(_f(15) & _f(16) & _f(5) => _f(33));
+_f(1) & _f(2) & _f(3) & Initialisation.7,(_f(4) & _f(5) => _f(12));
+_f(1) & _f(2) & _f(3) & Initialisation.6,(_f(4) & _f(5) => _f(11));
+_f(1) & _f(2) & _f(3) & Initialisation.5,(_f(4) & _f(5) => _f(10));
+_f(1) & _f(2) & _f(3) & Initialisation.4,(_f(4) & _f(5) => _f(9));
+_f(1) & _f(2) & _f(3) & Initialisation.3,(_f(4) & _f(5) => _f(8));
+_f(1) & _f(2) & _f(3) & Initialisation.2,(_f(4) & _f(5) => _f(7));
+_f(1) & _f(2) & _f(3) & Initialisation.1,(_f(4) & _f(5) => _f(6))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((1..2)*{STATE}): FIN(NATURAL*{STATE})& not(((1..2)*{STATE}) = {}) & ((NEXT) : (((((1..2)*{STATE})) <-> (((1..2)*{STATE}))))) & ((NEXT) = (({(((1|->STATE)) |-> ((2|->STATE)))}\/{(((2|->STATE)) |-> ((1|->STATE)))}\/{(((1|->STATE)) |-> ((1|->STATE)))}))) & ((S0) : (((1..2)*{STATE})));
+((delay$1) : (NAT));
+((delay) : (NAT));
+"Refinement is correct";
+((1800) : (NAT));
+((0) : (NAT));
+((90) : (NAT));
+((350) : (NAT));
+(350 <= 400);
+(1800 <= 2500);
+((0) : (INT));
+((target_val) : (NAT)) & ((temperature_val) : (NAT)) & ((gaz_duration) : (NAT)) & ((check_temperature_delay) : (NAT)) & ((delay) : (NAT));
+((delay) = (delay$1)) & ((target_val) = (target_val$1)) & ((temperature_val) = (temperature_val$1)) & ((gaz_duration) = (gaz_duration$1)) & ((check_temperature_delay) = (check_temperature_delay$1)) & ((target_val$1) : (NAT)) & ((temperature_val$1) : (NAT)) & ((gaz_duration$1) : (NAT)) & ((check_temperature_delay$1) : (NAT)) & (check_temperature_delay$1 <= 400) & (target_val$1 <= 2500) & ((delta$1) : (INT));
+((state) : (((1..2)*{STATE})));
+((state) = ((2|->STATE)));
+not(((state) = ((2|->STATE))));
+((state) = ((1|->STATE)));
+((ret_target) : (NAT));
+((new_temperature) : (NAT));
+(2500 +1 <= ret_target);
+(50 <= (2500 - new_temperature));
+((300) : (NAT));
+(new_temperature +1 <= 2500);
+not((new_temperature +1 <= 2500));
+not((50 <= (2500 - new_temperature)));
+not((2500 +1 <= ret_target));
+(50 <= (ret_target - new_temperature));
+(new_temperature +1 <= ret_target);
+not((new_temperature +1 <= ret_target));
+not((50 <= (ret_target - new_temperature)));
+not(((state) = ((1|->STATE))));
+(((1|->STATE)) : ((NEXT )[({state})]));
+"Precondition predicate";
+(((2|->STATE)) : ((NEXT )[({state})]));
+((2500) : (NAT));
+((120) : (NAT));
+(300 <= 400);
+(2500 <= 2500);
+(((2500 - new_temperature)) : (INT));
+(ret_target <= 2500);
+(((ret_target - new_temperature)) : (INT))
+END
+&
+THEORY EnumerateX IS
+STATE == {IDLE_STATE,SETGAZ_STATE}
+END

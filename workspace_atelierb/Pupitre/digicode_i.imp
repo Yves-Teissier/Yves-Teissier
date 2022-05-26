@@ -1,0 +1,15 @@
+/* digicode_i
+ * Author: yves
+ * Creation date: 24/05/2022
+ */
+
+IMPLEMENTATION digicode_i
+REFINES digicode
+
+// Code response 0 = pb_annuler; 1 = pb_saisirCode; 2 = erreurCodeApresDernierEssai; 3 = erreurCodeDernierEssai; 4 = codeBon
+OPERATIONS
+    response <-- digi_getResponse =
+    BEGIN
+        response := 0
+    END
+ END

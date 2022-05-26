@@ -1,0 +1,18 @@
+﻿THEORY ProofList IS
+  Initialisation.2,(_f(1) => _f(3));
+  Initialisation.1,(_f(1) => _f(2))
+END
+&
+THEORY Formulas IS
+  "`Check that the invariant (tab: 0..9 --> NAT) is established by the initialisation - ref 3.3'";
+  ((0..9)*{0}: 0..9 +-> NAT);
+  (dom((0..9)*{0}) = 0..9);
+  ("`Component invariant'" & tab: 0..9 +-> NAT & dom(tab) = 0..9)
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

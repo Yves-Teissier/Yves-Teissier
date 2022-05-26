@@ -1,0 +1,36 @@
+﻿/* BooksV1_r_r
+ * Author: yves
+ * Creation date: 22/02/2022
+ */
+
+REFINEMENT
+    BooksV1_r_r
+
+REFINES
+    BooksV1_r
+
+CONCRETE_CONSTANTS
+    bookarr
+
+PROPERTIES
+    bookarr : 0 .. card ( BOOK ) - 1 >->> BOOK
+
+ABSTRACT_VARIABLES
+    counter
+
+INVARIANT
+    counter : 0 .. card ( BOOK )
+    & ( % ii . ( ii : 1 .. card ( BOOK ) | bookarr ( ii - 1 ) ) )
+        = ( % ii . ( ii : 1 .. counter | bookarr ( ii - 1 ) ) ) ^ scheme
+
+INITIALISATION
+    counter := 0
+
+OPERATIONS
+
+  bb <-- newbook =
+    BEGIN bb := bookarr ( counter ) ;
+          counter := counter + 1
+    END
+
+END

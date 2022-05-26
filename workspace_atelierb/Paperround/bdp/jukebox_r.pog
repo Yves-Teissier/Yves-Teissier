@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="17219133420564441872">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0"/>
+    <Define name="seext" hash="0"/>
+    <Define name="lprp" hash="16501540907916313955">
+        <Exp_Comparison op=":">
+            <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:4:1:1"/>
+            <Id value="NAT1" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:4:1:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="inprp" hash="0"/>
+    <Define name="inext" hash="0"/>
+    <Define name="mchcst" hash="0"/>
+    <Define name="aprp" hash="6606269926116988849">
+        <Set>
+            <Id value="TRACK" typref="0"/>
+        </Set>
+        <Exp_Comparison op=":">
+            <Id value="limit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:4:1:1"/>
+            <Id value="NATURAL1" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:4:1:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="abs" hash="8226982968944002480">
+        <Exp_Comparison op=":">
+            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:5:1:1:1"/>
+            <Id value="NATURAL" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:5:1:1:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="&lt;=i">
+            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:5:1:2:1"/>
+            <Id value="limit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:5:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="&lt;:">
+            <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:5:1:3:1"/>
+            <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:5:1:3:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="inv" hash="4831564340572652006">
+        <Exp_Comparison op=":">
+            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,"/>
+            <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,"/>
+            <Unary_Exp op="iseq" typref="3">
+                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+            </Unary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Unary_Exp op="ran" typref="0">
+                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+            </Unary_Exp>
+            <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ass" hash="0"/>
+    <Define name="sets" hash="0"/>
+    <Proof_Obligation goalHash="8734001463741848649">
+        <Tag>Initialisation</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:6:1:1:2:1"/>
+                    <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <EmptySet typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:6:1:2:2:1"/>
+                    <Unary_Exp op="iseq" typref="3">
+                        <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="ran" typref="0">
+                        <EmptySet typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:6:1:2:2:1"/>
+                    </Unary_Exp>
+                    <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2,/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:6:1:2:2:1"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:6:1:3:2:1"/>
+                    <Binary_Exp op=".." typref="0">
+                        <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                        <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="12267169775038215230">
+        <Tag>Operation_pay</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="cc" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:1:2:1:1"/>
+                <Id value="NATURAL1" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:1:2:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Unary_Exp op="imin" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,">
+                        <Nary_Exp op="{" typref="0">
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:1:1,"/>
+                                <Id value="cc" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:1:2"/>
+                            </Binary_Exp>
+                            <Id value="limit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:2"/>
+                        </Nary_Exp>
+                    </Unary_Exp>
+                    <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="imin" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                        <Nary_Exp op="{" typref="0">
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:1:1,"/>
+                                <Id value="cc" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:1:2"/>
+                            </Binary_Exp>
+                            <Id value="limit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:2"/>
+                        </Nary_Exp>
+                    </Unary_Exp>
+                    <Unary_Exp op="imin" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                        <Nary_Exp op="{" typref="0">
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:1:3:1:2:1:1:1:1"/>
+                                <Id value="cc" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:1:3:1:2:1:1:1:2"/>
+                            </Binary_Exp>
+                            <Id value="limit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:1:3:1:2:1:1:2"/>
+                        </Nary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="14497812954514583942">
+        <Tag>Precondition_select</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:1:1"/>
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:2:1"/>
+                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Precondition can be deduced</Tag>
+            <Goal>
+                <Exp_Comparison op="&gt;i">
+                    <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:1:1,"/>
+                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="12567629345745577954">
+        <Tag>Operation_select</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:1:1"/>
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:2:1"/>
+                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:1:1,"/>
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:2:1"/>
+                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Unary_Pred op="not">
+                <Exp_Comparison op=":">
+                    <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:1:1:1"/>
+                    <Unary_Exp op="ran" typref="0">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:1:1:2:1,"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op="=">
+                <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:1:1:1,"/>
+                <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:1:1:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:1:1:1,"/>
+                    <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:1:1:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op=":">
+                <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:1:1:1"/>
+                <Unary_Exp op="ran" typref="0">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:1:1:2:1,"/>
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;-" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:1,"/>
+                        <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:2"/>
+                    </Binary_Exp>
+                    <Unary_Exp op="iseq" typref="3">
+                        <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="ran" typref="0">
+                        <Binary_Exp op="&lt;-" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,">
+                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:1,"/>
+                            <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:2"/>
+                        </Binary_Exp>
+                    </Unary_Exp>
+                    <Binary_Exp op="\/" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2">
+                        <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:2:2:1:1"/>
+                        <Nary_Exp op="{" typref="0">
+                            <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:2:2:1:2:1"/>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:1:2:1"/>
+                    <Binary_Exp op=".." typref="0">
+                        <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                        <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Exp_Comparison op="=">
+                        <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:1"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:2"/>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                        <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,">
+                        <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:1,"/>
+                        <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:2"/>
+                    </Binary_Exp>
+                    <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Exp_Comparison op="=">
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:1,"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:1"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:2"/>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:1,"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:2"/>
+                        </Binary_Exp>
+                        <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,">
+                        <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:1,"/>
+                        <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:2"/>
+                    </Binary_Exp>
+                    <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;-" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:1,"/>
+                        <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:2"/>
+                    </Binary_Exp>
+                    <Unary_Exp op="iseq" typref="3">
+                        <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="ran" typref="0">
+                        <Binary_Exp op="&lt;-" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,">
+                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:1,"/>
+                            <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:2"/>
+                        </Binary_Exp>
+                    </Unary_Exp>
+                    <Binary_Exp op="\/" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2">
+                        <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:2:2:1:1"/>
+                        <Nary_Exp op="{" typref="0">
+                            <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:2:2:1:2:1"/>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="+i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,">
+                        <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:1:2:1:1,"/>
+                        <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:1:2:1:2"/>
+                    </Binary_Exp>
+                    <Binary_Exp op=".." typref="0">
+                        <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                        <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Exp_Comparison op="=">
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:1,"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:1"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:2"/>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:1,"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:2"/>
+                        </Binary_Exp>
+                        <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="ran" typref="0">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+                    </Unary_Exp>
+                    <Binary_Exp op="\/" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2">
+                        <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:2:2:1:1"/>
+                        <Nary_Exp op="{" typref="0">
+                            <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:2:2:1:2:1"/>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:1:2:1"/>
+                    <Binary_Exp op=".." typref="0">
+                        <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                        <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Exp_Comparison op="=">
+                        <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:1"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:2"/>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                        <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,">
+                        <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:1,"/>
+                        <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:2"/>
+                    </Binary_Exp>
+                    <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="2"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Exp_Comparison op="=">
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:1,"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:1"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:2"/>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:1,"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:2:1:2:2:1:2"/>
+                        </Binary_Exp>
+                        <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,">
+                        <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:1,"/>
+                        <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:2"/>
+                    </Binary_Exp>
+                    <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="ran" typref="0">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+                    </Unary_Exp>
+                    <Binary_Exp op="\/" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2">
+                        <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:2:2:1:1"/>
+                        <Nary_Exp op="{" typref="0">
+                            <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:2:2:1:2:1"/>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="+i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,">
+                        <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:1:2:1:1,"/>
+                        <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:1:2:1:2"/>
+                    </Binary_Exp>
+                    <Binary_Exp op=".." typref="0">
+                        <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                        <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Exp_Comparison op="=">
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:1,"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:1"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:3:1:1:1:2:1:2"/>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                    <Exp_Comparison op="=">
+                        <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:1,"/>
+                            <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:2:3:1:2:2:1:2"/>
+                        </Binary_Exp>
+                        <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2329877300054289087">
+        <Tag>Precondition_play</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:2:1:1"/>
+                    <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:2:1:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="=">
+                <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:1:1"/>
+                <Id value="tt" suffix="1" typref="1"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Precondition can be deduced</Tag>
+            <Goal>
+                <Exp_Comparison op="&gt;i">
+                    <Unary_Exp op="size" typref="1">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:2:1:1:1,"/>
+                    </Unary_Exp>
+                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:2:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="18305723318512410512">
+        <Tag>Operation_play</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:2:1:1"/>
+                    <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:2:1:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="=">
+                <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:1:1"/>
+                <Id value="tt" suffix="1" typref="1"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Unary_Exp op="size" typref="1">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:2:1:1:1,"/>
+                </Unary_Exp>
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:2:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Unary_Exp op="tail" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:2:2:1:1,"/>
+                    </Unary_Exp>
+                    <Unary_Exp op="iseq" typref="3">
+                        <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:1:2:1:1,"/>
+                    <Unary_Exp op="seq" typref="3">
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:1:2:1:1,"/>
+                        </Unary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Unary_Pred op="not">
+                    <Exp_Comparison op="=">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:1:2:1:1,"/>
+                        <EmptySet typref="2"/>
+                    </Exp_Comparison>
+                </Unary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Unary_Exp op="first" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:3:1:2:1:1">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:1:2:1:1,"/>
+                    </Unary_Exp>
+                    <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:3:1:2:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Unary_Exp op="ran" typref="0">
+                        <Unary_Exp op="tail" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,">
+                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:2:2:1:1,"/>
+                        </Unary_Exp>
+                    </Unary_Exp>
+                    <Binary_Exp op="-s" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2">
+                        <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:3:1:3:1:2:2:1:1"/>
+                        <Nary_Exp op="{" typref="0">
+                            <Unary_Exp op="first" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:3:1:3:1:2:2:1:2:1">
+                                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:1:2:1:1,"/>
+                            </Unary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="16432445976523684884">
+        <Tag>Operation_penalty</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Local_Hyp num="1">
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:1:1:1,"/>
+                    <EmptySet typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:1:1:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op="=">
+                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:1:1:1,"/>
+                <EmptySet typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:1:1:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op="&gt;i">
+                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:1:1:1,"/>
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:1:1:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Unary_Pred op="not">
+                <Exp_Comparison op="&gt;i">
+                    <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:1:1:1,"/>
+                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:1:1:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="1"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Nary_Pred op="&amp;">
+                        <Exp_Comparison op="&gt;i">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:1"/>
+                            <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:2"/>
+                        </Exp_Comparison>
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,"/>
+                                <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                                <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                                    <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:2:1:2:1:1"/>
+                                    <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:2:1:2:1:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Unary_Exp op="tail" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,">
+                                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:2:1:2:1:1,"/>
+                                </Unary_Exp>
+                                <Unary_Exp op="iseq" typref="3">
+                                    <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Unary_Exp op="ran" typref="0">
+                                    <Unary_Exp op="tail" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,">
+                                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:2:1:2:1:1,"/>
+                                    </Unary_Exp>
+                                </Unary_Exp>
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                <Binary_Exp op=".." typref="0">
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                    <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                    </Nary_Pred>
+                    <Nary_Pred op="&amp;">
+                        <Unary_Pred op="not">
+                            <Exp_Comparison op="=">
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:1"/>
+                                <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:2"/>
+                            </Exp_Comparison>
+                        </Unary_Pred>
+                        <Quantified_Pred type="#">
+                            <Variables>
+                                <Id value="pp" typref="1"/>
+                            </Variables>
+                            <Body>
+                                <Nary_Pred op="&amp;">
+                                    <Exp_Comparison op=":">
+                                        <Id value="pp" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:2:1:1"/>
+                                        <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:2:1:2"/>
+                                    </Exp_Comparison>
+                                    <Nary_Pred op="&amp;">
+                                        <Exp_Comparison op=":">
+                                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,"/>
+                                            <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op=":">
+                                            <Unary_Exp op="tail" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,">
+                                                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:2:1:2:1:1,"/>
+                                            </Unary_Exp>
+                                            <Unary_Exp op="iseq" typref="3">
+                                                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                            </Unary_Exp>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Unary_Exp op="ran" typref="0">
+                                                <Unary_Exp op="tail" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,">
+                                                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:2:1:2:1:1,"/>
+                                                </Unary_Exp>
+                                            </Unary_Exp>
+                                            <Binary_Exp op="-s" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2">
+                                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:3:1:2:1:1"/>
+                                                <Nary_Exp op="{" typref="0">
+                                                    <Id value="pp" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:3:1:2:1:2:1"/>
+                                                </Nary_Exp>
+                                            </Binary_Exp>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op=":">
+                                            <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                            <Binary_Exp op=".." typref="0">
+                                                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                                <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                            </Binary_Exp>
+                                        </Exp_Comparison>
+                                    </Nary_Pred>
+                                </Nary_Pred>
+                            </Body>
+                        </Quantified_Pred>
+                    </Nary_Pred>
+                    <Nary_Pred op="&amp;">
+                        <Nary_Pred op="&amp;">
+                            <Unary_Pred op="not">
+                                <Exp_Comparison op="&gt;i">
+                                    <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:1"/>
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:2"/>
+                                </Exp_Comparison>
+                            </Unary_Pred>
+                            <Exp_Comparison op="=">
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:1"/>
+                                <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:2"/>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,"/>
+                                <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                                <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Unary_Exp op="tail" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,">
+                                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:2:1:2:1:1,"/>
+                                </Unary_Exp>
+                                <Unary_Exp op="iseq" typref="3">
+                                    <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Unary_Exp op="ran" typref="0">
+                                    <Unary_Exp op="tail" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,">
+                                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:2:1:2:1:1,"/>
+                                    </Unary_Exp>
+                                </Unary_Exp>
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                <Binary_Exp op=".." typref="0">
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                    <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                    </Nary_Pred>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Nary_Pred op="&amp;">
+                        <Exp_Comparison op="&gt;i">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:1"/>
+                            <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:2"/>
+                        </Exp_Comparison>
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,">
+                                    <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:1,"/>
+                                    <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:2"/>
+                                </Binary_Exp>
+                                <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                                    <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:1,"/>
+                                    <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:2"/>
+                                </Binary_Exp>
+                                <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                                    <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:2:1:2:1:1"/>
+                                    <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:2:1:2:1:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,"/>
+                                <Unary_Exp op="iseq" typref="3">
+                                    <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Unary_Exp op="ran" typref="0">
+                                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+                                </Unary_Exp>
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                <Binary_Exp op=".." typref="0">
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                    <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                    </Nary_Pred>
+                    <Nary_Pred op="&amp;">
+                        <Unary_Pred op="not">
+                            <Exp_Comparison op="=">
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:1"/>
+                                <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:2"/>
+                            </Exp_Comparison>
+                        </Unary_Pred>
+                        <Quantified_Pred type="#">
+                            <Variables>
+                                <Id value="pp" typref="1"/>
+                            </Variables>
+                            <Body>
+                                <Nary_Pred op="&amp;">
+                                    <Exp_Comparison op=":">
+                                        <Id value="pp" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:2:1:1"/>
+                                        <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:2:1:2"/>
+                                    </Exp_Comparison>
+                                    <Nary_Pred op="&amp;">
+                                        <Exp_Comparison op=":">
+                                            <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,">
+                                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:1,"/>
+                                                <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:2"/>
+                                            </Binary_Exp>
+                                            <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:1,"/>
+                                                <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:2"/>
+                                            </Binary_Exp>
+                                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op=":">
+                                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,"/>
+                                            <Unary_Exp op="iseq" typref="3">
+                                                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                            </Unary_Exp>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Unary_Exp op="ran" typref="0">
+                                                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+                                            </Unary_Exp>
+                                            <Binary_Exp op="-s" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2">
+                                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:3:1:2:1:1"/>
+                                                <Nary_Exp op="{" typref="0">
+                                                    <Id value="pp" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:3:1:2:1:2:1"/>
+                                                </Nary_Exp>
+                                            </Binary_Exp>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op=":">
+                                            <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                            <Binary_Exp op=".." typref="0">
+                                                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                                <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                            </Binary_Exp>
+                                        </Exp_Comparison>
+                                    </Nary_Pred>
+                                </Nary_Pred>
+                            </Body>
+                        </Quantified_Pred>
+                    </Nary_Pred>
+                    <Nary_Pred op="&amp;">
+                        <Nary_Pred op="&amp;">
+                            <Unary_Pred op="not">
+                                <Exp_Comparison op="&gt;i">
+                                    <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:1"/>
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:2"/>
+                                </Exp_Comparison>
+                            </Unary_Pred>
+                            <Exp_Comparison op="=">
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:1"/>
+                                <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:2"/>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,">
+                                    <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:1,"/>
+                                    <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:2"/>
+                                </Binary_Exp>
+                                <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,">
+                                    <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:1,"/>
+                                    <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:3:1:2:1:2:1:2"/>
+                                </Binary_Exp>
+                                <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,"/>
+                                <Unary_Exp op="iseq" typref="3">
+                                    <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Unary_Exp op="ran" typref="0">
+                                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+                                </Unary_Exp>
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                <Binary_Exp op=".." typref="0">
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                    <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                    </Nary_Pred>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Refinement is correct</Tag>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="4"/>
+            <Goal>
+                <Nary_Pred op="or">
+                    <Nary_Pred op="&amp;">
+                        <Exp_Comparison op="&gt;i">
+                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:1"/>
+                            <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:2"/>
+                        </Exp_Comparison>
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,"/>
+                                <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                                <Binary_Exp op="-i" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2">
+                                    <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:2:1:2:1:1"/>
+                                    <Integer_Literal value="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:2:1:2:1:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,"/>
+                                <Unary_Exp op="iseq" typref="3">
+                                    <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Unary_Exp op="ran" typref="0">
+                                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+                                </Unary_Exp>
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                <Binary_Exp op=".." typref="0">
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                    <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                    </Nary_Pred>
+                    <Nary_Pred op="&amp;">
+                        <Unary_Pred op="not">
+                            <Exp_Comparison op="=">
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:1"/>
+                                <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:2"/>
+                            </Exp_Comparison>
+                        </Unary_Pred>
+                        <Quantified_Pred type="#">
+                            <Variables>
+                                <Id value="pp" typref="1"/>
+                            </Variables>
+                            <Body>
+                                <Nary_Pred op="&amp;">
+                                    <Exp_Comparison op=":">
+                                        <Id value="pp" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:2:1:1"/>
+                                        <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:2:1:2"/>
+                                    </Exp_Comparison>
+                                    <Nary_Pred op="&amp;">
+                                        <Exp_Comparison op=":">
+                                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,"/>
+                                            <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                                            <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op=":">
+                                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,"/>
+                                            <Unary_Exp op="iseq" typref="3">
+                                                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                            </Unary_Exp>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op="=">
+                                            <Unary_Exp op="ran" typref="0">
+                                                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+                                            </Unary_Exp>
+                                            <Binary_Exp op="-s" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2">
+                                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:3:1:2:1:1"/>
+                                                <Nary_Exp op="{" typref="0">
+                                                    <Id value="pp" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:2:1:3:1:2:1:2:1"/>
+                                                </Nary_Exp>
+                                            </Binary_Exp>
+                                        </Exp_Comparison>
+                                        <Exp_Comparison op=":">
+                                            <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                            <Binary_Exp op=".." typref="0">
+                                                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                                <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                            </Binary_Exp>
+                                        </Exp_Comparison>
+                                    </Nary_Pred>
+                                </Nary_Pred>
+                            </Body>
+                        </Quantified_Pred>
+                    </Nary_Pred>
+                    <Nary_Pred op="&amp;">
+                        <Nary_Pred op="&amp;">
+                            <Unary_Pred op="not">
+                                <Exp_Comparison op="&gt;i">
+                                    <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:1"/>
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:1:1:1:2"/>
+                                </Exp_Comparison>
+                            </Unary_Pred>
+                            <Exp_Comparison op="=">
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:1"/>
+                                <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:4:1:1:1:2:1:1:2"/>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:1,"/>
+                                <Id value="NAT" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:1:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:1,"/>
+                                <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:2:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:1,"/>
+                                <Unary_Exp op="iseq" typref="3">
+                                    <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:3:2:1"/>
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Unary_Exp op="ran" typref="0">
+                                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:1:1,"/>
+                                </Unary_Exp>
+                                <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:4:2"/>
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="free" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:3,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:1,"/>
+                                <Binary_Exp op=".." typref="0">
+                                    <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:1"/>
+                                    <Id value="freefreq" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:5:1:5:2:2"/>
+                                </Binary_Exp>
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                    </Nary_Pred>
+                </Nary_Pred>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="13902880440421433107">
+        <Tag>WellDefinedness_pay</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="cc" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:1:2:1:1"/>
+                <Id value="NATURAL1" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:1:2:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Unary_Pred op="not">
+                    <Exp_Comparison op="=">
+                        <Nary_Exp op="{" typref="0">
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:1:1,"/>
+                                <Id value="cc" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:1:2"/>
+                            </Binary_Exp>
+                            <Id value="limit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:2"/>
+                        </Nary_Exp>
+                        <EmptySet typref="0"/>
+                    </Exp_Comparison>
+                </Unary_Pred>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="/\" typref="0">
+                        <Nary_Exp op="{" typref="0">
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:1:1,"/>
+                                <Id value="cc" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:1:2"/>
+                            </Binary_Exp>
+                            <Id value="limit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:1:2:1:2:1:1:2"/>
+                        </Nary_Exp>
+                        <Binary_Exp op="-s" typref="0">
+                            <Id value="INTEGER" typref="0"/>
+                            <Id value="NATURAL" typref="0"/>
+                        </Binary_Exp>
+                    </Binary_Exp>
+                    <Unary_Exp op="FIN" typref="4">
+                        <Id value="INTEGER" typref="0"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="7762208966629081751">
+        <Tag>WellDefinedness_select</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Id value="credit" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:1:1"/>
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:2:1"/>
+                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:2:2:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Id value="creditr" suffix="1" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:1,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:1:1,"/>
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:2:1"/>
+                <Id value="TRACK" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:2:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Unary_Pred op="not">
+                <Exp_Comparison op=":">
+                    <Id value="tt" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:1:1:1"/>
+                    <Unary_Exp op="ran" typref="0">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:1:1:2:1,"/>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Ref_Hyp num="1"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:1,"/>
+                    <Unary_Exp op="seq" typref="3">
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:2:3:1:1:1:2:1:2:1:1,"/>
+                        </Unary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="18294686153079227351">
+        <Tag>WellDefinednessPrecondition_play</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Simple_Goal>
+            <Tag>Operation precondition is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:2:1:1:1,"/>
+                    <Unary_Exp op="seq" typref="3">
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:2:1:1:1,"/>
+                        </Unary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2376818358532899478">
+        <Tag>WellDefinedness_play</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="playset" typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:2:1:1"/>
+                    <EmptySet typref="0" tag="/home/yves/workspace_atelierb/Paperround/bdp//jukebox.bxml:1:7:3:2:1:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Unary_Exp op="size" typref="1">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:2:1:1:1,"/>
+                </Unary_Exp>
+                <Integer_Literal value="0" typref="1" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:2:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:1:2:1:1,"/>
+                    <Unary_Exp op="seq" typref="3">
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:1:2:1:1,"/>
+                        </Unary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Unary_Pred op="not">
+                    <Exp_Comparison op="=">
+                        <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:3:3:1:1:1:2:1:1,"/>
+                        <EmptySet typref="2"/>
+                    </Exp_Comparison>
+                </Unary_Pred>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="14052716899001132012">
+        <Tag>WellDefinedness_penalty</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="mchcst"/>
+        <Definition name="aprp"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="abs"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Local_Hyp num="1">
+            <Unary_Pred op="not">
+                <Exp_Comparison op="=">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:1:1:1,"/>
+                    <EmptySet typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:1:1:2"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Ref_Hyp num="1"/>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:2:1:2:1:1,"/>
+                    <Unary_Exp op="seq" typref="3">
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="playlist" suffix="1" typref="2" tag="/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:3:2,/home/yves/workspace_atelierb/Paperround/bdp/jukebox_r.bxml:1:7:4:1:1:2:1:2:1:1,"/>
+                        </Unary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER"/>
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER"/>
+        </Type>
+        <Type id="2">
+            <Unary_Exp op="POW">
+                <Binary_Exp op="*">
+                    <Id value="INTEGER"/>
+                    <Id value="INTEGER"/>
+                </Binary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="3">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Binary_Exp op="*">
+                        <Id value="INTEGER"/>
+                        <Id value="INTEGER"/>
+                    </Binary_Exp>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="4">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Id value="INTEGER"/>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

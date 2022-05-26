@@ -1,0 +1,15 @@
+THEORY ProofList IS
+_f(1) & ValuesLemmas.2,(_f(2) => _f(4));
+_f(1) & ValuesLemmas.1,(_f(2) => _f(3))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+"Valuation is correct";
+(((1|->STATE)) : (((1..2)*{STATE})));
+((({(((1|->STATE)) |-> ((2|->STATE)))}\/{(((2|->STATE)) |-> ((1|->STATE)))}\/{(((1|->STATE)) |-> ((1|->STATE)))})) : (((((1..2)*{STATE})) <-> (((1..2)*{STATE})))))
+END
+&
+THEORY EnumerateX IS
+STATE == {IDLE_STATE,SETGAZ_STATE}
+END

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='Allocate_r' type='refinement' position='true' semantic='true' b0check='false'>
+<Abstraction>Allocate</Abstraction>
+<Abstract_Variables>
+<Attr>
+<Pos l='10' c='1' s='18'/>
+</Attr>
+<Id value='allocated' typref='2'>
+<Attr>
+<Pos l='10' c='19' s='9'/>
+</Attr>
+</Id>
+</Abstract_Variables>
+<Initialisation>
+<Attr>
+<Pos l='12' c='1' s='14'/>
+</Attr>
+<Assignement_Sub>
+<Attr>
+<Pos l='12' c='29' s='2'/>
+</Attr>
+<Variables>
+<Id value='allocated' typref='2'>
+<Attr>
+<Pos l='12' c='19' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<EmptySet typref='2'>
+<Attr>
+<Pos l='12' c='32' s='2'/>
+</Attr>
+</EmptySet>
+</Values>
+</Assignement_Sub>
+</Initialisation>
+<Operations>
+<Operation name='choose'>
+<Attr>
+<Pos l='17' c='3' s='6'/>
+</Attr>
+<Input_Parameters>
+<Id value='nn' typref='1'>
+<Attr>
+<Pos l='17' c='10' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='17' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='allocated' typref='2'>
+<Attr>
+<Pos l='17' c='16' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='\/' typref='2'>
+<Attr>
+<Pos l='17' c='39' s='2'/>
+</Attr>
+<Id value='allocated' typref='2'>
+<Attr>
+<Pos l='17' c='29' s='9'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='2'>
+<Attr>
+<Pos l='17' c='42' s='1'/>
+</Attr>
+<Id value='nn' typref='1'>
+<Attr>
+<Pos l='17' c='43' s='2'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='query'>
+<Attr>
+<Pos l='19' c='3' s='2' endLine='23'/>
+</Attr>
+<Output_Parameters>
+<Id value='aa' typref='0'>
+<Attr>
+<Pos l='19' c='3' s='2'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='nn' typref='1'>
+<Attr>
+<Pos l='19' c='16' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='20' c='5' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='20' c='11' s='1'/>
+</Attr>
+<Id value='nn' typref='1'>
+<Attr>
+<Pos l='20' c='8' s='2'/>
+</Attr>
+</Id>
+<Id value='allocated' typref='2'>
+<Attr>
+<Pos l='20' c='13' s='9'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='21' c='13' s='2'/>
+</Attr>
+<Variables>
+<Id value='aa' typref='0'>
+<Attr>
+<Pos l='21' c='10' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Boolean_Literal value='TRUE' typref='0'>
+<Attr>
+<Pos l='21' c='16' s='4'/>
+</Attr>
+</Boolean_Literal>
+</Values>
+</Assignement_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='22' c='13' s='2'/>
+</Attr>
+<Variables>
+<Id value='aa' typref='0'>
+<Attr>
+<Pos l='22' c='10' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Boolean_Literal value='FALSE' typref='0'>
+<Attr>
+<Pos l='22' c='16' s='5'/>
+</Attr>
+</Boolean_Literal>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+<Operation name='allocate'>
+<Attr>
+<Pos l='27' c='3' s='2' endLine='31'/>
+</Attr>
+<Output_Parameters>
+<Id value='nn' typref='1'>
+<Attr>
+<Pos l='27' c='3' s='2'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Body>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='29' c='10' s='2'/>
+</Attr>
+<Variables>
+<Id value='nn' typref='1'>
+<Attr>
+<Pos l='29' c='7' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Unary_Exp op='imin' typref='1'>
+<Attr>
+<Pos l='29' c='13' s='3'/>
+</Attr>
+<Binary_Exp op='-s' typref='2'>
+<Attr>
+<Pos l='29' c='25' s='1'/>
+</Attr>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='29' c='19' s='2'/>
+</Attr>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='29' c='18' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='100' typref='1'>
+<Attr>
+<Pos l='29' c='21' s='3'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Id value='allocated' typref='2'>
+<Attr>
+<Pos l='29' c='26' s='9'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Unary_Exp>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='30' c='17' s='2'/>
+</Attr>
+<Variables>
+<Id value='allocated' typref='2'>
+<Attr>
+<Pos l='30' c='7' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='\/' typref='2'>
+<Attr>
+<Pos l='30' c='30' s='2'/>
+</Attr>
+<Id value='allocated' typref='2'>
+<Attr>
+<Pos l='30' c='20' s='9'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='2'>
+<Attr>
+<Pos l='30' c='33' s='1'/>
+</Attr>
+<Id value='nn' typref='1'>
+<Attr>
+<Pos l='30' c='34' s='2'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

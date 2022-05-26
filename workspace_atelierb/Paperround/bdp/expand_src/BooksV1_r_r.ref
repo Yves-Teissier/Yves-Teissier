@@ -1,0 +1,37 @@
+﻿/* BooksV1_r_r
+ * Author: yves
+ * Creation date: 22/02/2022
+ */
+
+REFINEMENT
+    BooksV1_r_r
+
+REFINES
+    BooksV1_r
+
+CONCRETE_CONSTANTS
+    bookarr
+
+PROPERTIES
+    bookarr : 0 .. card ( BOOK ) - 1 >->> BOOK /* >->> bijection total de 0..card(BOOK-1) dans BOOK */
+    /* bookarr contient tous les livres et un livre n'est qu'une seule fois dans l'array bookarr */
+
+ABSTRACT_VARIABLES
+    counter
+
+INVARIANT
+    counter : 0 .. card ( BOOK )
+    & ( % ii . ( ii : 1 .. card ( BOOK ) | bookarr ( ii - 1 ) ) ) /* l'ensemble des livres EST EGALE A les livres lus concaténé aux livres non lus (scheme) */
+        = ( % ii . ( ii : 1 .. counter | bookarr ( ii - 1 ) ) ) ^ scheme
+
+INITIALISATION
+    counter := 0
+
+OPERATIONS
+
+  bb <-- newbook =
+    BEGIN bb := bookarr ( counter ) ;
+          counter := counter + 1
+    END
+
+END

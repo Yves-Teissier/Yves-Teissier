@@ -1,0 +1,50 @@
+/* Iron2R
+ * Author: yves
+ * Creation date: 12/02/2022
+ */
+
+REFINEMENT Iron2R
+REFINES Iron2
+
+VARIABLES         
+    pilearr, counter
+
+CONSTANTS 
+    ee
+    
+PROPERTIES
+    ee:ITEM
+
+INVARIANT         
+    pilearr : 0..limit --> ITEM 
+    & counter : 0..limit
+    & counter = size(pile)
+// CHANGE V2 
+// The following linking invariant was replaced by the one below to simplify proofs
+//    & pile = (%ii. ( ii:1..counter | pilearr(ii-1)))
+// CHANGE V2 END
+    & pile = (1..counter) <| pilearr
+                  
+INITIALISATION    pilearr := (0..limit)*{ee} || counter := 0
+
+OPERATIONS
+
+  put(ii) = 
+      BEGIN
+        counter := counter + 1;
+        pilearr(counter) := ii
+      END;
+
+  ii <-- take = 
+  	BEGIN
+    	ii := pilearr(counter);
+    	counter := counter - 1
+  	END;
+  
+bb <-- query(ii) =
+    IF ii : pilearr[1..counter] 
+    THEN bb := TRUE 
+    ELSE bb := FALSE 
+    END
+
+END

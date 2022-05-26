@@ -1,0 +1,93 @@
+﻿<component_checksums>
+<base>
+<symbol name="NAME" value="jukebox" />
+<symbol name="TYPE" value="0" />
+<symbol name="PARAM" />
+<symbol name="CONSTRAINTS" />
+<symbol name="SEES" />
+<symbol name="INCLUDES" />
+<symbol name="IMPORTS" />
+<symbol name="PROMOTES" />
+<symbol name="EXTENDS" />
+<symbol name="USES" />
+<symbol name="SETS" value="b82057c0f8a7631cf533363631986a00" />
+<symbol name="CONCRETE_VAR" />
+<symbol name="ABSTRACT_VAR" value="14da04684cf684029f4c3aee10b580fb" />
+<symbol name="CONCRETE_CONST" value="aa9f73eea60a006820d0f8768bc8a3fc" />
+<symbol name="ABSTRACT_CONST" />
+<symbol name="PROPERTIES" value="10180f93bbc17f1e0b277cc1e1f1dcdf" />
+<symbol name="INVARIANT" value="b333875bc74c77f28236a379fc723cec" />
+<symbol name="VARIANT" />
+<symbol name="ASSERTIONS" />
+<symbol name="VALUES" />
+<operations>
+<operation>
+<symbol name="NAME" value="INITIALISATION" />
+<symbol name="COMPONENT" value="jukebox" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="2019fb774003f753b825a5d4e3a66376" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="pay" />
+<symbol name="COMPONENT" value="jukebox" />
+<symbol name="PRECONDITION" value="ec2c42dc9174f8b37a695d675d9a1fc7" />
+<symbol name="BODY" value="13ecdbc8e2468735dbb24aab9bf116d2" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="select" />
+<symbol name="COMPONENT" value="jukebox" />
+<symbol name="PRECONDITION" value="16a0f1d40eb1b894b081c7002671c2fc" />
+<symbol name="BODY" value="bcc823968c2f58203d601a3190e20192" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="play" />
+<symbol name="COMPONENT" value="jukebox" />
+<symbol name="PRECONDITION" value="26f24c64eec9a0b307cc6f32c37a97b6" />
+<symbol name="BODY" value="ab1831d4624f58b4e56cea8ca7741db3" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="penalty" />
+<symbol name="COMPONENT" value="jukebox" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="4743dfc7d98d5bd12876e11bff9a87b8" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+</operations>
+</base>
+<seen>
+</seen>
+<used>
+</used>
+<included>
+</included>
+<imported>
+</imported>
+<extended>
+</extended>
+<refined>
+</refined>
+</component_checksums>

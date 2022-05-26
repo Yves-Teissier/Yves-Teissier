@@ -1,0 +1,15 @@
+THEORY ProofList IS
+_f(1) & ValuesLemmas.2,(_f(2) => _f(4));
+_f(1) & ValuesLemmas.1,(_f(2) => _f(3))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+"Valuation is correct";
+(((1|->STATE)) : (((1..30)*{STATE})));
+((({(((1|->STATE)) |-> ((2|->STATE)))}\/{(((2|->STATE)) |-> ((3|->STATE)))}\/{(((3|->STATE)) |-> ((2|->STATE)))}\/{(((3|->STATE)) |-> ((4|->STATE)))}\/{(((4|->STATE)) |-> ((3|->STATE)))}\/{(((3|->STATE)) |-> ((7|->STATE)))}\/{(((7|->STATE)) |-> ((3|->STATE)))}\/{(((3|->STATE)) |-> ((6|->STATE)))}\/{(((6|->STATE)) |-> ((7|->STATE)))}\/{(((3|->STATE)) |-> ((5|->STATE)))}\/{(((5|->STATE)) |-> ((8|->STATE)))}\/{(((8|->STATE)) |-> ((9|->STATE)))}\/{(((9|->STATE)) |-> ((10|->STATE)))}\/{(((10|->STATE)) |-> ((11|->STATE)))}\/{(((11|->STATE)) |-> ((12|->STATE)))}\/{(((12|->STATE)) |-> ((13|->STATE)))}\/{(((13|->STATE)) |-> ((14|->STATE)))}\/{(((14|->STATE)) |-> ((15|->STATE)))}\/{(((15|->STATE)) |-> ((16|->STATE)))}\/{(((16|->STATE)) |-> ((17|->STATE)))}\/{(((17|->STATE)) |-> ((18|->STATE)))}\/{(((18|->STATE)) |-> ((19|->STATE)))}\/{(((19|->STATE)) |-> ((19|->STATE)))}\/{(((19|->STATE)) |-> ((20|->STATE)))}\/{(((20|->STATE)) |-> ((21|->STATE)))}\/{(((21|->STATE)) |-> ((22|->STATE)))}\/{(((22|->STATE)) |-> ((23|->STATE)))}\/{(((23|->STATE)) |-> ((24|->STATE)))}\/{(((24|->STATE)) |-> ((25|->STATE)))}\/{(((25|->STATE)) |-> ((26|->STATE)))}\/{(((26|->STATE)) |-> ((27|->STATE)))}\/{(((27|->STATE)) |-> ((28|->STATE)))}\/{(((28|->STATE)) |-> ((29|->STATE)))}\/{(((29|->STATE)) |-> ((30|->STATE)))}\/{(((30|->STATE)) |-> ((29|->STATE)))}\/{(((29|->STATE)) |-> ((1|->STATE)))})) : (((((1..30)*{STATE})) <-> (((1..30)*{STATE})))))
+END
+&
+THEORY EnumerateX IS
+STATE == {S_DEBUT,S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE,S_DIGICODE,S_ACCES_REFUSE,S_ACCESS_AUTORISE,S_PERTE_DE_TEMPS_1,S_INCIDENT_NIVEAU_4,S_RECHERCHE_INCIDENT_1,S_INCIDENT_MAJEUR_1,S_PROTOCOLE_ACCES_PROCEDURE_1,S_MODE_AIDE_1,S_ENIGME_CABLES_1,S_INCIDENT_MAJEUR_RESOLU_1,S_RECHERCHE_INCIDENT_2,S_INCIDENT_MAJEUR_2,S_PROTOCOLE_ACCES_PROCEDURE_2,S_MODE_AIDE_2,S_ENIGME_CABLES_2,S_ENIGME_CABLES_2S2,S_INCIDENT_MAJEUR_RESOLU_2,S_RECHERCHE_INCIDENT_3,S_INCIDENT_MAJEUR_3,S_PROTOCOLE_ACCES_PROCEDURE_3,S_MODE_AIDE_3,S_ENIGME_ACTIVATION_BALANCE_3,S_ENIGME_POST_ACTIVATION_BALANCE_3,S_ENIGME_NIVEAU_DEAU,S_INCIDENT_RESOLU,S_GENERIC,S_BILAN_PARTIE}
+END

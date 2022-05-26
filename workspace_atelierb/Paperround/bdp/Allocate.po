@@ -1,0 +1,19 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(7) & Operation_allocate.1,(_f(8) & _f(5) => _f(9));
+_f(1) & _f(2) & _f(3) & _f(4) & Operation_choose.1,(_f(5) => _f(6))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+allocated : POW( ((1) .. (100)));
+((nn) : (((1) .. (100))));
+not(((nn) : (allocated)));
+"Invariant is preserved";
+((allocated) \/ (({nn}))) : POW( ((1) .. (100)));
+not((((((1) .. (100)) - allocated)) = ({})));
+((mm) : ((((1) .. (100)) - allocated)));
+((allocated) \/ (({mm}))) : POW( ((1) .. (100)))
+END
+&
+THEORY EnumerateX
+END

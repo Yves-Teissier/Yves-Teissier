@@ -1,0 +1,84 @@
+THEORY BalanceX IS
+race,16,0,0,13,0,0,0;
+Initialisation,1,0,0,1,0,0,0;
+Operation_disquality,1,0,0,0,0,0,0;
+Operation_finished,1,0,0,0,0,0,0;
+WellDefinednessPrecondition_disquality,1,0,0,1,0,0,0;
+WellDefinednessPrecondition_medals,1,0,0,1,0,0,0;
+WellDefinednessPrecondition_query,1,0,0,1,0,0,0;
+WellDefinedness_disquality,5,0,0,5,0,0,0;
+WellDefinedness_finished,1,0,0,1,0,0,0;
+WellDefinedness_medals,2,0,0,1,0,0,0;
+WellDefinedness_query,2,0,0,2,0,0,0
+END
+&
+THEORY ProofState IS
+Unproved;
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Unproved;
+Unproved;
+Proved(0)
+END
+&
+THEORY MethodList IS
+?;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+pr;
+?;
+?;
+pr
+END
+&
+THEORY PassList IS
+Force(0),(?; 0; 1; 2; 3);
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),(?; 0);
+Force(0),(?; 0; 1; 2; 3);
+Force(0),?
+END
+&
+THEORY Status IS
+race,16,0,13,0,0,0;
+Initialisation,1,0,1,0,0,0;
+Operation_disquality,1,0,0,0,0,0;
+Operation_finished,1,0,0,0,0,0;
+WellDefinednessPrecondition_disquality,1,0,1,0,0,0;
+WellDefinednessPrecondition_medals,1,0,1,0,0,0;
+WellDefinednessPrecondition_query,1,0,1,0,0,0;
+WellDefinedness_disquality,5,0,5,0,0,0;
+WellDefinedness_finished,1,0,1,0,0,0;
+WellDefinedness_medals,2,0,1,0,0,0;
+WellDefinedness_query,2,0,2,0,0,0
+END

@@ -1,0 +1,46 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(5) & _f(21) & WellDefinedness_medals.2,(_f(12) => _f(22));
+_f(1) & _f(2) & _f(5) & _f(21) & WellDefinedness_medals.1,(_f(12) => _f(13));
+_f(1) & _f(2) & _f(5) & WellDefinednessPrecondition_medals.1,(_f(14) => _f(13));
+_f(1) & _f(2) & _f(5) & _f(9) & _f(10) & WellDefinedness_disquality.5,(_f(12) => _f(20));
+_f(1) & _f(2) & _f(5) & _f(9) & _f(10) & WellDefinedness_disquality.4,(_f(12) => _f(19));
+_f(1) & _f(2) & _f(5) & _f(9) & _f(10) & WellDefinedness_disquality.3,(_f(12) => _f(18));
+_f(1) & _f(2) & _f(5) & _f(9) & _f(10) & WellDefinedness_disquality.2,(_f(12) => _f(17));
+_f(1) & _f(2) & _f(5) & _f(9) & _f(10) & WellDefinedness_disquality.1,(_f(12) => _f(13));
+_f(1) & _f(2) & _f(5) & WellDefinednessPrecondition_disquality.1,(_f(9) & _f(14) => _f(13));
+_f(1) & _f(2) & _f(5) & _f(9) & _f(10) & WellDefinedness_query.2,(_f(12) => _f(16));
+_f(1) & _f(2) & _f(5) & _f(9) & _f(10) & WellDefinedness_query.1,(_f(12) => _f(15));
+_f(1) & _f(2) & _f(5) & WellDefinednessPrecondition_query.1,(_f(9) & _f(14) => _f(13));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(7) & WellDefinedness_finished.1,(_f(12) => _f(13));
+_f(1) & _f(2) & _f(5) & _f(9) & _f(10) & Operation_disquality.1,(_f(3) => _f(11));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(7) & Operation_finished.1,(_f(3) => _f(8));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+CAR: FIN(INTEGER) & not(CAR = {});
+"Invariant is preserved";
+(({}) : (iseq(CAR)));
+finish : seq(CAR) & finish : NATURAL-{0} +-> CAR & finish ~ : CAR +-> NATURAL-{0} & ((finish) : (iseq(CAR)));
+((rr) : (CAR));
+not(((rr) : (ran(finish))));
+((((finish) <- (rr))) : (iseq(CAR)));
+((pp) : ((NAT-{0})));
+(pp <= size(finish));
+((((((finish) /|\ ((pp - 1)))) ^ (((finish) \|/ (pp))))) : (iseq(CAR)));
+"Operation is well defined";
+((finish) : (seq(ran(finish))));
+"Operation precondition is well defined";
+((pp) : (dom(finish)));
+((finish) : (((dom(finish)) +-> (ran(finish)))));
+(((pp - 1)) : (((0) .. (size(finish)))));
+((pp) : (((0) .. (size(finish)))));
+((((finish) /|\ ((pp - 1)))) : (seq(ran(((finish) /|\ ((pp - 1)))))));
+((((finish) \|/ (pp))) : (seq(ran(((finish) \|/ (pp))))));
+(size(finish) <= 3);
+((3) : (((0) .. (size(finish)))))
+END
+&
+THEORY EnumerateX
+END

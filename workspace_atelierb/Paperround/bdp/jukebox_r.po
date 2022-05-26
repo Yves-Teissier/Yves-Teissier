@@ -1,0 +1,96 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & WellDefinedness_penalty.1,(_f(34) & _f(42) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(29) & _f(31) & WellDefinedness_play.2,(_f(42) => _f(34));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(29) & _f(31) & WellDefinedness_play.1,(_f(42) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & WellDefinednessPrecondition_play.1,(_f(45) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & WellDefinedness_select.1,(_f(18) & _f(42) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & WellDefinedness_pay.2,(_f(42) => _f(44));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & WellDefinedness_pay.1,(_f(42) => _f(43));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & Operation_penalty.3,(_f(37) & _f(38) & _f(4) => _f(41));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & Operation_penalty.2,(_f(37) & _f(17) & _f(4) => _f(40));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & Operation_penalty.1,(_f(34) & _f(4) => _f(39));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(29) & _f(30) & _f(31) & Operation_play.5,(_f(4) => _f(36));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(29) & _f(30) & _f(31) & Operation_play.4,(_f(4) => _f(35));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(29) & _f(30) & _f(31) & Operation_play.3,(_f(4) => _f(34));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(29) & _f(30) & _f(31) & Operation_play.2,(_f(4) => _f(33));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(29) & _f(30) & _f(31) & Operation_play.1,(_f(4) => _f(32));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(29) & _f(30) & Precondition_play.1,(_f(16) => _f(31));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.20,(_f(21) & _f(20) & _f(4) => _f(26));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.19,(_f(21) & _f(20) & _f(4) => _f(27));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.18,(_f(21) & _f(20) & _f(4) => _f(28));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.17,(_f(21) & _f(20) & _f(4) => _f(25));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.16,(_f(21) & _f(19) & _f(4) => _f(26));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.15,(_f(21) & _f(19) & _f(4) => _f(25));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.14,(_f(21) & _f(19) & _f(4) => _f(24));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.13,(_f(21) & _f(19) & _f(4) => _f(8));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.12,(_f(21) & _f(19) & _f(4) => _f(28));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.11,(_f(18) & _f(20) & _f(4) => _f(26));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.10,(_f(18) & _f(20) & _f(4) => _f(27));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.9,(_f(18) & _f(20) & _f(4) => _f(23));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.8,(_f(18) & _f(20) & _f(4) => _f(22));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.7,(_f(18) & _f(20) & _f(4) => _f(25));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.6,(_f(18) & _f(19) & _f(4) => _f(26));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.5,(_f(18) & _f(19) & _f(4) => _f(25));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.4,(_f(18) & _f(19) & _f(4) => _f(24));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.3,(_f(18) & _f(19) & _f(4) => _f(8));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.2,(_f(18) & _f(19) & _f(4) => _f(23));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & _f(17) & _f(15) & Operation_select.1,(_f(18) & _f(19) & _f(4) => _f(22));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(14) & _f(15) & Precondition_select.1,(_f(16) => _f(17));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & Operation_pay.2,(_f(4) => _f(13));
+_f(1) & _f(2) & _f(3) & _f(9) & _f(10) & _f(11) & Operation_pay.1,(_f(4) => _f(12));
+_f(1) & _f(2) & _f(3) & Initialisation.4,(_f(4) => _f(8));
+_f(1) & _f(2) & _f(3) & Initialisation.3,(_f(4) => _f(7));
+_f(1) & _f(2) & _f(3) & Initialisation.2,(_f(4) => _f(6));
+_f(1) & _f(2) & _f(3) & Initialisation.1,(_f(4) => _f(5))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+TRACK: FIN(INTEGER) & not(TRACK = {}) & ((limit) : ((NATURAL-{0})));
+((freefreq) : ((NAT-{0})));
+"Refinement is correct";
+((0) : (NAT));
+(({}) : (iseq(TRACK)));
+((ran({})) = ({}));
+((0) : (((0) .. (freefreq))));
+credit : INTEGER & 0 <= credit & ((credit) : (NATURAL)) & (credit <= limit) & playset : POW( TRACK);
+((creditr$1) : (NAT)) & ((creditr$1) = (credit)) & playlist$1 : seq(TRACK) & playlist$1 : NATURAL-{0} +-> TRACK & playlist$1 ~ : TRACK +-> NATURAL-{0} & ((playlist$1) : (iseq(TRACK))) & ((ran(playlist$1)) = (playset)) & ((free$1) : (((0) .. (freefreq))));
+((cc) : ((NATURAL-{0})));
+((min(({(creditr$1 + cc)}\/{limit}))) : (NAT));
+((min(({(creditr$1 + cc)}\/{limit}))) = (min(({(credit + cc)}\/{limit}))));
+(0 +1 <= credit);
+((tt) : (TRACK));
+"Precondition can be deduced";
+(0 +1 <= creditr$1);
+not(((tt) : (ran(playlist$1))));
+((free$1) = (freefreq));
+not(((free$1) = (freefreq)));
+((tt) : (ran(playlist$1)));
+((((playlist$1) <- (tt))) : (iseq(TRACK)));
+((ran(((playlist$1) <- (tt)))) = (((playset) \/ (({tt})))));
+((((creditr$1) = ((credit - 1)))) or (((creditr$1) = (credit))));
+(((creditr$1 - 1)) : (NAT));
+(((((creditr$1 - 1)) = ((credit - 1)))) or ((((creditr$1 - 1)) = (credit))));
+(((free$1 + 1)) : (((0) .. (freefreq))));
+((ran(playlist$1)) = (((playset) \/ (({tt})))));
+not(((playset) = ({})));
+((tt) = (tt$1));
+(0 +1 <= size(playlist$1));
+((tail(playlist$1)) : (iseq(TRACK)));
+((playlist$1) : (seq(ran(playlist$1))));
+not(((playlist$1) = ({})));
+((first(playlist$1)) : (playset));
+((ran(tail(playlist$1))) = ((playset - ({first(playlist$1)}))));
+((playlist$1) = ({}));
+not((0 +1 <= creditr$1));
+(((0 +1 <= credit) & ((creditr$1) : (NAT)) & ((creditr$1) = ((credit - 1))) & ((tail(playlist$1)) : (iseq(TRACK))) & ((ran(tail(playlist$1))) = (playset)) & ((free$1) : (((0) .. (freefreq))))) or (not(((playset) = ({}))) & #(pp).(((pp) : (playset)) & ((creditr$1) : (NAT)) & ((creditr$1) = (credit)) & ((tail(playlist$1)) : (iseq(TRACK))) & ((ran(tail(playlist$1))) = ((playset - ({pp})))) & ((free$1) : (((0) .. (freefreq)))))) or (not((0 +1 <= credit)) & ((playset) = ({})) & ((creditr$1) : (NAT)) & ((creditr$1) = (credit)) & ((tail(playlist$1)) : (iseq(TRACK))) & ((ran(tail(playlist$1))) = (playset)) & ((free$1) : (((0) .. (freefreq))))));
+(((0 +1 <= credit) & (((creditr$1 - 1)) : (NAT)) & (((creditr$1 - 1)) = ((credit - 1))) & ((playlist$1) : (iseq(TRACK))) & ((ran(playlist$1)) = (playset)) & ((free$1) : (((0) .. (freefreq))))) or (not(((playset) = ({}))) & #(pp).(((pp) : (playset)) & (((creditr$1 - 1)) : (NAT)) & (((creditr$1 - 1)) = (credit)) & ((playlist$1) : (iseq(TRACK))) & ((ran(playlist$1)) = ((playset - ({pp})))) & ((free$1) : (((0) .. (freefreq)))))) or (not((0 +1 <= credit)) & ((playset) = ({})) & (((creditr$1 - 1)) : (NAT)) & (((creditr$1 - 1)) = (credit)) & ((playlist$1) : (iseq(TRACK))) & ((ran(playlist$1)) = (playset)) & ((free$1) : (((0) .. (freefreq))))));
+(((0 +1 <= credit) & ((creditr$1) : (NAT)) & ((creditr$1) = ((credit - 1))) & ((playlist$1) : (iseq(TRACK))) & ((ran(playlist$1)) = (playset)) & ((free$1) : (((0) .. (freefreq))))) or (not(((playset) = ({}))) & #(pp).(((pp) : (playset)) & ((creditr$1) : (NAT)) & ((creditr$1) = (credit)) & ((playlist$1) : (iseq(TRACK))) & ((ran(playlist$1)) = ((playset - ({pp})))) & ((free$1) : (((0) .. (freefreq)))))) or (not((0 +1 <= credit)) & ((playset) = ({})) & ((creditr$1) : (NAT)) & ((creditr$1) = (credit)) & ((playlist$1) : (iseq(TRACK))) & ((ran(playlist$1)) = (playset)) & ((free$1) : (((0) .. (freefreq))))));
+"Operation is well defined";
+not(((({(creditr$1 + cc)}\/{limit})) = ({})));
+((((({(creditr$1 + cc)}\/{limit})) /\ ((INTEGER - NATURAL)))) : (FIN(INTEGER)));
+"Operation precondition is well defined"
+END
+&
+THEORY EnumerateX
+END

@@ -1,0 +1,30 @@
+﻿/* MultRussian_i
+ * Author: yves
+ * Creation date: 08/03/2022
+ */
+
+IMPLEMENTATION MultRussian_i
+
+REFINES
+   MultRussian
+OPERATIONS
+   total <-- Mult ( aa , bb ) =
+    VAR xx , yy IN
+        xx := aa ;
+        yy := bb ;
+        total := 0 ;
+        WHILE xx /= 0
+        DO
+            VAR rest IN
+                rest := xx mod 2 ;
+                IF ( rest = 1 ) THEN
+                    total := total + yy
+                END
+                END ;
+            xx := xx / 2 ;
+            yy := yy * 2
+        INVARIANT xx : NAT & total + xx * yy = aa * bb
+        VARIANT xx
+        END
+    END
+END

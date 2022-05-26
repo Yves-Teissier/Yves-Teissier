@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='race_example' type='abstraction' position='true' semantic='true' b0check='false'>
+<Extends>
+<Attr>
+<Pos l='8' c='1' s='7'/>
+</Attr>
+<Referenced_Machine>
+<Attr>
+<Pos l='8' c='9' s='4'/>
+</Attr>
+<Name>race</Name>
+</Referenced_Machine>
+</Extends>
+<Concrete_Constants>
+<Attr>
+<Pos l='10' c='1' s='18'/>
+</Attr>
+<Id value='Ferrari' typref='4'>
+<Attr>
+<Pos l='11' c='5' s='7'/>
+</Attr>
+</Id>
+<Id value='Mercedes' typref='4'>
+<Attr>
+<Pos l='11' c='14' s='8'/>
+</Attr>
+</Id>
+<Id value='Williams' typref='4'>
+<Attr>
+<Pos l='11' c='24' s='8'/>
+</Attr>
+</Id>
+<Id value='McLaren' typref='4'>
+<Attr>
+<Pos l='11' c='34' s='7'/>
+</Attr>
+</Id>
+<Id value='Lotus' typref='4'>
+<Attr>
+<Pos l='11' c='43' s='5'/>
+</Attr>
+</Id>
+</Concrete_Constants>
+<Properties>
+<Attr>
+<Pos l='13' c='1' s='10'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='14' c='13' s='1'/>
+</Attr>
+<Id value='Ferrari' typref='4'>
+<Attr>
+<Pos l='14' c='5' s='7'/>
+</Attr>
+</Id>
+<Id value='CAR' typref='5'>
+<Attr>
+<Pos l='14' c='15' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='14' c='30' s='1'/>
+</Attr>
+<Id value='Mercedes' typref='4'>
+<Attr>
+<Pos l='14' c='21' s='8'/>
+</Attr>
+</Id>
+<Id value='CAR' typref='5'>
+<Attr>
+<Pos l='14' c='32' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='14' c='47' s='1'/>
+</Attr>
+<Id value='Williams' typref='4'>
+<Attr>
+<Pos l='14' c='38' s='8'/>
+</Attr>
+</Id>
+<Id value='CAR' typref='5'>
+<Attr>
+<Pos l='14' c='49' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='15' c='13' s='1'/>
+</Attr>
+<Id value='McLaren' typref='4'>
+<Attr>
+<Pos l='15' c='5' s='7'/>
+</Attr>
+</Id>
+<Id value='CAR' typref='5'>
+<Attr>
+<Pos l='15' c='15' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='15' c='27' s='1'/>
+</Attr>
+<Id value='Lotus' typref='4'>
+<Attr>
+<Pos l='15' c='21' s='5'/>
+</Attr>
+</Id>
+<Id value='CAR' typref='5'>
+<Attr>
+<Pos l='15' c='29' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='16' c='9' s='1'/>
+</Attr>
+<Id value='CAR' typref='5'>
+<Attr>
+<Pos l='16' c='5' s='3'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='5'>
+<Attr>
+<Pos l='16' c='11' s='1'/>
+</Attr>
+<Id value='Ferrari' typref='4'>
+<Attr>
+<Pos l='16' c='12' s='7'/>
+</Attr>
+</Id>
+<Id value='Mercedes' typref='4'>
+<Attr>
+<Pos l='16' c='21' s='8'/>
+</Attr>
+</Id>
+<Id value='Williams' typref='4'>
+<Attr>
+<Pos l='16' c='31' s='8'/>
+</Attr>
+</Id>
+<Id value='McLaren' typref='4'>
+<Attr>
+<Pos l='16' c='41' s='7'/>
+</Attr>
+</Id>
+<Id value='Lotus' typref='4'>
+<Attr>
+<Pos l='16' c='50' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='16' c='69' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='16' c='59' s='4'/>
+</Attr>
+<Id value='CAR' typref='5'>
+<Attr>
+<Pos l='16' c='64' s='3'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value='5' typref='1'>
+<Attr>
+<Pos l='16' c='71' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Nary_Pred>
+</Properties>
+<Initialisation>
+<Skip/>
+</Initialisation>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Id value='CAR'/>
+</Type>
+<Type id='5'>
+<Unary_Exp op='POW'>
+<Id value='CAR'/>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

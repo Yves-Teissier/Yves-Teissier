@@ -1,0 +1,21 @@
+THEORY BalanceX IS
+target_i,1,0,0,1,0,0,0;
+Operation_target_get_target,1,0,0,1,0,0,0
+END
+&
+THEORY ProofState IS
+Proved(0)
+END
+&
+THEORY MethodList IS
+pr
+END
+&
+THEORY PassList IS
+Force(0),?
+END
+&
+THEORY Status IS
+target_i,1,0,1,0,0,0;
+Operation_target_get_target,1,0,1,0,0,0
+END

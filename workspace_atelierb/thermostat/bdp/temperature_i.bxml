@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='temperature_i' type='implementation' position='true' semantic='true' b0check='false'>
+<Abstraction>temperature</Abstraction>
+<Initialisation>
+<Skip/>
+</Initialisation>
+<Operations>
+<Operation name='temperature_get_temperature'>
+<Attr>
+<Pos l='10' c='5' s='15' endLine='14'/>
+</Attr>
+<Output_Parameters>
+<Id value='new_temperature' typref='1'>
+<Attr>
+<Pos l='10' c='5' s='15'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='13' c='25' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_temperature' typref='1'>
+<Attr>
+<Pos l='13' c='9' s='15'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='1900' typref='1'>
+<Attr>
+<Pos l='13' c='28' s='4'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

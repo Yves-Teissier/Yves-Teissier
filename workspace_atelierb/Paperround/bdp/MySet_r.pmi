@@ -1,0 +1,98 @@
+THEORY BalanceX IS
+MySet_r,24,0,0,9,0,0,0;
+Initialisation,4,0,0,4,0,0,0;
+Operation_Add,7,0,0,2,0,0,0;
+Operation_Discard,10,0,0,2,0,0,0;
+WellDefinednessInvariant,1,0,0,0,0,0,0;
+WellDefinedness_Discard,2,0,0,1,0,0,0
+END
+&
+THEORY ProofState IS
+Proved(0);
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Unproved;
+Proved(0);
+Unproved;
+Unproved;
+Proved(0);
+Unproved;
+Unproved;
+Unproved;
+Proved(0);
+Unproved;
+Proved(0);
+Unproved;
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0)
+END
+&
+THEORY MethodList IS
+pr;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+?;
+pr;
+?;
+?;
+pr;
+?;
+?;
+?;
+pr;
+?;
+pr;
+?;
+pr;
+pr;
+pr;
+pr
+END
+&
+THEORY PassList IS
+Force(0),?;
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),?;
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),?;
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),(?; 0);
+Force(0),?;
+Force(0),(?; 0);
+Force(0),?;
+Force(0),(?; 0);
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?
+END
+&
+THEORY Status IS
+MySet_r,24,0,9,0,0,0;
+Initialisation,4,0,4,0,0,0;
+Operation_Add,7,0,2,0,0,0;
+Operation_Discard,10,0,2,0,0,0;
+WellDefinednessInvariant,1,0,0,0,0,0;
+WellDefinedness_Discard,2,0,1,0,0,0
+END

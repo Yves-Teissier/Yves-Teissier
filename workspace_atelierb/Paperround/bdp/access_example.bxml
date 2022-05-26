@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='access_example' type='abstraction' position='true' semantic='true' b0check='false'>
+<Extends>
+<Attr>
+<Pos l='8' c='1' s='7'/>
+</Attr>
+<Referenced_Machine>
+<Attr>
+<Pos l='9' c='5' s='6'/>
+</Attr>
+<Name>access</Name>
+</Referenced_Machine>
+</Extends>
+<Concrete_Constants>
+<Attr>
+<Pos l='11' c='1' s='18'/>
+</Attr>
+<Id value='brother' typref='4'>
+<Attr>
+<Pos l='12' c='5' s='7'/>
+</Attr>
+</Id>
+<Id value='hp' typref='4'>
+<Attr>
+<Pos l='12' c='14' s='2'/>
+</Attr>
+</Id>
+<Id value='lexmak' typref='4'>
+<Attr>
+<Pos l='12' c='18' s='6'/>
+</Attr>
+</Id>
+<Id value='rectoverso' typref='5'>
+<Attr>
+<Pos l='12' c='26' s='10'/>
+</Attr>
+</Id>
+<Id value='couleur' typref='5'>
+<Attr>
+<Pos l='12' c='38' s='7'/>
+</Attr>
+</Id>
+<Id value='ppp100' typref='5'>
+<Attr>
+<Pos l='12' c='47' s='6'/>
+</Attr>
+</Id>
+</Concrete_Constants>
+<Properties>
+<Attr>
+<Pos l='14' c='1' s='10'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='15' c='13' s='1'/>
+</Attr>
+<Id value='brother' typref='4'>
+<Attr>
+<Pos l='15' c='5' s='7'/>
+</Attr>
+</Id>
+<Id value='PRINTER' typref='6'>
+<Attr>
+<Pos l='15' c='15' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='15' c='28' s='1'/>
+</Attr>
+<Id value='hp' typref='4'>
+<Attr>
+<Pos l='15' c='25' s='2'/>
+</Attr>
+</Id>
+<Id value='PRINTER' typref='6'>
+<Attr>
+<Pos l='15' c='30' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='15' c='47' s='1'/>
+</Attr>
+<Id value='lexmak' typref='4'>
+<Attr>
+<Pos l='15' c='40' s='6'/>
+</Attr>
+</Id>
+<Id value='PRINTER' typref='6'>
+<Attr>
+<Pos l='15' c='49' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='16' c='16' s='1'/>
+</Attr>
+<Id value='rectoverso' typref='5'>
+<Attr>
+<Pos l='16' c='5' s='10'/>
+</Attr>
+</Id>
+<Id value='OPTION' typref='7'>
+<Attr>
+<Pos l='16' c='18' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='16' c='35' s='1'/>
+</Attr>
+<Id value='couleur' typref='5'>
+<Attr>
+<Pos l='16' c='27' s='7'/>
+</Attr>
+</Id>
+<Id value='OPTION' typref='7'>
+<Attr>
+<Pos l='16' c='37' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='16' c='53' s='1'/>
+</Attr>
+<Id value='ppp100' typref='5'>
+<Attr>
+<Pos l='16' c='46' s='6'/>
+</Attr>
+</Id>
+<Id value='OPTION' typref='7'>
+<Attr>
+<Pos l='16' c='55' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='17' c='13' s='1'/>
+</Attr>
+<Id value='PRINTER' typref='6'>
+<Attr>
+<Pos l='17' c='5' s='7'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='6'>
+<Attr>
+<Pos l='17' c='15' s='1'/>
+</Attr>
+<Id value='brother' typref='4'>
+<Attr>
+<Pos l='17' c='16' s='7'/>
+</Attr>
+</Id>
+<Id value='hp' typref='4'>
+<Attr>
+<Pos l='17' c='25' s='2'/>
+</Attr>
+</Id>
+<Id value='lexmak' typref='4'>
+<Attr>
+<Pos l='17' c='29' s='6'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='17' c='53' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='17' c='39' s='4'/>
+</Attr>
+<Id value='PRINTER' typref='6'>
+<Attr>
+<Pos l='17' c='44' s='7'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='17' c='55' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='18' c='12' s='1'/>
+</Attr>
+<Id value='OPTION' typref='7'>
+<Attr>
+<Pos l='18' c='5' s='6'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='7'>
+<Attr>
+<Pos l='18' c='14' s='1'/>
+</Attr>
+<Id value='rectoverso' typref='5'>
+<Attr>
+<Pos l='18' c='15' s='10'/>
+</Attr>
+</Id>
+<Id value='couleur' typref='5'>
+<Attr>
+<Pos l='18' c='27' s='7'/>
+</Attr>
+</Id>
+<Id value='ppp100' typref='5'>
+<Attr>
+<Pos l='18' c='36' s='6'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='18' c='59' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='18' c='46' s='4'/>
+</Attr>
+<Id value='OPTION' typref='7'>
+<Attr>
+<Pos l='18' c='51' s='6'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value='3' typref='1'>
+<Attr>
+<Pos l='18' c='61' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Nary_Pred>
+</Properties>
+<Initialisation>
+<Skip/>
+</Initialisation>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Id value='PRINTER'/>
+</Type>
+<Type id='5'>
+<Id value='OPTION'/>
+</Type>
+<Type id='6'>
+<Unary_Exp op='POW'>
+<Id value='PRINTER'/>
+</Unary_Exp>
+</Type>
+<Type id='7'>
+<Unary_Exp op='POW'>
+<Id value='OPTION'/>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

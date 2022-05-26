@@ -1,0 +1,121 @@
+﻿<component_checksums>
+<base>
+<symbol name="NAME" value="MultRussian_i" />
+<symbol name="TYPE" value="0" />
+<symbol name="PARAM" />
+<symbol name="CONSTRAINTS" />
+<symbol name="SEES" />
+<symbol name="INCLUDES" />
+<symbol name="IMPORTS" />
+<symbol name="PROMOTES" />
+<symbol name="EXTENDS" />
+<symbol name="USES" />
+<symbol name="SETS" />
+<symbol name="CONCRETE_VAR" />
+<symbol name="ABSTRACT_VAR" />
+<symbol name="CONCRETE_CONST" />
+<symbol name="ABSTRACT_CONST" />
+<symbol name="PROPERTIES" />
+<symbol name="INVARIANT" />
+<symbol name="VARIANT" />
+<symbol name="ASSERTIONS" />
+<symbol name="VALUES" />
+<operations>
+<operation>
+<symbol name="NAME" value="INITIALISATION" />
+<symbol name="COMPONENT" value="MultRussian_i" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="00000000000000000000000000000000" />
+<called>
+</called>
+<refined>
+<operation>
+<symbol name="NAME" value="INITIALISATION" />
+<symbol name="COMPONENT" value="MultRussian" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="00000000000000000000000000000000" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+</refined>
+</operation>
+
+<operation>
+<symbol name="NAME" value="Mult" />
+<symbol name="COMPONENT" value="MultRussian_i" />
+<symbol name="PRECONDITION" />
+<symbol name="BODY" value="ee43bfd08e916565df098659b403e6ce" />
+<called>
+</called>
+<refined>
+<operation>
+<symbol name="NAME" value="Mult" />
+<symbol name="COMPONENT" value="MultRussian" />
+<symbol name="PRECONDITION" value="0a6a5aedb24aa7150315e0be77704e93" />
+<symbol name="BODY" value="9cc43a4389b8e1cf27b5f75b77010590" />
+<called>
+</called>
+<refined>
+</refined>
+</operation>
+
+</refined>
+</operation>
+
+</operations>
+</base>
+<seen>
+</seen>
+<used>
+</used>
+<included>
+</included>
+<imported>
+</imported>
+<extended>
+</extended>
+<refined>
+<component_checksums>
+<base>
+<symbol name="NAME" value="MultRussian" />
+<symbol name="TYPE" value="1" />
+<symbol name="PARAM" />
+<symbol name="CONSTRAINTS" />
+<symbol name="SEES" />
+<symbol name="INCLUDES" />
+<symbol name="IMPORTS" />
+<symbol name="PROMOTES" />
+<symbol name="EXTENDS" />
+<symbol name="USES" />
+<symbol name="SETS" />
+<symbol name="CONCRETE_VAR" />
+<symbol name="ABSTRACT_VAR" />
+<symbol name="CONCRETE_CONST" />
+<symbol name="ABSTRACT_CONST" />
+<symbol name="PROPERTIES" />
+<symbol name="INVARIANT" />
+<symbol name="VARIANT" />
+<symbol name="ASSERTIONS" />
+<symbol name="VALUES" />
+<operations>
+</operations>
+</base>
+<seen>
+</seen>
+<used>
+</used>
+<included>
+</included>
+<imported>
+</imported>
+<extended>
+</extended>
+<refined>
+</refined>
+</component_checksums>
+
+</refined>
+</component_checksums>

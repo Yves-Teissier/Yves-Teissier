@@ -1,0 +1,16 @@
+/* target_i
+ * Author: yves
+ * Creation date: 21/11/2020
+ */
+
+IMPLEMENTATION target_i
+REFINES target
+
+    
+OPERATIONS
+    ret_target <-- target_get_target =
+    BEGIN
+        // Put the code here
+        ret_target := 1800
+    END
+ END

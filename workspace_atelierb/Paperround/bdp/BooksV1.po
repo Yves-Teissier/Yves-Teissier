@@ -1,0 +1,16 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(4) & Operation_newbook.1,(_f(5) & _f(6) => _f(7))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+BOOK: FIN(INTEGER) & not(BOOK = {});
+read : POW( BOOK);
+not(((read) = (BOOK)));
+((tt) : ((BOOK - read)));
+"Invariant is preserved";
+((read) \/ (({tt}))) : POW( BOOK)
+END
+&
+THEORY EnumerateX
+END

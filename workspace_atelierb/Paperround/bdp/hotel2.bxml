@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='hotel2' type='abstraction' position='true' semantic='true' b0check='false'>
+<Sets>
+<Attr>
+<Pos l='9' c='1' s='4'/>
+</Attr>
+<Set>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='10' c='5' s='4'/>
+</Attr>
+</Id>
+</Set>
+<Set>
+<Id value='NAME' typref='5'>
+<Attr>
+<Pos l='10' c='11' s='4'/>
+</Attr>
+</Id>
+</Set>
+<Set>
+<Id value='REPORT' typref='6'>
+<Attr>
+<Pos l='10' c='17' s='6'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='present' typref='7'>
+<Attr>
+<Pos l='10' c='27' s='7'/>
+</Attr>
+</Id>
+<Id value='notpresent' typref='7'>
+<Attr>
+<Pos l='10' c='36' s='10'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+</Sets>
+<Concrete_Constants>
+<Attr>
+<Pos l='12' c='1' s='18'/>
+</Attr>
+<Id value='empty' typref='8'>
+<Attr>
+<Pos l='13' c='5' s='5'/>
+</Attr>
+</Id>
+<Id value='sze' typref='1'>
+<Attr>
+<Pos l='13' c='12' s='3'/>
+</Attr>
+</Id>
+</Concrete_Constants>
+<Abstract_Variables>
+<Attr>
+<Pos l='18' c='1' s='18'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='19' c='5' s='6'/>
+</Attr>
+</Id>
+</Abstract_Variables>
+<Properties>
+<Attr>
+<Pos l='15' c='1' s='10'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='16' c='9' s='1'/>
+</Attr>
+<Id value='sze' typref='1'>
+<Attr>
+<Pos l='16' c='5' s='3'/>
+</Attr>
+</Id>
+<Id value='NATURAL1' typref='2'>
+<Attr>
+<Pos l='16' c='11' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='16' c='33' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='16' c='22' s='4'/>
+</Attr>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='16' c='27' s='4'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Id value='sze' typref='1'>
+<Attr>
+<Pos l='16' c='35' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='16' c='47' s='1'/>
+</Attr>
+<Id value='empty' typref='8'>
+<Attr>
+<Pos l='16' c='41' s='5'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='5'>
+<Attr>
+<Pos l='16' c='49' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Properties>
+<Invariant>
+<Attr>
+<Pos l='21' c='1' s='9'/>
+</Attr>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='22' c='12' s='1'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='22' c='5' s='6'/>
+</Attr>
+</Id>
+<Binary_Exp op='--&gt;' typref='10'>
+<Attr>
+<Pos l='22' c='19' s='3'/>
+</Attr>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='22' c='14' s='4'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='5'>
+<Attr>
+<Pos l='22' c='23' s='4'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Exp_Comparison>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='24' c='1' s='14'/>
+</Attr>
+<Assignement_Sub>
+<Attr>
+<Pos l='25' c='12' s='2'/>
+</Attr>
+<Variables>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='25' c='5' s='6'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='*s' typref='9'>
+<Attr>
+<Pos l='25' c='20' s='1'/>
+</Attr>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='25' c='15' s='4'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='5'>
+<Attr>
+<Pos l='25' c='22' s='1'/>
+</Attr>
+<Id value='empty' typref='8'>
+<Attr>
+<Pos l='25' c='23' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Initialisation>
+<Operations>
+<Operation name='guestcheckin'>
+<Attr>
+<Pos l='28' c='5' s='12' endLine='31'/>
+</Attr>
+<Input_Parameters>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='28' c='18' s='2'/>
+</Attr>
+</Id>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='28' c='22' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='29' c='12' s='1'/>
+</Attr>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='29' c='9' s='2'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='29' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='29' c='24' s='1'/>
+</Attr>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='29' c='21' s='2'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='5'>
+<Attr>
+<Pos l='29' c='26' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='/='>
+<Attr>
+<Pos l='29' c='36' s='2'/>
+</Attr>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='29' c='33' s='2'/>
+</Attr>
+</Id>
+<Id value='empty' typref='8'>
+<Attr>
+<Pos l='29' c='39' s='5'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='30' c='21' s='2'/>
+</Attr>
+<Variables>
+<Binary_Exp op='(' typref='8'>
+<Attr>
+<Pos l='30' c='16' s='0'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='30' c='10' s='6'/>
+</Attr>
+</Id>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='30' c='17' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Variables>
+<Values>
+<Id value='empty' typref='8'>
+<Attr>
+<Pos l='30' c='24' s='5'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='guestchekout'>
+<Attr>
+<Pos l='33' c='5' s='12' endLine='36'/>
+</Attr>
+<Input_Parameters>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='33' c='18' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='34' c='12' s='1'/>
+</Attr>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='34' c='9' s='2'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='34' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='35' c='21' s='2'/>
+</Attr>
+<Variables>
+<Binary_Exp op='(' typref='8'>
+<Attr>
+<Pos l='35' c='16' s='0'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='35' c='10' s='6'/>
+</Attr>
+</Id>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='35' c='17' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Variables>
+<Values>
+<Id value='empty' typref='8'>
+<Attr>
+<Pos l='35' c='24' s='5'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='guestquery'>
+<Attr>
+<Pos l='38' c='5' s='2' endLine='41'/>
+</Attr>
+<Output_Parameters>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='38' c='5' s='2'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='38' c='23' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='39' c='12' s='1'/>
+</Attr>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='39' c='9' s='2'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='39' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='40' c='13' s='2'/>
+</Attr>
+<Variables>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='40' c='10' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='(' typref='8'>
+<Attr>
+<Pos l='40' c='22' s='0'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='40' c='16' s='6'/>
+</Attr>
+</Id>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='40' c='23' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='presentquery'>
+<Attr>
+<Pos l='43' c='5' s='2' endLine='49'/>
+</Attr>
+<Output_Parameters>
+<Id value='rr' typref='7'>
+<Attr>
+<Pos l='43' c='5' s='2'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='43' c='25' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='44' c='12' s='1'/>
+</Attr>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='44' c='9' s='2'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='5'>
+<Attr>
+<Pos l='44' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='/='>
+<Attr>
+<Pos l='44' c='24' s='2'/>
+</Attr>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='44' c='21' s='2'/>
+</Attr>
+</Id>
+<Id value='empty' typref='8'>
+<Attr>
+<Pos l='44' c='27' s='5'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='45' c='10' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='45' c='16' s='1'/>
+</Attr>
+<Id value='nn' typref='8'>
+<Attr>
+<Pos l='45' c='13' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='ran' typref='5'>
+<Attr>
+<Pos l='45' c='18' s='3'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='45' c='22' s='6'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='46' c='17' s='2'/>
+</Attr>
+<Variables>
+<Id value='rr' typref='7'>
+<Attr>
+<Pos l='46' c='14' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='present' typref='7'>
+<Attr>
+<Pos l='46' c='20' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='47' c='17' s='2'/>
+</Attr>
+<Variables>
+<Id value='rr' typref='7'>
+<Attr>
+<Pos l='47' c='14' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='notpresent' typref='7'>
+<Attr>
+<Pos l='47' c='20' s='10'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+<Operation name='guestswap'>
+<Attr>
+<Pos l='51' c='5' s='9' endLine='54'/>
+</Attr>
+<Input_Parameters>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='51' c='15' s='2'/>
+</Attr>
+</Id>
+<Id value='ss' typref='11'>
+<Attr>
+<Pos l='51' c='18' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='52' c='12' s='1'/>
+</Attr>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='52' c='9' s='2'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='52' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='52' c='24' s='1'/>
+</Attr>
+<Id value='ss' typref='11'>
+<Attr>
+<Pos l='52' c='21' s='2'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='4'>
+<Attr>
+<Pos l='52' c='26' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='53' c='17' s='2'/>
+</Attr>
+<Variables>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='53' c='10' s='6'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='&lt;+' typref='9'>
+<Attr>
+<Pos l='53' c='27' s='2'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='53' c='20' s='6'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='9'>
+<Attr>
+<Pos l='53' c='30' s='1'/>
+</Attr>
+<Binary_Exp op='|-&gt;' typref='12'>
+<Attr>
+<Pos l='53' c='34' s='3'/>
+</Attr>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='53' c='31' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='(' typref='8'>
+<Attr>
+<Pos l='53' c='44' s='0'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='53' c='38' s='6'/>
+</Attr>
+</Id>
+<Id value='ss' typref='11'>
+<Attr>
+<Pos l='53' c='45' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Binary_Exp>
+<Binary_Exp op='|-&gt;' typref='12'>
+<Attr>
+<Pos l='53' c='53' s='3'/>
+</Attr>
+<Id value='ss' typref='11'>
+<Attr>
+<Pos l='53' c='50' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='(' typref='8'>
+<Attr>
+<Pos l='53' c='63' s='0'/>
+</Attr>
+<Id value='guests' typref='9'>
+<Attr>
+<Pos l='53' c='57' s='6'/>
+</Attr>
+</Id>
+<Id value='rr' typref='11'>
+<Attr>
+<Pos l='53' c='64' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Binary_Exp>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Unary_Exp op='POW'>
+<Id value='ROOM'/>
+</Unary_Exp>
+</Type>
+<Type id='5'>
+<Unary_Exp op='POW'>
+<Id value='NAME'/>
+</Unary_Exp>
+</Type>
+<Type id='6'>
+<Unary_Exp op='POW'>
+<Id value='REPORT'/>
+</Unary_Exp>
+</Type>
+<Type id='7'>
+<Id value='REPORT'/>
+</Type>
+<Type id='8'>
+<Id value='NAME'/>
+</Type>
+<Type id='9'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='ROOM'/>
+<Id value='NAME'/>
+</Binary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='10'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='ROOM'/>
+<Id value='NAME'/>
+</Binary_Exp>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='11'>
+<Id value='ROOM'/>
+</Type>
+<Type id='12'>
+<Binary_Exp op='*'>
+<Id value='ROOM'/>
+<Id value='NAME'/>
+</Binary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

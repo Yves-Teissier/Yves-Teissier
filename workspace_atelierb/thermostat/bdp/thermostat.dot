@@ -1,0 +1,14 @@
+digraph {
+CTX_i [ label=" CTX\nCTX_i " shape= box ]
+chaudiere_i [ label=" chaudiere\nchaudiere_i " shape= box ]
+target_i [ label=" target\ntarget_i " shape= box ]
+temperature_i [ label=" temperature\ntemperature_i " shape= box ]
+thermostat_i [ label=" thermostat\nthermostat_i " shape= box ]
+timer_i [ label=" timer\ntimer_i " shape= box ]
+
+"thermostat_i" -> "CTX_i" [style= dotted ]
+"thermostat_i" -> "target_i" []
+"thermostat_i" -> "temperature_i" []
+"thermostat_i" -> "chaudiere_i" []
+"thermostat_i" -> "timer_i" []
+}

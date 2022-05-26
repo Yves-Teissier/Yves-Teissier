@@ -1,0 +1,59 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(6) & _f(7) & _f(15) & _f(16) & WellDefinedness_swap.3,(_f(26) => _f(24));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(15) & _f(16) & WellDefinedness_swap.2,(_f(26) => _f(25));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(15) & _f(16) & WellDefinedness_swap.1,(_f(26) => _f(31));
+_f(1) & _f(2) & _f(6) & WellDefinedness_totalguests.3,(_f(28) & _f(26) => _f(25));
+_f(1) & _f(2) & _f(6) & WellDefinedness_totalguests.2,(_f(28) & _f(26) => _f(30));
+_f(1) & _f(2) & _f(6) & WellDefinedness_totalguests.1,(_f(26) => _f(29));
+_f(1) & _f(2) & _f(6) & WellDefinedness_vacancies.1,(_f(26) => _f(27));
+_f(1) & _f(2) & _f(6) & _f(7) & WellDefinedness_roomquery.2,(_f(26) => _f(25));
+_f(1) & _f(2) & _f(6) & _f(7) & WellDefinedness_roomquery.1,(_f(26) => _f(24));
+_f(1) & _f(2) & _f(6) & WellDefinednessPrecondition_checkin.2,(_f(7) & _f(8) & _f(23) => _f(25));
+_f(1) & _f(2) & _f(6) & WellDefinednessPrecondition_checkin.1,(_f(7) & _f(8) & _f(23) => _f(24));
+_f(1) & _f(19) & WellDefinednessProperties.1,(_f(20) & _f(21) => _f(22));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(15) & _f(16) & Operation_swap.2,(_f(3) => _f(18));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(15) & _f(16) & Operation_swap.1,(_f(3) => _f(17));
+_f(1) & _f(2) & _f(6) & _f(7) & Operation_checkout.2,(_f(3) => _f(14));
+_f(1) & _f(2) & _f(6) & _f(7) & Operation_checkout.1,(_f(3) => _f(13));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_checkin.2,(_f(3) => _f(12));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_checkin.1,(_f(3) => _f(11));
+_f(1) & _f(2) & Initialisation.2,(_f(3) => _f(5));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+ROOM: FIN(INTEGER) & not(ROOM = {}) & ((sze) : ((NATURAL-{0}))) & ((card(ROOM)) = (sze)) & small : POW( ROOM);
+"Invariant is preserved";
+(((ROOM * ({0}))) : (((ROOM) --> (((0) .. (6))))));
+((ROOM * ({0})) )[small] : POW( ((0) .. (4)));
+numbers : ROOM +-> ((0) .. (6)) & dom(numbers) = ROOM & ((numbers) : (((ROOM) --> (((0) .. (6)))))) & (numbers )[small] : POW( ((0) .. (4)));
+((rr) : (ROOM));
+((nn) : (((1) .. (6))));
+(((numbers )(rr)) = (0));
+((((rr) : (small))) => ((nn <= 4)));
+((((numbers) <+ (({((rr) |-> (nn))})))) : (((ROOM) --> (((0) .. (6))))));
+(((numbers) <+ (({((rr) |-> (nn))}))) )[small] : POW( ((0) .. (4)));
+((((numbers) <+ (({((rr) |-> (0))})))) : (((ROOM) --> (((0) .. (6))))));
+(((numbers) <+ (({((rr) |-> (0))}))) )[small] : POW( ((0) .. (4)));
+((ss) : (ROOM));
+((((rr) : (small))) => (((ss) : (small)))) & ((((ss) : (small))) => (((rr) : (small))));
+((((numbers) <+ (({((rr) |-> ((numbers )(ss)))}\/{((ss) |-> ((numbers )(rr)))})))) : (((ROOM) --> (((0) .. (6))))));
+(((numbers) <+ (({((rr) |-> ((numbers )(ss)))}\/{((ss) |-> ((numbers )(rr)))}))) )[small] : POW( ((0) .. (4)));
+ROOM: FIN(INTEGER) & not(ROOM = {});
+((sze) : ((NATURAL-{0})));
+"Properties are well defined";
+((ROOM) : (FIN(ROOM)));
+"Operation precondition is well defined";
+((rr) : (dom(numbers)));
+((numbers) : (((dom(numbers)) +-> (ran(numbers)))));
+"Operation is well defined";
+((((numbers) |> (({0})))) : (FIN(((numbers) |> (({0}))))));
+((zz) : (ROOM));
+((SET(zz).(((zz) : (ROOM)))) : (FIN(SET(zz).(((zz) : (ROOM))))));
+((zz) : (dom(numbers)));
+((ss) : (dom(numbers)))
+END
+&
+THEORY EnumerateX
+END

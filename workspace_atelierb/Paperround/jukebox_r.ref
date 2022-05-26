@@ -1,0 +1,49 @@
+/* jukebox_r
+ * Author: yves
+ * Creation date: 26/02/2022
+ * on passe d'une machie abstraite non-déterministe à un rafinement full déterministe
+ */
+
+REFINEMENT        jukebox_r
+
+REFINES           jukebox
+
+CONSTANTS         freefreq
+
+PROPERTIES        freefreq : NAT1
+
+VARIABLES         creditr, playlist, free
+
+INVARIANT         creditr : NAT & creditr = credit
+                  & playlist : iseq(TRACK) & ran(playlist) = playset /* iseq = injective sequence. Les éléments sont présents une seule fois. Le co-domaine de playlist (liste concrete) correspond à playset. */
+                  & free : 0..freefreq                  
+
+
+INITIALISATION    creditr := 0 ; playlist := <> ; free := 0
+
+OPERATIONS
+
+  pay(cc) = creditr := min({creditr + cc, limit});
+
+  select(tt) = 
+  PRE creditr > 0 & tt : TRACK
+  THEN 
+      BEGIN
+        IF tt /: ran(playlist) THEN playlist := playlist <- tt END;
+        IF free = freefreq 
+        THEN CHOICE free := 0 OR creditr := creditr - 1 END /* choix non-déterministe entre free := 0 et enlever un crédit */
+        ELSE free := free + 1 ; creditr := creditr - 1 END /* si free est différent de freefreq */
+      END
+  END;
+
+  tt <-- play = 
+  PRE size(playlist) > 0
+  THEN 
+    BEGIN tt := first(playlist) ; playlist := tail(playlist) END
+  END;
+
+  penalty = IF playlist /= <> THEN playlist := tail(playlist)
+            ELSIF creditr > 0 THEN creditr := creditr - 1
+            END
+
+END

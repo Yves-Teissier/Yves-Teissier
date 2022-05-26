@@ -1,0 +1,25 @@
+﻿THEORY ProofList IS
+  _f(1) & _f(5) & _f(6) & add.2,(_f(7) => _f(9));
+  _f(1) & _f(5) & _f(6) & add.1,(_f(7) => _f(8));
+  _f(1) & Initialisation.2,(_f(2) => _f(4));
+  _f(1) & Initialisation.1,(_f(2) => _f(3))
+END
+&
+THEORY Formulas IS
+  ("`Component properties'" & MAX: INTEGER & 0<=MAX & MAX<=2147483647);
+  "`Check that the invariant (aa: 0..MAX --> NAT) is established by the initialisation - ref 3.3'";
+  (%ii.(ii: 0..MAX | ii): 0..MAX +-> NAT);
+  (dom(%ii.(ii: 0..MAX | ii)) = 0..MAX);
+  ("`Component invariant'" & aa: 0..MAX +-> NAT & dom(aa) = 0..MAX);
+  ("`add preconditions in this component'" & ii: 0..MAX & xx: INTEGER & 0<=xx & xx<=2147483647);
+  "`Check that the invariant (aa: 0..MAX --> NAT) is preserved by the operation - ref 3.4'";
+  (aa<+{ii|->xx}: 0..MAX +-> NAT);
+  (dom(aa<+{ii|->xx}) = 0..MAX)
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

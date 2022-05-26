@@ -1,0 +1,38 @@
+﻿THEORY ProofList IS
+  _f(1) & op.9,(_f(14) & _f(2) => _f(15));
+  _f(1) & op.8,(_f(9) & _f(2) => _f(13));
+  _f(1) & op.7,(_f(9) & _f(2) => _f(12));
+  _f(1) & op.6,(_f(9) & _f(2) => _f(11));
+  _f(1) & op.5,(_f(9) & _f(2) => _f(10));
+  _f(1) & op.4,(_f(6) & _f(2) => _f(8));
+  _f(1) & op.3,(_f(6) & _f(2) => _f(7));
+  _f(1) & op.2,(_f(4) & _f(2) => _f(5));
+  _f(1) & op.1,(_f(2) => _f(3))
+END
+&
+THEORY Formulas IS
+  ("`Previous components invariants'" & tab$1: 0..9 +-> NAT & dom(tab$1) = 0..9 & "`Component invariant'" & tab = tab$1);
+  "`Check preconditions of called operation, or While loop construction, or Assert predicates'";
+  (0: 0..10);
+  ("`Local hypotheses'" & xx: 0.. -1);
+  (tab$1(xx) = 1);
+  ("`Local hypotheses'" & tab$2: 0..9 +-> NAT & dom(tab$2) = 0..9 & ii$0: 0..10 & !xx.(xx: 0..ii$0-1 => tab$2(xx) = 1));
+  (10-ii$0: INTEGER);
+  (0<=10-ii$0);
+  ("`Local hypotheses'" & tab$2: 0..9 +-> NAT & dom(tab$2) = 0..9 & ii$0: 0..10 & !xx.(xx: 0..ii$0-1 => tab$2(xx) = 1) & ii$0<=9);
+  (10-(ii$0+1)+1<=10-ii$0);
+  (tab$2<+{ii$0|->1}: 0..9 +-> NAT);
+  (dom(tab$2<+{ii$0|->1}) = 0..9);
+  (ii$0+1: 0..10);
+  ("`Local hypotheses'" & tab$2: 0..9 +-> NAT & dom(tab$2) = 0..9 & ii$0: 0..10 & !xx.(xx: 0..ii$0-1 => tab$2(xx) = 1) & ii$0<=9 & xx: 0..ii$0+1-1);
+  ((tab$2<+{ii$0|->1})(xx) = 1);
+  ("`Concrete variables typing predicates'" & tab$1: POW(INTEGER*INTEGER) & "`Variables conservation'" & tab = tab$1);
+  ("`Concrete variables typing predicates'" & tab: POW(INTEGER*INTEGER))
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Proof_Obligations author="pmi2Pos" version="1.0" xmlns="https://www.atelierb.eu/Formats/pog">
+<Proof_Obligation>
+<Tag>Operation_target_get_target</Tag>
+<Simple_Goal status="Proved">
+<Tag>Refinement is correct</Tag>
+<Proof_State methodList="pr" passList="Force(0),?" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+</Proof_Obligations>

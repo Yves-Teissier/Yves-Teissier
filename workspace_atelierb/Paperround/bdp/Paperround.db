@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<db_xml>
+    <atelierb version="3_7_ubuntu-cvs" />
+    <project decomp_dir="/home/yves/workspace_atelierb/Paperround/bdp/expand_src" old_decomp_dir="/home/yves/workspace_atelierb/Paperround/bdp/src">
+        <!-- Definition directory list -->
+        <!-- Proof mechanisms -->
+        <!-- Component file list -->
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Allocate" suffix="mch" user="yves">
+            <component name="Allocate" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Allocate_r" suffix="ref" user="yves">
+            <component name="Allocate_r" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="ArraySearch" suffix="mch" user="yves">
+            <component name="ArraySearch" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="ArraySearch_i" suffix="imp" user="yves">
+            <component name="ArraySearch_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="BooksV1" suffix="mch" user="yves">
+            <component name="BooksV1" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="BooksV1_ProB" suffix="mch" user="yves">
+            <component name="BooksV1_ProB" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="BooksV1_r" suffix="ref" user="yves">
+            <component name="BooksV1_r" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="BooksV1_r_ProB" suffix="ref" user="yves">
+            <component name="BooksV1_r_ProB" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="BooksV1_r_r" suffix="ref" user="yves">
+            <component name="BooksV1_r_r" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="BooksV1_r_r_ProB" suffix="ref" user="yves">
+            <component name="BooksV1_r_r_ProB" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Customer" suffix="mch" user="yves">
+            <component name="Customer" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Customer_i" suffix="imp" user="yves">
+            <component name="Customer_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="DataFields" suffix="mch" user="yves">
+            <component name="DataFields" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="DataFields_i" suffix="imp" user="yves">
+            <component name="DataFields_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Exam" suffix="mch" user="yves">
+            <component name="Exam" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="ExamR" suffix="ref" user="yves">
+            <component name="ExamR" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Iron1" suffix="mch" user="yves">
+            <component name="Iron1" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Iron1R" suffix="ref" user="yves">
+            <component name="Iron1R" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Iron2" suffix="mch" user="yves">
+            <component name="Iron2" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Iron2R" suffix="ref" user="yves">
+            <component name="Iron2R" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="List" suffix="mch" user="yves">
+            <component name="List" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="M0" suffix="mch" user="yves">
+            <component name="M0" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Map" suffix="mch" user="yves">
+            <component name="Map" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="MovingParticle" suffix="mch" user="yves">
+            <component name="MovingParticle" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="MultRussian" suffix="mch" user="yves">
+            <component name="MultRussian" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="MultRussian_i" suffix="imp" user="yves">
+            <component name="MultRussian_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="MySet" suffix="mch" user="yves">
+            <component name="MySet" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="MySet_ctx" suffix="mch" user="yves">
+            <component name="MySet_ctx" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="MySet_r" suffix="ref" user="yves">
+            <component name="MySet_r" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Paperround" suffix="mch" user="yves">
+            <component name="Paperround" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Port" suffix="mch" user="yves">
+            <component name="Port" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="PortR" suffix="ref" user="yves">
+            <component name="PortR" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="TabInit" suffix="mch" user="yves">
+            <component name="TabInit" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="TabInit_i" suffix="imp" user="yves">
+            <component name="TabInit_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="Team" suffix="mch" user="yves">
+            <component name="Team" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="TeamR" suffix="ref" user="yves">
+            <component name="TeamR" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="TeamR2" suffix="ref" user="yves">
+            <component name="TeamR2" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="access" suffix="mch" user="yves">
+            <component name="access" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="access_example" suffix="mch" user="yves">
+            <component name="access_example" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="hotel" suffix="mch" user="yves">
+            <component name="hotel" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="hotel2" suffix="mch" user="yves">
+            <component name="hotel2" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="jukebox" suffix="mch" user="yves">
+            <component name="jukebox" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="jukebox_r" suffix="ref" user="yves">
+            <component name="jukebox_r" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="race" suffix="mch" user="yves">
+            <component name="race" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="race_example" suffix="mch" user="yves">
+            <component name="race_example" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="readingBook" suffix="mch" user="yves">
+            <component name="readingBook" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="sport_non_determinism" suffix="mch" user="yves">
+            <component name="sport_non_determinism" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Paperround" name="test" suffix="mch" user="yves">
+            <component name="test" type="specification" />
+        </component_file>
+    </project>
+</db_xml>

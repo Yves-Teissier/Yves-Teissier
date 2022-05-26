@@ -1,0 +1,39 @@
+﻿THEORY ProofList IS
+  _f(1) & Mult.12,(_f(13) & _f(14) => _f(15));
+  _f(1) & Mult.11,(_f(11) & _f(3) => _f(12));
+  _f(1) & Mult.10,(_f(11) & _f(3) => _f(9));
+  _f(1) & Mult.9,(_f(11) & _f(3) => _f(8));
+  _f(1) & Mult.8,(_f(11) & _f(3) => _f(7));
+  _f(1) & Mult.7,(_f(11) & _f(3) => _f(6));
+  _f(1) & Mult.6,(_f(5) & _f(3) => _f(10));
+  _f(1) & Mult.5,(_f(5) & _f(3) => _f(9));
+  _f(1) & Mult.4,(_f(5) & _f(3) => _f(8));
+  _f(1) & Mult.3,(_f(5) & _f(3) => _f(7));
+  _f(1) & Mult.2,(_f(5) & _f(3) => _f(6));
+  _f(1) & Mult.1,(_f(2) & _f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+  ("`Mult preconditions in previous components'" & aa: INTEGER & 0<=aa & aa<=2147483647 & bb: INTEGER & 0<=bb & bb<=2147483647 & aa*bb: INTEGER & 0<=aa*bb & aa*bb<=2147483647);
+  ("`Mult preconditions in this component'" & aa: INTEGER & 0<=aa & aa<=2147483647 & bb: INTEGER & 0<=bb & bb<=2147483647 & aa*bb: INTEGER & 0<=aa*bb & aa*bb<=2147483647);
+  "`Check preconditions of called operation, or While loop construction, or Assert predicates'";
+  (0+aa*bb = aa*bb);
+  ("`Mult preconditions in this component'" & aa: INTEGER & 0<=aa & aa<=2147483647 & bb: INTEGER & 0<=bb & bb<=2147483647 & aa*bb: INTEGER & 0<=aa*bb & aa*bb<=2147483647 & "`Local hypotheses'" & xx: INTEGER & 0<=xx & xx<=2147483647 & total$1+xx*yy = aa*bb & not(xx = 0) & xx mod 2 = 1);
+  (xx/2+1<=xx);
+  (xx/2: INTEGER);
+  (0<=xx/2);
+  (xx/2<=2147483647);
+  (total$1+yy+xx/2*(yy*2) = aa*bb);
+  ("`Mult preconditions in this component'" & aa: INTEGER & 0<=aa & aa<=2147483647 & bb: INTEGER & 0<=bb & bb<=2147483647 & aa*bb: INTEGER & 0<=aa*bb & aa*bb<=2147483647 & "`Local hypotheses'" & xx: INTEGER & 0<=xx & xx<=2147483647 & total$1+xx*yy = aa*bb & not(xx = 0) & not(xx mod 2 = 1));
+  (total$1+xx/2*(yy*2) = aa*bb);
+  ("`Mult preconditions in this component'" & aa: INTEGER & 0<=aa & aa<=2147483647 & bb: INTEGER & 0<=bb & bb<=2147483647 & aa*bb: INTEGER & 0<=aa*bb & aa*bb<=2147483647 & "`Local hypotheses'" & xx$7777 = 0 & xx$7777: INTEGER & 0<=xx$7777 & xx$7777<=2147483647 & totalz$7777+xx$7777*yy$7777 = aa*bb);
+  "`Check that the invariant (total$1 = total) is preserved by the operation - ref 4.4, 5.5'" & "`Check operation refinement - ref 4.4, 5.5'";
+  (totalz$7777 = aa*bb)
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

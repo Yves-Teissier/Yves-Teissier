@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='ControlUnit' type='abstraction' position='true' semantic='true' b0check='false'>
+<Sees>
+<Attr>
+<Pos l='8' c='1' s='4'/>
+</Attr>
+<Referenced_Machine>
+<Attr>
+<Pos l='8' c='6' s='3'/>
+</Attr>
+<Name>CTX</Name>
+</Referenced_Machine>
+</Sees>
+<Initialisation>
+<Skip/>
+</Initialisation>
+<Operations>
+<Operation name='pupitre_next'>
+<Attr>
+<Pos l='30' c='5' s='9' endLine='33'/>
+</Attr>
+<Output_Parameters>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='30' c='5' s='9'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='30' c='32' s='5'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='31' c='14' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='31' c='9' s='5'/>
+</Attr>
+</Id>
+<Id value='STATE' typref='5'>
+<Attr>
+<Pos l='31' c='16' s='5'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<Becomes_In>
+<Attr>
+<Pos l='32' c='19' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='32' c='9' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<Binary_Exp op='[' typref='5'>
+<Attr>
+<Pos l='32' c='22' s='4'/>
+</Attr>
+<Id value='NEXT' typref='6'>
+<Attr>
+<Pos l='32' c='22' s='4'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='5'>
+<Attr>
+<Pos l='32' c='27' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='32' c='28' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Value>
+</Becomes_In>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Id value='STATE'/>
+</Type>
+<Type id='5'>
+<Unary_Exp op='POW'>
+<Id value='STATE'/>
+</Unary_Exp>
+</Type>
+<Type id='6'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='STATE'/>
+<Id value='STATE'/>
+</Binary_Exp>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

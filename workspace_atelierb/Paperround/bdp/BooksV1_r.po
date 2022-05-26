@@ -1,0 +1,36 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(7) & _f(8) & _f(9) & WellDefinedness_newbook.2,(_f(18) => _f(13));
+_f(1) & _f(2) & _f(7) & _f(8) & _f(9) & WellDefinedness_newbook.1,(_f(18) => _f(12));
+_f(1) & _f(2) & WellDefinednessInitialisation.1,(_f(16) => _f(17));
+_f(1) & _f(2) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_newbook.5,(_f(4) => _f(15));
+_f(1) & _f(2) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_newbook.4,(_f(4) => _f(14));
+_f(1) & _f(2) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_newbook.3,(_f(4) => _f(13));
+_f(1) & _f(2) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_newbook.2,(_f(4) => _f(12));
+_f(1) & _f(2) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_newbook.1,(_f(4) => _f(11));
+_f(1) & _f(2) & Initialisation.2,(_f(3) & _f(4) => _f(6));
+_f(1) & _f(2) & Initialisation.1,(_f(3) & _f(4) => _f(5))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+BOOK: FIN(INTEGER) & not(BOOK = {});
+scheme : seq(BOOK ) & scheme : NATURAL-{0} +-> BOOK & scheme : iseq(BOOK) & not(scheme = {}) & scheme ~ : BOOK +-> NATURAL-{0} & ran( scheme ) = BOOK & ((scheme) : (perm(BOOK)));
+"Refinement is correct";
+((scheme) : (iseq(BOOK)));
+((ran(scheme)) = ((BOOK - {})));
+read : POW( BOOK);
+scheme$1 : seq(BOOK) & scheme$1 : NATURAL-{0} +-> BOOK & scheme$1 ~ : BOOK +-> NATURAL-{0} & ((scheme$1) : (iseq(BOOK))) & ((ran(scheme$1)) = ((BOOK - read)));
+not(((read) = (BOOK)));
+((bb) = (bb$1));
+((tail(scheme$1)) : (iseq(BOOK)));
+((scheme$1) : (seq(ran(scheme$1))));
+not(((scheme$1) = ({})));
+((first(scheme$1)) : ((BOOK - read)));
+((ran(tail(scheme$1))) = ((BOOK - ((read) \/ (({first(scheme$1)}))))));
+"Initialisation is well defined";
+((BOOK) : (FIN(BOOK)));
+"Operation is well defined"
+END
+&
+THEORY EnumerateX
+END

@@ -1,0 +1,20 @@
+﻿THEORY ProofList IS
+  _f(4) & op.1,(_f(5) => _f(6));
+  Initialisation.1,(_f(1) & _f(2) => _f(3))
+END
+&
+THEORY Formulas IS
+  ("`Local hypotheses'" & xx$0: 0..1);
+  "`Check that the invariant (xx: 0..3) is established by the initialisation - ref 3.3'";
+  (xx$0: 0..3);
+  ("`Component invariant'" & xx: 0..3);
+  "`Check that the invariant (xx: 0..3) is preserved by the operation - ref 3.4'";
+  (xx+1: 0..3)
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

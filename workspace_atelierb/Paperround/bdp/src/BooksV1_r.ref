@@ -1,0 +1,24 @@
+﻿/* BooksV1_r
+ * Author: yves
+ * Creation date: 22/02/2022
+ */
+
+REFINEMENT BooksV1_r
+REFINES BooksV1
+
+ABSTRACT_VARIABLES
+    scheme
+INVARIANT
+    scheme : iseq ( BOOK )
+    & ran ( scheme ) = BOOK - read
+INITIALISATION
+    scheme :: perm ( BOOK )
+
+OPERATIONS
+  bb <-- newbook =
+  BEGIN
+      bb := first ( scheme ) ;
+      scheme := tail ( scheme )
+  END
+
+END

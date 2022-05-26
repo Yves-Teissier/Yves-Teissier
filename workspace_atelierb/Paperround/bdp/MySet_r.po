@@ -1,0 +1,75 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & WellDefinedness_Discard.2,(_f(26) & _f(43) => _f(31));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & WellDefinedness_Discard.1,(_f(26) & _f(43) => _f(30));
+_f(1) & _f(2) & _f(9) & WellDefinednessInvariant.1,(_f(38) & _f(39) & _f(40) & _f(41) => _f(42));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.10,(_f(27) & _f(4) => _f(37));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.9,(_f(27) & _f(4) => _f(36));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.8,(_f(27) & _f(4) => _f(35));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.7,(_f(26) & _f(4) => _f(34));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.6,(_f(26) & _f(4) => _f(33));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.5,(_f(26) & _f(4) => _f(32));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.4,(_f(26) & _f(4) => _f(31));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.3,(_f(26) & _f(4) => _f(30));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.2,(_f(26) & _f(4) => _f(29));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(24) & _f(25) & Operation_Discard.1,(_f(26) & _f(4) => _f(28));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(11) & _f(12) & _f(13) & Operation_Add.7,(_f(16) & _f(4) => _f(23));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(11) & _f(12) & _f(13) & Operation_Add.6,(_f(16) & _f(4) => _f(22));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(11) & _f(12) & _f(13) & Operation_Add.5,(_f(14) & _f(15) & _f(4) => _f(21));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(11) & _f(12) & _f(13) & Operation_Add.4,(_f(14) & _f(15) & _f(4) => _f(20));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(11) & _f(12) & _f(13) & Operation_Add.3,(_f(14) & _f(15) & _f(4) => _f(19));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(11) & _f(12) & _f(13) & Operation_Add.2,(_f(14) & _f(15) & _f(4) => _f(18));
+_f(1) & _f(2) & _f(9) & _f(10) & _f(11) & _f(12) & _f(13) & Operation_Add.1,(_f(14) & _f(15) & _f(4) => _f(17));
+_f(1) & _f(2) & Initialisation.4,(_f(3) & _f(4) => _f(8));
+_f(1) & _f(2) & Initialisation.3,(_f(3) & _f(4) => _f(7));
+_f(1) & _f(2) & Initialisation.2,(_f(3) & _f(4) => _f(6));
+_f(1) & _f(2) & Initialisation.1,(_f(3) & _f(4) => _f(5))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+VALUE: FIN(INTEGER) & not(VALUE = {}) & ((MM) : (NAT));
+array : ((0) .. ((MM - 1))) +-> VALUE & dom(array) = ((0) .. ((MM - 1))) & ((array) : (((((0) .. ((MM - 1)))) --> (VALUE))));
+"Refinement is correct";
+((0) : (((0) .. (MM))));
+((((((0) .. ((0 - 1)))) <| (array))) : (((((0) .. ((0 - 1)))) >-> (VALUE))));
+((0) = (card({})));
+(({}) = ((array )[((0) .. ((0 - 1)))]));
+ss : POW( VALUE) & (card(ss) <= MM);
+array$1 : ((0) .. ((MM - 1))) +-> VALUE & dom(array$1) = ((0) .. ((MM - 1))) & ((array$1) : (((((0) .. ((MM - 1)))) --> (VALUE)))) & ((hwm$1) : (((0) .. (MM)))) & ((((0) .. ((hwm$1 - 1)))) <| (array$1)) : ((0) .. ((hwm$1 - 1))) +-> VALUE & ((((0) .. ((hwm$1 - 1)))) <| (array$1)) : ((0) .. ((hwm$1 - 1))) --> VALUE & ((((0) .. ((hwm$1 - 1)))) <| (array$1))~ : VALUE +-> ((0) .. ((hwm$1 - 1))) & ((((((0) .. ((hwm$1 - 1)))) <| (array$1))) : (((((0) .. ((hwm$1 - 1)))) >-> (VALUE)))) & ((hwm$1) = (card(ss))) & ((ss) = ((array$1 )[((0) .. ((hwm$1 - 1)))]));
+((xx) : (VALUE));
+not(((xx) : (ss)));
+(card(ss) +1 <= MM);
+(hwm$1 +1 <= MM);
+not(((xx) : ((array$1 )[((0) .. ((hwm$1 - 1)))])));
+not((hwm$1 +1 <= MM) & not(((xx) : ((array$1 )[((0) .. ((hwm$1 - 1)))]))));
+((((array$1) <+ (({((hwm$1) |-> (xx))})))) : (((((0) .. ((MM - 1)))) --> (VALUE))));
+(((hwm$1 + 1)) : (((0) .. (MM))));
+((((((0) .. (((hwm$1 + 1) - 1)))) <| (((array$1) <+ (({((hwm$1) |-> (xx))})))))) : (((((0) .. (((hwm$1 + 1) - 1)))) >-> (VALUE))));
+(((hwm$1 + 1)) = (card(((ss) \/ (({xx}))))));
+((((ss) \/ (({xx})))) = ((((array$1) <+ (({((hwm$1) |-> (xx))}))) )[((0) .. (((hwm$1 + 1) - 1)))]));
+((hwm$1) = (card(((ss) \/ (({xx}))))));
+((((ss) \/ (({xx})))) = ((array$1 )[((0) .. ((hwm$1 - 1)))]));
+not(((ss) = ({})));
+((xx) = (xx$1));
+(0 +1 <= hwm$1);
+not((0 +1 <= hwm$1));
+(((hwm$1 - 1)) : (((0) .. (MM))));
+((((((0) .. (((hwm$1 - 1) - 1)))) <| (array$1))) : (((((0) .. (((hwm$1 - 1) - 1)))) >-> (VALUE))));
+(((hwm$1 - 1)) : (dom(array$1)));
+((array$1) : (((dom(array$1)) +-> (ran(array$1)))));
+(((array$1 )((hwm$1 - 1))) : (ss));
+(((hwm$1 - 1)) = (card((ss - ({(array$1 )((hwm$1 - 1))})))));
+(((ss - ({(array$1 )((hwm$1 - 1))}))) = ((array$1 )[((0) .. (((hwm$1 - 1) - 1)))]));
+((xx$1) : (ss));
+((hwm$1) = (card((ss - ({xx$1})))));
+(((ss - ({xx$1}))) = ((array$1 )[((0) .. ((hwm$1 - 1)))]));
+array$1 : ((0) .. ((MM - 1))) +-> VALUE & dom(array$1) = ((0) .. ((MM - 1))) & ((array$1) : (((((0) .. ((MM - 1)))) --> (VALUE))));
+((hwm$1) : (((0) .. (MM))));
+((((0) .. ((hwm$1 - 1)))) <| (array$1)) : ((0) .. ((hwm$1 - 1))) +-> VALUE & ((((0) .. ((hwm$1 - 1)))) <| (array$1)) : ((0) .. ((hwm$1 - 1))) --> VALUE & ((((0) .. ((hwm$1 - 1)))) <| (array$1))~ : VALUE +-> ((0) .. ((hwm$1 - 1))) & ((((((0) .. ((hwm$1 - 1)))) <| (array$1))) : (((((0) .. ((hwm$1 - 1)))) >-> (VALUE))));
+"Invariant is well defined";
+((ss) : (FIN(ss)));
+"Operation is well defined"
+END
+&
+THEORY EnumerateX
+END

@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='jukebox_r' type='refinement' position='true' semantic='true' b0check='false'>
+<Abstraction>jukebox</Abstraction>
+<Concrete_Constants>
+<Attr>
+<Pos l='11' c='1' s='18'/>
+</Attr>
+<Id value='freefreq' typref='1'>
+<Attr>
+<Pos l='11' c='19' s='8'/>
+</Attr>
+</Id>
+</Concrete_Constants>
+<Abstract_Variables>
+<Attr>
+<Pos l='15' c='1' s='18'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='15' c='19' s='7'/>
+</Attr>
+</Id>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='15' c='28' s='8'/>
+</Attr>
+</Id>
+<Id value='free' typref='1'>
+<Attr>
+<Pos l='15' c='38' s='4'/>
+</Attr>
+</Id>
+</Abstract_Variables>
+<Properties>
+<Attr>
+<Pos l='13' c='1' s='10'/>
+</Attr>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='13' c='28' s='1'/>
+</Attr>
+<Id value='freefreq' typref='1'>
+<Attr>
+<Pos l='13' c='19' s='8'/>
+</Attr>
+</Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='13' c='30' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Properties>
+<Invariant>
+<Attr>
+<Pos l='17' c='1' s='9'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='17' c='27' s='1'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='17' c='19' s='7'/>
+</Attr>
+</Id>
+<Id value='NAT' typref='2'>
+<Attr>
+<Pos l='17' c='29' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='17' c='43' s='1'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='17' c='35' s='7'/>
+</Attr>
+</Id>
+<Id value='credit' typref='1'>
+<Attr>
+<Pos l='17' c='45' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='18' c='30' s='1'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='18' c='21' s='8'/>
+</Attr>
+</Id>
+<Unary_Exp op='iseq' typref='5'>
+<Attr>
+<Pos l='18' c='32' s='4'/>
+</Attr>
+<Id value='TRACK' typref='6'>
+<Attr>
+<Pos l='18' c='37' s='5'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='18' c='60' s='1'/>
+</Attr>
+<Unary_Exp op='ran' typref='6'>
+<Attr>
+<Pos l='18' c='46' s='3'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='18' c='50' s='8'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Id value='playset' typref='6'>
+<Attr>
+<Pos l='18' c='62' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='19' c='26' s='1'/>
+</Attr>
+<Id value='free' typref='1'>
+<Attr>
+<Pos l='19' c='21' s='4'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='19' c='29' s='2'/>
+</Attr>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='19' c='28' s='1'/>
+</Attr>
+</Integer_Literal>
+<Id value='freefreq' typref='1'>
+<Attr>
+<Pos l='19' c='31' s='8'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='22' c='1' s='14'/>
+</Attr>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='22' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='22' c='19' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='22' c='30' s='1'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='22' c='43' s='2'/>
+</Attr>
+<Variables>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='22' c='34' s='8'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<EmptySeq typref='4'>
+<Attr>
+<Pos l='22' c='46' s='2'/>
+</Attr>
+</EmptySeq>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='22' c='56' s='2'/>
+</Attr>
+<Variables>
+<Id value='free' typref='1'>
+<Attr>
+<Pos l='22' c='51' s='4'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='22' c='59' s='1'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Initialisation>
+<Operations>
+<Operation name='pay'>
+<Attr>
+<Pos l='26' c='3' s='3'/>
+</Attr>
+<Input_Parameters>
+<Id value='cc' typref='1'>
+<Attr>
+<Pos l='26' c='7' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='26' c='21' s='2'/>
+</Attr>
+<Variables>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='26' c='13' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Unary_Exp op='imin' typref='1'>
+<Attr>
+<Pos l='26' c='24' s='3'/>
+</Attr>
+<Nary_Exp op='{' typref='2'>
+<Attr>
+<Pos l='26' c='28' s='1'/>
+</Attr>
+<Binary_Exp op='+i' typref='1'>
+<Attr>
+<Pos l='26' c='37' s='1'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='26' c='29' s='7'/>
+</Attr>
+</Id>
+<Id value='cc' typref='1'>
+<Attr>
+<Pos l='26' c='39' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Id value='limit' typref='1'>
+<Attr>
+<Pos l='26' c='43' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Unary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='select'>
+<Attr>
+<Pos l='28' c='3' s='6' endLine='37'/>
+</Attr>
+<Input_Parameters>
+<Id value='tt' typref='7'>
+<Attr>
+<Pos l='28' c='10' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op='&gt;i'>
+<Attr>
+<Pos l='29' c='15' s='1'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='29' c='7' s='7'/>
+</Attr>
+</Id>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='29' c='17' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='29' c='24' s='1'/>
+</Attr>
+<Id value='tt' typref='7'>
+<Attr>
+<Pos l='29' c='21' s='2'/>
+</Attr>
+</Id>
+<Id value='TRACK' typref='6'>
+<Attr>
+<Pos l='29' c='26' s='5'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Bloc_Sub>
+<Attr>
+<Pos l='31' c='7' s='5'/>
+</Attr>
+<Nary_Sub op=';'>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='32' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='/:'>
+<Attr>
+<Pos l='32' c='15' s='2'/>
+</Attr>
+<Id value='tt' typref='7'>
+<Attr>
+<Pos l='32' c='12' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='ran' typref='6'>
+<Attr>
+<Pos l='32' c='18' s='3'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='32' c='22' s='8'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='32' c='46' s='2'/>
+</Attr>
+<Variables>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='32' c='37' s='8'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='&lt;-' typref='4'>
+<Attr>
+<Pos l='32' c='58' s='2'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='32' c='49' s='8'/>
+</Attr>
+</Id>
+<Id value='tt' typref='7'>
+<Attr>
+<Pos l='32' c='61' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='33' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='33' c='17' s='1'/>
+</Attr>
+<Id value='free' typref='1'>
+<Attr>
+<Pos l='33' c='12' s='4'/>
+</Attr>
+</Id>
+<Id value='freefreq' typref='1'>
+<Attr>
+<Pos l='33' c='19' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Nary_Sub op='CHOICE'>
+<Attr>
+<Pos l='34' c='14' s='6'/>
+</Attr>
+<Assignement_Sub>
+<Attr>
+<Pos l='34' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='free' typref='1'>
+<Attr>
+<Pos l='34' c='21' s='4'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='34' c='29' s='1'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='34' c='42' s='2'/>
+</Attr>
+<Variables>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='34' c='34' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='34' c='53' s='1'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='34' c='45' s='7'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='34' c='55' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Then>
+<Else>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='35' c='19' s='2'/>
+</Attr>
+<Variables>
+<Id value='free' typref='1'>
+<Attr>
+<Pos l='35' c='14' s='4'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='+i' typref='1'>
+<Attr>
+<Pos l='35' c='27' s='1'/>
+</Attr>
+<Id value='free' typref='1'>
+<Attr>
+<Pos l='35' c='22' s='4'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='35' c='29' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='35' c='41' s='2'/>
+</Attr>
+<Variables>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='35' c='33' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='35' c='52' s='1'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='35' c='44' s='7'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='35' c='54' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Else>
+</If_Sub>
+</Nary_Sub>
+</Bloc_Sub>
+</Body>
+</Operation>
+<Operation name='play'>
+<Attr>
+<Pos l='39' c='3' s='2' endLine='43'/>
+</Attr>
+<Output_Parameters>
+<Id value='tt' typref='7'>
+<Attr>
+<Pos l='39' c='3' s='2'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Precondition>
+<Exp_Comparison op='&gt;i'>
+<Attr>
+<Pos l='40' c='22' s='1'/>
+</Attr>
+<Unary_Exp op='size' typref='1'>
+<Attr>
+<Pos l='40' c='7' s='4'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='40' c='12' s='8'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='40' c='24' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<Bloc_Sub>
+<Attr>
+<Pos l='42' c='5' s='5'/>
+</Attr>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='42' c='14' s='2'/>
+</Attr>
+<Variables>
+<Id value='tt' typref='7'>
+<Attr>
+<Pos l='42' c='11' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Unary_Exp op='first' typref='7'>
+<Attr>
+<Pos l='42' c='17' s='5'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='42' c='23' s='8'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='42' c='44' s='2'/>
+</Attr>
+<Variables>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='42' c='35' s='8'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Unary_Exp op='tail' typref='4'>
+<Attr>
+<Pos l='42' c='47' s='4'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='42' c='52' s='8'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Bloc_Sub>
+</Body>
+</Operation>
+<Operation name='penalty'>
+<Attr>
+<Pos l='45' c='3' s='7' endLine='47'/>
+</Attr>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='45' c='13' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='/='>
+<Attr>
+<Pos l='45' c='25' s='2'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='45' c='16' s='8'/>
+</Attr>
+</Id>
+<EmptySeq typref='4'>
+<Attr>
+<Pos l='45' c='28' s='2'/>
+</Attr>
+</EmptySeq>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='45' c='45' s='2'/>
+</Attr>
+<Variables>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='45' c='36' s='8'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Unary_Exp op='tail' typref='4'>
+<Attr>
+<Pos l='45' c='48' s='4'/>
+</Attr>
+<Id value='playlist' typref='4'>
+<Attr>
+<Pos l='45' c='53' s='8'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Values>
+</Assignement_Sub>
+</Then>
+<Else>
+<If_Sub elseif='yes'>
+<Condition>
+<Exp_Comparison op='&gt;i'>
+<Attr>
+<Pos l='46' c='27' s='1'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='46' c='19' s='7'/>
+</Attr>
+</Id>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='46' c='29' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='46' c='44' s='2'/>
+</Attr>
+<Variables>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='46' c='36' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='46' c='55' s='1'/>
+</Attr>
+<Id value='creditr' typref='1'>
+<Attr>
+<Pos l='46' c='47' s='7'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='46' c='57' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='INTEGER'/>
+<Id value='TRACK'/>
+</Binary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='5'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='INTEGER'/>
+<Id value='TRACK'/>
+</Binary_Exp>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='6'>
+<Unary_Exp op='POW'>
+<Id value='TRACK'/>
+</Unary_Exp>
+</Type>
+<Type id='7'>
+<Id value='TRACK'/>
+</Type>
+</TypeInfos>
+
+</Machine>

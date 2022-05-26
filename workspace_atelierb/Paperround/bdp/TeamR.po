@@ -1,0 +1,39 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & _f(9) & _f(10) & WellDefinedness_substitute.2,(_f(20) => _f(22));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & _f(9) & _f(10) & WellDefinedness_substitute.1,(_f(20) => _f(21));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(13) & _f(14) & Operation_query.2,(_f(17) & _f(8) & _f(3) => _f(19));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(13) & _f(14) & Operation_query.1,(_f(15) & _f(16) & _f(3) => _f(18));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_substitute.2,(_f(3) => _f(12));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & _f(9) & _f(10) & Operation_substitute.1,(_f(3) => _f(11));
+_f(1) & _f(2) & Initialisation.2,(_f(3) => _f(5));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((1..2)*{ANSWER}): FIN(NATURAL*{ANSWER})& not(((1..2)*{ANSWER}) = {});
+"Refinement is correct";
+((%(nn).(((nn) : (((0) .. (10)))) | nn)) : (((((0) .. (10))) >-> (((0) .. (21))))));
+((ran(%(nn).(((nn) : (((0) .. (10)))) | nn))) = (((0) .. (10))));
+team : POW( ((0) .. (21))) & ((card(team)) = (11));
+teamr$1 : ((0) .. (10)) +-> ((0) .. (21)) & teamr$1 : ((0) .. (10)) --> ((0) .. (21)) & teamr$1~ : ((0) .. (21)) +-> ((0) .. (10)) & ((teamr$1) : (((((0) .. (10))) >-> (((0) .. (21)))))) & ((ran(teamr$1)) = (team));
+((pp) : (team));
+((rr) : (((0) .. (21))));
+not(((rr) : (team)));
+((((teamr$1) <+ (({((((teamr$1)~ )(pp)) |-> (rr))})))) : (((((0) .. (10))) >-> (((0) .. (21))))));
+((ran(((teamr$1) <+ (({((((teamr$1)~ )(pp)) |-> (rr))}))))) = ((((team) \/ (({rr}))) - ({pp}))));
+((pp) : (((0) .. (21))));
+((aa) = (aa$1));
+((pp) : (ran(teamr$1)));
+not(((pp) : (team)));
+not(((pp) : (ran(teamr$1))));
+(((2|->ANSWER)) = ((1|->ANSWER)));
+(((1|->ANSWER)) = ((2|->ANSWER)));
+"Operation is well defined";
+((pp) : (dom((teamr$1)~)));
+(((teamr$1)~) : (((dom((teamr$1)~)) +-> (ran((teamr$1)~)))))
+END
+&
+THEORY EnumerateX IS
+ANSWER == {in,out}
+END

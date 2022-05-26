@@ -1,0 +1,18 @@
+THEORY ProofList IS
+_f(1) & WellDefinednessProperties.1,(_f(2) & _f(3) & _f(4) & _f(5) & _f(6) & _f(7) & _f(8) => _f(9))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((Ferrari) : (CAR));
+((Mercedes) : (CAR));
+((Williams) : (CAR));
+((McLaren) : (CAR));
+((Lotus) : (CAR));
+((CAR) = (({Ferrari}\/{Mercedes}\/{Williams}\/{McLaren}\/{Lotus})));
+"Properties are well defined";
+((CAR) : (FIN(CAR)))
+END
+&
+THEORY EnumerateX
+END

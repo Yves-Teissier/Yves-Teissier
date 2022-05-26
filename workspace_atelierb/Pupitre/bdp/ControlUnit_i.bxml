@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='ControlUnit_i' type='implementation' position='true' semantic='true' b0check='false'>
+<Abstraction>ControlUnit</Abstraction>
+<Imports>
+<Attr>
+<Pos l='9' c='1' s='7'/>
+</Attr>
+<Referenced_Machine>
+<Attr>
+<Pos l='10' c='5' s='10'/>
+</Attr>
+<Name>httpServer</Name>
+</Referenced_Machine>
+<Referenced_Machine>
+<Attr>
+<Pos l='10' c='17' s='8'/>
+</Attr>
+<Name>digicode</Name>
+</Referenced_Machine>
+</Imports>
+<Sees>
+<Attr>
+<Pos l='12' c='1' s='4'/>
+</Attr>
+<Referenced_Machine>
+<Attr>
+<Pos l='12' c='6' s='3'/>
+</Attr>
+<Name>CTX</Name>
+</Referenced_Machine>
+</Sees>
+<Concrete_Variables>
+<Attr>
+<Pos l='14' c='1' s='18'/>
+</Attr>
+<Id value='debutRequest' typref='1'>
+<Attr>
+<Pos l='15' c='5' s='12'/>
+</Attr>
+</Id>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='15' c='19' s='17'/>
+</Attr>
+</Id>
+</Concrete_Variables>
+<Invariant>
+<Attr>
+<Pos l='17' c='1' s='9'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='18' c='18' s='1'/>
+</Attr>
+<Id value='debutRequest' typref='1'>
+<Attr>
+<Pos l='18' c='5' s='12'/>
+</Attr>
+</Id>
+<Id value='NAT' typref='2'>
+<Attr>
+<Pos l='18' c='20' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='19' c='23' s='1'/>
+</Attr>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='19' c='5' s='17'/>
+</Attr>
+</Id>
+<Id value='NAT' typref='2'>
+<Attr>
+<Pos l='19' c='25' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='21' c='1' s='14'/>
+</Attr>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='22' c='18' s='2'/>
+</Attr>
+<Variables>
+<Id value='debutRequest' typref='1'>
+<Attr>
+<Pos l='22' c='5' s='12'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='22' c='21' s='1'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='23' c='23' s='2'/>
+</Attr>
+<Variables>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='23' c='5' s='17'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='23' c='26' s='1'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Initialisation>
+<Operations>
+<Operation name='pupitre_next'>
+<Attr>
+<Pos l='26' c='5' s='9' endLine='80'/>
+</Attr>
+<Output_Parameters>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='26' c='5' s='9'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='26' c='32' s='5'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Body>
+<Nary_Sub op=';'>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='29' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='29' c='18' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='29' c='12' s='5'/>
+</Attr>
+</Id>
+<Id value='S_DEBUT' typref='4'>
+<Attr>
+<Pos l='29' c='20' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Nary_Sub op=';'>
+<Operation_Call>
+<Attr>
+<Pos l='31' c='26' s='3'/>
+</Attr>
+<Name>
+<Id value='httpServer_get_debut_request'>
+<Attr>
+<Pos l='31' c='30' s='28'/>
+</Attr>
+</Id>
+</Name>
+<Output_Parameters>
+<Id value='debutRequest' typref='1'>
+<Attr>
+<Pos l='31' c='13' s='12'/>
+</Attr>
+</Id>
+</Output_Parameters>
+</Operation_Call>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='33' c='13' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='33' c='29' s='1'/>
+</Attr>
+<Id value='debutRequest' typref='1'>
+<Attr>
+<Pos l='33' c='16' s='12'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='33' c='31' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='34' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='34' c='17' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE' typref='4'>
+<Attr>
+<Pos l='34' c='30' s='39'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='35' c='30' s='2'/>
+</Attr>
+<Variables>
+<Id value='debutRequest' typref='1'>
+<Attr>
+<Pos l='35' c='17' s='12'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='35' c='33' s='1'/>
+</Attr>
+</Integer_Literal>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Then>
+</If_Sub>
+</Nary_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='38' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='38' c='18' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='38' c='12' s='5'/>
+</Attr>
+</Id>
+<Id value='S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE' typref='4'>
+<Attr>
+<Pos l='38' c='20' s='39'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='39' c='23' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='39' c='13' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_DIGICODE' typref='4'>
+<Attr>
+<Pos l='39' c='26' s='10'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='41' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='41' c='18' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='41' c='12' s='5'/>
+</Attr>
+</Id>
+<Id value='S_DIGICODE' typref='4'>
+<Attr>
+<Pos l='41' c='20' s='10'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Nary_Sub op=';'>
+<Operation_Call>
+<Attr>
+<Pos l='42' c='31' s='3'/>
+</Attr>
+<Name>
+<Id value='digi_getResponse'>
+<Attr>
+<Pos l='42' c='35' s='16'/>
+</Attr>
+</Id>
+</Name>
+<Output_Parameters>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='42' c='13' s='17'/>
+</Attr>
+</Id>
+</Output_Parameters>
+</Operation_Call>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='44' c='13' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='44' c='34' s='1'/>
+</Attr>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='44' c='16' s='17'/>
+</Attr>
+</Id>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='44' c='36' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='45' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='45' c='17' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE' typref='4'>
+<Attr>
+<Pos l='45' c='30' s='39'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='47' c='13' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='47' c='34' s='1'/>
+</Attr>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='47' c='16' s='17'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='47' c='36' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='48' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='48' c='17' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_ACCES_REFUSE' typref='4'>
+<Attr>
+<Pos l='48' c='30' s='14'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='50' c='13' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='50' c='34' s='1'/>
+</Attr>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='50' c='16' s='17'/>
+</Attr>
+</Id>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='50' c='36' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='51' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='51' c='17' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_INCIDENT_NIVEAU_4' typref='4'>
+<Attr>
+<Pos l='51' c='30' s='19'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='53' c='13' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='53' c='34' s='1'/>
+</Attr>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='53' c='16' s='17'/>
+</Attr>
+</Id>
+<Integer_Literal value='3' typref='1'>
+<Attr>
+<Pos l='53' c='36' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='54' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='54' c='17' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_PERTE_DE_TEMPS_1' typref='4'>
+<Attr>
+<Pos l='54' c='30' s='18'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='56' c='13' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='56' c='34' s='1'/>
+</Attr>
+<Id value='digicode_response' typref='1'>
+<Attr>
+<Pos l='56' c='16' s='17'/>
+</Attr>
+</Id>
+<Integer_Literal value='4' typref='1'>
+<Attr>
+<Pos l='56' c='36' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='57' c='27' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='57' c='17' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_ACCESS_AUTORISE' typref='4'>
+<Attr>
+<Pos l='57' c='30' s='17'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+</Nary_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='60' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='60' c='18' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='60' c='12' s='5'/>
+</Attr>
+</Id>
+<Id value='S_ACCES_REFUSE' typref='4'>
+<Attr>
+<Pos l='60' c='20' s='14'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='62' c='23' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='62' c='13' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_DIGICODE' typref='4'>
+<Attr>
+<Pos l='62' c='26' s='10'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='64' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='64' c='18' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='64' c='12' s='5'/>
+</Attr>
+</Id>
+<Id value='S_INCIDENT_NIVEAU_4' typref='4'>
+<Attr>
+<Pos l='64' c='20' s='19'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='66' c='23' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='66' c='13' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_DIGICODE' typref='4'>
+<Attr>
+<Pos l='66' c='26' s='10'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='68' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='68' c='18' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='68' c='12' s='5'/>
+</Attr>
+</Id>
+<Id value='S_PERTE_DE_TEMPS_1' typref='4'>
+<Attr>
+<Pos l='68' c='20' s='18'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='70' c='23' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='70' c='13' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_INCIDENT_NIVEAU_4' typref='4'>
+<Attr>
+<Pos l='70' c='26' s='19'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='72' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='72' c='18' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='72' c='12' s='5'/>
+</Attr>
+</Id>
+<Id value='S_ACCESS_AUTORISE' typref='4'>
+<Attr>
+<Pos l='72' c='20' s='17'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='73' c='23' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='73' c='13' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_RECHERCHE_INCIDENT_1' typref='4'>
+<Attr>
+<Pos l='73' c='26' s='22'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='75' c='9' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='75' c='18' s='1'/>
+</Attr>
+<Id value='state' typref='4'>
+<Attr>
+<Pos l='75' c='12' s='5'/>
+</Attr>
+</Id>
+<Id value='S_RECHERCHE_INCIDENT_1' typref='4'>
+<Attr>
+<Pos l='75' c='20' s='22'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='77' c='23' s='2'/>
+</Attr>
+<Variables>
+<Id value='new_state' typref='4'>
+<Attr>
+<Pos l='77' c='13' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='S_INCIDENT_MAJEUR_1' typref='4'>
+<Attr>
+<Pos l='77' c='26' s='19'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+</If_Sub>
+</Nary_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Id value='STATE'/>
+</Type>
+</TypeInfos>
+
+</Machine>

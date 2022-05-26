@@ -1,0 +1,32 @@
+﻿/* ExamR
+ * Author: yves
+ * Creation date: 12/02/2022
+ */
+
+REFINEMENT        ExamR
+
+REFINES           Exam
+
+ABSTRACT_VARIABLES total , num , candidates
+
+INVARIANT         total = SIGMA ( zz ) . ( zz : dom ( marks ) | marks ( zz ) )
+                  & num = card ( dom ( marks ) )
+                  & candidates = dom ( marks )
+
+INITIALISATION    total := 0 ; num := 0 ; candidates := {}
+
+OPERATIONS
+
+  enter ( cc , nn ) =
+      BEGIN
+        total := total + nn
+        || num := num + 1
+        || candidates := candidates \/ { cc }
+  END ;
+
+aa <-- average =
+    aa := total / num ;
+
+  nn <-- number = nn := num
+
+END

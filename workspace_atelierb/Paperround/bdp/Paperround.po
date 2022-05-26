@@ -1,0 +1,37 @@
+THEORY ProofList IS
+_f(1) & _f(4) & WellDefinednessPrecondition_addpaper.1,(_f(5) & _f(19) => _f(18));
+_f(1) & WellDefinednessInvariant.1,(_f(15) & _f(16) & _f(17) => _f(18));
+_f(1) & _f(4) & _f(5) & Operation_remove.3,(_f(2) => _f(14));
+_f(1) & _f(4) & _f(5) & Operation_remove.2,(_f(2) => _f(13));
+_f(1) & _f(4) & _f(5) & Operation_remove.1,(_f(2) => _f(12));
+_f(1) & _f(4) & _f(10) & Operation_addmagazine.1,(_f(2) => _f(11));
+_f(1) & _f(4) & _f(5) & _f(6) & Operation_addpaper.3,(_f(2) => _f(9));
+_f(1) & _f(4) & _f(5) & _f(6) & Operation_addpaper.2,(_f(2) => _f(8));
+_f(1) & _f(4) & _f(5) & _f(6) & Operation_addpaper.1,(_f(2) => _f(7));
+_f(1) & Initialisation.1,(_f(2) => _f(3))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+"Invariant is preserved";
+(card({}) <= 60);
+papers : POW( ((1) .. (163))) & magazines : POW( papers) & (card(papers) <= 60);
+((hh) : (((1) .. (163))));
+(card(papers) +1 <= 60);
+((papers) \/ (({hh}))) : POW( ((1) .. (163)));
+magazines : POW( ((papers) \/ (({hh}))));
+(card(((papers) \/ (({hh})))) <= 60);
+((hh) : (papers));
+((magazines) \/ (({hh}))) : POW( papers);
+(papers - ({hh})) : POW( ((1) .. (163)));
+(magazines - ({hh})) : POW( (papers - ({hh})));
+(card((papers - ({hh}))) <= 60);
+papers : POW( ((1) .. (163)));
+magazines : POW( papers);
+"Invariant is well defined";
+((papers) : (FIN(papers)));
+"Operation precondition is well defined"
+END
+&
+THEORY EnumerateX
+END

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<db_xml>
+    <atelierb version="3_7_ubuntu-cvs" />
+    <project decomp_dir="/home/yves/workspace_atelierb/Pupitre/bdp/expand_src" old_decomp_dir="/home/yves/workspace_atelierb/Pupitre/bdp/src">
+        <!-- Definition directory list -->
+        <!-- Proof mechanisms -->
+        <!-- Component file list -->
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="CTX" suffix="mch" user="yves">
+            <component name="CTX" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="CTX_i" suffix="imp" user="yves">
+            <component name="CTX_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="ControlUnit" suffix="mch" user="yves">
+            <component name="ControlUnit" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="ControlUnit_i" suffix="imp" user="yves">
+            <component name="ControlUnit_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="ControlUnit_r" suffix="ref" user="yves">
+            <component name="ControlUnit_r" type="refinement" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="digicode" suffix="mch" user="yves">
+            <component name="digicode" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="digicode_i" suffix="imp" user="yves">
+            <component name="digicode_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="httpServer" suffix="mch" user="yves">
+            <component name="httpServer" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Pupitre" name="httpServer_i" suffix="imp" user="yves">
+            <component name="httpServer_i" type="implementation" />
+        </component_file>
+    </project>
+</db_xml>

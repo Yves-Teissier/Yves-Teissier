@@ -1,0 +1,79 @@
+﻿THEORY ProofList IS
+  _f(1) & _f(21) & _f(30) & contains.11,(_f(38) & _f(39) => _f(40));
+  _f(1) & _f(21) & _f(30) & contains.10,(_f(36) & _f(2) => _f(17));
+  _f(1) & _f(21) & _f(30) & contains.9,(_f(36) & _f(2) => _f(37));
+  _f(1) & _f(21) & _f(30) & contains.8,(_f(36) & _f(2) => _f(12));
+  _f(1) & _f(21) & _f(30) & contains.7,(_f(34) & _f(2) => _f(17));
+  _f(1) & _f(21) & _f(30) & contains.6,(_f(34) & _f(2) => _f(35));
+  _f(1) & _f(21) & _f(30) & contains.5,(_f(34) & _f(2) => _f(12));
+  _f(1) & _f(21) & _f(30) & contains.4,(_f(33) & _f(2) => _f(10));
+  _f(1) & _f(21) & _f(30) & contains.3,(_f(33) & _f(2) => _f(9));
+  _f(1) & _f(21) & _f(30) & contains.2,(_f(31) & _f(2) => _f(7));
+  _f(1) & _f(21) & _f(30) & contains.1,(_f(31) & _f(2) => _f(32));
+  _f(1) & _f(21) & _f(26) & add.1,(_f(27) & _f(28) => _f(29));
+  _f(1) & _f(21) & _f(22) & get.1,(_f(23) & _f(24) => _f(25));
+  _f(1) & Initialisation.12,(_f(18) & _f(19) => _f(20));
+  _f(1) & Initialisation.11,(_f(11) & _f(2) => _f(17));
+  _f(1) & Initialisation.10,(_f(15) & _f(2) => _f(16));
+  _f(1) & Initialisation.9,(_f(11) & _f(2) => _f(14));
+  _f(1) & Initialisation.8,(_f(11) & _f(2) => _f(13));
+  _f(1) & Initialisation.7,(_f(11) & _f(2) => _f(12));
+  _f(1) & Initialisation.6,(_f(8) & _f(2) => _f(10));
+  _f(1) & Initialisation.5,(_f(8) & _f(2) => _f(9));
+  _f(1) & Initialisation.4,(_f(2) => _f(7));
+  _f(1) & Initialisation.3,(_f(5) & _f(2) => _f(6));
+  _f(1) & Initialisation.2,(_f(2) => _f(4));
+  _f(1) & Initialisation.1,(_f(2) => _f(3))
+END
+&
+THEORY Formulas IS
+  ("`Valuations'" & MAX = 9 & "`Previous components properties'" & MAX: INTEGER & 0<=MAX & MAX<=2147483647);
+  "`Check preconditions of called operation, or While loop construction, or Assert predicates'";
+  ((0..MAX)*{0}: 0..MAX +-> NAT);
+  (dom((0..MAX)*{0}) = 0..MAX);
+  ("`Local hypotheses'" & jj: 0.. -1);
+  (((0..MAX)*{0})(jj) = jj);
+  (0: 0..MAX+1);
+  ("`Local hypotheses'" & aa$1: 0..MAX +-> NAT & dom(aa$1) = 0..MAX & !jj.(jj: 0..ii-1 => aa$1(jj) = jj) & ii: 0..MAX+1);
+  (MAX+1-ii: INTEGER);
+  (0<=MAX+1-ii);
+  ("`Local hypotheses'" & aa$1: 0..MAX +-> NAT & dom(aa$1) = 0..MAX & !jj.(jj: 0..ii-1 => aa$1(jj) = jj) & ii: 0..MAX+1 & ii<=MAX);
+  (MAX+1-(ii+1)+1<=MAX+1-ii);
+  (aa$1<+{ii|->ii}: 0..MAX +-> NAT);
+  (dom(aa$1<+{ii|->ii}) = 0..MAX);
+  ("`Local hypotheses'" & aa$1: 0..MAX +-> NAT & dom(aa$1) = 0..MAX & !jj.(jj: 0..ii-1 => aa$1(jj) = jj) & ii: 0..MAX+1 & ii<=MAX & jj: 0..ii+1-1);
+  ((aa$1<+{ii|->ii})(jj) = jj);
+  (ii+1: 0..MAX+1);
+  ("`Local hypotheses'" & not(ii$7777<=MAX) & aaz$7777: 0..MAX +-> NAT & dom(aaz$7777) = 0..MAX & !jj.(jj: 0..ii$7777-1 => aaz$7777(jj) = jj) & ii$7777: 0..MAX+1);
+  "`Check that the invariant (aa = aa$1) is established by the initialisation - ref 4.3, 5.4'" & "`Check initialisation refinement - ref 4.3, 5.4'";
+  (aaz$7777 = %ii.(ii: 0..MAX | ii));
+  ("`Previous components invariants'" & aa$1: 0..MAX +-> NAT & dom(aa$1) = 0..MAX & "`Component invariant'" & aa = aa$1);
+  ("`get preconditions in previous components'" & xx: 0..MAX);
+  ("`get preconditions in this component'" & xx: 0..MAX);
+  "`Check that the invariant (ee$1 = ee) is preserved by the operation - ref 4.4, 5.5'" & "`Check operation refinement - ref 4.4, 5.5'";
+  (aa$1(xx) = aa(xx));
+  ("`add preconditions in previous components'" & ii: 0..MAX & xx: INTEGER & 0<=xx & xx<=2147483647);
+  ("`add preconditions in this component'" & ii: 0..MAX & xx: INTEGER & 0<=xx & xx<=2147483647);
+  "`Check that the invariant (aa = aa$1) is preserved by the operation - ref 4.4, 5.5'" & "`Check operation refinement - ref 4.4, 5.5'";
+  (aa$1<+{ii|->xx} = aa<+{ii|->xx});
+  ("`contains preconditions in previous components'" & xx: INTEGER & 0<=xx & xx<=2147483647);
+  ("`contains preconditions in this component'" & xx: INTEGER & 0<=xx & xx<=2147483647);
+  (not(xx: ran(0.. -1<|aa$1)));
+  ("`contains preconditions in this component'" & xx: INTEGER & 0<=xx & xx<=2147483647 & "`Local hypotheses'" & rr = bool(xx: ran(0..ii-1<|aa$1)) & ii: 0..MAX+1);
+  ("`contains preconditions in this component'" & xx: INTEGER & 0<=xx & xx<=2147483647 & "`Local hypotheses'" & rr = bool(xx: ran(0..ii-1<|aa$1)) & ii: 0..MAX+1 & ii<=MAX & rr = FALSE & aa$1(ii) = xx);
+  (xx: ran(0..ii+1-1<|aa$1));
+  ("`contains preconditions in this component'" & xx: INTEGER & 0<=xx & xx<=2147483647 & "`Local hypotheses'" & rr = bool(xx: ran(0..ii-1<|aa$1)) & ii: 0..MAX+1 & ii<=MAX & rr = FALSE & not(aa$1(ii) = xx));
+  (rr = bool(xx: ran(0..ii+1-1<|aa$1)));
+  ("`contains preconditions in this component'" & xx: INTEGER & 0<=xx & xx<=2147483647 & "`Local hypotheses'" & not(ii$7777<=MAX & not(xx: ran(0..ii$7777-1<|aa$1))) & ii$7777: 0..MAX+1);
+  "`Check that the invariant (bb$1 = bb) is preserved by the operation - ref 4.4, 5.5'" & "`Check operation refinement - ref 4.4, 5.5'";
+  (bool(xx: ran(0..ii$7777-1<|aa$1)) = bool(xx: ran(aa$1)));
+  ("`Concrete variables typing predicates'" & aa$1: POW(INTEGER*INTEGER) & "`Variables conservation'" & aa = aa$1);
+  ("`Concrete variables typing predicates'" & aa: POW(INTEGER*INTEGER))
+END
+&
+THEORY EnumerateX 
+END
+&
+THEORY Version IS
+  POVersion("svn")(CLT == "svn")(genOPO == KO, genDivergencePO == KO, local_op == OK)
+END

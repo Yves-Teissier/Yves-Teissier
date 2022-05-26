@@ -1,0 +1,31 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(5) & WellDefinedness_number.1,(_f(12) => _f(15));
+_f(1) & _f(2) & _f(5) & _f(10) & WellDefinedness_average.4,(_f(12) => _f(16));
+_f(1) & _f(2) & _f(5) & _f(10) & WellDefinedness_average.3,(_f(12) => _f(15));
+_f(1) & _f(2) & _f(5) & _f(10) & WellDefinedness_average.2,(_f(11) & _f(12) => _f(14));
+_f(1) & _f(2) & _f(5) & _f(10) & WellDefinedness_average.1,(_f(12) => _f(13));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(7) & _f(8) & Operation_enter.1,(_f(3) => _f(9));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+CANDIDATE: FIN(INTEGER) & not(CANDIDATE = {});
+"Invariant is preserved";
+(({}) : (((CANDIDATE) +-> (((0) .. (100))))));
+((marks) : (((CANDIDATE) +-> (((0) .. (100))))));
+((cc) : (CANDIDATE));
+not(((cc) : (dom(marks))));
+((nn) : (((0) .. (100))));
+((((marks) <+ (({((cc) |-> (nn))})))) : (((CANDIDATE) +-> (((0) .. (100))))));
+not(((marks) = ({})));
+((zz) : (dom(marks)));
+"Operation is well defined";
+((SET(zz).(((zz) : (dom(marks))))) : (FIN(SET(zz).(((zz) : (dom(marks)))))));
+((marks) : (((dom(marks)) +-> (ran(marks)))));
+((dom(marks)) : (FIN(dom(marks))));
+not(((card(dom(marks))) = (0)))
+END
+&
+THEORY EnumerateX
+END

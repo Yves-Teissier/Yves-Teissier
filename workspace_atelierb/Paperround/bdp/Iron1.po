@@ -1,0 +1,36 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(6) & _f(11) & WellDefinedness_take.1,(_f(18) => _f(16));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & WellDefinedness_put.1,(_f(18) => _f(16));
+_f(1) & _f(2) & _f(6) & WellDefinednessPrecondition_put.1,(_f(7) & _f(17) => _f(16));
+_f(1) & _f(2) & WellDefinednessInvariant.1,(_f(14) & _f(15) => _f(16));
+_f(1) & _f(2) & _f(6) & _f(11) & Operation_take.2,(_f(3) => _f(13));
+_f(1) & _f(2) & _f(6) & _f(11) & Operation_take.1,(_f(3) => _f(12));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & Operation_put.2,(_f(3) => _f(10));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & Operation_put.1,(_f(3) => _f(9));
+_f(1) & _f(2) & Initialisation.2,(_f(3) => _f(5));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+ITEM: FIN(INTEGER) & not(ITEM = {}) & ((limit) : ((NAT-{0})));
+"Invariant is preserved";
+(({}) : (seq(ITEM)));
+(size({}) <= limit);
+pile : NATURAL-{0} +-> ITEM & ((pile) : (seq(ITEM))) & (size(pile) <= limit);
+((ii) : (ITEM));
+(size(pile) +1 <= limit);
+((((pile) <- (ii))) : (seq(ITEM)));
+(size(((pile) <- (ii))) <= limit);
+not(((pile) = ({})));
+((front(pile)) : (seq(ITEM)));
+(size(front(pile)) <= limit);
+pile : NATURAL-{0} +-> ITEM & ((pile) : (seq(ITEM)));
+"Invariant is well defined";
+((pile) : (seq(ran(pile))));
+"Operation precondition is well defined";
+"Operation is well defined"
+END
+&
+THEORY EnumerateX
+END

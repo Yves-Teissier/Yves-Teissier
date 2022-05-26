@@ -1,0 +1,87 @@
+﻿/* thermostat_i
+ * Author: yves
+ * Creation date: 21/11/2020
+ */
+
+IMPLEMENTATION thermostat_i
+
+REFINES thermostat
+
+SEES CTX
+
+IMPORTS
+    target , temperature , chaudiere , timer
+
+CONCRETE_VARIABLES
+    target_val , temperature_val , gaz_duration , check_temperature_delay , delta
+
+INVARIANT
+    target_val : NAT &
+    temperature_val : NAT &
+    gaz_duration : NAT &
+    check_temperature_delay : NAT &
+    check_temperature_delay <= 400 &
+    target_val <= 2500 &
+    delta : INT
+//VALUES
+
+
+INITIALISATION
+    target_val := 1800 ;
+    temperature_val := 0 ;
+    gaz_duration := 90 ;
+    check_temperature_delay := 350 ;
+    delta := 0
+
+OPERATIONS
+     thermostat_set_context =
+    BEGIN
+        skip
+    END ;
+
+    new_state <-- thermostat_next ( state ) =
+    BEGIN
+//        new_state := IDLE_STATE;
+        IF state = SETGAZ_STATE THEN
+            // Set gaz
+            start_chaudiere ;
+            // Wait 90 sec
+            timer_wait ( gaz_duration ) ;
+            // Unset gaz
+            stop_chaudiere ;
+            new_state := IDLE_STATE
+        ELSIF state = IDLE_STATE THEN
+
+            // Get current target
+            target_val <-- target_get_target ;
+            // Get current temperature
+            temperature_val <-- temperature_get_temperature ;
+
+            IF target_val > 2500 THEN
+                target_val := 2500
+            END ;
+
+            delta := target_val - temperature_val ;
+            // Increase the gaz duration if the delta between target and current temperature is to high
+            IF ( delta >= 50 ) THEN
+                gaz_duration := 120 ;
+                check_temperature_delay := 300
+            ELSE
+                gaz_duration := 90 ;
+                check_temperature_delay := 350
+            END ;
+
+            timer_wait ( check_temperature_delay ) ;
+
+            // Start gaz if the temperature is less than target
+            IF temperature_val < target_val THEN
+                new_state := SETGAZ_STATE
+            ELSE
+                new_state := IDLE_STATE
+            END
+
+        ELSE
+            new_state := IDLE_STATE
+        END
+    END
+ END

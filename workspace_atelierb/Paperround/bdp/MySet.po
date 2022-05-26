@@ -1,0 +1,33 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(5) & WellDefinednessPrecondition_Add.1,(_f(6) & _f(7) & _f(18) => _f(17));
+_f(1) & _f(2) & WellDefinednessInvariant.1,(_f(15) & _f(16) => _f(17));
+_f(1) & _f(2) & _f(5) & _f(11) & Operation_Discard.2,(_f(12) & _f(3) => _f(14));
+_f(1) & _f(2) & _f(5) & _f(11) & Operation_Discard.1,(_f(12) & _f(3) => _f(13));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(7) & _f(8) & Operation_Add.2,(_f(3) => _f(10));
+_f(1) & _f(2) & _f(5) & _f(6) & _f(7) & _f(8) & Operation_Add.1,(_f(3) => _f(9));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+VALUE: FIN(INTEGER) & not(VALUE = {}) & ((MM) : (NAT));
+"Invariant is preserved";
+(card({}) <= MM);
+ss : POW( VALUE) & (card(ss) <= MM);
+((xx) : (VALUE));
+not(((xx) : (ss)));
+(card(ss) +1 <= MM);
+((ss) \/ (({xx}))) : POW( VALUE);
+(card(((ss) \/ (({xx})))) <= MM);
+not(((ss) = ({})));
+((ee) : (ss));
+(ss - ({ee})) : POW( VALUE);
+(card((ss - ({ee}))) <= MM);
+ss : POW( VALUE);
+"Invariant is well defined";
+((ss) : (FIN(ss)));
+"Operation precondition is well defined"
+END
+&
+THEORY EnumerateX
+END

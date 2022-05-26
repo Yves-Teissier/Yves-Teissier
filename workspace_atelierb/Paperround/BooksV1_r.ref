@@ -1,0 +1,24 @@
+/* BooksV1_r
+ * Author: yves
+ * Creation date: 22/02/2022
+ */
+
+REFINEMENT BooksV1_r
+REFINES BooksV1
+
+VARIABLES         
+    scheme
+INVARIANT         
+    scheme : iseq(BOOK) 
+    & ran(scheme) = BOOK - read /* Cette expression fait le lien entre la variable abstraite "read" et "scheme". scheme ne contient que les livres non lus */
+INITIALISATION    
+    scheme :: perm(BOOK) /* :: devient élément de ... . perm = ensemble des permutations (suites bijectives) */
+
+OPERATIONS
+  bb <-- newbook = 
+  BEGIN 
+      bb := first(scheme); /* bb est le premier élément de scheme */ /* ; = séquence de ... */
+      scheme := tail(scheme) /* scheme devient scheme sauf le premier élément */
+  END
+
+END

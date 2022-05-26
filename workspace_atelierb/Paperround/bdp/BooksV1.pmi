@@ -1,0 +1,21 @@
+THEORY BalanceX IS
+BooksV1,1,0,0,1,0,0,0;
+Operation_newbook,1,0,0,1,0,0,0
+END
+&
+THEORY ProofState IS
+Proved(0)
+END
+&
+THEORY MethodList IS
+pr
+END
+&
+THEORY PassList IS
+Force(0),?
+END
+&
+THEORY Status IS
+BooksV1,1,0,1,0,0,0;
+Operation_newbook,1,0,1,0,0,0
+END

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<db_xml>
+    <atelierb version="3_7_ubuntu-cvs" />
+    <project decomp_dir="/home/yves/workspace_atelierb/Prouver/bdp/expand_src" old_decomp_dir="/home/yves/workspace_atelierb/Prouver/bdp/src">
+        <!-- Definition directory list -->
+        <!-- Proof mechanisms -->
+        <!-- Component file list -->
+        <component_file path="/home/yves/workspace_atelierb/Prouver" name="CTX" suffix="mch" user="yves">
+            <component name="CTX" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Prouver" name="M0" suffix="mch" user="yves">
+            <component name="M0" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/Prouver" name="M0_i" suffix="imp" user="yves">
+            <component name="M0_i" type="implementation" />
+        </component_file>
+    </project>
+</db_xml>

@@ -1,0 +1,18 @@
+THEORY ProofList IS
+_f(1) & WellDefinednessProperties.1,(_f(2) & _f(3) & _f(4) & _f(5) & _f(6) & _f(7) & _f(8) => _f(9))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((DOM_QUIXOTE) : (BOOK));
+((ULYSSES) : (BOOK));
+((THE_ODISSEY) : (BOOK));
+((HAMLET) : (BOOK));
+((THE_DIVINE_COMEDY) : (BOOK));
+((BOOK) = (({DOM_QUIXOTE}\/{ULYSSES}\/{THE_ODISSEY}\/{HAMLET}\/{THE_DIVINE_COMEDY})));
+"Properties are well defined";
+((BOOK) : (FIN(BOOK)))
+END
+&
+THEORY EnumerateX
+END

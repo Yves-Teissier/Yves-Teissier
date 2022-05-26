@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Proof_Obligations version="1.0" author="pmi2Pos" xmlns="https://www.atelierb.eu/Formats/pog">
+<Proof_Obligation>
+<Tag>Initialisation</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_put</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_take</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessInvariant</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinednessPrecondition_put</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation precondition is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinedness_put</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>WellDefinedness_take</Tag>
+<Simple_Goal status="Proved">
+<Tag>Operation is well defined</Tag>
+<Proof_State passList="Force(0),?" methodList="pr" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+</Proof_Obligations>

@@ -1,0 +1,28 @@
+THEORY ProofList IS
+_f(1) & _f(2) & WellDefinednessInvariant.1,(_f(12) & _f(13) => _f(14));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & _f(9) & Operation_substitute.2,(_f(3) => _f(11));
+_f(1) & _f(2) & _f(6) & _f(7) & _f(8) & _f(9) & Operation_substitute.1,(_f(3) => _f(10));
+_f(1) & _f(2) & Initialisation.2,(_f(3) => _f(5));
+_f(1) & _f(2) & Initialisation.1,(_f(3) => _f(4))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((1..2)*{ANSWER}): FIN(NATURAL*{ANSWER})& not(((1..2)*{ANSWER}) = {});
+"Invariant is preserved";
+((0) .. (10)) : POW( ((0) .. (21)));
+((card(((0) .. (10)))) = (11));
+team : POW( ((0) .. (21))) & ((card(team)) = (11));
+((pp) : (team));
+((rr) : (((0) .. (21))));
+not(((rr) : (team)));
+(((team) \/ (({rr}))) - ({pp})) : POW( ((0) .. (21)));
+((card((((team) \/ (({rr}))) - ({pp})))) = (11));
+team : POW( ((0) .. (21)));
+"Invariant is well defined";
+((team) : (FIN(team)))
+END
+&
+THEORY EnumerateX IS
+ANSWER == {in,out}
+END
