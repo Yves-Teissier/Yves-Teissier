@@ -34,48 +34,84 @@ OPERATIONS
                 new_state := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE;
                 debutRequest := 0
             END
-        END;
-        IF state = S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE THEN
+        ELSIF state = S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE THEN
             new_state := S_DIGICODE
-        END;
-        IF state = S_DIGICODE THEN
+        ELSIF state = S_DIGICODE THEN
             digicode_response <-- digi_getResponse;
             
             IF digicode_response = 0 THEN
                 new_state := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE
-            END;
-            IF digicode_response = 1 THEN
+            ELSIF digicode_response = 1 THEN // erreur code
                 new_state := S_ACCES_REFUSE
-            END;
-            IF digicode_response = 2 THEN
+            ELSIF digicode_response = 2 THEN // erreur code apres dernier essai
                 new_state := S_INCIDENT_NIVEAU_4
-            END;
-            IF digicode_response = 3 THEN
+            ELSIF digicode_response = 3 THEN // erreur code dernier essai
                 new_state := S_PERTE_DE_TEMPS_1
-            END;
-            IF digicode_response = 4 THEN
+                // Add delay X secs
+            ELSIF digicode_response = 4 THEN // Code bon
                 new_state := S_ACCESS_AUTORISE
             END
-        END;
-        IF state = S_ACCES_REFUSE THEN
+        ELSIF state = S_ACCES_REFUSE THEN
             // Display erreur message
             new_state := S_DIGICODE
-        END;
-        IF state = S_INCIDENT_NIVEAU_4 THEN
+        ELSIF state = S_INCIDENT_NIVEAU_4 THEN
             // Display erreur message incident niveau 4
             new_state := S_DIGICODE
-        END;
-        IF state = S_PERTE_DE_TEMPS_1 THEN
+        ELSIF state = S_PERTE_DE_TEMPS_1 THEN
             // Delay 1000 seconds
             new_state := S_INCIDENT_NIVEAU_4
-        END;
-        IF state = S_ACCESS_AUTORISE THEN
-            new_state := S_RECHERCHE_INCIDENT_1;
-        END;
-        IF state = S_RECHERCHE_INCIDENT_1 THEN
+        ELSIF state = S_ACCESS_AUTORISE THEN
+            new_state := S_RECHERCHE_INCIDENT_1
+        ELSIF state = S_RECHERCHE_INCIDENT_1 THEN
             // Delay X sec or timer time out
-            new_state := S_INCIDENT_MAJEUR_1;
+            // result <-- ExecuteIncident(1)
+            new_state := S_INCIDENT_MAJEUR_1
+        ELSIF state = S_INCIDENT_MAJEUR_1 THEN
+            new_state := S_PROTOCOLE_ACCES_PROCEDURE_1
+        ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_1 THEN
+            new_state := S_MODE_AIDE_1
+        ELSIF state = S_MODE_AIDE_1 THEN
+            new_state := S_ENIGME_CABLES_1
+        ELSIF state = S_ENIGME_CABLES_1 THEN
+            new_state := S_INCIDENT_MAJEUR_RESOLU_1
+        ELSIF state = S_INCIDENT_MAJEUR_RESOLU_1 THEN
+            new_state := S_RECHERCHE_INCIDENT_2
+        ELSIF state = S_RECHERCHE_INCIDENT_2 THEN
+            new_state := S_INCIDENT_MAJEUR_2
+        ELSIF state = S_INCIDENT_MAJEUR_2 THEN
+            new_state := S_PROTOCOLE_ACCES_PROCEDURE_2
+        ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_2 THEN
+            new_state := S_MODE_AIDE_2
+        ELSIF state = S_MODE_AIDE_2 THEN
+            new_state := S_ENIGME_CABLES_2
+        ELSIF state = S_ENIGME_CABLES_2 THEN
+            new_state := S_ENIGME_CABLES_2S2
+        ELSIF state = S_ENIGME_CABLES_2S2 THEN
+            // IF erreur = 0 THEN
+            new_state := S_INCIDENT_MAJEUR_RESOLU_2
+        ELSIF state = S_INCIDENT_MAJEUR_RESOLU_2 THEN
+            new_state := S_RECHERCHE_INCIDENT_3
+        ELSIF state = S_RECHERCHE_INCIDENT_3 THEN
+            new_state := S_INCIDENT_MAJEUR_3
+        ELSIF state = S_INCIDENT_MAJEUR_3 THEN
+            new_state := S_PROTOCOLE_ACCES_PROCEDURE_3
+        ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_3 THEN
+            new_state := S_MODE_AIDE_3
+        ELSIF state = S_MODE_AIDE_3 THEN
+            new_state := S_ENIGME_ACTIVATION_BALANCE_3
+        ELSIF state = S_ENIGME_ACTIVATION_BALANCE_3 THEN
+            new_state := S_ENIGME_POST_ACTIVATION_BALANCE_3
+        ELSIF state = S_ENIGME_POST_ACTIVATION_BALANCE_3 THEN
+            new_state := S_ENIGME_NIVEAU_DEAU
+        ELSIF state = S_ENIGME_NIVEAU_DEAU THEN
+            new_state := S_INCIDENT_RESOLU
+        ELSIF state = S_INCIDENT_RESOLU THEN
+            new_state := S_GENERIQUE
+        ELSIF state = S_GENERIQUE THEN
+            new_state := S_BILAN_PARTIE
+        ELSIF state = S_BILAN_PARTIE THEN
+            new_state := S_DEBUT
         END
-        
-    END    
+  
+    END
 END
