@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+#include "CTX.h"
+#include "ControlUnit.h"
+
+int main(void )
+{
+
+  CTX__STATE state = CTX__S0;
+  CTX__STATE new_state;
+  
+  CTX__INITIALISATION();
+
+  ControlUnit__INITIALISATION();
+
+  
+  while(1) {
+    ControlUnit__pupitre_next(CTX__S0, &new_state);
+    state = new_state;
+    
+    sleep(1);
+  }
+  
+  exit(0);
+}

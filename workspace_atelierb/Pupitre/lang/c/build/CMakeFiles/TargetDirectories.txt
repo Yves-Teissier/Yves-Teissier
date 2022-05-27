@@ -1,0 +1,3 @@
+/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles/rebuild_cache.dir
+/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles/Pupitre.dir
+/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles/edit_cache.dir

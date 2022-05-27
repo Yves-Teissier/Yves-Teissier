@@ -1,0 +1,64 @@
+#ifndef _CTX_h
+#define _CTX_h
+
+#include <stdint.h>
+#include <stdbool.h>
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
+
+/* Clause SETS */
+typedef enum
+{
+    CTX__S_DEBUT,
+    CTX__S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE,
+    CTX__S_DIGICODE,
+    CTX__S_ACCES_REFUSE,
+    CTX__S_ACCESS_AUTORISE,
+    CTX__S_PERTE_DE_TEMPS_1,
+    CTX__S_INCIDENT_NIVEAU_4,
+    CTX__S_RECHERCHE_INCIDENT_1,
+    CTX__S_INCIDENT_MAJEUR_1,
+    CTX__S_PROTOCOLE_ACCES_PROCEDURE_1,
+    CTX__S_MODE_AIDE_1,
+    CTX__S_ENIGME_CABLES_1,
+    CTX__S_INCIDENT_MAJEUR_RESOLU_1,
+    CTX__S_RECHERCHE_INCIDENT_2,
+    CTX__S_INCIDENT_MAJEUR_2,
+    CTX__S_PROTOCOLE_ACCES_PROCEDURE_2,
+    CTX__S_MODE_AIDE_2,
+    CTX__S_ENIGME_CABLES_2,
+    CTX__S_ENIGME_CABLES_2S2,
+    CTX__S_INCIDENT_MAJEUR_RESOLU_2,
+    CTX__S_RECHERCHE_INCIDENT_3,
+    CTX__S_INCIDENT_MAJEUR_3,
+    CTX__S_PROTOCOLE_ACCES_PROCEDURE_3,
+    CTX__S_MODE_AIDE_3,
+    CTX__S_ENIGME_ACTIVATION_BALANCE_3,
+    CTX__S_ENIGME_POST_ACTIVATION_BALANCE_3,
+    CTX__S_ENIGME_NIVEAU_DEAU,
+    CTX__S_INCIDENT_RESOLU,
+    CTX__S_GENERIQUE,
+    CTX__S_BILAN_PARTIE
+    
+} CTX__STATE;
+#define CTX__STATE__max 30
+
+/* Clause CONCRETE_CONSTANTS */
+/* Basic constants */
+#define CTX__S0 CTX__S_DEBUT
+/* Array and record constants */
+
+
+/* Clause CONCRETE_VARIABLES */
+
+extern void CTX__INITIALISATION(void);
+
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
+
+
+#endif /* _CTX_h */
