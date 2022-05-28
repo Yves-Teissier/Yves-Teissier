@@ -1,5 +1,7 @@
 /* WARNING if type checker is not performed, translation could contain errors ! */
 
+#include <stdio.h>
+
 #include "httpServer.h"
 
 /* Clause CONCRETE_CONSTANTS */
@@ -23,6 +25,9 @@ void httpServer__handleRequest(void)
 
 void httpServer__httpServer_get_debut_request(int32_t *debutRequest)
 {
-    (*debutRequest) = 0;
+  printf("Http debut resquest [0,1] ? = ");
+  fflush( stdout );
+  scanf("%d", debutRequest);
+  //    (*debutRequest) = 0;
 }
 

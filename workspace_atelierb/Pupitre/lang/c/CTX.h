@@ -11,6 +11,7 @@ extern "C" {
 /* Clause SETS */
 typedef enum
 {
+    CTX__S_IDLE,
     CTX__S_DEBUT,
     CTX__S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE,
     CTX__S_DIGICODE,
@@ -43,11 +44,11 @@ typedef enum
     CTX__S_BILAN_PARTIE
     
 } CTX__STATE;
-#define CTX__STATE__max 30
+#define CTX__STATE__max 31
 
 /* Clause CONCRETE_CONSTANTS */
 /* Basic constants */
-#define CTX__S0 CTX__S_DEBUT
+#define CTX__S0 CTX__S_IDLE
 /* Array and record constants */
 
 

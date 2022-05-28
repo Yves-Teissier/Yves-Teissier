@@ -8,6 +8,7 @@
 /* Clause IMPORTS */
 #include "httpServer.h"
 #include "digicode.h"
+#include "com_debug.h"
 
 /* Clause CONCRETE_CONSTANTS */
 /* Basic constants */
@@ -21,6 +22,7 @@ static int32_t ControlUnit__digicode_response;
 void ControlUnit__INITIALISATION(void)
 {
     
+    com_debug__INITIALISATION();
     digicode__INITIALISATION();
     httpServer__INITIALISATION();
     ControlUnit__debutRequest = 0;
@@ -31,7 +33,11 @@ void ControlUnit__INITIALISATION(void)
 
 void ControlUnit__pupitre_next(CTX__STATE state, CTX__STATE *new_state)
 {
-    if(state == CTX__S_DEBUT)
+    if(state == CTX__S_IDLE)
+    {
+        (*new_state) = CTX__S_DEBUT;
+    }
+    else if(state == CTX__S_DEBUT)
     {
         httpServer__httpServer_get_debut_request(&ControlUnit__debutRequest);
         if(ControlUnit__debutRequest == 1)
@@ -175,6 +181,10 @@ void ControlUnit__pupitre_next(CTX__STATE state, CTX__STATE *new_state)
     else if(state == CTX__S_BILAN_PARTIE)
     {
         (*new_state) = CTX__S_DEBUT;
+    }
+    if(((*new_state)) != (state))
+    {
+        com_debug__debug_print_state(*new_state);
     }
 }
 

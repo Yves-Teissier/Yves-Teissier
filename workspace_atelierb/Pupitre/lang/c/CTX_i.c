@@ -5,7 +5,7 @@
 /* Clause CONCRETE_CONSTANTS */
 /* Basic constants */
 
-#define CTX__S0 CTX__S_DEBUT
+#define CTX__S0 CTX__S_IDLE
 /* Array and record constants */
 /* Clause CONCRETE_VARIABLES */
 

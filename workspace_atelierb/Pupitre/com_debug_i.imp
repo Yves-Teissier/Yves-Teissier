@@ -1,0 +1,80 @@
+/* com_debug_i
+* Author: yves
+* Creation date: 28/05/2022
+*/
+
+IMPLEMENTATION com_debug_i
+REFINES com_debug
+    
+SEES
+    CTX
+    
+OPERATIONS
+    debug_print_state(state) =
+    BEGIN
+        IF state = S_DEBUT THEN
+            skip
+        ELSIF state = S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE THEN
+            skip
+        ELSIF state = S_DIGICODE THEN
+            skip
+        ELSIF state = S_ACCES_REFUSE THEN
+            skip
+        ELSIF state = S_ACCESS_AUTORISE THEN
+            skip
+        ELSIF state = S_PERTE_DE_TEMPS_1 THEN
+            skip
+        ELSIF state = S_INCIDENT_NIVEAU_4 THEN
+            skip
+        ELSIF state = S_RECHERCHE_INCIDENT_1 THEN
+            skip
+        ELSIF state = S_INCIDENT_MAJEUR_1 THEN
+            skip
+        ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_1 THEN
+            skip
+        ELSIF state = S_MODE_AIDE_1 THEN
+            skip
+        ELSIF state = S_ENIGME_CABLES_1 THEN
+            skip
+        ELSIF state = S_INCIDENT_MAJEUR_RESOLU_1 THEN
+            skip
+        ELSIF state = S_RECHERCHE_INCIDENT_2 THEN
+            skip
+        ELSIF state = S_INCIDENT_MAJEUR_2 THEN
+            skip
+        ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_2 THEN
+            skip
+        ELSIF state = S_MODE_AIDE_2 THEN
+            skip
+        ELSIF state = S_ENIGME_CABLES_2 THEN
+            skip
+        ELSIF state = S_ENIGME_CABLES_2S2 THEN
+            skip
+        ELSIF state = S_INCIDENT_MAJEUR_RESOLU_2 THEN
+            skip
+        ELSIF state = S_RECHERCHE_INCIDENT_3 THEN
+            skip
+        ELSIF state = S_INCIDENT_MAJEUR_3 THEN
+            skip
+        ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_3 THEN
+            skip
+        ELSIF state = S_MODE_AIDE_3 THEN
+            skip
+        ELSIF state = S_ENIGME_ACTIVATION_BALANCE_3 THEN
+            skip
+        ELSIF state = S_ENIGME_POST_ACTIVATION_BALANCE_3 THEN
+            skip
+        ELSIF state = S_ENIGME_NIVEAU_DEAU THEN
+            skip
+        ELSIF state = S_INCIDENT_RESOLU THEN
+            skip
+        ELSIF state = S_GENERIQUE THEN
+            skip
+        ELSIF state = S_BILAN_PARTIE THEN
+            skip
+        ELSE
+            skip 
+        END
+    END
+    
+END

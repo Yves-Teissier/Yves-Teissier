@@ -17,10 +17,10 @@ int main(void )
 
   
   while(1) {
-    ControlUnit__pupitre_next(CTX__S0, &new_state);
+    ControlUnit__pupitre_next(state, &new_state);
     state = new_state;
     
-    sleep(1);
+    sleep(0.1);
   }
   
   exit(0);
