@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yves/workspace_atelierb/Pupitre/lang/c
+CMAKE_SOURCE_DIR = /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yves/workspace_atelierb/Pupitre/lang/c/build
+CMAKE_BINARY_DIR = /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Pupitre.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Pupitre.dir/flags.make
 
 CMakeFiles/Pupitre.dir/CTX_i.o: CMakeFiles/Pupitre.dir/flags.make
 CMakeFiles/Pupitre.dir/CTX_i.o: ../CTX_i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Pupitre.dir/CTX_i.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/CTX_i.o   -c /home/yves/workspace_atelierb/Pupitre/lang/c/CTX_i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Pupitre.dir/CTX_i.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/CTX_i.o   -c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/CTX_i.c
 
 CMakeFiles/Pupitre.dir/CTX_i.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pupitre.dir/CTX_i.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/workspace_atelierb/Pupitre/lang/c/CTX_i.c > CMakeFiles/Pupitre.dir/CTX_i.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/CTX_i.c > CMakeFiles/Pupitre.dir/CTX_i.i
 
 CMakeFiles/Pupitre.dir/CTX_i.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pupitre.dir/CTX_i.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/workspace_atelierb/Pupitre/lang/c/CTX_i.c -o CMakeFiles/Pupitre.dir/CTX_i.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/CTX_i.c -o CMakeFiles/Pupitre.dir/CTX_i.s
 
 CMakeFiles/Pupitre.dir/CTX_i.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/Pupitre.dir/CTX_i.o.provides.build: CMakeFiles/Pupitre.dir/CTX_i.o
 
 CMakeFiles/Pupitre.dir/ControlUnit_i.o: CMakeFiles/Pupitre.dir/flags.make
 CMakeFiles/Pupitre.dir/ControlUnit_i.o: ../ControlUnit_i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Pupitre.dir/ControlUnit_i.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/ControlUnit_i.o   -c /home/yves/workspace_atelierb/Pupitre/lang/c/ControlUnit_i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Pupitre.dir/ControlUnit_i.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/ControlUnit_i.o   -c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/ControlUnit_i.c
 
 CMakeFiles/Pupitre.dir/ControlUnit_i.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pupitre.dir/ControlUnit_i.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/workspace_atelierb/Pupitre/lang/c/ControlUnit_i.c > CMakeFiles/Pupitre.dir/ControlUnit_i.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/ControlUnit_i.c > CMakeFiles/Pupitre.dir/ControlUnit_i.i
 
 CMakeFiles/Pupitre.dir/ControlUnit_i.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pupitre.dir/ControlUnit_i.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/workspace_atelierb/Pupitre/lang/c/ControlUnit_i.c -o CMakeFiles/Pupitre.dir/ControlUnit_i.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/ControlUnit_i.c -o CMakeFiles/Pupitre.dir/ControlUnit_i.s
 
 CMakeFiles/Pupitre.dir/ControlUnit_i.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/Pupitre.dir/ControlUnit_i.o.provides.build: CMakeFiles/Pupitre.dir/Co
 
 CMakeFiles/Pupitre.dir/digicode_i.o: CMakeFiles/Pupitre.dir/flags.make
 CMakeFiles/Pupitre.dir/digicode_i.o: ../digicode_i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Pupitre.dir/digicode_i.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/digicode_i.o   -c /home/yves/workspace_atelierb/Pupitre/lang/c/digicode_i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Pupitre.dir/digicode_i.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/digicode_i.o   -c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/digicode_i.c
 
 CMakeFiles/Pupitre.dir/digicode_i.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pupitre.dir/digicode_i.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/workspace_atelierb/Pupitre/lang/c/digicode_i.c > CMakeFiles/Pupitre.dir/digicode_i.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/digicode_i.c > CMakeFiles/Pupitre.dir/digicode_i.i
 
 CMakeFiles/Pupitre.dir/digicode_i.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pupitre.dir/digicode_i.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/workspace_atelierb/Pupitre/lang/c/digicode_i.c -o CMakeFiles/Pupitre.dir/digicode_i.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/digicode_i.c -o CMakeFiles/Pupitre.dir/digicode_i.s
 
 CMakeFiles/Pupitre.dir/digicode_i.o.requires:
 
@@ -129,18 +129,42 @@ CMakeFiles/Pupitre.dir/digicode_i.o.provides: CMakeFiles/Pupitre.dir/digicode_i.
 CMakeFiles/Pupitre.dir/digicode_i.o.provides.build: CMakeFiles/Pupitre.dir/digicode_i.o
 
 
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: CMakeFiles/Pupitre.dir/flags.make
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../Root_pupitre_i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Pupitre.dir/Root_pupitre_i.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/Root_pupitre_i.o   -c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/Root_pupitre_i.c
+
+CMakeFiles/Pupitre.dir/Root_pupitre_i.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pupitre.dir/Root_pupitre_i.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/Root_pupitre_i.c > CMakeFiles/Pupitre.dir/Root_pupitre_i.i
+
+CMakeFiles/Pupitre.dir/Root_pupitre_i.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pupitre.dir/Root_pupitre_i.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/Root_pupitre_i.c -o CMakeFiles/Pupitre.dir/Root_pupitre_i.s
+
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o.requires:
+
+.PHONY : CMakeFiles/Pupitre.dir/Root_pupitre_i.o.requires
+
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o.provides: CMakeFiles/Pupitre.dir/Root_pupitre_i.o.requires
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/Root_pupitre_i.o.provides.build
+.PHONY : CMakeFiles/Pupitre.dir/Root_pupitre_i.o.provides
+
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o.provides.build: CMakeFiles/Pupitre.dir/Root_pupitre_i.o
+
+
 CMakeFiles/Pupitre.dir/httpServer_i.o: CMakeFiles/Pupitre.dir/flags.make
 CMakeFiles/Pupitre.dir/httpServer_i.o: ../httpServer_i.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Pupitre.dir/httpServer_i.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/httpServer_i.o   -c /home/yves/workspace_atelierb/Pupitre/lang/c/httpServer_i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Pupitre.dir/httpServer_i.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/httpServer_i.o   -c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/httpServer_i.c
 
 CMakeFiles/Pupitre.dir/httpServer_i.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pupitre.dir/httpServer_i.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/workspace_atelierb/Pupitre/lang/c/httpServer_i.c > CMakeFiles/Pupitre.dir/httpServer_i.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/httpServer_i.c > CMakeFiles/Pupitre.dir/httpServer_i.i
 
 CMakeFiles/Pupitre.dir/httpServer_i.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pupitre.dir/httpServer_i.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/workspace_atelierb/Pupitre/lang/c/httpServer_i.c -o CMakeFiles/Pupitre.dir/httpServer_i.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/httpServer_i.c -o CMakeFiles/Pupitre.dir/httpServer_i.s
 
 CMakeFiles/Pupitre.dir/httpServer_i.o.requires:
 
@@ -153,18 +177,66 @@ CMakeFiles/Pupitre.dir/httpServer_i.o.provides: CMakeFiles/Pupitre.dir/httpServe
 CMakeFiles/Pupitre.dir/httpServer_i.o.provides.build: CMakeFiles/Pupitre.dir/httpServer_i.o
 
 
+CMakeFiles/Pupitre.dir/com_debug_i.o: CMakeFiles/Pupitre.dir/flags.make
+CMakeFiles/Pupitre.dir/com_debug_i.o: ../com_debug_i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Pupitre.dir/com_debug_i.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/com_debug_i.o   -c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/com_debug_i.c
+
+CMakeFiles/Pupitre.dir/com_debug_i.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pupitre.dir/com_debug_i.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/com_debug_i.c > CMakeFiles/Pupitre.dir/com_debug_i.i
+
+CMakeFiles/Pupitre.dir/com_debug_i.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pupitre.dir/com_debug_i.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/com_debug_i.c -o CMakeFiles/Pupitre.dir/com_debug_i.s
+
+CMakeFiles/Pupitre.dir/com_debug_i.o.requires:
+
+.PHONY : CMakeFiles/Pupitre.dir/com_debug_i.o.requires
+
+CMakeFiles/Pupitre.dir/com_debug_i.o.provides: CMakeFiles/Pupitre.dir/com_debug_i.o.requires
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/com_debug_i.o.provides.build
+.PHONY : CMakeFiles/Pupitre.dir/com_debug_i.o.provides
+
+CMakeFiles/Pupitre.dir/com_debug_i.o.provides.build: CMakeFiles/Pupitre.dir/com_debug_i.o
+
+
+CMakeFiles/Pupitre.dir/incidentMng_i.o: CMakeFiles/Pupitre.dir/flags.make
+CMakeFiles/Pupitre.dir/incidentMng_i.o: ../incidentMng_i.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Pupitre.dir/incidentMng_i.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/incidentMng_i.o   -c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/incidentMng_i.c
+
+CMakeFiles/Pupitre.dir/incidentMng_i.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pupitre.dir/incidentMng_i.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/incidentMng_i.c > CMakeFiles/Pupitre.dir/incidentMng_i.i
+
+CMakeFiles/Pupitre.dir/incidentMng_i.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pupitre.dir/incidentMng_i.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/incidentMng_i.c -o CMakeFiles/Pupitre.dir/incidentMng_i.s
+
+CMakeFiles/Pupitre.dir/incidentMng_i.o.requires:
+
+.PHONY : CMakeFiles/Pupitre.dir/incidentMng_i.o.requires
+
+CMakeFiles/Pupitre.dir/incidentMng_i.o.provides: CMakeFiles/Pupitre.dir/incidentMng_i.o.requires
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/incidentMng_i.o.provides.build
+.PHONY : CMakeFiles/Pupitre.dir/incidentMng_i.o.provides
+
+CMakeFiles/Pupitre.dir/incidentMng_i.o.provides.build: CMakeFiles/Pupitre.dir/incidentMng_i.o
+
+
 CMakeFiles/Pupitre.dir/b_main.o: CMakeFiles/Pupitre.dir/flags.make
 CMakeFiles/Pupitre.dir/b_main.o: ../b_main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Pupitre.dir/b_main.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/b_main.o   -c /home/yves/workspace_atelierb/Pupitre/lang/c/b_main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Pupitre.dir/b_main.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Pupitre.dir/b_main.o   -c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/b_main.c
 
 CMakeFiles/Pupitre.dir/b_main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pupitre.dir/b_main.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/workspace_atelierb/Pupitre/lang/c/b_main.c > CMakeFiles/Pupitre.dir/b_main.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/b_main.c > CMakeFiles/Pupitre.dir/b_main.i
 
 CMakeFiles/Pupitre.dir/b_main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pupitre.dir/b_main.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/workspace_atelierb/Pupitre/lang/c/b_main.c -o CMakeFiles/Pupitre.dir/b_main.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/b_main.c -o CMakeFiles/Pupitre.dir/b_main.s
 
 CMakeFiles/Pupitre.dir/b_main.o.requires:
 
@@ -182,7 +254,10 @@ Pupitre_OBJECTS = \
 "CMakeFiles/Pupitre.dir/CTX_i.o" \
 "CMakeFiles/Pupitre.dir/ControlUnit_i.o" \
 "CMakeFiles/Pupitre.dir/digicode_i.o" \
+"CMakeFiles/Pupitre.dir/Root_pupitre_i.o" \
 "CMakeFiles/Pupitre.dir/httpServer_i.o" \
+"CMakeFiles/Pupitre.dir/com_debug_i.o" \
+"CMakeFiles/Pupitre.dir/incidentMng_i.o" \
 "CMakeFiles/Pupitre.dir/b_main.o"
 
 # External object files for target Pupitre
@@ -191,11 +266,14 @@ Pupitre_EXTERNAL_OBJECTS =
 Pupitre: CMakeFiles/Pupitre.dir/CTX_i.o
 Pupitre: CMakeFiles/Pupitre.dir/ControlUnit_i.o
 Pupitre: CMakeFiles/Pupitre.dir/digicode_i.o
+Pupitre: CMakeFiles/Pupitre.dir/Root_pupitre_i.o
 Pupitre: CMakeFiles/Pupitre.dir/httpServer_i.o
+Pupitre: CMakeFiles/Pupitre.dir/com_debug_i.o
+Pupitre: CMakeFiles/Pupitre.dir/incidentMng_i.o
 Pupitre: CMakeFiles/Pupitre.dir/b_main.o
 Pupitre: CMakeFiles/Pupitre.dir/build.make
 Pupitre: CMakeFiles/Pupitre.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable Pupitre"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable Pupitre"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Pupitre.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -206,7 +284,10 @@ CMakeFiles/Pupitre.dir/build: Pupitre
 CMakeFiles/Pupitre.dir/requires: CMakeFiles/Pupitre.dir/CTX_i.o.requires
 CMakeFiles/Pupitre.dir/requires: CMakeFiles/Pupitre.dir/ControlUnit_i.o.requires
 CMakeFiles/Pupitre.dir/requires: CMakeFiles/Pupitre.dir/digicode_i.o.requires
+CMakeFiles/Pupitre.dir/requires: CMakeFiles/Pupitre.dir/Root_pupitre_i.o.requires
 CMakeFiles/Pupitre.dir/requires: CMakeFiles/Pupitre.dir/httpServer_i.o.requires
+CMakeFiles/Pupitre.dir/requires: CMakeFiles/Pupitre.dir/com_debug_i.o.requires
+CMakeFiles/Pupitre.dir/requires: CMakeFiles/Pupitre.dir/incidentMng_i.o.requires
 CMakeFiles/Pupitre.dir/requires: CMakeFiles/Pupitre.dir/b_main.o.requires
 
 .PHONY : CMakeFiles/Pupitre.dir/requires
@@ -216,6 +297,6 @@ CMakeFiles/Pupitre.dir/clean:
 .PHONY : CMakeFiles/Pupitre.dir/clean
 
 CMakeFiles/Pupitre.dir/depend:
-	cd /home/yves/workspace_atelierb/Pupitre/lang/c/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yves/workspace_atelierb/Pupitre/lang/c /home/yves/workspace_atelierb/Pupitre/lang/c /home/yves/workspace_atelierb/Pupitre/lang/c/build /home/yves/workspace_atelierb/Pupitre/lang/c/build /home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles/Pupitre.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles/Pupitre.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Pupitre.dir/depend
 

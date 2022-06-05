@@ -7,18 +7,39 @@ CMakeFiles/Pupitre.dir/CTX_i.o: ../CTX_i.c
 CMakeFiles/Pupitre.dir/ControlUnit_i.o: ../CTX.h
 CMakeFiles/Pupitre.dir/ControlUnit_i.o: ../ControlUnit.h
 CMakeFiles/Pupitre.dir/ControlUnit_i.o: ../ControlUnit_i.c
+CMakeFiles/Pupitre.dir/ControlUnit_i.o: ../com_debug.h
 CMakeFiles/Pupitre.dir/ControlUnit_i.o: ../digicode.h
 CMakeFiles/Pupitre.dir/ControlUnit_i.o: ../httpServer.h
+CMakeFiles/Pupitre.dir/ControlUnit_i.o: ../incidentLMng.h
+
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../CTX.h
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../ControlUnit.h
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../Root_pupitre.h
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../Root_pupitre_i.c
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../com_debug.h
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../digicode.h
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../httpServer.h
+CMakeFiles/Pupitre.dir/Root_pupitre_i.o: ../incidentLMng.h
 
 CMakeFiles/Pupitre.dir/b_main.o: ../CTX.h
 CMakeFiles/Pupitre.dir/b_main.o: ../ControlUnit.h
+CMakeFiles/Pupitre.dir/b_main.o: ../Root_pupitre.h
 CMakeFiles/Pupitre.dir/b_main.o: ../b_main.c
+CMakeFiles/Pupitre.dir/b_main.o: ../com_debug.h
 CMakeFiles/Pupitre.dir/b_main.o: ../digicode.h
 CMakeFiles/Pupitre.dir/b_main.o: ../httpServer.h
+CMakeFiles/Pupitre.dir/b_main.o: ../incidentLMng.h
+
+CMakeFiles/Pupitre.dir/com_debug_i.o: ../CTX.h
+CMakeFiles/Pupitre.dir/com_debug_i.o: ../com_debug.h
+CMakeFiles/Pupitre.dir/com_debug_i.o: ../com_debug_i.c
 
 CMakeFiles/Pupitre.dir/digicode_i.o: ../digicode.h
 CMakeFiles/Pupitre.dir/digicode_i.o: ../digicode_i.c
 
 CMakeFiles/Pupitre.dir/httpServer_i.o: ../httpServer.h
 CMakeFiles/Pupitre.dir/httpServer_i.o: ../httpServer_i.c
+
+CMakeFiles/Pupitre.dir/incidentMng_i.o: ../incidentLMng.h
+CMakeFiles/Pupitre.dir/incidentMng_i.o: ../incidentMng_i.c
 

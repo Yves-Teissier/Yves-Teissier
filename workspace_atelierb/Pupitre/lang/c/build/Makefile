@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yves/workspace_atelierb/Pupitre/lang/c
+CMAKE_SOURCE_DIR = /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yves/workspace_atelierb/Pupitre/lang/c/build
+CMAKE_BINARY_DIR = /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles /home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yves/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yves/Documents/Yves/GIT/Yves-Teissier/workspace_atelierb/Pupitre/lang/c/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -154,6 +154,21 @@ ControlUnit_i.s:
 .PHONY : ControlUnit_i.s
 
 # target to build an object file
+Root_pupitre_i.o:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/Root_pupitre_i.o
+.PHONY : Root_pupitre_i.o
+
+# target to preprocess a source file
+Root_pupitre_i.i:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/Root_pupitre_i.i
+.PHONY : Root_pupitre_i.i
+
+# target to generate assembly for a file
+Root_pupitre_i.s:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/Root_pupitre_i.s
+.PHONY : Root_pupitre_i.s
+
+# target to build an object file
 b_main.o:
 	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/b_main.o
 .PHONY : b_main.o
@@ -167,6 +182,21 @@ b_main.i:
 b_main.s:
 	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/b_main.s
 .PHONY : b_main.s
+
+# target to build an object file
+com_debug_i.o:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/com_debug_i.o
+.PHONY : com_debug_i.o
+
+# target to preprocess a source file
+com_debug_i.i:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/com_debug_i.i
+.PHONY : com_debug_i.i
+
+# target to generate assembly for a file
+com_debug_i.s:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/com_debug_i.s
+.PHONY : com_debug_i.s
 
 # target to build an object file
 digicode_i.o:
@@ -198,6 +228,21 @@ httpServer_i.s:
 	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/httpServer_i.s
 .PHONY : httpServer_i.s
 
+# target to build an object file
+incidentMng_i.o:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/incidentMng_i.o
+.PHONY : incidentMng_i.o
+
+# target to preprocess a source file
+incidentMng_i.i:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/incidentMng_i.i
+.PHONY : incidentMng_i.i
+
+# target to generate assembly for a file
+incidentMng_i.s:
+	$(MAKE) -f CMakeFiles/Pupitre.dir/build.make CMakeFiles/Pupitre.dir/incidentMng_i.s
+.PHONY : incidentMng_i.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,15 +258,24 @@ help:
 	@echo "... ControlUnit_i.o"
 	@echo "... ControlUnit_i.i"
 	@echo "... ControlUnit_i.s"
+	@echo "... Root_pupitre_i.o"
+	@echo "... Root_pupitre_i.i"
+	@echo "... Root_pupitre_i.s"
 	@echo "... b_main.o"
 	@echo "... b_main.i"
 	@echo "... b_main.s"
+	@echo "... com_debug_i.o"
+	@echo "... com_debug_i.i"
+	@echo "... com_debug_i.s"
 	@echo "... digicode_i.o"
 	@echo "... digicode_i.i"
 	@echo "... digicode_i.s"
 	@echo "... httpServer_i.o"
 	@echo "... httpServer_i.i"
 	@echo "... httpServer_i.s"
+	@echo "... incidentMng_i.o"
+	@echo "... incidentMng_i.i"
+	@echo "... incidentMng_i.s"
 .PHONY : help
 
 

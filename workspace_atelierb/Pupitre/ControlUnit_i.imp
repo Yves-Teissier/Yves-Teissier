@@ -7,117 +7,339 @@ IMPLEMENTATION ControlUnit_i
 REFINES ControlUnit
 
 IMPORTS
-    httpServer, digicode, com_debug
+    httpServer, digicode, com_debug, incidentLMng
     
 SEES CTX
 
 CONCRETE_VARIABLES
-    debutRequest, digicode_response
+    debutRequest, digicode_response, IncidentMng_response, pv1_response, pv2_response, ext_response
     
 INVARIANT
     debutRequest : NAT &
-    digicode_response : NAT
+    digicode_response : NAT &
+    IncidentMng_response : NAT &
+    pv1_response : NAT &
+    pv2_response : NAT &
+    ext_response : NAT
     
 INITIALISATION
     debutRequest := 0;
-    digicode_response := 0
+    digicode_response := 0;
+    IncidentMng_response := 0;
+    pv1_response := 0;
+    pv2_response := 0;
+    ext_response := 0
 
 OPERATIONS
-    new_state <-- pupitre_next(state) =
+    
+    new_state_pupitre <-- pupitre_next(state) =
     BEGIN
         IF state = S_IDLE THEN
-            new_state := S_DEBUT
+            new_state_pupitre := S_DEBUT
         // Reception of the "debut" request
         ELSIF state = S_DEBUT THEN
             // Get debut request
             debutRequest <-- httpServer_get_debut_request;
             
             IF debutRequest = 1 THEN
-                new_state := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE;
+                new_state_pupitre := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE;
                 debutRequest := 0
+            ELSE
+                new_state_pupitre := state
             END
         ELSIF state = S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE THEN
-            new_state := S_DIGICODE
+            IncidentMng_response <-- IncidentMng_GetResponse;
+//            IF substate1 = S_PV1_IDLE THEN
+//                IF IncidentMng_response = 9 THEN // panneVolontaire1
+//                    substate1 := S_ALERT_INCENDIE
+//                END
+//            ELSIF substate1 = S_ALERT_INCENDIE THEN
+//                IF IncidentMng_response = 3 THEN // reussite
+//                    substate1 := S_APPEL_CLOTURE
+//                END
+//            ELSIF substate1 = S_APPEL_CLOTURE THEN
+//                IF IncidentMng_response = 1 THEN // pb_continuer
+//                    substate1 := S_APPEL_CLOTURE
+//                END
+            IF IncidentMng_response = 1 THEN // pb_continuer
+                new_state_pupitre := S_DIGICODE    
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_DIGICODE THEN
             digicode_response <-- digi_getResponse;
             
             IF digicode_response = 0 THEN
-                new_state := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE
+                new_state_pupitre := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE
             ELSIF digicode_response = 1 THEN // erreur code
-                new_state := S_ACCES_REFUSE
+                new_state_pupitre := S_ACCES_REFUSE
             ELSIF digicode_response = 2 THEN // erreur code apres dernier essai
-                new_state := S_INCIDENT_NIVEAU_4
+                new_state_pupitre := S_INCIDENT_NIVEAU_4
             ELSIF digicode_response = 3 THEN // erreur code dernier essai
-                new_state := S_PERTE_DE_TEMPS_1
+                new_state_pupitre := S_PERTE_DE_TEMPS_1
                 // Add delay X secs
             ELSIF digicode_response = 4 THEN // Code bon
-                new_state := S_ACCESS_AUTORISE
+                new_state_pupitre := S_ACCESS_AUTORISE
+            ELSE
+                new_state_pupitre := state
             END
         ELSIF state = S_ACCES_REFUSE THEN
             // Display erreur message
-            new_state := S_DIGICODE
+            new_state_pupitre := S_DIGICODE
         ELSIF state = S_INCIDENT_NIVEAU_4 THEN
             // Display erreur message incident niveau 4
-            new_state := S_DIGICODE
+            new_state_pupitre := S_DIGICODE
         ELSIF state = S_PERTE_DE_TEMPS_1 THEN
             // Delay 1000 seconds
-            new_state := S_INCIDENT_NIVEAU_4
+            new_state_pupitre := S_INCIDENT_NIVEAU_4
         ELSIF state = S_ACCESS_AUTORISE THEN
-            new_state := S_RECHERCHE_INCIDENT_1
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 1 THEN // pb_continuer
+                new_state_pupitre := S_RECHERCHE_INCIDENT_1
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_RECHERCHE_INCIDENT_1 THEN
             // Delay X sec or timer time out
             // result <-- ExecuteIncident(1)
-            new_state := S_INCIDENT_MAJEUR_1
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 2 THEN // timerEcoule
+                new_state_pupitre := S_INCIDENT_MAJEUR_1
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_INCIDENT_MAJEUR_1 THEN
-            new_state := S_PROTOCOLE_ACCES_PROCEDURE_1
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 1 THEN // pb_continuer
+                new_state_pupitre := S_PROTOCOLE_ACCES_PROCEDURE_1
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_1 THEN
-            new_state := S_MODE_AIDE_1
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_MODE_AIDE_1
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_MODE_AIDE_1 THEN
-            new_state := S_ENIGME_CABLES_1
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_ENIGME_CABLES_1
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_ENIGME_CABLES_1 THEN
-            new_state := S_INCIDENT_MAJEUR_RESOLU_1
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_INCIDENT_MAJEUR_RESOLU_1
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_INCIDENT_MAJEUR_RESOLU_1 THEN
-            new_state := S_RECHERCHE_INCIDENT_2
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 1 THEN // pb_continuer
+                new_state_pupitre := S_RECHERCHE_INCIDENT_2
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_RECHERCHE_INCIDENT_2 THEN
-            new_state := S_INCIDENT_MAJEUR_2
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 2 THEN // timerEcoule
+                new_state_pupitre := S_INCIDENT_MAJEUR_2
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_INCIDENT_MAJEUR_2 THEN
-            new_state := S_PROTOCOLE_ACCES_PROCEDURE_2
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 1 THEN // pb_continuer
+                new_state_pupitre := S_PROTOCOLE_ACCES_PROCEDURE_2
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_2 THEN
-            new_state := S_MODE_AIDE_2
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_MODE_AIDE_2
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_MODE_AIDE_2 THEN
-            new_state := S_ENIGME_CABLES_2
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_ENIGME_CABLES_2
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_ENIGME_CABLES_2 THEN
-            new_state := S_ENIGME_CABLES_2S2
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_ENIGME_CABLES_2S2
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_ENIGME_CABLES_2S2 THEN
             // IF erreur = 0 THEN
-            new_state := S_INCIDENT_MAJEUR_RESOLU_2
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_INCIDENT_MAJEUR_RESOLU_2
+            ELSIF IncidentMng_response = 4 THEN  // erreur
+                new_state_pupitre := S_ENIGME_CABLES_2S2
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_INCIDENT_MAJEUR_RESOLU_2 THEN
-            new_state := S_RECHERCHE_INCIDENT_3
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 1 THEN // pb_continuer
+                new_state_pupitre := S_RECHERCHE_INCIDENT_3
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_RECHERCHE_INCIDENT_3 THEN
-            new_state := S_INCIDENT_MAJEUR_3
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 2 THEN // timerEcoule
+                new_state_pupitre := S_INCIDENT_MAJEUR_3
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_INCIDENT_MAJEUR_3 THEN
-            new_state := S_PROTOCOLE_ACCES_PROCEDURE_3
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 1 THEN // pb_continuer
+                new_state_pupitre := S_PROTOCOLE_ACCES_PROCEDURE_3
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_PROTOCOLE_ACCES_PROCEDURE_3 THEN
-            new_state := S_MODE_AIDE_3
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_MODE_AIDE_3
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_MODE_AIDE_3 THEN
-            new_state := S_ENIGME_ACTIVATION_BALANCE_3
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_ENIGME_ACTIVATION_BALANCE_3
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_ENIGME_ACTIVATION_BALANCE_3 THEN
-            new_state := S_ENIGME_POST_ACTIVATION_BALANCE_3
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_ENIGME_POST_ACTIVATION_BALANCE_3
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_ENIGME_POST_ACTIVATION_BALANCE_3 THEN
-            new_state := S_ENIGME_NIVEAU_DEAU
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 3 THEN // reussite
+                new_state_pupitre := S_ENIGME_NIVEAU_DEAU
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_ENIGME_NIVEAU_DEAU THEN
-            new_state := S_INCIDENT_RESOLU
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 5 THEN // niveauEauOK
+                new_state_pupitre := S_INCIDENT_RESOLU
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_INCIDENT_RESOLU THEN
-            new_state := S_GENERIQUE
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 1 THEN // pb_continuer
+                new_state_pupitre := S_GENERIQUE
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_GENERIQUE THEN
-            new_state := S_BILAN_PARTIE
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 7 THEN // pb_retour
+                new_state_pupitre := S_BILAN_PARTIE
+            ELSIF IncidentMng_response = 8 THEN // pb_relancerJeu
+                new_state_pupitre := S_DEBUT
+            ELSE
+                new_state_pupitre := state
+            END
         ELSIF state = S_BILAN_PARTIE THEN
-            new_state := S_DEBUT
+            IncidentMng_response <-- IncidentMng_GetResponse;
+            IF IncidentMng_response = 6 THEN // pb_bilanPartie
+                new_state_pupitre := S_GENERIQUE
+            ELSE
+                new_state_pupitre := state
+            END
+        ELSE
+            new_state_pupitre := S_IDLE
         END;
   
-        IF new_state /= state THEN
-            debug_print_state(new_state)
+        IF new_state_pupitre /= state THEN
+            debug_print_state(new_state_pupitre)
         END
 
+    END;
+    
+    new_state_pv1 <-- panne_volontaire1_next(state) =
+    BEGIN
+        pv1_response <-- panne_volontaire1_response;
+        
+        IF state =  S_PV1_IDLE THEN
+            IF pv1_response = 1 THEN // panneVolontaire_1
+                new_state_pv1 := S_ALERT_INCENDIE
+            ELSE
+                new_state_pv1 := state
+            END
+        ELSIF state = S_ALERT_INCENDIE THEN
+            IF pv1_response = 2 THEN // reussite
+                new_state_pv1 := S_DOUCHE_ACTIVEE
+            ELSE
+                new_state_pv1 := state
+            END
+        ELSE // IF state = S_DOUCHE_ACTIVEE THEN
+            IF pv1_response = 3 THEN // pb_continuer
+                new_state_pv1 := S_PV1_IDLE
+            ELSE
+                new_state_pv1 := state
+            END
+        END
+    END;
+    
+    new_state_pv2 <-- panne_volontaire2_next(state) =
+    BEGIN
+        pv2_response <-- panne_volontaire2_response;
+         
+        IF state =  S_PV2_IDLE THEN
+           IF pv2_response = 1 THEN // panneVolontaire2
+              new_state_pv2 := S_APPEL_ENTRANT
+           ELSE
+               new_state_pv2 := state
+           END
+        ELSIF state = S_APPEL_ENTRANT THEN
+            IF pv2_response = 2 THEN // reussite
+                new_state_pv2 := S_APPEL_CLOTURE
+            ELSE
+                new_state_pv2 := state
+            END
+        ELSE // state = S_APPEL_CLOTURE THEN
+            IF pv2_response = 3 THEN // pb_continuer
+                new_state_pv2 := S_PV2_IDLE
+            ELSE
+                new_state_pv2 := state
+            END
+        END
+    END;
+    
+    new_state_ext <-- ext_state_next(state) =
+    BEGIN
+        ext_response <-- ext_state_response;
+
+        IF ext_response = 0 THEN // no_response
+            new_state_ext := S_EXT_IDLE
+        ELSIF ext_response = 1 THEN // erreur1
+            new_state_ext := S_PERTE_DE_TEMPS
+        ELSIF ext_response = 2 THEN // erreur2
+            new_state_ext := S_GAME_OVER_ERREUR
+        ELSIF ext_response = 3 THEN // tempsEcoule
+            new_state_ext := S_GAME_OVER_TEMPS
+        END
     END
+    
 END

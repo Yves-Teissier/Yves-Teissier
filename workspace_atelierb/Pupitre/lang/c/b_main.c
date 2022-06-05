@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 #include "CTX.h"
-#include "ControlUnit.h"
+#include "Root_pupitre.h"
 
 int main(void )
 {
@@ -13,12 +13,11 @@ int main(void )
   
   CTX__INITIALISATION();
 
-  ControlUnit__INITIALISATION();
+  Root_pupitre__INITIALISATION();
 
   
   while(1) {
-    ControlUnit__pupitre_next(state, &new_state);
-    state = new_state;
+    Root_pupitre__run();
     
     sleep(0.1);
   }

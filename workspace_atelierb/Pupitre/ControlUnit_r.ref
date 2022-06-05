@@ -9,12 +9,23 @@ REFINES ControlUnit
 SEES CTX
 
 OPERATIONS
-    new_state <-- pupitre_next(state) =
+    new_state_pupitre <-- pupitre_next(state) =
     BEGIN
-        // Reception of the "debut" request
-        IF state = S_DEBUT THEN
-            // 
-            new_state := S_ACCES_RESTREINT_AU_PERSONNES_AUTORISE
-        END
-    END    
+        skip
+    END;
+    
+    new_state_pv1 <-- panne_volontaire1_next(state) =
+    BEGIN
+        skip
+    END;
+    
+    new_state_pv2 <-- panne_volontaire2_next(state) =
+    BEGIN
+        skip
+    END;
+    
+    new_state_ext <-- ext_state_next(state) =
+    BEGIN
+        skip
+    END
  END

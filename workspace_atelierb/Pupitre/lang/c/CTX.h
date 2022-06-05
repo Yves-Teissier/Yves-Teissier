@@ -45,6 +45,31 @@ typedef enum
     
 } CTX__STATE;
 #define CTX__STATE__max 31
+typedef enum
+{
+    CTX__S_PV2_IDLE,
+    CTX__S_APPEL_ENTRANT,
+    CTX__S_APPEL_CLOTURE
+    
+} CTX__PANNE_VOLONTAIRE2;
+#define CTX__PANNE_VOLONTAIRE2__max 3
+typedef enum
+{
+    CTX__S_PV1_IDLE,
+    CTX__S_ALERT_INCENDIE,
+    CTX__S_DOUCHE_ACTIVEE
+    
+} CTX__PANNE_VOLONTAIRE1;
+#define CTX__PANNE_VOLONTAIRE1__max 3
+typedef enum
+{
+    CTX__S_EXT_IDLE,
+    CTX__S_PERTE_DE_TEMPS,
+    CTX__S_GAME_OVER_TEMPS,
+    CTX__S_GAME_OVER_ERREUR
+    
+} CTX__EXT_STATE;
+#define CTX__EXT_STATE__max 4
 
 /* Clause CONCRETE_CONSTANTS */
 /* Basic constants */
