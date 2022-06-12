@@ -1,0 +1,89 @@
+/* MailBox_i
+ * Author: yves
+ * Creation date: 06/06/2022
+ */
+
+IMPLEMENTATION MailBox_i
+REFINES MailBox
+
+SEES
+    CTX
+    
+CONCRETE_VARIABLES
+    cu1_on_state,
+    cu2_on_state,
+    cu1_running_state,
+    cu2_running_state,
+    cu1_main_state,
+    cu2_main_state
+    
+INVARIANT
+    cu1_on_state : ON_STATE &
+    cu2_on_state : ON_STATE &
+    cu1_running_state : RUNNING_STATE &
+    cu2_running_state : RUNNING_STATE &
+    cu1_main_state : MAIN_STATE &
+    cu2_main_state : MAIN_STATE
+    
+INITIALISATION
+    cu1_on_state := ON_IDLE;
+    cu2_on_state := ON_IDLE;
+    cu1_running_state := UNKNOWN;
+    cu2_running_state := UNKNOWN;
+    cu1_main_state := OFF;
+    cu2_main_state := OFF
+
+OPERATIONS
+    
+    resp_cu1_main_state <-- mb_get_cu1_main_state =
+    BEGIN
+        resp_cu1_main_state := cu1_main_state
+    END;
+    
+    resp_cu2_main_state <-- mb_get_cu2_main_state =
+    BEGIN
+        resp_cu2_main_state := cu2_main_state
+    END;
+    
+    current_u <-- mb_getCurrentU =
+    BEGIN
+        skip
+    END;
+    
+    cu1_error <-- mb_getCU1Error =
+    BEGIN
+        skip
+    END;
+    
+    cu2_error <-- mb_getCU2Error =
+    BEGIN
+        skip
+    END;
+    
+    mb_set_on_state(state, cu) =
+    BEGIN
+        IF cu = 1 THEN
+            cu1_on_state := state
+        ELSE
+            cu2_on_state := state            
+        END
+    END;
+    
+    mb_set_running_state(state, cu) =
+    BEGIN
+        IF cu = 1 THEN
+            cu1_running_state := state
+        ELSE
+            cu2_running_state := state            
+        END
+    END;
+    
+    mb_set_main_state(state, cu) =
+    BEGIN
+        IF cu = 1 THEN
+            cu1_main_state := state
+        ELSE
+            cu2_main_state := state
+        END
+    END
+ END

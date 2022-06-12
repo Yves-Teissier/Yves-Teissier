@@ -1,0 +1,16 @@
+﻿/* CTX_i
+ * Author: yves
+ * Creation date: 06/06/2022
+ */
+
+IMPLEMENTATION CTX_i
+REFINES CTX
+
+VALUES
+    U_MIN = 32 ;
+    U_UNDER = 30 ;
+    U_OVER = 35 ;
+    U_HIGH = 34 ;
+    U_LOW = 32
+
+ END

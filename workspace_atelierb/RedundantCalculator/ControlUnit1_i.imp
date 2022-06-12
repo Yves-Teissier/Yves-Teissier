@@ -1,0 +1,119 @@
+/* ControlUnit1_i
+ * Author: yves
+ * Creation date: 06/06/2022
+ */
+
+IMPLEMENTATION ControlUnit1_i
+REFINES ControlUnit1
+
+IMPORTS
+    MailBox
+    
+SEES CTX
+    
+        
+CONCRETE_VARIABLES
+    current_u, 
+    cu1_error,
+    cu2_main_state, 
+    prev_main_state,
+    IS_FIRST_ELECTION, // indique que l’ECU n’a pas atteint ni l’état SLAVE ni l’état MASTER depuis le premier démarrage
+    IS_MASTER_BEFORE, // indique que l’ECU était dans l’état MASTER dans l’exécution précédente
+    IS_ERROR_BEFORE, // indique que l’ECU était dans l’état ERROR dans l’exécution précédente.
+    IS_ERROR_RECEIVED_BEFORE, // indique que l’ECU a reçu de l’autre ECU un état ERROR dans l’exécution précédente
+    IS_MASTER // indique que l’ECU dans l’état SLAVE a reçu un état ERROR de l’autre ECU, ce qui lui permet de basculer dans l’état MASTER.
+    
+INVARIANT
+    current_u : NAT &
+    cu1_error : BOOL &
+    cu2_main_state : MAIN_STATE &
+    prev_main_state : MAIN_STATE &
+    IS_FIRST_ELECTION : BOOL &
+    IS_MASTER_BEFORE : BOOL &
+    IS_ERROR_BEFORE : BOOL & 
+    IS_ERROR_RECEIVED_BEFORE : BOOL &
+    IS_MASTER : BOOL
+    
+INITIALISATION
+    current_u := 0;
+    cu1_error := FALSE;
+    cu2_main_state := OFF;
+    prev_main_state := OFF;
+    IS_FIRST_ELECTION := TRUE;
+    IS_MASTER_BEFORE := FALSE;
+    IS_ERROR_BEFORE := FALSE;
+    IS_ERROR_RECEIVED_BEFORE := FALSE;
+    IS_MASTER := FALSE
+    
+VALUES
+    CU1_IS_FIRST_SLAVE = TRUE // Valeur retreived from settings
+        
+OPERATIONS
+    
+    next_main_state <-- cu1_next_main_state(state) =
+    BEGIN
+        IF state = ERROR THEN
+            mb_set_main_state(ERROR, 1)
+        ELSIF state = SHUTDOWN THEN
+            mb_set_main_state(prev_main_state, 1)
+        END;
+        
+        
+        current_u <-- mb_getCurrentU;
+        IF current_u > U_MIN THEN
+            next_main_state := ON
+        END;
+        IF current_u < U_UNDER or current_u > U_OVER THEN
+            next_main_state := SHUTDOWN
+        END;
+        IF current_u > U_LOW & current_u < U_HIGH THEN
+            next_main_state := ON
+        END;
+        IF current_u < U_MIN THEN
+            next_main_state := OFF
+        END;
+        cu1_error <-- mb_getCU1Error;
+        IF cu1_error = TRUE THEN
+            next_main_state := ERROR
+        END
+    END;
+    
+    next_on_state <-- cu1_next_on_state(state) =
+    BEGIN
+        current_u <-- mb_getCurrentU;
+        IF current_u > U_LOW & current_u < U_HIGH THEN
+            next_on_state := RUNNING
+        END;
+        
+        IF state = INITIALIZING THEN
+            mb_set_on_state(INITIALIZING, 1)
+        END
+    END;
+    
+    next_running_state <-- cu1_next_running_state(state) =
+    BEGIN
+        IF state = SLAVE THEN
+            mb_set_running_state(SLAVE, 1)
+        ELSIF state = MASTER THEN
+            mb_set_running_state(MASTER, 1)
+        END;
+        
+        cu2_main_state <-- mb_get_cu1_main_state;
+        
+        IF cu2_main_state = ERROR THEN
+            next_running_state := MASTER
+        END
+        //next_running_state := SLAVE
+    END;
+    
+    cu1_run =
+    BEGIN
+        skip
+        // Evaluate next state
+//        new_main_state <-- cu1_next_main_state(current_main_state);
+//        new_on_state <-- cu1_next_on_state(current_on_state);
+//        new_running_state <-- cu1_next_running_state(current_running_state)
+    END
+    
+    
+ END

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Proof_Obligations version="1.0" author="pmi2Pos" xmlns="https://www.atelierb.eu/Formats/pog">
+<Proof_Obligation>
+<Tag>Operation_mb_getCurrentU</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Refinement is correct</Tag>
+<Proof_State proofState="Unproved" passList="Force(0),(?; 0)" methodList="?"/>
+</Simple_Goal>
+</Proof_Obligation>
+</Proof_Obligations>

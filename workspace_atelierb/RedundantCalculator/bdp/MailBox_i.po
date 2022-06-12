@@ -1,0 +1,18 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(4) & Operation_mb_getCurrentU.1,(_f(5) => _f(6))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((1..3)*{RUNNING_STATE}): FIN(NATURAL*{RUNNING_STATE})& not(((1..3)*{RUNNING_STATE}) = {}) & ((1..4)*{MAIN_STATE}): FIN(NATURAL*{MAIN_STATE})& not(((1..4)*{MAIN_STATE}) = {}) & ((1..3)*{ON_STATE}): FIN(NATURAL*{ON_STATE})& not(((1..3)*{ON_STATE}) = {}) & ((NEXT_RUNNING_STATE) : (((((1..3)*{RUNNING_STATE})) <-> (((1..3)*{RUNNING_STATE}))))) & ((NEXT_MAIN_STATE) : (((((1..4)*{MAIN_STATE})) <-> (((1..4)*{MAIN_STATE}))))) & ((NEXT_ON_STATE) : (((((1..3)*{ON_STATE})) <-> (((1..3)*{ON_STATE}))))) & ((NEXT_MAIN_STATE) = (({(((3|->MAIN_STATE)) |-> ((4|->MAIN_STATE)))}\/{(((2|->MAIN_STATE)) |-> ((4|->MAIN_STATE)))}\/{(((4|->MAIN_STATE)) |-> ((2|->MAIN_STATE)))}\/{(((1|->MAIN_STATE)) |-> ((2|->MAIN_STATE)))}\/{(((4|->MAIN_STATE)) |-> ((1|->MAIN_STATE)))}))) & ((NEXT_ON_STATE) = (({(((2|->ON_STATE)) |-> ((3|->ON_STATE)))}\/{(((1|->ON_STATE)) |-> ((2|->ON_STATE)))}))) & ((NEXT_RUNNING_STATE) = (({(((1|->RUNNING_STATE)) |-> ((3|->RUNNING_STATE)))}\/{(((1|->RUNNING_STATE)) |-> ((2|->RUNNING_STATE)))}\/{(((2|->RUNNING_STATE)) |-> ((3|->RUNNING_STATE)))}))) & ((U_MIN) : (NAT)) & ((U_UNDER) : (NAT)) & ((U_OVER) : (NAT)) & ((U_HIGH) : (NAT)) & ((U_LOW) : (NAT));
+((UNIT1_RS) : (((1..3)*{RUNNING_STATE}))) & ((UNIT2_RS) : (((1..3)*{RUNNING_STATE}))) & ((UNIT1_MS) : (((1..4)*{MAIN_STATE}))) & ((UNIT2_MS) : (((1..4)*{MAIN_STATE}))) & ((UNIT1_OS) : (((1..3)*{ON_STATE}))) & ((UNIT2_OS) : (((1..3)*{ON_STATE})));
+((cu1_on_state$1) : (((1..3)*{ON_STATE}))) & ((cu2_on_state$1) : (((1..3)*{ON_STATE}))) & ((cu1_running_state$1) : (((1..3)*{RUNNING_STATE}))) & ((cu2_running_state$1) : (((1..3)*{RUNNING_STATE}))) & ((cu1_main_state$1) : (((1..4)*{MAIN_STATE}))) & ((cu2_main_state$1) : (((1..4)*{MAIN_STATE})));
+"Refinement is correct";
+((current_u$1) : (NAT))
+END
+&
+THEORY EnumerateX IS
+MAIN_STATE == {ERROR,SHUTDOWN,OFF,ON};
+ON_STATE == {ON_IDLE,INITIALIZING,RUNNING};
+RUNNING_STATE == {UNKNOWN,SLAVE,MASTER}
+END

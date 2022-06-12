@@ -1,0 +1,18 @@
+digraph {
+CTX_i [ label=" CTX\nCTX_i " shape= box ]
+ControlUnit1_i [ label=" ControlUnit1\nControlUnit1_i " shape= box ]
+ControlUnit2_i [ label=" ControlUnit2\nControlUnit2_i " shape= box ]
+MailBox_i [ label=" MailBox\nMailBox_i " shape= box ]
+MainControl_i [ label=" MainControl\nMainControl_i " shape= box ]
+PowerSupplyCtrl [ label=" PowerSupplyCtrl " shape= box ]
+
+"ControlUnit1_i" -> "CTX_i" [style= dotted ]
+"ControlUnit1_i" -> "MailBox_i" []
+"ControlUnit2_i" -> "CTX_i" [style= dotted ]
+"ControlUnit2_i" -> "MailBox_i" []
+"MailBox_i" -> "CTX_i" [style= dotted ]
+"MainControl_i" -> "CTX_i" [style= dotted ]
+"MainControl_i" -> "ControlUnit1_i" []
+"MainControl_i" -> "ControlUnit2_i" []
+"MainControl_i" -> "MailBox_i" []
+}

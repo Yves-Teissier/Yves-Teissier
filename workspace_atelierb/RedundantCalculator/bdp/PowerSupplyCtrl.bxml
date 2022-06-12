@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='PowerSupplyCtrl' type='abstraction' position='true' semantic='true' b0check='false'>
+<Initialisation>
+<Skip/>
+</Initialisation>
+<Operations>
+<Operation name='is_powered'>
+<Attr>
+<Pos l='9' c='5' s='9' endLine='12'/>
+</Attr>
+<Output_Parameters>
+<Id value='isPowered' typref='0'>
+<Attr>
+<Pos l='9' c='5' s='9'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Body>
+<Becomes_In>
+<Attr>
+<Pos l='11' c='19' s='2'/>
+</Attr>
+<Variables>
+<Id value='isPowered' typref='0'>
+<Attr>
+<Pos l='11' c='9' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<Id value='BOOL' typref='4'>
+<Attr>
+<Pos l='11' c='22' s='4'/>
+</Attr>
+</Id>
+</Value>
+</Becomes_In>
+</Body>
+</Operation>
+<Operation name='getU'>
+<Attr>
+<Pos l='14' c='5' s='9' endLine='17'/>
+</Attr>
+<Output_Parameters>
+<Id value='current_u' typref='1'>
+<Attr>
+<Pos l='14' c='5' s='9'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Body>
+<Becomes_In>
+<Attr>
+<Pos l='16' c='19' s='2'/>
+</Attr>
+<Variables>
+<Id value='current_u' typref='1'>
+<Attr>
+<Pos l='16' c='9' s='9'/>
+</Attr>
+</Id>
+</Variables>
+<Value>
+<Id value='NAT' typref='2'>
+<Attr>
+<Pos l='16' c='22' s='3'/>
+</Attr>
+</Id>
+</Value>
+</Becomes_In>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Unary_Exp op='POW'>
+<Id value='BOOL'/>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>
