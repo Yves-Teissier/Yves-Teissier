@@ -95,13 +95,14 @@ THEORY ListConstraintsX IS
 END
 &
 THEORY ListOperationsX IS
-  Internal_List_Operations(Machine(MailBox))==(mb_get_cu1_main_state,mb_get_cu2_main_state,mb_getCurrentU,mb_getCU1Error,mb_getCU2Error,mb_set_on_state,mb_set_running_state,mb_set_main_state);
-  List_Operations(Machine(MailBox))==(mb_get_cu1_main_state,mb_get_cu2_main_state,mb_getCurrentU,mb_getCU1Error,mb_getCU2Error,mb_set_on_state,mb_set_running_state,mb_set_main_state)
+  Internal_List_Operations(Machine(MailBox))==(mb_get_cu_main_state,mb_get_cu_on_state,mb_get_cu_running_state,mb_getCurrentU,mb_getCU1Error,mb_getCU2Error,mb_set_on_state,mb_set_running_state,mb_set_main_state);
+  List_Operations(Machine(MailBox))==(mb_get_cu_main_state,mb_get_cu_on_state,mb_get_cu_running_state,mb_getCurrentU,mb_getCU1Error,mb_getCU2Error,mb_set_on_state,mb_set_running_state,mb_set_main_state)
 END
 &
 THEORY ListInputX IS
-  List_Input(Machine(MailBox),mb_get_cu1_main_state)==(?);
-  List_Input(Machine(MailBox),mb_get_cu2_main_state)==(?);
+  List_Input(Machine(MailBox),mb_get_cu_main_state)==(level,cu);
+  List_Input(Machine(MailBox),mb_get_cu_on_state)==(level,cu);
+  List_Input(Machine(MailBox),mb_get_cu_running_state)==(level,cu);
   List_Input(Machine(MailBox),mb_getCurrentU)==(?);
   List_Input(Machine(MailBox),mb_getCU1Error)==(?);
   List_Input(Machine(MailBox),mb_getCU2Error)==(?);
@@ -111,22 +112,24 @@ THEORY ListInputX IS
 END
 &
 THEORY ListOutputX IS
-  List_Output(Machine(MailBox),mb_get_cu1_main_state)==(resp_cu1_main_state);
-  List_Output(Machine(MailBox),mb_get_cu2_main_state)==(resp_cu2_main_state);
-  List_Output(Machine(MailBox),mb_getCurrentU)==(current_u);
-  List_Output(Machine(MailBox),mb_getCU1Error)==(cu1_error);
-  List_Output(Machine(MailBox),mb_getCU2Error)==(cu2_error);
+  List_Output(Machine(MailBox),mb_get_cu_main_state)==(resp_cu_main_state);
+  List_Output(Machine(MailBox),mb_get_cu_on_state)==(resp_cu_on_state);
+  List_Output(Machine(MailBox),mb_get_cu_running_state)==(resp_cu_running_state);
+  List_Output(Machine(MailBox),mb_getCurrentU)==(resp_current_u);
+  List_Output(Machine(MailBox),mb_getCU1Error)==(resp_cu1_error);
+  List_Output(Machine(MailBox),mb_getCU2Error)==(resp_cu2_error);
   List_Output(Machine(MailBox),mb_set_on_state)==(?);
   List_Output(Machine(MailBox),mb_set_running_state)==(?);
   List_Output(Machine(MailBox),mb_set_main_state)==(?)
 END
 &
 THEORY ListHeaderX IS
-  List_Header(Machine(MailBox),mb_get_cu1_main_state)==(resp_cu1_main_state <-- mb_get_cu1_main_state);
-  List_Header(Machine(MailBox),mb_get_cu2_main_state)==(resp_cu2_main_state <-- mb_get_cu2_main_state);
-  List_Header(Machine(MailBox),mb_getCurrentU)==(current_u <-- mb_getCurrentU);
-  List_Header(Machine(MailBox),mb_getCU1Error)==(cu1_error <-- mb_getCU1Error);
-  List_Header(Machine(MailBox),mb_getCU2Error)==(cu2_error <-- mb_getCU2Error);
+  List_Header(Machine(MailBox),mb_get_cu_main_state)==(resp_cu_main_state <-- mb_get_cu_main_state(level,cu));
+  List_Header(Machine(MailBox),mb_get_cu_on_state)==(resp_cu_on_state <-- mb_get_cu_on_state(level,cu));
+  List_Header(Machine(MailBox),mb_get_cu_running_state)==(resp_cu_running_state <-- mb_get_cu_running_state(level,cu));
+  List_Header(Machine(MailBox),mb_getCurrentU)==(resp_current_u <-- mb_getCurrentU);
+  List_Header(Machine(MailBox),mb_getCU1Error)==(resp_cu1_error <-- mb_getCU1Error);
+  List_Header(Machine(MailBox),mb_getCU2Error)==(resp_cu2_error <-- mb_getCU2Error);
   List_Header(Machine(MailBox),mb_set_on_state)==(mb_set_on_state(state,cu));
   List_Header(Machine(MailBox),mb_set_running_state)==(mb_set_running_state(state,cu));
   List_Header(Machine(MailBox),mb_set_main_state)==(mb_set_main_state(state,cu))
@@ -135,8 +138,9 @@ END
 THEORY ListOperationGuardX END
 &
 THEORY ListPreconditionX IS
-  List_Precondition(Machine(MailBox),mb_get_cu1_main_state)==(btrue);
-  List_Precondition(Machine(MailBox),mb_get_cu2_main_state)==(btrue);
+  List_Precondition(Machine(MailBox),mb_get_cu_main_state)==(level: NAT & cu: NAT);
+  List_Precondition(Machine(MailBox),mb_get_cu_on_state)==(level: NAT & cu: NAT);
+  List_Precondition(Machine(MailBox),mb_get_cu_running_state)==(level: NAT & cu: NAT);
   List_Precondition(Machine(MailBox),mb_getCurrentU)==(btrue);
   List_Precondition(Machine(MailBox),mb_getCU1Error)==(btrue);
   List_Precondition(Machine(MailBox),mb_getCU2Error)==(btrue);
@@ -149,16 +153,18 @@ THEORY ListSubstitutionX IS
   Expanded_List_Substitution(Machine(MailBox),mb_set_main_state)==(state: MAIN_STATE & cu: NAT | skip);
   Expanded_List_Substitution(Machine(MailBox),mb_set_running_state)==(state: RUNNING_STATE & cu: NAT | skip);
   Expanded_List_Substitution(Machine(MailBox),mb_set_on_state)==(state: ON_STATE & cu: NAT | skip);
-  Expanded_List_Substitution(Machine(MailBox),mb_getCU2Error)==(btrue | @(cu2_error$0).(cu2_error$0: BOOL ==> cu2_error:=cu2_error$0));
-  Expanded_List_Substitution(Machine(MailBox),mb_getCU1Error)==(btrue | @(cu1_error$0).(cu1_error$0: BOOL ==> cu1_error:=cu1_error$0));
-  Expanded_List_Substitution(Machine(MailBox),mb_getCurrentU)==(btrue | @(current_u$0).(current_u$0: NAT ==> current_u:=current_u$0));
-  Expanded_List_Substitution(Machine(MailBox),mb_get_cu2_main_state)==(btrue | @(resp_cu2_main_state$0).(resp_cu2_main_state$0: MAIN_STATE ==> resp_cu2_main_state:=resp_cu2_main_state$0));
-  Expanded_List_Substitution(Machine(MailBox),mb_get_cu1_main_state)==(btrue | @(resp_cu1_main_state$0).(resp_cu1_main_state$0: MAIN_STATE ==> resp_cu1_main_state:=resp_cu1_main_state$0));
-  List_Substitution(Machine(MailBox),mb_get_cu1_main_state)==(resp_cu1_main_state:: MAIN_STATE);
-  List_Substitution(Machine(MailBox),mb_get_cu2_main_state)==(resp_cu2_main_state:: MAIN_STATE);
-  List_Substitution(Machine(MailBox),mb_getCurrentU)==(current_u:: NAT);
-  List_Substitution(Machine(MailBox),mb_getCU1Error)==(cu1_error:: BOOL);
-  List_Substitution(Machine(MailBox),mb_getCU2Error)==(cu2_error:: BOOL);
+  Expanded_List_Substitution(Machine(MailBox),mb_getCU2Error)==(btrue | @(resp_cu2_error$0).(resp_cu2_error$0: BOOL ==> resp_cu2_error:=resp_cu2_error$0));
+  Expanded_List_Substitution(Machine(MailBox),mb_getCU1Error)==(btrue | @(resp_cu1_error$0).(resp_cu1_error$0: BOOL ==> resp_cu1_error:=resp_cu1_error$0));
+  Expanded_List_Substitution(Machine(MailBox),mb_getCurrentU)==(btrue | @(resp_current_u$0).(resp_current_u$0: NAT ==> resp_current_u:=resp_current_u$0));
+  Expanded_List_Substitution(Machine(MailBox),mb_get_cu_running_state)==(level: NAT & cu: NAT | @(resp_cu_running_state$0).(resp_cu_running_state$0: RUNNING_STATE ==> resp_cu_running_state:=resp_cu_running_state$0));
+  Expanded_List_Substitution(Machine(MailBox),mb_get_cu_on_state)==(level: NAT & cu: NAT | @(resp_cu_on_state$0).(resp_cu_on_state$0: ON_STATE ==> resp_cu_on_state:=resp_cu_on_state$0));
+  Expanded_List_Substitution(Machine(MailBox),mb_get_cu_main_state)==(level: NAT & cu: NAT | @(resp_cu_main_state$0).(resp_cu_main_state$0: MAIN_STATE ==> resp_cu_main_state:=resp_cu_main_state$0));
+  List_Substitution(Machine(MailBox),mb_get_cu_main_state)==(resp_cu_main_state:: MAIN_STATE);
+  List_Substitution(Machine(MailBox),mb_get_cu_on_state)==(resp_cu_on_state:: ON_STATE);
+  List_Substitution(Machine(MailBox),mb_get_cu_running_state)==(resp_cu_running_state:: RUNNING_STATE);
+  List_Substitution(Machine(MailBox),mb_getCurrentU)==(resp_current_u:: NAT);
+  List_Substitution(Machine(MailBox),mb_getCU1Error)==(resp_cu1_error:: BOOL);
+  List_Substitution(Machine(MailBox),mb_getCU2Error)==(resp_cu2_error:: BOOL);
   List_Substitution(Machine(MailBox),mb_set_on_state)==(skip);
   List_Substitution(Machine(MailBox),mb_set_running_state)==(skip);
   List_Substitution(Machine(MailBox),mb_set_main_state)==(skip)
@@ -195,7 +201,7 @@ END
 &
 THEORY ListPropertiesX IS
   Abstract_List_Properties(Machine(MailBox))==(btrue);
-  Context_List_Properties(Machine(MailBox))==(NEXT_RUNNING_STATE: RUNNING_STATE <-> RUNNING_STATE & NEXT_MAIN_STATE: MAIN_STATE <-> MAIN_STATE & NEXT_ON_STATE: ON_STATE <-> ON_STATE & NEXT_MAIN_STATE = {OFF|->ON,SHUTDOWN|->ON,ON|->SHUTDOWN,ERROR|->SHUTDOWN,ON|->ERROR} & NEXT_ON_STATE = {INITIALIZING|->RUNNING,ON_IDLE|->INITIALIZING} & NEXT_RUNNING_STATE = {UNKNOWN|->MASTER,UNKNOWN|->SLAVE,SLAVE|->MASTER} & U_MIN: NAT & U_UNDER: NAT & U_OVER: NAT & U_HIGH: NAT & U_LOW: NAT & RUNNING_STATE: FIN(INTEGER) & not(RUNNING_STATE = {}) & MAIN_STATE: FIN(INTEGER) & not(MAIN_STATE = {}) & ON_STATE: FIN(INTEGER) & not(ON_STATE = {}));
+  Context_List_Properties(Machine(MailBox))==(NEXT_RUNNING_STATE: RUNNING_STATE <-> RUNNING_STATE & NEXT_MAIN_STATE: MAIN_STATE <-> MAIN_STATE & NEXT_ON_STATE: ON_STATE <-> ON_STATE & NEXT_MAIN_STATE = {OFF|->ON,SHUTDOWN|->ON,ON|->SHUTDOWN,ERROR|->SHUTDOWN,ON|->ERROR,OFF|->OFF,ON|->ON,ERROR|->ERROR,SHUTDOWN|->SHUTDOWN} & NEXT_ON_STATE = {INITIALIZING|->RUNNING,ON_IDLE|->INITIALIZING,INITIALIZING|->INITIALIZING,ON_IDLE|->ON_IDLE,RUNNING|->RUNNING} & NEXT_RUNNING_STATE = {UNKNOWN|->MASTER,UNKNOWN|->SLAVE,SLAVE|->MASTER,UNKNOWN|->UNKNOWN,MASTER|->MASTER,SLAVE|->SLAVE} & U_MIN: NAT & U_UNDER: NAT & U_OVER: NAT & U_HIGH: NAT & U_LOW: NAT & RUNNING_STATE: FIN(INTEGER) & not(RUNNING_STATE = {}) & MAIN_STATE: FIN(INTEGER) & not(MAIN_STATE = {}) & ON_STATE: FIN(INTEGER) & not(ON_STATE = {}));
   Inherited_List_Properties(Machine(MailBox))==(btrue);
   List_Properties(Machine(MailBox))==(btrue)
 END
@@ -212,8 +218,9 @@ THEORY ListSeenInfoX IS
 END
 &
 THEORY ListANYVarX IS
-  List_ANY_Var(Machine(MailBox),mb_get_cu1_main_state)==(?);
-  List_ANY_Var(Machine(MailBox),mb_get_cu2_main_state)==(?);
+  List_ANY_Var(Machine(MailBox),mb_get_cu_main_state)==(?);
+  List_ANY_Var(Machine(MailBox),mb_get_cu_on_state)==(?);
+  List_ANY_Var(Machine(MailBox),mb_get_cu_running_state)==(?);
   List_ANY_Var(Machine(MailBox),mb_getCurrentU)==(?);
   List_ANY_Var(Machine(MailBox),mb_getCU1Error)==(?);
   List_ANY_Var(Machine(MailBox),mb_getCU2Error)==(?);
@@ -223,7 +230,7 @@ THEORY ListANYVarX IS
 END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Machine(MailBox)) == (? | ? | ? | ? | mb_get_cu1_main_state,mb_get_cu2_main_state,mb_getCurrentU,mb_getCU1Error,mb_getCU2Error,mb_set_on_state,mb_set_running_state,mb_set_main_state | ? | seen(Machine(CTX)) | ? | MailBox);
+  List_Of_Ids(Machine(MailBox)) == (? | ? | ? | ? | mb_get_cu_main_state,mb_get_cu_on_state,mb_get_cu_running_state,mb_getCurrentU,mb_getCU1Error,mb_getCU2Error,mb_set_on_state,mb_set_running_state,mb_set_main_state | ? | seen(Machine(CTX)) | ? | MailBox);
   List_Of_HiddenCst_Ids(Machine(MailBox)) == (? | ?);
   List_Of_VisibleCst_Ids(Machine(MailBox)) == (?);
   List_Of_VisibleVar_Ids(Machine(MailBox)) == (? | ?);
@@ -236,8 +243,8 @@ THEORY ListOfIdsX IS
 END
 &
 THEORY OperationsEnvX IS
-  Operations(Machine(MailBox)) == (Type(mb_set_main_state) == Cst(No_type,etype(MAIN_STATE,?,?)*btype(INTEGER,?,?));Type(mb_set_running_state) == Cst(No_type,etype(RUNNING_STATE,?,?)*btype(INTEGER,?,?));Type(mb_set_on_state) == Cst(No_type,etype(ON_STATE,?,?)*btype(INTEGER,?,?));Type(mb_getCU2Error) == Cst(btype(BOOL,0,1),No_type);Type(mb_getCU1Error) == Cst(btype(BOOL,0,1),No_type);Type(mb_getCurrentU) == Cst(btype(INTEGER,0,MAXINT),No_type);Type(mb_get_cu2_main_state) == Cst(etype(MAIN_STATE,?,?),No_type);Type(mb_get_cu1_main_state) == Cst(etype(MAIN_STATE,?,?),No_type));
-  Observers(Machine(MailBox)) == (Type(mb_set_main_state) == Cst(No_type,etype(MAIN_STATE,?,?)*btype(INTEGER,?,?));Type(mb_set_running_state) == Cst(No_type,etype(RUNNING_STATE,?,?)*btype(INTEGER,?,?));Type(mb_set_on_state) == Cst(No_type,etype(ON_STATE,?,?)*btype(INTEGER,?,?));Type(mb_getCU2Error) == Cst(btype(BOOL,0,1),No_type);Type(mb_getCU1Error) == Cst(btype(BOOL,0,1),No_type);Type(mb_getCurrentU) == Cst(btype(INTEGER,0,MAXINT),No_type);Type(mb_get_cu2_main_state) == Cst(etype(MAIN_STATE,?,?),No_type);Type(mb_get_cu1_main_state) == Cst(etype(MAIN_STATE,?,?),No_type))
+  Operations(Machine(MailBox)) == (Type(mb_set_main_state) == Cst(No_type,etype(MAIN_STATE,?,?)*btype(INTEGER,?,?));Type(mb_set_running_state) == Cst(No_type,etype(RUNNING_STATE,?,?)*btype(INTEGER,?,?));Type(mb_set_on_state) == Cst(No_type,etype(ON_STATE,?,?)*btype(INTEGER,?,?));Type(mb_getCU2Error) == Cst(btype(BOOL,0,1),No_type);Type(mb_getCU1Error) == Cst(btype(BOOL,0,1),No_type);Type(mb_getCurrentU) == Cst(btype(INTEGER,0,MAXINT),No_type);Type(mb_get_cu_running_state) == Cst(etype(RUNNING_STATE,?,?),btype(INTEGER,?,?)*btype(INTEGER,?,?));Type(mb_get_cu_on_state) == Cst(etype(ON_STATE,?,?),btype(INTEGER,?,?)*btype(INTEGER,?,?));Type(mb_get_cu_main_state) == Cst(etype(MAIN_STATE,?,?),btype(INTEGER,?,?)*btype(INTEGER,?,?)));
+  Observers(Machine(MailBox)) == (Type(mb_set_main_state) == Cst(No_type,etype(MAIN_STATE,?,?)*btype(INTEGER,?,?));Type(mb_set_running_state) == Cst(No_type,etype(RUNNING_STATE,?,?)*btype(INTEGER,?,?));Type(mb_set_on_state) == Cst(No_type,etype(ON_STATE,?,?)*btype(INTEGER,?,?));Type(mb_getCU2Error) == Cst(btype(BOOL,0,1),No_type);Type(mb_getCU1Error) == Cst(btype(BOOL,0,1),No_type);Type(mb_getCurrentU) == Cst(btype(INTEGER,0,MAXINT),No_type);Type(mb_get_cu_running_state) == Cst(etype(RUNNING_STATE,?,?),btype(INTEGER,?,?)*btype(INTEGER,?,?));Type(mb_get_cu_on_state) == Cst(etype(ON_STATE,?,?),btype(INTEGER,?,?)*btype(INTEGER,?,?));Type(mb_get_cu_main_state) == Cst(etype(MAIN_STATE,?,?),btype(INTEGER,?,?)*btype(INTEGER,?,?)))
 END
 &
 THEORY TCIntRdX IS

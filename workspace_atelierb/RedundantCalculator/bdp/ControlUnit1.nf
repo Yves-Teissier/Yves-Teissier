@@ -95,29 +95,26 @@ THEORY ListConstraintsX IS
 END
 &
 THEORY ListOperationsX IS
-  Internal_List_Operations(Machine(ControlUnit1))==(cu1_next_main_state,cu1_next_on_state,cu1_next_running_state,cu1_run);
-  List_Operations(Machine(ControlUnit1))==(cu1_next_main_state,cu1_next_on_state,cu1_next_running_state,cu1_run)
+  Internal_List_Operations(Machine(ControlUnit1))==(cu1_next_main_state,cu1_next_on_state,cu1_next_running_state);
+  List_Operations(Machine(ControlUnit1))==(cu1_next_main_state,cu1_next_on_state,cu1_next_running_state)
 END
 &
 THEORY ListInputX IS
   List_Input(Machine(ControlUnit1),cu1_next_main_state)==(state);
   List_Input(Machine(ControlUnit1),cu1_next_on_state)==(state);
-  List_Input(Machine(ControlUnit1),cu1_next_running_state)==(state);
-  List_Input(Machine(ControlUnit1),cu1_run)==(?)
+  List_Input(Machine(ControlUnit1),cu1_next_running_state)==(state)
 END
 &
 THEORY ListOutputX IS
   List_Output(Machine(ControlUnit1),cu1_next_main_state)==(next_main_state);
   List_Output(Machine(ControlUnit1),cu1_next_on_state)==(next_on_state);
-  List_Output(Machine(ControlUnit1),cu1_next_running_state)==(next_running_state);
-  List_Output(Machine(ControlUnit1),cu1_run)==(?)
+  List_Output(Machine(ControlUnit1),cu1_next_running_state)==(next_running_state)
 END
 &
 THEORY ListHeaderX IS
   List_Header(Machine(ControlUnit1),cu1_next_main_state)==(next_main_state <-- cu1_next_main_state(state));
   List_Header(Machine(ControlUnit1),cu1_next_on_state)==(next_on_state <-- cu1_next_on_state(state));
-  List_Header(Machine(ControlUnit1),cu1_next_running_state)==(next_running_state <-- cu1_next_running_state(state));
-  List_Header(Machine(ControlUnit1),cu1_run)==(cu1_run)
+  List_Header(Machine(ControlUnit1),cu1_next_running_state)==(next_running_state <-- cu1_next_running_state(state))
 END
 &
 THEORY ListOperationGuardX END
@@ -125,19 +122,16 @@ THEORY ListOperationGuardX END
 THEORY ListPreconditionX IS
   List_Precondition(Machine(ControlUnit1),cu1_next_main_state)==(state: MAIN_STATE);
   List_Precondition(Machine(ControlUnit1),cu1_next_on_state)==(state: ON_STATE);
-  List_Precondition(Machine(ControlUnit1),cu1_next_running_state)==(state: RUNNING_STATE);
-  List_Precondition(Machine(ControlUnit1),cu1_run)==(btrue)
+  List_Precondition(Machine(ControlUnit1),cu1_next_running_state)==(state: RUNNING_STATE)
 END
 &
 THEORY ListSubstitutionX IS
-  Expanded_List_Substitution(Machine(ControlUnit1),cu1_run)==(btrue | skip);
   Expanded_List_Substitution(Machine(ControlUnit1),cu1_next_running_state)==(state: RUNNING_STATE | @(next_running_state$0).(next_running_state$0: NEXT_RUNNING_STATE[{state}] ==> next_running_state:=next_running_state$0));
   Expanded_List_Substitution(Machine(ControlUnit1),cu1_next_on_state)==(state: ON_STATE | @(next_on_state$0).(next_on_state$0: NEXT_ON_STATE[{state}] ==> next_on_state:=next_on_state$0));
   Expanded_List_Substitution(Machine(ControlUnit1),cu1_next_main_state)==(state: MAIN_STATE | @(next_main_state$0).(next_main_state$0: NEXT_MAIN_STATE[{state}] ==> next_main_state:=next_main_state$0));
   List_Substitution(Machine(ControlUnit1),cu1_next_main_state)==(next_main_state:: NEXT_MAIN_STATE[{state}]);
   List_Substitution(Machine(ControlUnit1),cu1_next_on_state)==(next_on_state:: NEXT_ON_STATE[{state}]);
-  List_Substitution(Machine(ControlUnit1),cu1_next_running_state)==(next_running_state:: NEXT_RUNNING_STATE[{state}]);
-  List_Substitution(Machine(ControlUnit1),cu1_run)==(skip)
+  List_Substitution(Machine(ControlUnit1),cu1_next_running_state)==(next_running_state:: NEXT_RUNNING_STATE[{state}])
 END
 &
 THEORY ListConstantsX IS
@@ -171,7 +165,7 @@ END
 &
 THEORY ListPropertiesX IS
   Abstract_List_Properties(Machine(ControlUnit1))==(btrue);
-  Context_List_Properties(Machine(ControlUnit1))==(NEXT_RUNNING_STATE: RUNNING_STATE <-> RUNNING_STATE & NEXT_MAIN_STATE: MAIN_STATE <-> MAIN_STATE & NEXT_ON_STATE: ON_STATE <-> ON_STATE & NEXT_MAIN_STATE = {OFF|->ON,SHUTDOWN|->ON,ON|->SHUTDOWN,ERROR|->SHUTDOWN,ON|->ERROR} & NEXT_ON_STATE = {INITIALIZING|->RUNNING,ON_IDLE|->INITIALIZING} & NEXT_RUNNING_STATE = {UNKNOWN|->MASTER,UNKNOWN|->SLAVE,SLAVE|->MASTER} & U_MIN: NAT & U_UNDER: NAT & U_OVER: NAT & U_HIGH: NAT & U_LOW: NAT & RUNNING_STATE: FIN(INTEGER) & not(RUNNING_STATE = {}) & MAIN_STATE: FIN(INTEGER) & not(MAIN_STATE = {}) & ON_STATE: FIN(INTEGER) & not(ON_STATE = {}));
+  Context_List_Properties(Machine(ControlUnit1))==(NEXT_RUNNING_STATE: RUNNING_STATE <-> RUNNING_STATE & NEXT_MAIN_STATE: MAIN_STATE <-> MAIN_STATE & NEXT_ON_STATE: ON_STATE <-> ON_STATE & NEXT_MAIN_STATE = {OFF|->ON,SHUTDOWN|->ON,ON|->SHUTDOWN,ERROR|->SHUTDOWN,ON|->ERROR,OFF|->OFF,ON|->ON,ERROR|->ERROR,SHUTDOWN|->SHUTDOWN} & NEXT_ON_STATE = {INITIALIZING|->RUNNING,ON_IDLE|->INITIALIZING,INITIALIZING|->INITIALIZING,ON_IDLE|->ON_IDLE,RUNNING|->RUNNING} & NEXT_RUNNING_STATE = {UNKNOWN|->MASTER,UNKNOWN|->SLAVE,SLAVE|->MASTER,UNKNOWN|->UNKNOWN,MASTER|->MASTER,SLAVE|->SLAVE} & U_MIN: NAT & U_UNDER: NAT & U_OVER: NAT & U_HIGH: NAT & U_LOW: NAT & RUNNING_STATE: FIN(INTEGER) & not(RUNNING_STATE = {}) & MAIN_STATE: FIN(INTEGER) & not(MAIN_STATE = {}) & ON_STATE: FIN(INTEGER) & not(ON_STATE = {}));
   Inherited_List_Properties(Machine(ControlUnit1))==(btrue);
   List_Properties(Machine(ControlUnit1))==(CU1_IS_FIRST_SLAVE: BOOL)
 END
@@ -190,12 +184,11 @@ END
 THEORY ListANYVarX IS
   List_ANY_Var(Machine(ControlUnit1),cu1_next_main_state)==(?);
   List_ANY_Var(Machine(ControlUnit1),cu1_next_on_state)==(?);
-  List_ANY_Var(Machine(ControlUnit1),cu1_next_running_state)==(?);
-  List_ANY_Var(Machine(ControlUnit1),cu1_run)==(?)
+  List_ANY_Var(Machine(ControlUnit1),cu1_next_running_state)==(?)
 END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Machine(ControlUnit1)) == (CU1_IS_FIRST_SLAVE | ? | ? | ? | cu1_next_main_state,cu1_next_on_state,cu1_next_running_state,cu1_run | ? | seen(Machine(CTX)) | ? | ControlUnit1);
+  List_Of_Ids(Machine(ControlUnit1)) == (CU1_IS_FIRST_SLAVE | ? | ? | ? | cu1_next_main_state,cu1_next_on_state,cu1_next_running_state | ? | seen(Machine(CTX)) | ? | ControlUnit1);
   List_Of_HiddenCst_Ids(Machine(ControlUnit1)) == (? | ?);
   List_Of_VisibleCst_Ids(Machine(ControlUnit1)) == (CU1_IS_FIRST_SLAVE);
   List_Of_VisibleVar_Ids(Machine(ControlUnit1)) == (? | ?);
@@ -212,8 +205,8 @@ THEORY ConstantsEnvX IS
 END
 &
 THEORY OperationsEnvX IS
-  Operations(Machine(ControlUnit1)) == (Type(cu1_run) == Cst(No_type,No_type);Type(cu1_next_running_state) == Cst(etype(RUNNING_STATE,?,?),etype(RUNNING_STATE,?,?));Type(cu1_next_on_state) == Cst(etype(ON_STATE,?,?),etype(ON_STATE,?,?));Type(cu1_next_main_state) == Cst(etype(MAIN_STATE,?,?),etype(MAIN_STATE,?,?)));
-  Observers(Machine(ControlUnit1)) == (Type(cu1_run) == Cst(No_type,No_type);Type(cu1_next_running_state) == Cst(etype(RUNNING_STATE,?,?),etype(RUNNING_STATE,?,?));Type(cu1_next_on_state) == Cst(etype(ON_STATE,?,?),etype(ON_STATE,?,?));Type(cu1_next_main_state) == Cst(etype(MAIN_STATE,?,?),etype(MAIN_STATE,?,?)))
+  Operations(Machine(ControlUnit1)) == (Type(cu1_next_running_state) == Cst(etype(RUNNING_STATE,?,?),etype(RUNNING_STATE,?,?));Type(cu1_next_on_state) == Cst(etype(ON_STATE,?,?),etype(ON_STATE,?,?));Type(cu1_next_main_state) == Cst(etype(MAIN_STATE,?,?),etype(MAIN_STATE,?,?)));
+  Observers(Machine(ControlUnit1)) == (Type(cu1_next_running_state) == Cst(etype(RUNNING_STATE,?,?),etype(RUNNING_STATE,?,?));Type(cu1_next_on_state) == Cst(etype(ON_STATE,?,?),etype(ON_STATE,?,?));Type(cu1_next_main_state) == Cst(etype(MAIN_STATE,?,?),etype(MAIN_STATE,?,?)))
 END
 &
 THEORY TCIntRdX IS

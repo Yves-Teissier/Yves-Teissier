@@ -19,7 +19,7 @@
     <Define name="ctx" hash="0"/>
     <Define name="seext" hash="0"/>
     <Define name="mchcst" hash="0"/>
-    <Define name="aprp" hash="14361164403451005234">
+    <Define name="aprp" hash="4071119014487217411">
         <Set>
             <Id value="RUNNING_STATE" typref="0"/>
             <Enumerated_Values>
@@ -89,6 +89,22 @@
                     <Id value="ON" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:5:1"/>
                     <Id value="ERROR" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:5:2"/>
                 </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="OFF" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:6:1"/>
+                    <Id value="OFF" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:6:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="ON" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:7:1"/>
+                    <Id value="ON" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:7:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="ERROR" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:8:1"/>
+                    <Id value="ERROR" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:8:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="SHUTDOWN" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:9:1"/>
+                    <Id value="SHUTDOWN" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:9:2"/>
+                </Binary_Exp>
             </Nary_Exp>
         </Exp_Comparison>
         <Exp_Comparison op="=">
@@ -101,6 +117,18 @@
                 <Binary_Exp op="|-&gt;" typref="4">
                     <Id value="ON_IDLE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:2:1"/>
                     <Id value="INITIALIZING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:2:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="INITIALIZING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:3:1"/>
+                    <Id value="INITIALIZING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:3:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="ON_IDLE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:4:1"/>
+                    <Id value="ON_IDLE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:4:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="RUNNING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:5:1"/>
+                    <Id value="RUNNING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:5:2"/>
                 </Binary_Exp>
             </Nary_Exp>
         </Exp_Comparison>
@@ -118,6 +146,18 @@
                 <Binary_Exp op="|-&gt;" typref="4">
                     <Id value="SLAVE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:3:1"/>
                     <Id value="MASTER" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:3:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="UNKNOWN" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:4:1"/>
+                    <Id value="UNKNOWN" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:4:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="MASTER" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:5:1"/>
+                    <Id value="MASTER" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:5:2"/>
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="4">
+                    <Id value="SLAVE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:6:1"/>
+                    <Id value="SLAVE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:6:2"/>
                 </Binary_Exp>
             </Nary_Exp>
         </Exp_Comparison>
@@ -195,7 +235,7 @@
     </Define>
     <Define name="imprp" hash="0"/>
     <Define name="imext" hash="0"/>
-    <Proof_Obligation goalHash="7946599111918430662">
+    <Proof_Obligation goalHash="2149956850742455519">
         <Tag>ValuesLemmas</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -261,6 +301,22 @@
                             <Id value="ON" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:5:1"/>
                             <Id value="ERROR" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:5:2"/>
                         </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="OFF" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:6:1"/>
+                            <Id value="OFF" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:6:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="ON" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:7:1"/>
+                            <Id value="ON" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:7:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="ERROR" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:8:1"/>
+                            <Id value="ERROR" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:8:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="SHUTDOWN" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:9:1"/>
+                            <Id value="SHUTDOWN" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:4:2:9:2"/>
+                        </Binary_Exp>
                     </Nary_Exp>
                     <Binary_Exp op="&lt;-&gt;" typref="3">
                         <Id value="MAIN_STATE" typref="0" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:2:2:1"/>
@@ -281,6 +337,18 @@
                         <Binary_Exp op="|-&gt;" typref="4">
                             <Id value="ON_IDLE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:2:1"/>
                             <Id value="INITIALIZING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:2:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="INITIALIZING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:3:1"/>
+                            <Id value="INITIALIZING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:3:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="ON_IDLE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:4:1"/>
+                            <Id value="ON_IDLE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:4:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="RUNNING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:5:1"/>
+                            <Id value="RUNNING" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:5:2:5:2"/>
                         </Binary_Exp>
                     </Nary_Exp>
                     <Binary_Exp op="&lt;-&gt;" typref="3">
@@ -306,6 +374,18 @@
                         <Binary_Exp op="|-&gt;" typref="4">
                             <Id value="SLAVE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:3:1"/>
                             <Id value="MASTER" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:3:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="UNKNOWN" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:4:1"/>
+                            <Id value="UNKNOWN" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:4:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="MASTER" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:5:1"/>
+                            <Id value="MASTER" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:5:2"/>
+                        </Binary_Exp>
+                        <Binary_Exp op="|-&gt;" typref="4">
+                            <Id value="SLAVE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:6:1"/>
+                            <Id value="SLAVE" typref="1" tag="/home/yves/workspace_atelierb/RedundantCalculator/bdp//CTX.bxml:1:5:1:6:2:6:2"/>
                         </Binary_Exp>
                     </Nary_Exp>
                     <Binary_Exp op="&lt;-&gt;" typref="3">

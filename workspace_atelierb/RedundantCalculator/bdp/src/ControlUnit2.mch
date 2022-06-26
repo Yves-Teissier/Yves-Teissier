@@ -27,11 +27,6 @@ OPERATIONS
     next_running_state <-- cu2_next_running_state ( state ) =
     PRE state : RUNNING_STATE THEN
         next_running_state :: NEXT_RUNNING_STATE [ { state } ]
-    END ;
-
-    cu2_run =
-    BEGIN
-        skip
     END
 
 END

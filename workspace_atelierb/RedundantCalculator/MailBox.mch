@@ -8,31 +8,37 @@ MACHINE
 SEES 
     CTX
     
+   
 OPERATIONS
     
-    resp_cu1_main_state <-- mb_get_cu1_main_state =
-    BEGIN
-        resp_cu1_main_state :: MAIN_STATE
+    resp_cu_main_state <-- mb_get_cu_main_state(level, cu) =
+    PRE level : NAT & cu : NAT THEN
+        resp_cu_main_state :: MAIN_STATE
     END;
     
-    resp_cu2_main_state <-- mb_get_cu2_main_state =
-    BEGIN
-        resp_cu2_main_state :: MAIN_STATE
+    resp_cu_on_state <-- mb_get_cu_on_state(level, cu) =
+    PRE level : NAT & cu : NAT THEN
+        resp_cu_on_state :: ON_STATE
     END;
     
-    current_u <-- mb_getCurrentU =
+    resp_cu_running_state <-- mb_get_cu_running_state(level, cu) =
+    PRE level : NAT & cu : NAT THEN
+        resp_cu_running_state :: RUNNING_STATE
+    END;
+   
+    resp_current_u <-- mb_getCurrentU =
     BEGIN
-        current_u :: NAT
+        resp_current_u :: NAT
     END;
     
-    cu1_error <-- mb_getCU1Error =
+    resp_cu1_error <-- mb_getCU1Error =
     BEGIN
-        cu1_error :: BOOL
+        resp_cu1_error :: BOOL
     END;
     
-    cu2_error <-- mb_getCU2Error =
+    resp_cu2_error <-- mb_getCU2Error =
     BEGIN
-        cu2_error :: BOOL
+        resp_cu2_error :: BOOL
     END;
     
     mb_set_on_state(state, cu) =

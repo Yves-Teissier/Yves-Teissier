@@ -11,15 +11,9 @@ SEES
     CTX
     
 IMPORTS
-    ControlUnit1,ControlUnit2, MailBox
+    ControlUnit2, MailBox
     
 CONCRETE_VARIABLES
-    cu1_current_main_state, 
-    cu1_current_running_state, 
-    cu1_current_on_state,
-    cu1_new_main_state, 
-    cu1_new_running_state, 
-    cu1_new_on_state,
     cu2_current_main_state, 
     cu2_current_running_state, 
     cu2_current_on_state,
@@ -28,12 +22,6 @@ CONCRETE_VARIABLES
     cu2_new_on_state
     
 INVARIANT
-    cu1_current_main_state : MAIN_STATE &
-    cu1_current_running_state : RUNNING_STATE &
-    cu1_current_on_state : ON_STATE &
-    cu1_new_main_state : MAIN_STATE &
-    cu1_new_running_state : RUNNING_STATE &
-    cu1_new_on_state : ON_STATE &
     cu2_current_main_state : MAIN_STATE &
     cu2_current_running_state : RUNNING_STATE &
     cu2_current_on_state : ON_STATE &
@@ -42,12 +30,6 @@ INVARIANT
     cu2_new_on_state : ON_STATE
     
 INITIALISATION
-    cu1_current_main_state := OFF;
-    cu1_current_running_state := UNKNOWN;
-    cu1_current_on_state := ON_IDLE;
-    cu1_new_main_state := OFF;
-    cu1_new_running_state := UNKNOWN;
-    cu1_new_on_state := ON_IDLE;
     cu2_current_main_state := OFF;
     cu2_current_running_state := UNKNOWN;
     cu2_current_on_state := ON_IDLE;
@@ -59,36 +41,21 @@ INITIALISATION
     
     
 OPERATIONS
-//    init =
-//    BEGIN
-//        // Cat UC2 as SLAVE
-//        cu1_set_is_slave(CU1_IS_SLAVE);
-//        cu2_set_is_slave(not(CU1_IS_SLAVE))
-//    END;
-    
-    
-    run =
-    BEGIN
-        // Evaluate the CU1
-        cu1_new_main_state <-- cu1_next_main_state(cu1_current_main_state);
-        
-        IF cu1_new_main_state = ON THEN
-            cu1_new_on_state <-- cu1_next_on_state(cu1_current_on_state)
-        END;
-        
-        IF cu1_new_on_state = RUNNING THEN
-            cu1_new_running_state <-- cu1_next_running_state(cu1_current_running_state)
-        END;
 
+    cu2_run =
+    BEGIN
         // Evaluate the CU2
         cu2_new_main_state <-- cu2_next_main_state(cu2_current_main_state);
+        cu2_current_main_state := cu2_new_main_state;
         
         IF cu2_new_main_state = ON THEN
-            cu2_new_on_state <-- cu2_next_on_state(cu2_current_on_state)
+            cu2_new_on_state <-- cu2_next_on_state(cu2_current_on_state);
+            cu2_current_on_state := cu2_new_on_state
         END;
         
         IF cu2_new_on_state = RUNNING THEN
-            cu2_new_running_state <-- cu2_next_running_state(cu2_current_running_state)
+            cu2_new_running_state <-- cu2_next_running_state(cu2_current_running_state);
+            cu2_current_running_state := cu2_new_running_state
         END
         
         // Get the current state from CU1 and CU2

@@ -1,18 +1,6 @@
 /* CTX
  * Author: yves
  * Creation date: 06/06/2022
- 
- Presentation
- 
- Gestion de la redondance d’un calculateur embarqué
-Un calculateur embarqué redondé est un ensemble de deux calculateurs identiques {ECU1, ECU2} reliés par une même interface I_ECU1_ECU2.
-Ces deux calculateurs échangent sur l’interface I_ECU1_ECU2 leur état de redondance actuel parmi les états suivants : UNKNOWN, SLAVE, MASTER, ERROR.
-    • Dans l’état SLAVE, le calculateur écoute le calculateur dans l’état MASTER : il reçoit toutes les informations reçues par ce calculateur, ainsi que toutes les informations émises par ce calculateur.
-    • Dans l’état MASTER, le calculateur reçoit toutes les informations provenant de l’extérieur, et répond à ces informations et effectue les actions correspondantes si cela est nécessaire.
-    • Dans l’état ERROR, le calculateur reçoit toutes les informations provenant de l’extérieur, mais ne répond pas à ces informations ni ne prend aucune action.
- 
- 
- 
  */
 MACHINE
     CTX
@@ -49,18 +37,28 @@ PROPERTIES
     NEXT_RUNNING_STATE : RUNNING_STATE <-> RUNNING_STATE &
     NEXT_MAIN_STATE : MAIN_STATE <-> MAIN_STATE &
     NEXT_ON_STATE : ON_STATE <-> ON_STATE &
-    NEXT_MAIN_STATE = {OFF |-> ON,
-                        SHUTDOWN |-> ON,
-                        ON |-> SHUTDOWN,
-                        ERROR |-> SHUTDOWN,
-                        ON |-> ERROR
+    NEXT_MAIN_STATE = {OFF      |-> ON,
+                       SHUTDOWN |-> ON,
+                       ON       |-> SHUTDOWN,
+                       ERROR    |-> SHUTDOWN,
+                       ON       |-> ERROR,
+                       OFF      |-> OFF,
+                       ON       |-> ON,
+                       ERROR    |-> ERROR,
+                       SHUTDOWN |-> SHUTDOWN
                     } &
     NEXT_ON_STATE = { INITIALIZING |-> RUNNING,
-                      ON_IDLE      |-> INITIALIZING
+                      ON_IDLE      |-> INITIALIZING,
+                      INITIALIZING |-> INITIALIZING,
+                      ON_IDLE      |-> ON_IDLE,
+                      RUNNING      |-> RUNNING
                     } &
     NEXT_RUNNING_STATE = { UNKNOWN |-> MASTER,
                            UNKNOWN |-> SLAVE,
-                           SLAVE |-> MASTER } &
+                           SLAVE   |-> MASTER,
+                           UNKNOWN |-> UNKNOWN,
+                           MASTER  |-> MASTER,
+                           SLAVE   |-> SLAVE} &
     U_MIN : NAT &
     U_UNDER : NAT &
     U_OVER : NAT &

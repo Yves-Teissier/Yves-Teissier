@@ -10,7 +10,7 @@ SEES CTX
 
 
 OPERATIONS
-    run =
+    cu2_run =
     BEGIN
         skip
     END

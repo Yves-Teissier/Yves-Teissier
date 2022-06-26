@@ -1,0 +1,27 @@
+project(RedundantCalculator)
+
+cmake_minimum_required(VERSION 2.4)
+
+SET(RedundantCalculator_SOURCES
+    CTX_i.c
+    ControlUnit1_i.c
+    ControlUnit2_i.c
+    IHM_i.c
+    MailBox_i.c
+    MainControl1_i.c
+    MainControl_i.c
+    Main_i.c
+    b_main.c
+)
+SET(RedundantCalculator_HEADERS
+    CTX.h
+    ControlUnit1.h
+    ControlUnit2.h
+    IHM.h
+    MailBox.h
+    Main.h
+    MainControl.h
+    MainControl1.h
+    PowerSupplyCtrl.h
+)
+add_executable(RedundantCalculator ${RedundantCalculator_SOURCES} ${RedundantCalculator_HEADERS})

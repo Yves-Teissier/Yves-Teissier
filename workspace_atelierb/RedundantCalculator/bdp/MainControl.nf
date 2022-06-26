@@ -95,31 +95,31 @@ THEORY ListConstraintsX IS
 END
 &
 THEORY ListOperationsX IS
-  Internal_List_Operations(Machine(MainControl))==(run);
-  List_Operations(Machine(MainControl))==(run)
+  Internal_List_Operations(Machine(MainControl))==(cu2_run);
+  List_Operations(Machine(MainControl))==(cu2_run)
 END
 &
 THEORY ListInputX IS
-  List_Input(Machine(MainControl),run)==(?)
+  List_Input(Machine(MainControl),cu2_run)==(?)
 END
 &
 THEORY ListOutputX IS
-  List_Output(Machine(MainControl),run)==(?)
+  List_Output(Machine(MainControl),cu2_run)==(?)
 END
 &
 THEORY ListHeaderX IS
-  List_Header(Machine(MainControl),run)==(run)
+  List_Header(Machine(MainControl),cu2_run)==(cu2_run)
 END
 &
 THEORY ListOperationGuardX END
 &
 THEORY ListPreconditionX IS
-  List_Precondition(Machine(MainControl),run)==(btrue)
+  List_Precondition(Machine(MainControl),cu2_run)==(btrue)
 END
 &
 THEORY ListSubstitutionX IS
-  Expanded_List_Substitution(Machine(MainControl),run)==(btrue | skip);
-  List_Substitution(Machine(MainControl),run)==(skip)
+  Expanded_List_Substitution(Machine(MainControl),cu2_run)==(btrue | skip);
+  List_Substitution(Machine(MainControl),cu2_run)==(skip)
 END
 &
 THEORY ListConstantsX IS
@@ -153,7 +153,7 @@ END
 &
 THEORY ListPropertiesX IS
   Abstract_List_Properties(Machine(MainControl))==(btrue);
-  Context_List_Properties(Machine(MainControl))==(NEXT_RUNNING_STATE: RUNNING_STATE <-> RUNNING_STATE & NEXT_MAIN_STATE: MAIN_STATE <-> MAIN_STATE & NEXT_ON_STATE: ON_STATE <-> ON_STATE & NEXT_MAIN_STATE = {OFF|->ON,SHUTDOWN|->ON,ON|->SHUTDOWN,ERROR|->SHUTDOWN,ON|->ERROR} & NEXT_ON_STATE = {INITIALIZING|->RUNNING,ON_IDLE|->INITIALIZING} & NEXT_RUNNING_STATE = {UNKNOWN|->MASTER,UNKNOWN|->SLAVE,SLAVE|->MASTER} & U_MIN: NAT & U_UNDER: NAT & U_OVER: NAT & U_HIGH: NAT & U_LOW: NAT & RUNNING_STATE: FIN(INTEGER) & not(RUNNING_STATE = {}) & MAIN_STATE: FIN(INTEGER) & not(MAIN_STATE = {}) & ON_STATE: FIN(INTEGER) & not(ON_STATE = {}));
+  Context_List_Properties(Machine(MainControl))==(NEXT_RUNNING_STATE: RUNNING_STATE <-> RUNNING_STATE & NEXT_MAIN_STATE: MAIN_STATE <-> MAIN_STATE & NEXT_ON_STATE: ON_STATE <-> ON_STATE & NEXT_MAIN_STATE = {OFF|->ON,SHUTDOWN|->ON,ON|->SHUTDOWN,ERROR|->SHUTDOWN,ON|->ERROR,OFF|->OFF,ON|->ON,ERROR|->ERROR,SHUTDOWN|->SHUTDOWN} & NEXT_ON_STATE = {INITIALIZING|->RUNNING,ON_IDLE|->INITIALIZING,INITIALIZING|->INITIALIZING,ON_IDLE|->ON_IDLE,RUNNING|->RUNNING} & NEXT_RUNNING_STATE = {UNKNOWN|->MASTER,UNKNOWN|->SLAVE,SLAVE|->MASTER,UNKNOWN|->UNKNOWN,MASTER|->MASTER,SLAVE|->SLAVE} & U_MIN: NAT & U_UNDER: NAT & U_OVER: NAT & U_HIGH: NAT & U_LOW: NAT & RUNNING_STATE: FIN(INTEGER) & not(RUNNING_STATE = {}) & MAIN_STATE: FIN(INTEGER) & not(MAIN_STATE = {}) & ON_STATE: FIN(INTEGER) & not(ON_STATE = {}));
   Inherited_List_Properties(Machine(MainControl))==(btrue);
   List_Properties(Machine(MainControl))==(btrue)
 END
@@ -170,11 +170,11 @@ THEORY ListSeenInfoX IS
 END
 &
 THEORY ListANYVarX IS
-  List_ANY_Var(Machine(MainControl),run)==(?)
+  List_ANY_Var(Machine(MainControl),cu2_run)==(?)
 END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Machine(MainControl)) == (? | ? | ? | ? | run | ? | seen(Machine(CTX)) | ? | MainControl);
+  List_Of_Ids(Machine(MainControl)) == (? | ? | ? | ? | cu2_run | ? | seen(Machine(CTX)) | ? | MainControl);
   List_Of_HiddenCst_Ids(Machine(MainControl)) == (? | ?);
   List_Of_VisibleCst_Ids(Machine(MainControl)) == (?);
   List_Of_VisibleVar_Ids(Machine(MainControl)) == (? | ?);
@@ -187,8 +187,8 @@ THEORY ListOfIdsX IS
 END
 &
 THEORY OperationsEnvX IS
-  Operations(Machine(MainControl)) == (Type(run) == Cst(No_type,No_type));
-  Observers(Machine(MainControl)) == (Type(run) == Cst(No_type,No_type))
+  Operations(Machine(MainControl)) == (Type(cu2_run) == Cst(No_type,No_type));
+  Observers(Machine(MainControl)) == (Type(cu2_run) == Cst(No_type,No_type))
 END
 &
 THEORY TCIntRdX IS

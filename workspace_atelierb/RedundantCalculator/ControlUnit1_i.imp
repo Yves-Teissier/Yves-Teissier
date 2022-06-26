@@ -14,8 +14,9 @@ SEES CTX
         
 CONCRETE_VARIABLES
     current_u, 
-    cu1_error,
+    cu1_error, // Internal error trigger
     cu2_main_state, 
+    prev_cu2_main_state,
     prev_main_state,
     IS_FIRST_ELECTION, // indique que l’ECU n’a pas atteint ni l’état SLAVE ni l’état MASTER depuis le premier démarrage
     IS_MASTER_BEFORE, // indique que l’ECU était dans l’état MASTER dans l’exécution précédente
@@ -27,6 +28,7 @@ INVARIANT
     current_u : NAT &
     cu1_error : BOOL &
     cu2_main_state : MAIN_STATE &
+    prev_cu2_main_state : MAIN_STATE &
     prev_main_state : MAIN_STATE &
     IS_FIRST_ELECTION : BOOL &
     IS_MASTER_BEFORE : BOOL &
@@ -38,6 +40,7 @@ INITIALISATION
     current_u := 0;
     cu1_error := FALSE;
     cu2_main_state := OFF;
+    prev_cu2_main_state := OFF;
     prev_main_state := OFF;
     IS_FIRST_ELECTION := TRUE;
     IS_MASTER_BEFORE := FALSE;
@@ -52,36 +55,53 @@ OPERATIONS
     
     next_main_state <-- cu1_next_main_state(state) =
     BEGIN
+        
+        prev_cu2_main_state <-- mb_get_cu_main_state(0,2);
+        IF prev_cu2_main_state = ERROR THEN
+            IS_ERROR_RECEIVED_BEFORE := TRUE
+        END;
+        
+        // state if the previous main state
+        IF state = ERROR THEN
+            IS_ERROR_BEFORE := TRUE
+        ELSE
+            IS_ERROR_BEFORE:= FALSE
+        END;
+        
         IF state = ERROR THEN
             mb_set_main_state(ERROR, 1)
         ELSIF state = SHUTDOWN THEN
             mb_set_main_state(prev_main_state, 1)
         END;
         
-        
-        current_u <-- mb_getCurrentU;
-        IF current_u > U_MIN THEN
-            next_main_state := ON
-        END;
-        IF current_u < U_UNDER or current_u > U_OVER THEN
-            next_main_state := SHUTDOWN
-        END;
-        IF current_u > U_LOW & current_u < U_HIGH THEN
-            next_main_state := ON
-        END;
-        IF current_u < U_MIN THEN
-            next_main_state := OFF
-        END;
+        /**
+        * Power supply
+        */
         cu1_error <-- mb_getCU1Error;
+        
         IF cu1_error = TRUE THEN
-            next_main_state := ERROR
+            next_main_state := ERROR;
+            mb_set_main_state(ERROR, 1)
+        ELSE
+            current_u <-- mb_getCurrentU;
+        
+            IF current_u > 32 THEN
+                next_main_state := ON
+            ELSIF current_u > 32 & current_u < 34 THEN
+                next_main_state := ON
+            ELSIF current_u < 30 or current_u > 35 THEN
+                next_main_state := SHUTDOWN
+            ELSIF current_u < 32 THEN
+                next_main_state := OFF
+            END;
+            mb_set_main_state(next_main_state, 1)
         END
     END;
     
     next_on_state <-- cu1_next_on_state(state) =
     BEGIN
         current_u <-- mb_getCurrentU;
-        IF current_u > U_LOW & current_u < U_HIGH THEN
+        IF current_u > 32 & current_u < 34 THEN
             next_on_state := RUNNING
         END;
         
@@ -92,28 +112,53 @@ OPERATIONS
     
     next_running_state <-- cu1_next_running_state(state) =
     BEGIN
+        // state is the previous state
+        IF state = MASTER THEN
+            IS_MASTER_BEFORE := TRUE
+        ELSE
+            IS_MASTER_BEFORE := FALSE
+        END;
+        
         IF state = SLAVE THEN
             mb_set_running_state(SLAVE, 1)
         ELSIF state = MASTER THEN
             mb_set_running_state(MASTER, 1)
         END;
         
-        cu2_main_state <-- mb_get_cu1_main_state;
+        // First execution : election of MASTER/SLAVE
+        IF CU1_IS_FIRST_SLAVE=TRUE & IS_FIRST_ELECTION=TRUE THEN
+            next_running_state := SLAVE;
+            mb_set_running_state(SLAVE, 1)
+        END;
+        IF IS_MASTER_BEFORE=TRUE & IS_ERROR_RECEIVED_BEFORE=FALSE THEN
+            next_running_state := SLAVE;
+            mb_set_running_state(SLAVE, 1)
+        END;
+        
+        IF CU1_IS_FIRST_SLAVE=FALSE & IS_FIRST_ELECTION=TRUE THEN
+            next_running_state := MASTER;
+            mb_set_running_state(MASTER, 1)
+        END;
+        
+        IF IS_MASTER_BEFORE=FALSE & IS_ERROR_BEFORE=FALSE THEN
+            next_running_state := MASTER;
+            mb_set_running_state(MASTER, 1)
+        END;
+        
+        IF IS_MASTER_BEFORE=TRUE & IS_ERROR_RECEIVED_BEFORE=TRUE THEN
+            next_running_state := MASTER;
+            mb_set_running_state(MASTER, 1)
+        END;
+        
+        cu2_main_state <-- mb_get_cu_main_state(1,2);
         
         IF cu2_main_state = ERROR THEN
-            next_running_state := MASTER
+            next_running_state := MASTER;
+            mb_set_running_state(MASTER, 1)
+        END;
+        IF next_running_state = UNKNOWN THEN
+            mb_set_running_state(UNKNOWN, 1)
         END
         //next_running_state := SLAVE
-    END;
-    
-    cu1_run =
-    BEGIN
-        skip
-        // Evaluate next state
-//        new_main_state <-- cu1_next_main_state(current_main_state);
-//        new_on_state <-- cu1_next_on_state(current_on_state);
-//        new_running_state <-- cu1_next_running_state(current_running_state)
-    END
-    
-    
+    END    
  END

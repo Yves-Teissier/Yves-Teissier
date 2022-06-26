@@ -15,9 +15,9 @@
 <Skip/>
 </Initialisation>
 <Operations>
-<Operation name='run'>
+<Operation name='cu2_run'>
 <Attr>
-<Pos l='13' c='5' s='3' endLine='16'/>
+<Pos l='13' c='5' s='7' endLine='16'/>
 </Attr>
 <Body>
 <Skip>

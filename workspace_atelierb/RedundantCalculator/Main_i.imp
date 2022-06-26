@@ -1,0 +1,88 @@
+/* Main_i
+ * Author: yves
+ * Creation date: 13/06/2022
+ */
+
+IMPLEMENTATION Main_i
+REFINES Main
+    
+SEES
+    CTX
+    
+IMPORTS
+    MainControl, MainControl1, MailBox, IHM
+
+CONCRETE_VARIABLES
+    m_cu1_current_main_state, 
+    m_cu1_current_running_state, 
+    m_cu1_current_on_state,
+    m_cu1_new_main_state, 
+    m_cu1_new_running_state, 
+    m_cu1_new_on_state,
+    m_cu2_current_main_state, 
+    m_cu2_current_running_state, 
+    m_cu2_current_on_state,
+    m_cu2_new_main_state, 
+    m_cu2_new_running_state, 
+    m_cu2_new_on_state
+    
+INVARIANT
+    m_cu1_current_main_state : MAIN_STATE &
+    m_cu1_current_running_state : RUNNING_STATE &
+    m_cu1_current_on_state : ON_STATE &
+    m_cu1_new_main_state : MAIN_STATE &
+    m_cu1_new_running_state : RUNNING_STATE &
+    m_cu1_new_on_state : ON_STATE &
+    m_cu2_current_main_state : MAIN_STATE &
+    m_cu2_current_running_state : RUNNING_STATE &
+    m_cu2_current_on_state : ON_STATE &
+    m_cu2_new_main_state : MAIN_STATE &
+    m_cu2_new_running_state : RUNNING_STATE &
+    m_cu2_new_on_state : ON_STATE &
+    not(m_cu2_current_running_state = SLAVE & m_cu2_current_running_state = SLAVE) &
+    not(m_cu2_current_running_state = MASTER & m_cu2_current_running_state = MASTER)
+    
+INITIALISATION
+    m_cu1_current_main_state := OFF;
+    m_cu1_current_running_state := UNKNOWN;
+    m_cu1_current_on_state := ON_IDLE;
+    m_cu1_new_main_state := OFF;
+    m_cu1_new_running_state := UNKNOWN;
+    m_cu1_new_on_state := ON_IDLE;
+    m_cu2_current_main_state := OFF;
+    m_cu2_current_running_state := UNKNOWN;
+    m_cu2_current_on_state := ON_IDLE;
+    m_cu2_new_main_state := OFF;
+    m_cu2_new_running_state := UNKNOWN;
+    m_cu2_new_on_state := ON_IDLE
+
+
+OPERATIONS
+    run =
+    BEGIN
+        // CU1 and CU2 are execution in paralell. So, we evaluate states at the end of both executions.
+        cu1_run;
+        
+        cu2_run;
+        
+        m_cu2_current_running_state <-- mb_get_cu_running_state(1, 1);
+        m_cu1_current_running_state <-- mb_get_cu_running_state(1, 2);
+        
+        m_cu2_current_main_state <-- mb_get_cu_main_state(1, 1);
+        m_cu1_current_main_state <-- mb_get_cu_main_state(1, 2);
+        
+        m_cu2_current_on_state <-- mb_get_cu_on_state(1, 1);
+        m_cu1_current_on_state <-- mb_get_cu_on_state(1, 2);
+        
+        print_on_state(m_cu1_current_on_state, 1);
+        print_on_state(m_cu2_current_on_state, 2);
+
+        print_running_state(m_cu1_current_running_state, 1);
+        print_running_state(m_cu2_current_running_state, 2);
+        
+        print_main_state(m_cu1_current_main_state, 1);
+        print_main_state(m_cu2_current_main_state, 2)
+
+
+    END
+ END

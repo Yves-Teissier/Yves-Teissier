@@ -23,17 +23,35 @@
         <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="ControlUnit2_i" suffix="imp" user="yves">
             <component name="ControlUnit2_i" type="implementation" />
         </component_file>
+        <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="IHM" suffix="mch" user="yves">
+            <component name="IHM" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="IHM_i" suffix="imp" user="yves">
+            <component name="IHM_i" type="implementation" />
+        </component_file>
         <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="MailBox" suffix="mch" user="yves">
             <component name="MailBox" type="specification" />
         </component_file>
         <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="MailBox_i" suffix="imp" user="yves">
             <component name="MailBox_i" type="implementation" />
         </component_file>
+        <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="Main" suffix="mch" user="yves">
+            <component name="Main" type="specification" />
+        </component_file>
         <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="MainControl" suffix="mch" user="yves">
             <component name="MainControl" type="specification" />
         </component_file>
+        <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="MainControl1" suffix="mch" user="yves">
+            <component name="MainControl1" type="specification" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="MainControl1_i" suffix="imp" user="yves">
+            <component name="MainControl1_i" type="implementation" />
+        </component_file>
         <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="MainControl_i" suffix="imp" user="yves">
             <component name="MainControl_i" type="implementation" />
+        </component_file>
+        <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="Main_i" suffix="imp" user="yves">
+            <component name="Main_i" type="implementation" />
         </component_file>
         <component_file path="/home/yves/workspace_atelierb/RedundantCalculator" name="PowerSupplyCtrl" suffix="mch" user="yves">
             <component name="PowerSupplyCtrl" type="specification" />

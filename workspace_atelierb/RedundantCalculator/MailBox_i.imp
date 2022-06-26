@@ -15,7 +15,13 @@ CONCRETE_VARIABLES
     cu1_running_state,
     cu2_running_state,
     cu1_main_state,
-    cu2_main_state
+    cu2_main_state,
+    prev_cu1_on_state,
+    prev_cu2_on_state,
+    prev_cu1_running_state,
+    prev_cu2_running_state,
+    prev_cu1_main_state,
+    prev_cu2_main_state
     
 INVARIANT
     cu1_on_state : ON_STATE &
@@ -23,7 +29,13 @@ INVARIANT
     cu1_running_state : RUNNING_STATE &
     cu2_running_state : RUNNING_STATE &
     cu1_main_state : MAIN_STATE &
-    cu2_main_state : MAIN_STATE
+    cu2_main_state : MAIN_STATE &
+    prev_cu1_on_state : ON_STATE &
+    prev_cu2_on_state : ON_STATE &
+    prev_cu1_running_state : RUNNING_STATE &
+    prev_cu2_running_state : RUNNING_STATE &
+    prev_cu1_main_state : MAIN_STATE &
+    prev_cu2_main_state : MAIN_STATE
     
 INITIALISATION
     cu1_on_state := ON_IDLE;
@@ -31,31 +43,79 @@ INITIALISATION
     cu1_running_state := UNKNOWN;
     cu2_running_state := UNKNOWN;
     cu1_main_state := OFF;
-    cu2_main_state := OFF
+    cu2_main_state := OFF;
+    prev_cu1_on_state := ON_IDLE;
+    prev_cu2_on_state := ON_IDLE;
+    prev_cu1_running_state := UNKNOWN;
+    prev_cu2_running_state := UNKNOWN;
+    prev_cu1_main_state := OFF;
+    prev_cu2_main_state := OFF
 
 OPERATIONS
     
-    resp_cu1_main_state <-- mb_get_cu1_main_state =
+    resp_cu_main_state <-- mb_get_cu_main_state(level,cu) =
     BEGIN
-        resp_cu1_main_state := cu1_main_state
+        IF cu = 1 THEN
+            IF level = 0 THEN
+                resp_cu_main_state := prev_cu1_main_state
+            ELSE
+                resp_cu_main_state := cu1_main_state
+            END
+        ELSE
+            IF level = 0 THEN
+                resp_cu_main_state := prev_cu2_main_state
+            ELSE
+                resp_cu_main_state := cu2_main_state
+            END        
+        END
+        
     END;
     
-    resp_cu2_main_state <-- mb_get_cu2_main_state =
+    resp_cu_running_state <-- mb_get_cu_running_state(level,cu) =
     BEGIN
-        resp_cu2_main_state := cu2_main_state
+        IF cu = 1 THEN
+            IF level = 0 THEN
+                resp_cu_running_state := cu1_running_state
+            ELSE
+                resp_cu_running_state := prev_cu1_running_state
+            END
+        ELSE
+            IF level = 0 THEN
+                resp_cu_running_state := cu2_running_state
+            ELSE
+                resp_cu_running_state := prev_cu2_running_state
+            END
+        END
     END;
     
-    current_u <-- mb_getCurrentU =
+    resp_cu_on_state <-- mb_get_cu_on_state(level,cu) =
+    BEGIN
+        IF cu = 1 THEN
+            IF level = 0 THEN
+                resp_cu_on_state := cu1_on_state
+            ELSE
+                resp_cu_on_state := prev_cu1_on_state
+            END
+        ELSE
+            IF level = 0 THEN
+                resp_cu_on_state := cu2_on_state
+            ELSE
+                resp_cu_on_state := prev_cu2_on_state
+            END
+        END
+    END;
+    
+    resp_current_u <-- mb_getCurrentU =
+    BEGIN
+        resp_current_u := 0
+    END;
+    
+    resp_cu1_error <-- mb_getCU1Error =
     BEGIN
         skip
     END;
     
-    cu1_error <-- mb_getCU1Error =
-    BEGIN
-        skip
-    END;
-    
-    cu2_error <-- mb_getCU2Error =
+    resp_cu2_error <-- mb_getCU2Error =
     BEGIN
         skip
     END;
@@ -63,8 +123,10 @@ OPERATIONS
     mb_set_on_state(state, cu) =
     BEGIN
         IF cu = 1 THEN
+            prev_cu1_on_state := cu1_on_state;
             cu1_on_state := state
         ELSE
+            prev_cu2_on_state := cu2_on_state;
             cu2_on_state := state            
         END
     END;
@@ -72,8 +134,10 @@ OPERATIONS
     mb_set_running_state(state, cu) =
     BEGIN
         IF cu = 1 THEN
+            prev_cu1_running_state := cu1_running_state;
             cu1_running_state := state
         ELSE
+            prev_cu2_running_state := cu2_running_state;
             cu2_running_state := state            
         END
     END;
@@ -81,8 +145,10 @@ OPERATIONS
     mb_set_main_state(state, cu) =
     BEGIN
         IF cu = 1 THEN
+            prev_cu1_main_state  := cu1_main_state;
             cu1_main_state := state
         ELSE
+            prev_cu2_main_state  := cu2_main_state;
             cu2_main_state := state
         END
     END

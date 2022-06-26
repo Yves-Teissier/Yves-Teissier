@@ -1,21 +1,21 @@
 THEORY BalanceX IS
-MailBox_i,1,0,0,0,0,0,0;
-Operation_mb_getCurrentU,1,0,0,0,0,0,0
+MailBox_i,1,0,0,1,0,0,0;
+Operation_mb_getCurrentU,1,0,0,1,0,0,0
 END
 &
 THEORY ProofState IS
-Unproved
+Proved(0)
 END
 &
 THEORY MethodList IS
-?
+pr
 END
 &
 THEORY PassList IS
-Force(0),(?; 0)
+Force(0),?
 END
 &
 THEORY Status IS
-MailBox_i,1,0,0,0,0,0;
-Operation_mb_getCurrentU,1,0,0,0,0,0
+MailBox_i,1,0,1,0,0,0;
+Operation_mb_getCurrentU,1,0,1,0,0,0
 END
