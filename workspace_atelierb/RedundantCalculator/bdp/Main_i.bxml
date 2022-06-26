@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='Main_i' type='implementation' position='true' semantic='true' b0check='false'>
+<Abstraction>Main</Abstraction>
+<Imports>
+<Attr>
+<Pos l='12' c='1' s='7'/>
+</Attr>
+<Referenced_Machine>
+<Attr>
+<Pos l='13' c='5' s='11'/>
+</Attr>
+<Name>MainControl</Name>
+</Referenced_Machine>
+<Referenced_Machine>
+<Attr>
+<Pos l='13' c='18' s='12'/>
+</Attr>
+<Name>MainControl1</Name>
+</Referenced_Machine>
+<Referenced_Machine>
+<Attr>
+<Pos l='13' c='32' s='7'/>
+</Attr>
+<Name>MailBox</Name>
+</Referenced_Machine>
+<Referenced_Machine>
+<Attr>
+<Pos l='13' c='41' s='3'/>
+</Attr>
+<Name>IHM</Name>
+</Referenced_Machine>
+</Imports>
+<Sees>
+<Attr>
+<Pos l='9' c='1' s='4'/>
+</Attr>
+<Referenced_Machine>
+<Attr>
+<Pos l='10' c='5' s='3'/>
+</Attr>
+<Name>CTX</Name>
+</Referenced_Machine>
+</Sees>
+<Concrete_Variables>
+<Attr>
+<Pos l='15' c='1' s='18'/>
+</Attr>
+<Id value='m_cu1_current_main_state' typref='4'>
+<Attr>
+<Pos l='16' c='5' s='24'/>
+</Attr>
+</Id>
+<Id value='m_cu1_current_running_state' typref='5'>
+<Attr>
+<Pos l='17' c='5' s='27'/>
+</Attr>
+</Id>
+<Id value='m_cu1_current_on_state' typref='6'>
+<Attr>
+<Pos l='18' c='5' s='22'/>
+</Attr>
+</Id>
+<Id value='m_cu1_new_main_state' typref='4'>
+<Attr>
+<Pos l='19' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='m_cu1_new_running_state' typref='5'>
+<Attr>
+<Pos l='20' c='5' s='23'/>
+</Attr>
+</Id>
+<Id value='m_cu1_new_on_state' typref='6'>
+<Attr>
+<Pos l='21' c='5' s='18'/>
+</Attr>
+</Id>
+<Id value='m_cu2_current_main_state' typref='4'>
+<Attr>
+<Pos l='22' c='5' s='24'/>
+</Attr>
+</Id>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='23' c='5' s='27'/>
+</Attr>
+</Id>
+<Id value='m_cu2_current_on_state' typref='6'>
+<Attr>
+<Pos l='24' c='5' s='22'/>
+</Attr>
+</Id>
+<Id value='m_cu2_new_main_state' typref='4'>
+<Attr>
+<Pos l='25' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='m_cu2_new_running_state' typref='5'>
+<Attr>
+<Pos l='26' c='5' s='23'/>
+</Attr>
+</Id>
+<Id value='m_cu2_new_on_state' typref='6'>
+<Attr>
+<Pos l='27' c='5' s='18'/>
+</Attr>
+</Id>
+</Concrete_Variables>
+<Invariant>
+<Attr>
+<Pos l='29' c='1' s='9'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='30' c='30' s='1'/>
+</Attr>
+<Id value='m_cu1_current_main_state' typref='4'>
+<Attr>
+<Pos l='30' c='5' s='24'/>
+</Attr>
+</Id>
+<Id value='MAIN_STATE' typref='7'>
+<Attr>
+<Pos l='30' c='32' s='10'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='31' c='33' s='1'/>
+</Attr>
+<Id value='m_cu1_current_running_state' typref='5'>
+<Attr>
+<Pos l='31' c='5' s='27'/>
+</Attr>
+</Id>
+<Id value='RUNNING_STATE' typref='8'>
+<Attr>
+<Pos l='31' c='35' s='13'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='32' c='28' s='1'/>
+</Attr>
+<Id value='m_cu1_current_on_state' typref='6'>
+<Attr>
+<Pos l='32' c='5' s='22'/>
+</Attr>
+</Id>
+<Id value='ON_STATE' typref='9'>
+<Attr>
+<Pos l='32' c='30' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='33' c='26' s='1'/>
+</Attr>
+<Id value='m_cu1_new_main_state' typref='4'>
+<Attr>
+<Pos l='33' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='MAIN_STATE' typref='7'>
+<Attr>
+<Pos l='33' c='28' s='10'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='34' c='29' s='1'/>
+</Attr>
+<Id value='m_cu1_new_running_state' typref='5'>
+<Attr>
+<Pos l='34' c='5' s='23'/>
+</Attr>
+</Id>
+<Id value='RUNNING_STATE' typref='8'>
+<Attr>
+<Pos l='34' c='31' s='13'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='35' c='24' s='1'/>
+</Attr>
+<Id value='m_cu1_new_on_state' typref='6'>
+<Attr>
+<Pos l='35' c='5' s='18'/>
+</Attr>
+</Id>
+<Id value='ON_STATE' typref='9'>
+<Attr>
+<Pos l='35' c='26' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='36' c='30' s='1'/>
+</Attr>
+<Id value='m_cu2_current_main_state' typref='4'>
+<Attr>
+<Pos l='36' c='5' s='24'/>
+</Attr>
+</Id>
+<Id value='MAIN_STATE' typref='7'>
+<Attr>
+<Pos l='36' c='32' s='10'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='37' c='33' s='1'/>
+</Attr>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='37' c='5' s='27'/>
+</Attr>
+</Id>
+<Id value='RUNNING_STATE' typref='8'>
+<Attr>
+<Pos l='37' c='35' s='13'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='38' c='28' s='1'/>
+</Attr>
+<Id value='m_cu2_current_on_state' typref='6'>
+<Attr>
+<Pos l='38' c='5' s='22'/>
+</Attr>
+</Id>
+<Id value='ON_STATE' typref='9'>
+<Attr>
+<Pos l='38' c='30' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='39' c='26' s='1'/>
+</Attr>
+<Id value='m_cu2_new_main_state' typref='4'>
+<Attr>
+<Pos l='39' c='5' s='20'/>
+</Attr>
+</Id>
+<Id value='MAIN_STATE' typref='7'>
+<Attr>
+<Pos l='39' c='28' s='10'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='40' c='29' s='1'/>
+</Attr>
+<Id value='m_cu2_new_running_state' typref='5'>
+<Attr>
+<Pos l='40' c='5' s='23'/>
+</Attr>
+</Id>
+<Id value='RUNNING_STATE' typref='8'>
+<Attr>
+<Pos l='40' c='31' s='13'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='41' c='24' s='1'/>
+</Attr>
+<Id value='m_cu2_new_on_state' typref='6'>
+<Attr>
+<Pos l='41' c='5' s='18'/>
+</Attr>
+</Id>
+<Id value='ON_STATE' typref='9'>
+<Attr>
+<Pos l='41' c='26' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Unary_Pred op='not'>
+<Attr>
+<Pos l='42' c='5' s='3'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='42' c='37' s='1'/>
+</Attr>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='42' c='9' s='27'/>
+</Attr>
+</Id>
+<Id value='SLAVE' typref='5'>
+<Attr>
+<Pos l='42' c='39' s='5'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='42' c='75' s='1'/>
+</Attr>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='42' c='47' s='27'/>
+</Attr>
+</Id>
+<Id value='SLAVE' typref='5'>
+<Attr>
+<Pos l='42' c='77' s='5'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Unary_Pred>
+<Unary_Pred op='not'>
+<Attr>
+<Pos l='43' c='5' s='3'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='43' c='37' s='1'/>
+</Attr>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='43' c='9' s='27'/>
+</Attr>
+</Id>
+<Id value='MASTER' typref='5'>
+<Attr>
+<Pos l='43' c='39' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='43' c='76' s='1'/>
+</Attr>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='43' c='48' s='27'/>
+</Attr>
+</Id>
+<Id value='MASTER' typref='5'>
+<Attr>
+<Pos l='43' c='78' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Unary_Pred>
+</Nary_Pred>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='45' c='1' s='14'/>
+</Attr>
+<Nary_Sub op=';'>
+<Assignement_Sub>
+<Attr>
+<Pos l='46' c='30' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu1_current_main_state' typref='4'>
+<Attr>
+<Pos l='46' c='5' s='24'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='OFF' typref='4'>
+<Attr>
+<Pos l='46' c='33' s='3'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='47' c='33' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu1_current_running_state' typref='5'>
+<Attr>
+<Pos l='47' c='5' s='27'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='UNKNOWN' typref='5'>
+<Attr>
+<Pos l='47' c='36' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='48' c='28' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu1_current_on_state' typref='6'>
+<Attr>
+<Pos l='48' c='5' s='22'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='ON_IDLE' typref='6'>
+<Attr>
+<Pos l='48' c='31' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='49' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu1_new_main_state' typref='4'>
+<Attr>
+<Pos l='49' c='5' s='20'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='OFF' typref='4'>
+<Attr>
+<Pos l='49' c='29' s='3'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='50' c='29' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu1_new_running_state' typref='5'>
+<Attr>
+<Pos l='50' c='5' s='23'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='UNKNOWN' typref='5'>
+<Attr>
+<Pos l='50' c='32' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='51' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu1_new_on_state' typref='6'>
+<Attr>
+<Pos l='51' c='5' s='18'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='ON_IDLE' typref='6'>
+<Attr>
+<Pos l='51' c='27' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='52' c='30' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu2_current_main_state' typref='4'>
+<Attr>
+<Pos l='52' c='5' s='24'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='OFF' typref='4'>
+<Attr>
+<Pos l='52' c='33' s='3'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='53' c='33' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='53' c='5' s='27'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='UNKNOWN' typref='5'>
+<Attr>
+<Pos l='53' c='36' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='54' c='28' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu2_current_on_state' typref='6'>
+<Attr>
+<Pos l='54' c='5' s='22'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='ON_IDLE' typref='6'>
+<Attr>
+<Pos l='54' c='31' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='55' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu2_new_main_state' typref='4'>
+<Attr>
+<Pos l='55' c='5' s='20'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='OFF' typref='4'>
+<Attr>
+<Pos l='55' c='29' s='3'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='56' c='29' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu2_new_running_state' typref='5'>
+<Attr>
+<Pos l='56' c='5' s='23'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='UNKNOWN' typref='5'>
+<Attr>
+<Pos l='56' c='32' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='57' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='m_cu2_new_on_state' typref='6'>
+<Attr>
+<Pos l='57' c='5' s='18'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='ON_IDLE' typref='6'>
+<Attr>
+<Pos l='57' c='27' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Initialisation>
+<Operations>
+<Operation name='run'>
+<Attr>
+<Pos l='61' c='5' s='3' endLine='87'/>
+</Attr>
+<Body>
+<Nary_Sub op=';'>
+<Operation_Call>
+<Attr>
+<Pos l='64' c='9' s='7'/>
+</Attr>
+<Name>
+<Id value='cu1_run'>
+<Attr>
+<Pos l='64' c='9' s='7'/>
+</Attr>
+</Id>
+</Name>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='66' c='9' s='7'/>
+</Attr>
+<Name>
+<Id value='cu2_run'>
+<Attr>
+<Pos l='66' c='9' s='7'/>
+</Attr>
+</Id>
+</Name>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='68' c='37' s='3'/>
+</Attr>
+<Name>
+<Id value='mb_get_cu_running_state'>
+<Attr>
+<Pos l='68' c='41' s='23'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='68' c='65' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='68' c='68' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+<Output_Parameters>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='68' c='9' s='27'/>
+</Attr>
+</Id>
+</Output_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='69' c='37' s='3'/>
+</Attr>
+<Name>
+<Id value='mb_get_cu_running_state'>
+<Attr>
+<Pos l='69' c='41' s='23'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='69' c='65' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='69' c='68' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+<Output_Parameters>
+<Id value='m_cu1_current_running_state' typref='5'>
+<Attr>
+<Pos l='69' c='9' s='27'/>
+</Attr>
+</Id>
+</Output_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='71' c='34' s='3'/>
+</Attr>
+<Name>
+<Id value='mb_get_cu_main_state'>
+<Attr>
+<Pos l='71' c='38' s='20'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='71' c='59' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='71' c='62' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+<Output_Parameters>
+<Id value='m_cu2_current_main_state' typref='4'>
+<Attr>
+<Pos l='71' c='9' s='24'/>
+</Attr>
+</Id>
+</Output_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='72' c='34' s='3'/>
+</Attr>
+<Name>
+<Id value='mb_get_cu_main_state'>
+<Attr>
+<Pos l='72' c='38' s='20'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='72' c='59' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='72' c='62' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+<Output_Parameters>
+<Id value='m_cu1_current_main_state' typref='4'>
+<Attr>
+<Pos l='72' c='9' s='24'/>
+</Attr>
+</Id>
+</Output_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='74' c='32' s='3'/>
+</Attr>
+<Name>
+<Id value='mb_get_cu_on_state'>
+<Attr>
+<Pos l='74' c='36' s='18'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='74' c='55' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='74' c='58' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+<Output_Parameters>
+<Id value='m_cu2_current_on_state' typref='6'>
+<Attr>
+<Pos l='74' c='9' s='22'/>
+</Attr>
+</Id>
+</Output_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='75' c='32' s='3'/>
+</Attr>
+<Name>
+<Id value='mb_get_cu_on_state'>
+<Attr>
+<Pos l='75' c='36' s='18'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='75' c='55' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='75' c='58' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+<Output_Parameters>
+<Id value='m_cu1_current_on_state' typref='6'>
+<Attr>
+<Pos l='75' c='9' s='22'/>
+</Attr>
+</Id>
+</Output_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='77' c='23' s='0'/>
+</Attr>
+<Name>
+<Id value='print_on_state'>
+<Attr>
+<Pos l='77' c='9' s='14'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Id value='m_cu1_current_on_state' typref='6'>
+<Attr>
+<Pos l='77' c='24' s='22'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='77' c='48' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='78' c='23' s='0'/>
+</Attr>
+<Name>
+<Id value='print_on_state'>
+<Attr>
+<Pos l='78' c='9' s='14'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Id value='m_cu2_current_on_state' typref='6'>
+<Attr>
+<Pos l='78' c='24' s='22'/>
+</Attr>
+</Id>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='78' c='48' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='80' c='28' s='0'/>
+</Attr>
+<Name>
+<Id value='print_running_state'>
+<Attr>
+<Pos l='80' c='9' s='19'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Id value='m_cu1_current_running_state' typref='5'>
+<Attr>
+<Pos l='80' c='29' s='27'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='80' c='58' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='81' c='28' s='0'/>
+</Attr>
+<Name>
+<Id value='print_running_state'>
+<Attr>
+<Pos l='81' c='9' s='19'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Id value='m_cu2_current_running_state' typref='5'>
+<Attr>
+<Pos l='81' c='29' s='27'/>
+</Attr>
+</Id>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='81' c='58' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='83' c='25' s='0'/>
+</Attr>
+<Name>
+<Id value='print_main_state'>
+<Attr>
+<Pos l='83' c='9' s='16'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Id value='m_cu1_current_main_state' typref='4'>
+<Attr>
+<Pos l='83' c='26' s='24'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='83' c='52' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+</Operation_Call>
+<Operation_Call>
+<Attr>
+<Pos l='84' c='25' s='0'/>
+</Attr>
+<Name>
+<Id value='print_main_state'>
+<Attr>
+<Pos l='84' c='9' s='16'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Id value='m_cu2_current_main_state' typref='4'>
+<Attr>
+<Pos l='84' c='26' s='24'/>
+</Attr>
+</Id>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='84' c='52' s='1'/>
+</Attr>
+</Integer_Literal>
+</Input_Parameters>
+</Operation_Call>
+</Nary_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='0'>
+<Id value='BOOL'/>
+</Type>
+<Type id='1'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='2'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='3'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='4'>
+<Id value='MAIN_STATE'/>
+</Type>
+<Type id='5'>
+<Id value='RUNNING_STATE'/>
+</Type>
+<Type id='6'>
+<Id value='ON_STATE'/>
+</Type>
+<Type id='7'>
+<Unary_Exp op='POW'>
+<Id value='MAIN_STATE'/>
+</Unary_Exp>
+</Type>
+<Type id='8'>
+<Unary_Exp op='POW'>
+<Id value='RUNNING_STATE'/>
+</Unary_Exp>
+</Type>
+<Type id='9'>
+<Unary_Exp op='POW'>
+<Id value='ON_STATE'/>
+</Unary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

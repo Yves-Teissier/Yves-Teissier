@@ -1,0 +1,69 @@
+﻿/* MainControl1_i
+ * Author: yves
+ * Creation date: 13/06/2022
+ */
+
+IMPLEMENTATION MainControl1_i
+REFINES MainControl1
+
+SEES CTX
+
+IMPORTS
+    ControlUnit1 , MailBox
+
+CONCRETE_VARIABLES
+    cu1_current_main_state ,
+    cu1_current_running_state ,
+    cu1_current_on_state ,
+    cu1_new_main_state ,
+    cu1_new_running_state ,
+    cu1_new_on_state
+
+INVARIANT
+    cu1_current_main_state : MAIN_STATE &
+    cu1_current_running_state : RUNNING_STATE &
+    cu1_current_on_state : ON_STATE &
+    cu1_new_main_state : MAIN_STATE &
+    cu1_new_running_state : RUNNING_STATE &
+    cu1_new_on_state : ON_STATE
+
+INITIALISATION
+    cu1_current_main_state := OFF ;
+    cu1_current_running_state := UNKNOWN ;
+    cu1_current_on_state := ON_IDLE ;
+    cu1_new_main_state := OFF ;
+    cu1_new_running_state := UNKNOWN ;
+    cu1_new_on_state := ON_IDLE
+
+//    CU2_IS_SLAVE := not(CU1_IS_SLAVE)
+
+
+OPERATIONS
+//    init =
+//    BEGIN
+//        // Cat UC2 as SLAVE
+//        cu1_set_is_slave(CU1_IS_SLAVE);
+//        cu2_set_is_slave(not(CU1_IS_SLAVE))
+//    END;
+
+
+    cu1_run =
+    BEGIN
+        // Evaluate the CU1
+        cu1_new_main_state <-- cu1_next_main_state ( cu1_current_main_state ) ;
+        cu1_current_main_state := cu1_new_main_state ;
+
+        IF cu1_new_main_state = ON THEN
+            cu1_new_on_state <-- cu1_next_on_state ( cu1_current_on_state ) ;
+            cu1_current_on_state := cu1_new_on_state
+        END ;
+
+        IF cu1_new_on_state = RUNNING THEN
+            cu1_new_running_state <-- cu1_next_running_state ( cu1_current_running_state ) ;
+            cu1_current_running_state := cu1_new_running_state
+        END
+
+        // Get the current state from CU1 and CU2
+
+    END
+ END
