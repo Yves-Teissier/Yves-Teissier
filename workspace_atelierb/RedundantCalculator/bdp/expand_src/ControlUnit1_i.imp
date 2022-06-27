@@ -15,7 +15,9 @@ SEES CTX
 CONCRETE_VARIABLES
     current_u ,
     cu1_error , // Internal error trigger
+    cu1_main_state ,
     cu2_main_state ,
+    prev_cu1_main_state ,
     prev_cu2_main_state ,
     prev_main_state ,
     IS_FIRST_ELECTION , // indique que l’ECU n’a pas atteint ni l’état SLAVE ni l’état MASTER depuis le premier démarrage
@@ -27,7 +29,9 @@ CONCRETE_VARIABLES
 INVARIANT
     current_u : NAT &
     cu1_error : BOOL &
+    cu1_main_state : MAIN_STATE &
     cu2_main_state : MAIN_STATE &
+    prev_cu1_main_state : MAIN_STATE &
     prev_cu2_main_state : MAIN_STATE &
     prev_main_state : MAIN_STATE &
     IS_FIRST_ELECTION : BOOL &
@@ -39,7 +43,9 @@ INVARIANT
 INITIALISATION
     current_u := 0 ;
     cu1_error := FALSE ;
+    cu1_main_state := OFF ;
     cu2_main_state := OFF ;
+    prev_cu1_main_state := OFF ;
     prev_cu2_main_state := OFF ;
     prev_main_state := OFF ;
     IS_FIRST_ELECTION := TRUE ;
@@ -59,10 +65,13 @@ OPERATIONS
         prev_cu2_main_state <-- mb_get_cu_main_state ( 0 , 2 ) ;
         IF prev_cu2_main_state = ERROR THEN
             IS_ERROR_RECEIVED_BEFORE := TRUE
+        ELSE
+            IS_ERROR_RECEIVED_BEFORE := FALSE
         END ;
 
-        // state if the previous main state
-        IF state = ERROR THEN
+        // state of the previous main state
+        prev_cu1_main_state <-- mb_get_cu_main_state ( 0 , 1 ) ;
+        IF prev_cu1_main_state = ERROR THEN
             IS_ERROR_BEFORE := TRUE
         ELSE
             IS_ERROR_BEFORE := FALSE
@@ -95,7 +104,8 @@ OPERATIONS
                 next_main_state := OFF
             END ;
             mb_set_main_state ( next_main_state , 1 )
-        END
+        END ;
+        cu1_main_state := next_main_state
     END ;
 
     next_on_state <-- cu1_next_on_state ( state ) =
@@ -125,40 +135,58 @@ OPERATIONS
             mb_set_running_state ( MASTER , 1 )
         END ;
 
+        //
         // First execution : election of MASTER/SLAVE
+        //
         IF CU1_IS_FIRST_SLAVE = TRUE & IS_FIRST_ELECTION = TRUE THEN
             next_running_state := SLAVE ;
             mb_set_running_state ( SLAVE , 1 )
         END ;
-        IF IS_MASTER_BEFORE = TRUE & IS_ERROR_RECEIVED_BEFORE = FALSE THEN
-            next_running_state := SLAVE ;
-            mb_set_running_state ( SLAVE , 1 )
-        END ;
-
         IF CU1_IS_FIRST_SLAVE = FALSE & IS_FIRST_ELECTION = TRUE THEN
             next_running_state := MASTER ;
             mb_set_running_state ( MASTER , 1 )
         END ;
 
-        IF IS_MASTER_BEFORE = FALSE & IS_ERROR_BEFORE = FALSE THEN
+        //
+        // L'état de CU1 précédent est en ERROR
+        //
+        IF IS_MASTER_BEFORE = TRUE & IS_ERROR_BEFORE = TRUE THEN
+            next_running_state := SLAVE ;
+            mb_set_running_state ( SLAVE , 1 )
+        END ;
+
+        //
+        // L'état de CU2 précédent est en ERROR
+        //
+        IF IS_MASTER_BEFORE = FALSE & IS_ERROR_RECEIVED_BEFORE = TRUE THEN
             next_running_state := MASTER ;
             mb_set_running_state ( MASTER , 1 )
         END ;
 
-        IF IS_MASTER_BEFORE = TRUE & IS_ERROR_RECEIVED_BEFORE = TRUE THEN
-            next_running_state := MASTER ;
-            mb_set_running_state ( MASTER , 1 )
-        END ;
+//        IF IS_MASTER_BEFORE=TRUE & IS_ERROR_RECEIVED_BEFORE=FALSE THEN
+//            next_running_state := SLAVE;
+//            mb_set_running_state(SLAVE, 2)
+//        END;
 
-        cu2_main_state <-- mb_get_cu_main_state ( 1 , 2 ) ;
+//        IF cu2_main_state = ERROR THEN
+//            next_running_state := SLAVE;
+//            mb_set_running_state(SLAVE, 2)
+//        END;
 
-        IF cu2_main_state = ERROR THEN
-            next_running_state := MASTER ;
-            mb_set_running_state ( MASTER , 1 )
-        END ;
+        //
+        // Si le calculateur 1 est en erreur alors le calculateur 2 passe en MASTER
+        //
+//        cu1_main_state <-- mb_get_cu_main_state(1,1);
+
+//        IF cu1_main_state = ERROR THEN
+//            next_running_state := MASTER;
+//            mb_set_running_state(MASTER, 2)
+//        END;
+//        
         IF next_running_state = UNKNOWN THEN
             mb_set_running_state ( UNKNOWN , 1 )
-        END
+        END ;
         //next_running_state := SLAVE
+        IS_FIRST_ELECTION := FALSE
     END
  END

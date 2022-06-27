@@ -76,22 +76,22 @@ void MailBox__mb_get_cu_running_state(int32_t level, int32_t cu, CTX__RUNNING_ST
     {
         if(level == 0)
         {
-            (*resp_cu_running_state) = MailBox__cu1_running_state;
+            (*resp_cu_running_state) = MailBox__prev_cu1_running_state;
         }
         else
         {
-            (*resp_cu_running_state) = MailBox__prev_cu1_running_state;
+            (*resp_cu_running_state) = MailBox__cu1_running_state;
         }
     }
     else
     {
         if(level == 0)
         {
-            (*resp_cu_running_state) = MailBox__cu2_running_state;
+            (*resp_cu_running_state) = MailBox__prev_cu2_running_state;
         }
         else
         {
-            (*resp_cu_running_state) = MailBox__prev_cu2_running_state;
+            (*resp_cu_running_state) = MailBox__cu2_running_state;
         }
     }
 }
@@ -102,22 +102,22 @@ void MailBox__mb_get_cu_on_state(int32_t level, int32_t cu, CTX__ON_STATE *resp_
     {
         if(level == 0)
         {
-            (*resp_cu_on_state) = MailBox__cu1_on_state;
+            (*resp_cu_on_state) = MailBox__prev_cu1_on_state;
         }
         else
         {
-            (*resp_cu_on_state) = MailBox__prev_cu1_on_state;
+            (*resp_cu_on_state) = MailBox__cu1_on_state;
         }
     }
     else
     {
         if(level == 0)
         {
-            (*resp_cu_on_state) = MailBox__cu2_on_state;
+            (*resp_cu_on_state) = MailBox__prev_cu2_on_state;
         }
         else
         {
-            (*resp_cu_on_state) = MailBox__prev_cu2_on_state;
+            (*resp_cu_on_state) = MailBox__cu2_on_state;
         }
     }
 }

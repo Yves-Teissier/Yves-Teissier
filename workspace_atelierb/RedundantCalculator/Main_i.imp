@@ -65,14 +65,14 @@ OPERATIONS
         
         cu2_run;
         
-        m_cu2_current_running_state <-- mb_get_cu_running_state(1, 1);
-        m_cu1_current_running_state <-- mb_get_cu_running_state(1, 2);
+        m_cu1_current_running_state <-- mb_get_cu_running_state(1, 1);
+        m_cu2_current_running_state <-- mb_get_cu_running_state(1, 2);
         
-        m_cu2_current_main_state <-- mb_get_cu_main_state(1, 1);
-        m_cu1_current_main_state <-- mb_get_cu_main_state(1, 2);
+        m_cu1_current_main_state <-- mb_get_cu_main_state(1, 1);
+        m_cu2_current_main_state <-- mb_get_cu_main_state(1, 2);
         
-        m_cu2_current_on_state <-- mb_get_cu_on_state(1, 1);
-        m_cu1_current_on_state <-- mb_get_cu_on_state(1, 2);
+        m_cu1_current_on_state <-- mb_get_cu_on_state(1, 1);
+        m_cu2_current_on_state <-- mb_get_cu_on_state(1, 2);
         
         print_on_state(m_cu1_current_on_state, 1);
         print_on_state(m_cu2_current_on_state, 2);

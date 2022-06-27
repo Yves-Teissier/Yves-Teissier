@@ -17,7 +17,9 @@
 
 static int32_t ControlUnit1__current_u;
 static bool ControlUnit1__cu1_error;
+static CTX__MAIN_STATE ControlUnit1__cu1_main_state;
 static CTX__MAIN_STATE ControlUnit1__cu2_main_state;
+static CTX__MAIN_STATE ControlUnit1__prev_cu1_main_state;
 static CTX__MAIN_STATE ControlUnit1__prev_cu2_main_state;
 static CTX__MAIN_STATE ControlUnit1__prev_main_state;
 static bool ControlUnit1__IS_FIRST_ELECTION;
@@ -32,7 +34,9 @@ void ControlUnit1__INITIALISATION(void)
     MailBox__INITIALISATION();
     ControlUnit1__current_u = 0;
     ControlUnit1__cu1_error = false;
+    ControlUnit1__cu1_main_state = CTX__OFF;
     ControlUnit1__cu2_main_state = CTX__OFF;
+    ControlUnit1__prev_cu1_main_state = CTX__OFF;
     ControlUnit1__prev_cu2_main_state = CTX__OFF;
     ControlUnit1__prev_main_state = CTX__OFF;
     ControlUnit1__IS_FIRST_ELECTION = true;
@@ -51,7 +55,12 @@ void ControlUnit1__cu1_next_main_state(CTX__MAIN_STATE state, CTX__MAIN_STATE *n
     {
         ControlUnit1__IS_ERROR_RECEIVED_BEFORE = true;
     }
-    if(state == CTX__ERROR)
+    else
+    {
+        ControlUnit1__IS_ERROR_RECEIVED_BEFORE = false;
+    }
+    MailBox__mb_get_cu_main_state(0, 1, &ControlUnit1__prev_cu1_main_state);
+    if(ControlUnit1__prev_cu1_main_state == CTX__ERROR)
     {
         ControlUnit1__IS_ERROR_BEFORE = true;
     }
@@ -96,6 +105,7 @@ void ControlUnit1__cu1_next_main_state(CTX__MAIN_STATE state, CTX__MAIN_STATE *n
         }
         MailBox__mb_set_main_state(*next_main_state, 1);
     }
+    ControlUnit1__cu1_main_state = (*next_main_state);
 }
 
 void ControlUnit1__cu1_next_on_state(CTX__ON_STATE state, CTX__ON_STATE *next_on_state)
@@ -136,32 +146,20 @@ void ControlUnit1__cu1_next_running_state(CTX__RUNNING_STATE state, CTX__RUNNING
         (*next_running_state) = CTX__SLAVE;
         MailBox__mb_set_running_state(CTX__SLAVE, 1);
     }
-    if((ControlUnit1__IS_MASTER_BEFORE == true) &&
-    (ControlUnit1__IS_ERROR_RECEIVED_BEFORE == false))
-    {
-        (*next_running_state) = CTX__SLAVE;
-        MailBox__mb_set_running_state(CTX__SLAVE, 1);
-    }
     if((ControlUnit1__CU1_IS_FIRST_SLAVE == false) &&
     (ControlUnit1__IS_FIRST_ELECTION == true))
     {
         (*next_running_state) = CTX__MASTER;
         MailBox__mb_set_running_state(CTX__MASTER, 1);
     }
-    if((ControlUnit1__IS_MASTER_BEFORE == false) &&
-    (ControlUnit1__IS_ERROR_BEFORE == false))
-    {
-        (*next_running_state) = CTX__MASTER;
-        MailBox__mb_set_running_state(CTX__MASTER, 1);
-    }
     if((ControlUnit1__IS_MASTER_BEFORE == true) &&
-    (ControlUnit1__IS_ERROR_RECEIVED_BEFORE == true))
+    (ControlUnit1__IS_ERROR_BEFORE == true))
     {
-        (*next_running_state) = CTX__MASTER;
-        MailBox__mb_set_running_state(CTX__MASTER, 1);
+        (*next_running_state) = CTX__SLAVE;
+        MailBox__mb_set_running_state(CTX__SLAVE, 1);
     }
-    MailBox__mb_get_cu_main_state(1, 2, &ControlUnit1__cu2_main_state);
-    if(ControlUnit1__cu2_main_state == CTX__ERROR)
+    if((ControlUnit1__IS_MASTER_BEFORE == false) &&
+    (ControlUnit1__IS_ERROR_RECEIVED_BEFORE == true))
     {
         (*next_running_state) = CTX__MASTER;
         MailBox__mb_set_running_state(CTX__MASTER, 1);
@@ -170,5 +168,6 @@ void ControlUnit1__cu1_next_running_state(CTX__RUNNING_STATE state, CTX__RUNNING
     {
         MailBox__mb_set_running_state(CTX__UNKNOWN, 1);
     }
+    ControlUnit1__IS_FIRST_ELECTION = false;
 }
 

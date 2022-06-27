@@ -657,7 +657,7 @@
 </Integer_Literal>
 </Input_Parameters>
 <Output_Parameters>
-<Id value='m_cu2_current_running_state' typref='5'>
+<Id value='m_cu1_current_running_state' typref='5'>
 <Attr>
 <Pos l='68' c='9' s='27'/>
 </Attr>
@@ -688,7 +688,7 @@
 </Integer_Literal>
 </Input_Parameters>
 <Output_Parameters>
-<Id value='m_cu1_current_running_state' typref='5'>
+<Id value='m_cu2_current_running_state' typref='5'>
 <Attr>
 <Pos l='69' c='9' s='27'/>
 </Attr>
@@ -719,7 +719,7 @@
 </Integer_Literal>
 </Input_Parameters>
 <Output_Parameters>
-<Id value='m_cu2_current_main_state' typref='4'>
+<Id value='m_cu1_current_main_state' typref='4'>
 <Attr>
 <Pos l='71' c='9' s='24'/>
 </Attr>
@@ -750,7 +750,7 @@
 </Integer_Literal>
 </Input_Parameters>
 <Output_Parameters>
-<Id value='m_cu1_current_main_state' typref='4'>
+<Id value='m_cu2_current_main_state' typref='4'>
 <Attr>
 <Pos l='72' c='9' s='24'/>
 </Attr>
@@ -781,7 +781,7 @@
 </Integer_Literal>
 </Input_Parameters>
 <Output_Parameters>
-<Id value='m_cu2_current_on_state' typref='6'>
+<Id value='m_cu1_current_on_state' typref='6'>
 <Attr>
 <Pos l='74' c='9' s='22'/>
 </Attr>
@@ -812,7 +812,7 @@
 </Integer_Literal>
 </Input_Parameters>
 <Output_Parameters>
-<Id value='m_cu1_current_on_state' typref='6'>
+<Id value='m_cu2_current_on_state' typref='6'>
 <Attr>
 <Pos l='75' c='9' s='22'/>
 </Attr>

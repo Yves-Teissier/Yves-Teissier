@@ -760,9 +760,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='cu1_running_state' typref='5'>
+<Id value='prev_cu1_running_state' typref='5'>
 <Attr>
-<Pos l='78' c='42' s='17'/>
+<Pos l='78' c='42' s='22'/>
 </Attr>
 </Id>
 </Values>
@@ -781,9 +781,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='prev_cu1_running_state' typref='5'>
+<Id value='cu1_running_state' typref='5'>
 <Attr>
-<Pos l='80' c='42' s='22'/>
+<Pos l='80' c='42' s='17'/>
 </Attr>
 </Id>
 </Values>
@@ -826,9 +826,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='cu2_running_state' typref='5'>
+<Id value='prev_cu2_running_state' typref='5'>
 <Attr>
-<Pos l='84' c='42' s='17'/>
+<Pos l='84' c='42' s='22'/>
 </Attr>
 </Id>
 </Values>
@@ -847,9 +847,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='prev_cu2_running_state' typref='5'>
+<Id value='cu2_running_state' typref='5'>
 <Attr>
-<Pos l='86' c='42' s='22'/>
+<Pos l='86' c='42' s='17'/>
 </Attr>
 </Id>
 </Values>
@@ -940,9 +940,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='cu1_on_state' typref='4'>
+<Id value='prev_cu1_on_state' typref='4'>
 <Attr>
-<Pos l='95' c='37' s='12'/>
+<Pos l='95' c='37' s='17'/>
 </Attr>
 </Id>
 </Values>
@@ -961,9 +961,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='prev_cu1_on_state' typref='4'>
+<Id value='cu1_on_state' typref='4'>
 <Attr>
-<Pos l='97' c='37' s='17'/>
+<Pos l='97' c='37' s='12'/>
 </Attr>
 </Id>
 </Values>
@@ -1006,9 +1006,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='cu2_on_state' typref='4'>
+<Id value='prev_cu2_on_state' typref='4'>
 <Attr>
-<Pos l='101' c='37' s='12'/>
+<Pos l='101' c='37' s='17'/>
 </Attr>
 </Id>
 </Values>
@@ -1027,9 +1027,9 @@
 </Id>
 </Variables>
 <Values>
-<Id value='prev_cu2_on_state' typref='4'>
+<Id value='cu2_on_state' typref='4'>
 <Attr>
-<Pos l='103' c='37' s='17'/>
+<Pos l='103' c='37' s='12'/>
 </Attr>
 </Id>
 </Values>

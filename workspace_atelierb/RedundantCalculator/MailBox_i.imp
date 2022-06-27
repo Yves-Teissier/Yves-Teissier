@@ -75,15 +75,15 @@ OPERATIONS
     BEGIN
         IF cu = 1 THEN
             IF level = 0 THEN
-                resp_cu_running_state := cu1_running_state
-            ELSE
                 resp_cu_running_state := prev_cu1_running_state
+            ELSE
+                resp_cu_running_state := cu1_running_state
             END
         ELSE
             IF level = 0 THEN
-                resp_cu_running_state := cu2_running_state
-            ELSE
                 resp_cu_running_state := prev_cu2_running_state
+            ELSE
+                resp_cu_running_state := cu2_running_state
             END
         END
     END;
@@ -92,15 +92,15 @@ OPERATIONS
     BEGIN
         IF cu = 1 THEN
             IF level = 0 THEN
-                resp_cu_on_state := cu1_on_state
-            ELSE
                 resp_cu_on_state := prev_cu1_on_state
+            ELSE
+                resp_cu_on_state := cu1_on_state
             END
         ELSE
             IF level = 0 THEN
-                resp_cu_on_state := cu2_on_state
-            ELSE
                 resp_cu_on_state := prev_cu2_on_state
+            ELSE
+                resp_cu_on_state := cu2_on_state
             END
         END
     END;

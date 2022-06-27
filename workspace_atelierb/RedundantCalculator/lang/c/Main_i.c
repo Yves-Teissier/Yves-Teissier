@@ -57,12 +57,12 @@ void Main__run(void)
 {
     MainControl1__cu1_run();
     MainControl__cu2_run();
-    MailBox__mb_get_cu_running_state(1, 1, &Main__m_cu2_current_running_state);
-    MailBox__mb_get_cu_running_state(1, 2, &Main__m_cu1_current_running_state);
-    MailBox__mb_get_cu_main_state(1, 1, &Main__m_cu2_current_main_state);
-    MailBox__mb_get_cu_main_state(1, 2, &Main__m_cu1_current_main_state);
-    MailBox__mb_get_cu_on_state(1, 1, &Main__m_cu2_current_on_state);
-    MailBox__mb_get_cu_on_state(1, 2, &Main__m_cu1_current_on_state);
+    MailBox__mb_get_cu_running_state(1, 1, &Main__m_cu1_current_running_state);
+    MailBox__mb_get_cu_running_state(1, 2, &Main__m_cu2_current_running_state);
+    MailBox__mb_get_cu_main_state(1, 1, &Main__m_cu1_current_main_state);
+    MailBox__mb_get_cu_main_state(1, 2, &Main__m_cu2_current_main_state);
+    MailBox__mb_get_cu_on_state(1, 1, &Main__m_cu1_current_on_state);
+    MailBox__mb_get_cu_on_state(1, 2, &Main__m_cu2_current_on_state);
     IHM__print_on_state(Main__m_cu1_current_on_state, 1);
     IHM__print_on_state(Main__m_cu2_current_on_state, 2);
     IHM__print_running_state(Main__m_cu1_current_running_state, 1);
